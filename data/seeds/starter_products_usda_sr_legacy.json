@@ -1,0 +1,1340 @@
+{
+  "source": "USDA FoodData Central SR Legacy",
+  "source_file": "FoodData_Central_sr_legacy_food_json_2018-04.json",
+  "notes": [
+    "Values are per 100 grams.",
+    "This is a curated starter set for MVP level 1.",
+    "For ambiguous foods, cooked variants were preferred for default aliases where that is the most common user intent."
+  ],
+  "products": [
+    {
+      "slug": "rice_white_cooked",
+      "name_ru": "рис белый вареный",
+      "category": "крупы и гарниры",
+      "state": "готовый продукт",
+      "usda_description": "Rice, white, long-grain, regular, unenriched, cooked without salt",
+      "aliases": [
+        "рис",
+        "рис вареный",
+        "рис белый",
+        "белый рис",
+        "white rice cooked"
+      ],
+      "fdc_id": 169757,
+      "usda_category": "Cereal Grains and Pasta",
+      "calories_per_100g": 130.0,
+      "protein_per_100g": 2.69,
+      "fat_per_100g": 0.28,
+      "carbs_per_100g": 28.2
+    },
+    {
+      "slug": "rice_white_dry",
+      "name_ru": "рис белый сухой",
+      "category": "крупы и гарниры",
+      "state": "сухой продукт",
+      "usda_description": "Rice, white, long-grain, regular, raw, unenriched",
+      "aliases": [
+        "рис сухой",
+        "рис сырой",
+        "рис белый сухой",
+        "white rice dry"
+      ],
+      "fdc_id": 169756,
+      "usda_category": "Cereal Grains and Pasta",
+      "calories_per_100g": 365.0,
+      "protein_per_100g": 7.13,
+      "fat_per_100g": 0.66,
+      "carbs_per_100g": 80.0
+    },
+    {
+      "slug": "rice_brown_cooked",
+      "name_ru": "рис бурый вареный",
+      "category": "крупы и гарниры",
+      "state": "готовый продукт",
+      "usda_description": "Rice, brown, long-grain, cooked (Includes foods for USDA's Food Distribution Program)",
+      "aliases": [
+        "бурый рис",
+        "коричневый рис",
+        "бурый рис вареный",
+        "brown rice cooked"
+      ],
+      "fdc_id": 169704,
+      "usda_category": "Cereal Grains and Pasta",
+      "calories_per_100g": 123.0,
+      "protein_per_100g": 2.74,
+      "fat_per_100g": 0.97,
+      "carbs_per_100g": 25.6
+    },
+    {
+      "slug": "rice_brown_dry",
+      "name_ru": "рис бурый сухой",
+      "category": "крупы и гарниры",
+      "state": "сухой продукт",
+      "usda_description": "Rice, brown, long-grain, raw (Includes foods for USDA's Food Distribution Program)",
+      "aliases": [
+        "бурый рис сухой",
+        "бурый рис сырой",
+        "коричневый рис сухой",
+        "brown rice dry"
+      ],
+      "fdc_id": 169703,
+      "usda_category": "Cereal Grains and Pasta",
+      "calories_per_100g": 367.0,
+      "protein_per_100g": 7.54,
+      "fat_per_100g": 3.2,
+      "carbs_per_100g": 76.2
+    },
+    {
+      "slug": "buckwheat_cooked",
+      "name_ru": "гречка вареная",
+      "category": "крупы и гарниры",
+      "state": "готовый продукт",
+      "usda_description": "Buckwheat groats, roasted, cooked",
+      "aliases": [
+        "гречка",
+        "гречка вареная",
+        "гречневая каша",
+        "buckwheat cooked"
+      ],
+      "fdc_id": 170686,
+      "usda_category": "Cereal Grains and Pasta",
+      "calories_per_100g": 92.0,
+      "protein_per_100g": 3.38,
+      "fat_per_100g": 0.62,
+      "carbs_per_100g": 19.9
+    },
+    {
+      "slug": "buckwheat_dry",
+      "name_ru": "гречка сухая",
+      "category": "крупы и гарниры",
+      "state": "сухой продукт",
+      "usda_description": "Buckwheat groats, roasted, dry",
+      "aliases": [
+        "гречка сухая",
+        "гречка сырая",
+        "buckwheat dry"
+      ],
+      "fdc_id": 170685,
+      "usda_category": "Cereal Grains and Pasta",
+      "calories_per_100g": 346.0,
+      "protein_per_100g": 11.7,
+      "fat_per_100g": 2.71,
+      "carbs_per_100g": 75.0
+    },
+    {
+      "slug": "oatmeal_cooked",
+      "name_ru": "овсянка на воде",
+      "category": "крупы и гарниры",
+      "state": "готовый продукт",
+      "usda_description": "Cereals, oats, regular and quick, unenriched, cooked with water (includes boiling and microwaving), without salt",
+      "aliases": [
+        "овсянка",
+        "овсяная каша",
+        "овсянка на воде",
+        "oatmeal cooked"
+      ],
+      "fdc_id": 173905,
+      "usda_category": "Breakfast Cereals",
+      "calories_per_100g": 71.0,
+      "protein_per_100g": 2.54,
+      "fat_per_100g": 1.52,
+      "carbs_per_100g": 12.0
+    },
+    {
+      "slug": "oats_dry",
+      "name_ru": "овсяные хлопья сухие",
+      "category": "крупы и гарниры",
+      "state": "сухой продукт",
+      "usda_description": "Cereals, oats, regular and quick, not fortified, dry",
+      "aliases": [
+        "овсянка сухая",
+        "овсяные хлопья",
+        "овес сухой",
+        "oats dry"
+      ],
+      "fdc_id": 173904,
+      "usda_category": "Breakfast Cereals",
+      "calories_per_100g": 379.0,
+      "protein_per_100g": 13.2,
+      "fat_per_100g": 6.52,
+      "carbs_per_100g": 67.7
+    },
+    {
+      "slug": "pasta_cooked",
+      "name_ru": "макароны вареные",
+      "category": "крупы и гарниры",
+      "state": "готовый продукт",
+      "usda_description": "Pasta, cooked, unenriched, without added salt",
+      "aliases": [
+        "макароны",
+        "паста",
+        "макароны вареные",
+        "pasta cooked"
+      ],
+      "fdc_id": 168928,
+      "usda_category": "Cereal Grains and Pasta",
+      "calories_per_100g": 158.0,
+      "protein_per_100g": 5.8,
+      "fat_per_100g": 0.93,
+      "carbs_per_100g": 30.9
+    },
+    {
+      "slug": "pasta_dry",
+      "name_ru": "макароны сухие",
+      "category": "крупы и гарниры",
+      "state": "сухой продукт",
+      "usda_description": "Pasta, dry, unenriched",
+      "aliases": [
+        "макароны сухие",
+        "паста сухая",
+        "pasta dry"
+      ],
+      "fdc_id": 168927,
+      "usda_category": "Cereal Grains and Pasta",
+      "calories_per_100g": 371.0,
+      "protein_per_100g": 13.0,
+      "fat_per_100g": 1.51,
+      "carbs_per_100g": 74.7
+    },
+    {
+      "slug": "wholewheat_pasta_cooked",
+      "name_ru": "макароны цельнозерновые вареные",
+      "category": "крупы и гарниры",
+      "state": "готовый продукт",
+      "usda_description": "Pasta, whole-wheat, cooked (Includes foods for USDA's Food Distribution Program)",
+      "aliases": [
+        "макароны цельнозерновые",
+        "цельнозерновая паста",
+        "whole wheat pasta"
+      ],
+      "fdc_id": 168910,
+      "usda_category": "Cereal Grains and Pasta",
+      "calories_per_100g": 149.0,
+      "protein_per_100g": 5.99,
+      "fat_per_100g": 1.71,
+      "carbs_per_100g": 30.1
+    },
+    {
+      "slug": "bread_white",
+      "name_ru": "хлеб белый",
+      "category": "хлеб и выпечка",
+      "state": "готовый продукт",
+      "usda_description": "Bread, white wheat",
+      "aliases": [
+        "хлеб белый",
+        "белый хлеб",
+        "батон",
+        "white bread"
+      ],
+      "fdc_id": 167532,
+      "usda_category": "Baked Products",
+      "calories_per_100g": 238.0,
+      "protein_per_100g": 10.7,
+      "fat_per_100g": 2.15,
+      "carbs_per_100g": 43.9
+    },
+    {
+      "slug": "bread_multigrain",
+      "name_ru": "хлеб цельнозерновой",
+      "category": "хлеб и выпечка",
+      "state": "готовый продукт",
+      "usda_description": "Bread, multi-grain (includes whole-grain)",
+      "aliases": [
+        "хлеб цельнозерновой",
+        "хлеб зерновой",
+        "мультизерновой хлеб",
+        "whole grain bread"
+      ],
+      "fdc_id": 168013,
+      "usda_category": "Baked Products",
+      "calories_per_100g": 265.0,
+      "protein_per_100g": 13.4,
+      "fat_per_100g": 4.23,
+      "carbs_per_100g": 43.3
+    },
+    {
+      "slug": "potato_raw",
+      "name_ru": "картофель сырой",
+      "category": "овощи",
+      "state": "сырой продукт",
+      "usda_description": "Potatoes, flesh and skin, raw",
+      "aliases": [
+        "картофель сырой",
+        "картошка сырая",
+        "potato raw"
+      ],
+      "fdc_id": 170026,
+      "usda_category": "Vegetables and Vegetable Products",
+      "calories_per_100g": 77.0,
+      "protein_per_100g": 2.05,
+      "fat_per_100g": 0.09,
+      "carbs_per_100g": 17.5
+    },
+    {
+      "slug": "potato_boiled",
+      "name_ru": "картофель вареный",
+      "category": "овощи",
+      "state": "готовый продукт",
+      "usda_description": "Potatoes, boiled, cooked in skin, flesh, without salt",
+      "aliases": [
+        "картофель вареный",
+        "картошка вареная",
+        "potato boiled"
+      ],
+      "fdc_id": 170438,
+      "usda_category": "Vegetables and Vegetable Products",
+      "calories_per_100g": 87.0,
+      "protein_per_100g": 1.87,
+      "fat_per_100g": 0.1,
+      "carbs_per_100g": 20.1
+    },
+    {
+      "slug": "potato_baked",
+      "name_ru": "картофель запеченный",
+      "category": "овощи",
+      "state": "готовый продукт",
+      "usda_description": "Potatoes, baked, flesh, without salt",
+      "aliases": [
+        "картофель запеченный",
+        "картошка печеная",
+        "potato baked"
+      ],
+      "fdc_id": 170033,
+      "usda_category": "Vegetables and Vegetable Products",
+      "calories_per_100g": 93.0,
+      "protein_per_100g": 1.96,
+      "fat_per_100g": 0.1,
+      "carbs_per_100g": 21.6
+    },
+    {
+      "slug": "tomato_raw",
+      "name_ru": "помидор",
+      "category": "овощи",
+      "state": "сырой продукт",
+      "usda_description": "Tomatoes, red, ripe, raw, year round average",
+      "aliases": [
+        "помидор",
+        "томат",
+        "tomato"
+      ],
+      "fdc_id": 170457,
+      "usda_category": "Vegetables and Vegetable Products",
+      "calories_per_100g": 18.0,
+      "protein_per_100g": 0.88,
+      "fat_per_100g": 0.2,
+      "carbs_per_100g": 3.89
+    },
+    {
+      "slug": "cucumber_raw",
+      "name_ru": "огурец",
+      "category": "овощи",
+      "state": "сырой продукт",
+      "usda_description": "Cucumber, with peel, raw",
+      "aliases": [
+        "огурец",
+        "cucumber"
+      ],
+      "fdc_id": 168409,
+      "usda_category": "Vegetables and Vegetable Products",
+      "calories_per_100g": 15.0,
+      "protein_per_100g": 0.65,
+      "fat_per_100g": 0.11,
+      "carbs_per_100g": 3.63
+    },
+    {
+      "slug": "carrot_raw",
+      "name_ru": "морковь",
+      "category": "овощи",
+      "state": "сырой продукт",
+      "usda_description": "Carrots, raw",
+      "aliases": [
+        "морковь",
+        "carrot"
+      ],
+      "fdc_id": 170393,
+      "usda_category": "Vegetables and Vegetable Products",
+      "calories_per_100g": 41.0,
+      "protein_per_100g": 0.93,
+      "fat_per_100g": 0.24,
+      "carbs_per_100g": 9.58
+    },
+    {
+      "slug": "onion_raw",
+      "name_ru": "лук репчатый",
+      "category": "овощи",
+      "state": "сырой продукт",
+      "usda_description": "Onions, raw",
+      "aliases": [
+        "лук",
+        "лук репчатый",
+        "onion"
+      ],
+      "fdc_id": 170000,
+      "usda_category": "Vegetables and Vegetable Products",
+      "calories_per_100g": 40.0,
+      "protein_per_100g": 1.1,
+      "fat_per_100g": 0.1,
+      "carbs_per_100g": 9.34
+    },
+    {
+      "slug": "cabbage_raw",
+      "name_ru": "капуста белокочанная",
+      "category": "овощи",
+      "state": "сырой продукт",
+      "usda_description": "Cabbage, common (danish, domestic, and pointed types), freshly harvest, raw",
+      "aliases": [
+        "капуста",
+        "капуста белокочанная",
+        "cabbage"
+      ],
+      "fdc_id": 169335,
+      "usda_category": "Vegetables and Vegetable Products",
+      "calories_per_100g": 24.0,
+      "protein_per_100g": 1.21,
+      "fat_per_100g": 0.18,
+      "carbs_per_100g": 5.37
+    },
+    {
+      "slug": "broccoli_raw",
+      "name_ru": "брокколи",
+      "category": "овощи",
+      "state": "сырой продукт",
+      "usda_description": "Broccoli, flower clusters, raw",
+      "aliases": [
+        "брокколи",
+        "broccoli"
+      ],
+      "fdc_id": 169330,
+      "usda_category": "Vegetables and Vegetable Products",
+      "calories_per_100g": 28.0,
+      "protein_per_100g": 2.98,
+      "fat_per_100g": 0.35,
+      "carbs_per_100g": 5.06
+    },
+    {
+      "slug": "cauliflower_raw",
+      "name_ru": "цветная капуста",
+      "category": "овощи",
+      "state": "сырой продукт",
+      "usda_description": "Cauliflower, raw",
+      "aliases": [
+        "цветная капуста",
+        "cauliflower"
+      ],
+      "fdc_id": 169986,
+      "usda_category": "Vegetables and Vegetable Products",
+      "calories_per_100g": 25.0,
+      "protein_per_100g": 1.92,
+      "fat_per_100g": 0.28,
+      "carbs_per_100g": 4.97
+    },
+    {
+      "slug": "pepper_green_raw",
+      "name_ru": "перец сладкий зеленый",
+      "category": "овощи",
+      "state": "сырой продукт",
+      "usda_description": "Peppers, sweet, green, raw",
+      "aliases": [
+        "перец зеленый",
+        "болгарский перец зеленый",
+        "зеленый перец",
+        "green bell pepper"
+      ],
+      "fdc_id": 170427,
+      "usda_category": "Vegetables and Vegetable Products",
+      "calories_per_100g": 20.0,
+      "protein_per_100g": 0.86,
+      "fat_per_100g": 0.17,
+      "carbs_per_100g": 4.64
+    },
+    {
+      "slug": "pepper_red_raw",
+      "name_ru": "перец сладкий красный",
+      "category": "овощи",
+      "state": "сырой продукт",
+      "usda_description": "Peppers, sweet, red, raw",
+      "aliases": [
+        "перец красный",
+        "болгарский перец красный",
+        "красный перец",
+        "red bell pepper"
+      ],
+      "fdc_id": 170108,
+      "usda_category": "Vegetables and Vegetable Products",
+      "calories_per_100g": 26.0,
+      "protein_per_100g": 0.99,
+      "fat_per_100g": 0.3,
+      "carbs_per_100g": 6.03
+    },
+    {
+      "slug": "lettuce_iceberg_raw",
+      "name_ru": "салат айсберг",
+      "category": "овощи",
+      "state": "сырой продукт",
+      "usda_description": "Lettuce, iceberg (includes crisphead types), raw",
+      "aliases": [
+        "салат айсберг",
+        "айсберг",
+        "lettuce iceberg"
+      ],
+      "fdc_id": 169248,
+      "usda_category": "Vegetables and Vegetable Products",
+      "calories_per_100g": 14.0,
+      "protein_per_100g": 0.9,
+      "fat_per_100g": 0.14,
+      "carbs_per_100g": 2.97
+    },
+    {
+      "slug": "corn_cooked",
+      "name_ru": "кукуруза вареная",
+      "category": "овощи",
+      "state": "готовый продукт",
+      "usda_description": "Corn, sweet, yellow, cooked, boiled, drained, without salt",
+      "aliases": [
+        "кукуруза",
+        "кукуруза вареная",
+        "sweet corn cooked"
+      ],
+      "fdc_id": 169999,
+      "usda_category": "Vegetables and Vegetable Products",
+      "calories_per_100g": 96.0,
+      "protein_per_100g": 3.41,
+      "fat_per_100g": 1.5,
+      "carbs_per_100g": 21.0
+    },
+    {
+      "slug": "peas_green_cooked",
+      "name_ru": "горошек зеленый вареный",
+      "category": "овощи",
+      "state": "готовый продукт",
+      "usda_description": "Peas, green, cooked, boiled, drained, without salt",
+      "aliases": [
+        "горошек",
+        "зеленый горошек",
+        "peas cooked"
+      ],
+      "fdc_id": 170420,
+      "usda_category": "Vegetables and Vegetable Products",
+      "calories_per_100g": 84.0,
+      "protein_per_100g": 5.36,
+      "fat_per_100g": 0.22,
+      "carbs_per_100g": 15.6
+    },
+    {
+      "slug": "mushroom_white_raw",
+      "name_ru": "шампиньоны",
+      "category": "овощи",
+      "state": "сырой продукт",
+      "usda_description": "Mushrooms, white, raw",
+      "aliases": [
+        "шампиньоны",
+        "грибы шампиньоны",
+        "white mushrooms"
+      ],
+      "fdc_id": 169251,
+      "usda_category": "Vegetables and Vegetable Products",
+      "calories_per_100g": 22.0,
+      "protein_per_100g": 3.09,
+      "fat_per_100g": 0.34,
+      "carbs_per_100g": 3.26
+    },
+    {
+      "slug": "garlic_raw",
+      "name_ru": "чеснок",
+      "category": "овощи",
+      "state": "сырой продукт",
+      "usda_description": "Garlic, raw",
+      "aliases": [
+        "чеснок",
+        "garlic"
+      ],
+      "fdc_id": 169230,
+      "usda_category": "Vegetables and Vegetable Products",
+      "calories_per_100g": 149.0,
+      "protein_per_100g": 6.36,
+      "fat_per_100g": 0.5,
+      "carbs_per_100g": 33.1
+    },
+    {
+      "slug": "apple_raw",
+      "name_ru": "яблоко",
+      "category": "фрукты и ягоды",
+      "state": "сырой продукт",
+      "usda_description": "Apples, raw, with skin (Includes foods for USDA's Food Distribution Program)",
+      "aliases": [
+        "яблоко",
+        "apple"
+      ],
+      "fdc_id": 171688,
+      "usda_category": "Fruits and Fruit Juices",
+      "calories_per_100g": 52.0,
+      "protein_per_100g": 0.26,
+      "fat_per_100g": 0.17,
+      "carbs_per_100g": 13.8
+    },
+    {
+      "slug": "banana_raw",
+      "name_ru": "банан",
+      "category": "фрукты и ягоды",
+      "state": "сырой продукт",
+      "usda_description": "Bananas, raw",
+      "aliases": [
+        "банан",
+        "banana"
+      ],
+      "fdc_id": 173944,
+      "usda_category": "Fruits and Fruit Juices",
+      "calories_per_100g": 89.0,
+      "protein_per_100g": 1.09,
+      "fat_per_100g": 0.33,
+      "carbs_per_100g": 22.8
+    },
+    {
+      "slug": "orange_raw",
+      "name_ru": "апельсин",
+      "category": "фрукты и ягоды",
+      "state": "сырой продукт",
+      "usda_description": "Oranges, raw, all commercial varieties",
+      "aliases": [
+        "апельсин",
+        "orange"
+      ],
+      "fdc_id": 169097,
+      "usda_category": "Fruits and Fruit Juices",
+      "calories_per_100g": 47.0,
+      "protein_per_100g": 0.94,
+      "fat_per_100g": 0.12,
+      "carbs_per_100g": 11.8
+    },
+    {
+      "slug": "pear_raw",
+      "name_ru": "груша",
+      "category": "фрукты и ягоды",
+      "state": "сырой продукт",
+      "usda_description": "Pears, raw",
+      "aliases": [
+        "груша",
+        "pear"
+      ],
+      "fdc_id": 169118,
+      "usda_category": "Fruits and Fruit Juices",
+      "calories_per_100g": 57.0,
+      "protein_per_100g": 0.36,
+      "fat_per_100g": 0.14,
+      "carbs_per_100g": 15.2
+    },
+    {
+      "slug": "strawberry_raw",
+      "name_ru": "клубника",
+      "category": "фрукты и ягоды",
+      "state": "сырой продукт",
+      "usda_description": "Strawberries, raw",
+      "aliases": [
+        "клубника",
+        "strawberry"
+      ],
+      "fdc_id": 167762,
+      "usda_category": "Fruits and Fruit Juices",
+      "calories_per_100g": 32.0,
+      "protein_per_100g": 0.67,
+      "fat_per_100g": 0.3,
+      "carbs_per_100g": 7.68
+    },
+    {
+      "slug": "blueberry_raw",
+      "name_ru": "черника голубика",
+      "category": "фрукты и ягоды",
+      "state": "сырой продукт",
+      "usda_description": "Blueberries, raw",
+      "aliases": [
+        "голубика",
+        "черника",
+        "blueberry"
+      ],
+      "fdc_id": 171711,
+      "usda_category": "Fruits and Fruit Juices",
+      "calories_per_100g": 57.0,
+      "protein_per_100g": 0.74,
+      "fat_per_100g": 0.33,
+      "carbs_per_100g": 14.5
+    },
+    {
+      "slug": "grapes_raw",
+      "name_ru": "виноград",
+      "category": "фрукты и ягоды",
+      "state": "сырой продукт",
+      "usda_description": "Grapes, red or green (European type, such as Thompson seedless), raw",
+      "aliases": [
+        "виноград",
+        "grapes"
+      ],
+      "fdc_id": 174683,
+      "usda_category": "Fruits and Fruit Juices",
+      "calories_per_100g": 69.0,
+      "protein_per_100g": 0.72,
+      "fat_per_100g": 0.16,
+      "carbs_per_100g": 18.1
+    },
+    {
+      "slug": "avocado_raw",
+      "name_ru": "авокадо",
+      "category": "фрукты и ягоды",
+      "state": "сырой продукт",
+      "usda_description": "Avocados, raw, all commercial varieties",
+      "aliases": [
+        "авокадо",
+        "avocado"
+      ],
+      "fdc_id": 171705,
+      "usda_category": "Fruits and Fruit Juices",
+      "calories_per_100g": 160.0,
+      "protein_per_100g": 2.0,
+      "fat_per_100g": 14.7,
+      "carbs_per_100g": 8.53
+    },
+    {
+      "slug": "kiwi_raw",
+      "name_ru": "киви",
+      "category": "фрукты и ягоды",
+      "state": "сырой продукт",
+      "usda_description": "Kiwifruit, green, raw",
+      "aliases": [
+        "киви",
+        "kiwi"
+      ],
+      "fdc_id": 168153,
+      "usda_category": "Fruits and Fruit Juices",
+      "calories_per_100g": 61.0,
+      "protein_per_100g": 1.14,
+      "fat_per_100g": 0.52,
+      "carbs_per_100g": 14.7
+    },
+    {
+      "slug": "peach_raw",
+      "name_ru": "персик",
+      "category": "фрукты и ягоды",
+      "state": "сырой продукт",
+      "usda_description": "Peaches, yellow, raw",
+      "aliases": [
+        "персик",
+        "peach"
+      ],
+      "fdc_id": 169928,
+      "usda_category": "Fruits and Fruit Juices",
+      "calories_per_100g": 39.0,
+      "protein_per_100g": 0.91,
+      "fat_per_100g": 0.25,
+      "carbs_per_100g": 9.54
+    },
+    {
+      "slug": "apricot_raw",
+      "name_ru": "абрикос",
+      "category": "фрукты и ягоды",
+      "state": "сырой продукт",
+      "usda_description": "Apricots, raw",
+      "aliases": [
+        "абрикос",
+        "apricot"
+      ],
+      "fdc_id": 171697,
+      "usda_category": "Fruits and Fruit Juices",
+      "calories_per_100g": 48.0,
+      "protein_per_100g": 1.4,
+      "fat_per_100g": 0.39,
+      "carbs_per_100g": 11.1
+    },
+    {
+      "slug": "plum_raw",
+      "name_ru": "слива",
+      "category": "фрукты и ягоды",
+      "state": "сырой продукт",
+      "usda_description": "Plums, raw",
+      "aliases": [
+        "слива",
+        "plum"
+      ],
+      "fdc_id": 169949,
+      "usda_category": "Fruits and Fruit Juices",
+      "calories_per_100g": 46.0,
+      "protein_per_100g": 0.7,
+      "fat_per_100g": 0.28,
+      "carbs_per_100g": 11.4
+    },
+    {
+      "slug": "lentils_cooked",
+      "name_ru": "чечевица вареная",
+      "category": "бобовые",
+      "state": "готовый продукт",
+      "usda_description": "Lentils, mature seeds, cooked, boiled, without salt",
+      "aliases": [
+        "чечевица",
+        "чечевица вареная",
+        "lentils cooked"
+      ],
+      "fdc_id": 172421,
+      "usda_category": "Legumes and Legume Products",
+      "calories_per_100g": 116.0,
+      "protein_per_100g": 9.02,
+      "fat_per_100g": 0.38,
+      "carbs_per_100g": 20.1
+    },
+    {
+      "slug": "lentils_dry",
+      "name_ru": "чечевица сухая",
+      "category": "бобовые",
+      "state": "сухой продукт",
+      "usda_description": "Lentils, raw",
+      "aliases": [
+        "чечевица сухая",
+        "чечевица сырая",
+        "lentils dry"
+      ],
+      "fdc_id": 172420,
+      "usda_category": "Legumes and Legume Products",
+      "calories_per_100g": 352.0,
+      "protein_per_100g": 24.6,
+      "fat_per_100g": 1.06,
+      "carbs_per_100g": 63.4
+    },
+    {
+      "slug": "chickpeas_cooked",
+      "name_ru": "нут вареный",
+      "category": "бобовые",
+      "state": "готовый продукт",
+      "usda_description": "Chickpeas (garbanzo beans, bengal gram), mature seeds, cooked, boiled, without salt",
+      "aliases": [
+        "нут",
+        "нут вареный",
+        "chickpeas cooked"
+      ],
+      "fdc_id": 173757,
+      "usda_category": "Legumes and Legume Products",
+      "calories_per_100g": 164.0,
+      "protein_per_100g": 8.86,
+      "fat_per_100g": 2.59,
+      "carbs_per_100g": 27.4
+    },
+    {
+      "slug": "chickpeas_dry",
+      "name_ru": "нут сухой",
+      "category": "бобовые",
+      "state": "сухой продукт",
+      "usda_description": "Chickpeas (garbanzo beans, bengal gram), mature seeds, raw",
+      "aliases": [
+        "нут сухой",
+        "нут сырой",
+        "chickpeas dry"
+      ],
+      "fdc_id": 173756,
+      "usda_category": "Legumes and Legume Products",
+      "calories_per_100g": 378.0,
+      "protein_per_100g": 20.5,
+      "fat_per_100g": 6.04,
+      "carbs_per_100g": 63.0
+    },
+    {
+      "slug": "kidney_beans_cooked",
+      "name_ru": "фасоль красная вареная",
+      "category": "бобовые",
+      "state": "готовый продукт",
+      "usda_description": "Beans, kidney, all types, mature seeds, cooked, boiled, without salt",
+      "aliases": [
+        "фасоль красная",
+        "красная фасоль",
+        "kidney beans cooked"
+      ],
+      "fdc_id": 173740,
+      "usda_category": "Legumes and Legume Products",
+      "calories_per_100g": 127.0,
+      "protein_per_100g": 8.67,
+      "fat_per_100g": 0.5,
+      "carbs_per_100g": 22.8
+    },
+    {
+      "slug": "white_beans_cooked",
+      "name_ru": "фасоль белая вареная",
+      "category": "бобовые",
+      "state": "готовый продукт",
+      "usda_description": "Beans, white, mature seeds, cooked, boiled, without salt",
+      "aliases": [
+        "фасоль белая",
+        "белая фасоль",
+        "white beans cooked"
+      ],
+      "fdc_id": 175203,
+      "usda_category": "Legumes and Legume Products",
+      "calories_per_100g": 139.0,
+      "protein_per_100g": 9.73,
+      "fat_per_100g": 0.35,
+      "carbs_per_100g": 25.1
+    },
+    {
+      "slug": "egg_raw",
+      "name_ru": "яйцо сырое",
+      "category": "яйца",
+      "state": "сырой продукт",
+      "usda_description": "Egg, whole, raw, fresh",
+      "aliases": [
+        "яйцо сырое",
+        "сырое яйцо",
+        "egg raw"
+      ],
+      "fdc_id": 171287,
+      "usda_category": "Dairy and Egg Products",
+      "calories_per_100g": 143.0,
+      "protein_per_100g": 12.6,
+      "fat_per_100g": 9.51,
+      "carbs_per_100g": 0.72
+    },
+    {
+      "slug": "egg_boiled",
+      "name_ru": "яйцо вареное",
+      "category": "яйца",
+      "state": "готовый продукт",
+      "usda_description": "Egg, whole, cooked, hard-boiled",
+      "aliases": [
+        "яйцо",
+        "яйцо вареное",
+        "вареное яйцо",
+        "egg boiled"
+      ],
+      "fdc_id": 173424,
+      "usda_category": "Dairy and Egg Products",
+      "calories_per_100g": 155.0,
+      "protein_per_100g": 12.6,
+      "fat_per_100g": 10.6,
+      "carbs_per_100g": 1.12
+    },
+    {
+      "slug": "chicken_breast_roasted",
+      "name_ru": "куриная грудка запеченная",
+      "category": "мясо и птица",
+      "state": "готовый продукт",
+      "usda_description": "Chicken, broilers or fryers, breast, meat only, cooked, roasted",
+      "aliases": [
+        "куриная грудка",
+        "грудка куриная",
+        "курица грудка",
+        "chicken breast"
+      ],
+      "fdc_id": 171477,
+      "usda_category": "Poultry Products",
+      "calories_per_100g": 165.0,
+      "protein_per_100g": 31.0,
+      "fat_per_100g": 3.57,
+      "carbs_per_100g": 0.0
+    },
+    {
+      "slug": "chicken_thigh_roasted",
+      "name_ru": "куриное бедро запеченное",
+      "category": "мясо и птица",
+      "state": "готовый продукт",
+      "usda_description": "Chicken, broilers or fryers, thigh, meat only, cooked, roasted",
+      "aliases": [
+        "куриное бедро",
+        "бедро куриное",
+        "chicken thigh"
+      ],
+      "fdc_id": 172388,
+      "usda_category": "Poultry Products",
+      "calories_per_100g": 179.0,
+      "protein_per_100g": 24.8,
+      "fat_per_100g": 8.15,
+      "carbs_per_100g": 0.0
+    },
+    {
+      "slug": "turkey_breast_roasted",
+      "name_ru": "грудка индейки запеченная",
+      "category": "мясо и птица",
+      "state": "готовый продукт",
+      "usda_description": "Turkey, all classes, breast, meat and skin, cooked, roasted",
+      "aliases": [
+        "индейка грудка",
+        "грудка индейки",
+        "turkey breast"
+      ],
+      "fdc_id": 171492,
+      "usda_category": "Poultry Products",
+      "calories_per_100g": 189.0,
+      "protein_per_100g": 28.7,
+      "fat_per_100g": 7.41,
+      "carbs_per_100g": 0.0
+    },
+    {
+      "slug": "beef_ground_lean_cooked",
+      "name_ru": "говяжий фарш постный готовый",
+      "category": "мясо и птица",
+      "state": "готовый продукт",
+      "usda_description": "Beef, ground, 95% lean meat / 5% fat, patty, cooked, broiled",
+      "aliases": [
+        "говяжий фарш",
+        "фарш говяжий постный",
+        "lean ground beef"
+      ],
+      "fdc_id": 171791,
+      "usda_category": "Beef Products",
+      "calories_per_100g": 174.0,
+      "protein_per_100g": 26.3,
+      "fat_per_100g": 6.8,
+      "carbs_per_100g": 0.0
+    },
+    {
+      "slug": "beef_steak_cooked",
+      "name_ru": "говядина стейк готовый",
+      "category": "мясо и птица",
+      "state": "готовый продукт",
+      "usda_description": "Beef, flank, steak, separable lean only, trimmed to 0\" fat, choice, cooked, broiled",
+      "aliases": [
+        "говядина",
+        "стейк говяжий",
+        "beef steak"
+      ],
+      "fdc_id": 168611,
+      "usda_category": "Beef Products",
+      "calories_per_100g": 194.0,
+      "protein_per_100g": 27.8,
+      "fat_per_100g": 8.32,
+      "carbs_per_100g": 0.0
+    },
+    {
+      "slug": "pork_tenderloin_roasted",
+      "name_ru": "свиная вырезка запеченная",
+      "category": "мясо и птица",
+      "state": "готовый продукт",
+      "usda_description": "Pork, fresh, loin, tenderloin, separable lean only, cooked, roasted",
+      "aliases": [
+        "свиная вырезка",
+        "свинина постная",
+        "pork tenderloin"
+      ],
+      "fdc_id": 168250,
+      "usda_category": "Pork Products",
+      "calories_per_100g": 143.0,
+      "protein_per_100g": 26.2,
+      "fat_per_100g": 3.51,
+      "carbs_per_100g": 0.0
+    },
+    {
+      "slug": "tuna_canned_water",
+      "name_ru": "тунец консервированный в воде",
+      "category": "рыба и морепродукты",
+      "state": "готовый продукт",
+      "usda_description": "Fish, tuna, light, canned in water, without salt, drained solids",
+      "aliases": [
+        "тунец",
+        "тунец в воде",
+        "консервированный тунец",
+        "tuna canned"
+      ],
+      "fdc_id": 171986,
+      "usda_category": "Finfish and Shellfish Products",
+      "calories_per_100g": 116.0,
+      "protein_per_100g": 25.5,
+      "fat_per_100g": 0.82,
+      "carbs_per_100g": 0.0
+    },
+    {
+      "slug": "salmon_canned",
+      "name_ru": "лосось консервированный",
+      "category": "рыба и морепродукты",
+      "state": "готовый продукт",
+      "usda_description": "Fish, salmon, pink, canned, drained solids",
+      "aliases": [
+        "лосось",
+        "семга консервированная",
+        "salmon canned"
+      ],
+      "fdc_id": 175175,
+      "usda_category": "Finfish and Shellfish Products",
+      "calories_per_100g": 138.0,
+      "protein_per_100g": 23.1,
+      "fat_per_100g": 5.02,
+      "carbs_per_100g": 0.0
+    },
+    {
+      "slug": "cod_raw",
+      "name_ru": "треска сырая",
+      "category": "рыба и морепродукты",
+      "state": "сырой продукт",
+      "usda_description": "Fish, cod, Atlantic, raw",
+      "aliases": [
+        "треска",
+        "cod raw"
+      ],
+      "fdc_id": 171955,
+      "usda_category": "Finfish and Shellfish Products",
+      "calories_per_100g": 82.0,
+      "protein_per_100g": 17.8,
+      "fat_per_100g": 0.67,
+      "carbs_per_100g": 0.0
+    },
+    {
+      "slug": "milk_1pct",
+      "name_ru": "молоко 1%",
+      "category": "молочные продукты",
+      "state": "готовый продукт",
+      "usda_description": "Milk, lowfat, fluid, 1% milkfat, with added vitamin A and vitamin D",
+      "aliases": [
+        "молоко 1%",
+        "молоко 1 процент",
+        "milk 1%"
+      ],
+      "fdc_id": 170872,
+      "usda_category": "Dairy and Egg Products",
+      "calories_per_100g": 42.0,
+      "protein_per_100g": 3.37,
+      "fat_per_100g": 0.97,
+      "carbs_per_100g": 4.99
+    },
+    {
+      "slug": "milk_2pct",
+      "name_ru": "молоко 2%",
+      "category": "молочные продукты",
+      "state": "готовый продукт",
+      "usda_description": "Milk, reduced fat, fluid, 2% milkfat, with added vitamin A and vitamin D",
+      "aliases": [
+        "молоко 2%",
+        "молоко 2 процент",
+        "milk 2%"
+      ],
+      "fdc_id": 171267,
+      "usda_category": "Dairy and Egg Products",
+      "calories_per_100g": 50.0,
+      "protein_per_100g": 3.3,
+      "fat_per_100g": 1.98,
+      "carbs_per_100g": 4.8
+    },
+    {
+      "slug": "cottage_cheese_2pct",
+      "name_ru": "творог 2%",
+      "category": "молочные продукты",
+      "state": "готовый продукт",
+      "usda_description": "Cheese, cottage, lowfat, 2% milkfat",
+      "aliases": [
+        "творог 2%",
+        "творог",
+        "cottage cheese 2%"
+      ],
+      "fdc_id": 172182,
+      "usda_category": "Dairy and Egg Products",
+      "calories_per_100g": 81.0,
+      "protein_per_100g": 10.4,
+      "fat_per_100g": 2.27,
+      "carbs_per_100g": 4.76
+    },
+    {
+      "slug": "yogurt_lowfat_plain",
+      "name_ru": "йогурт натуральный нежирный",
+      "category": "молочные продукты",
+      "state": "готовый продукт",
+      "usda_description": "Yogurt, plain, low fat",
+      "aliases": [
+        "йогурт натуральный",
+        "йогурт нежирный",
+        "plain yogurt low fat"
+      ],
+      "fdc_id": 170886,
+      "usda_category": "Dairy and Egg Products",
+      "calories_per_100g": 63.0,
+      "protein_per_100g": 5.25,
+      "fat_per_100g": 1.55,
+      "carbs_per_100g": 7.04
+    },
+    {
+      "slug": "yogurt_whole_plain",
+      "name_ru": "йогурт натуральный цельный",
+      "category": "молочные продукты",
+      "state": "готовый продукт",
+      "usda_description": "Yogurt, plain, whole milk",
+      "aliases": [
+        "йогурт цельный",
+        "йогурт натуральный цельный",
+        "plain yogurt whole milk"
+      ],
+      "fdc_id": 171284,
+      "usda_category": "Dairy and Egg Products",
+      "calories_per_100g": 61.0,
+      "protein_per_100g": 3.47,
+      "fat_per_100g": 3.25,
+      "carbs_per_100g": 4.66
+    },
+    {
+      "slug": "sour_cream",
+      "name_ru": "сметана",
+      "category": "молочные продукты",
+      "state": "готовый продукт",
+      "usda_description": "Cream, sour, cultured",
+      "aliases": [
+        "сметана",
+        "sour cream"
+      ],
+      "fdc_id": 171257,
+      "usda_category": "Dairy and Egg Products",
+      "calories_per_100g": 198.0,
+      "protein_per_100g": 2.44,
+      "fat_per_100g": 19.4,
+      "carbs_per_100g": 4.63
+    },
+    {
+      "slug": "cheddar",
+      "name_ru": "сыр чеддер",
+      "category": "молочные продукты",
+      "state": "готовый продукт",
+      "usda_description": "Cheese, cheddar (Includes foods for USDA's Food Distribution Program)",
+      "aliases": [
+        "чеддер",
+        "сыр чеддер",
+        "cheddar"
+      ],
+      "fdc_id": 173414,
+      "usda_category": "Dairy and Egg Products",
+      "calories_per_100g": 403.0,
+      "protein_per_100g": 22.9,
+      "fat_per_100g": 33.3,
+      "carbs_per_100g": 3.37
+    },
+    {
+      "slug": "mozzarella",
+      "name_ru": "сыр моцарелла",
+      "category": "молочные продукты",
+      "state": "готовый продукт",
+      "usda_description": "Cheese, mozzarella, whole milk",
+      "aliases": [
+        "моцарелла",
+        "сыр моцарелла",
+        "mozzarella"
+      ],
+      "fdc_id": 170845,
+      "usda_category": "Dairy and Egg Products",
+      "calories_per_100g": 299.0,
+      "protein_per_100g": 22.2,
+      "fat_per_100g": 22.1,
+      "carbs_per_100g": 2.4
+    },
+    {
+      "slug": "feta",
+      "name_ru": "сыр фета",
+      "category": "молочные продукты",
+      "state": "готовый продукт",
+      "usda_description": "Cheese, feta",
+      "aliases": [
+        "фета",
+        "сыр фета",
+        "feta"
+      ],
+      "fdc_id": 173420,
+      "usda_category": "Dairy and Egg Products",
+      "calories_per_100g": 265.0,
+      "protein_per_100g": 14.2,
+      "fat_per_100g": 21.5,
+      "carbs_per_100g": 3.88
+    },
+    {
+      "slug": "butter_salted",
+      "name_ru": "масло сливочное",
+      "category": "жиры и масла",
+      "state": "готовый продукт",
+      "usda_description": "Butter, salted",
+      "aliases": [
+        "масло сливочное",
+        "сливочное масло",
+        "butter"
+      ],
+      "fdc_id": 173410,
+      "usda_category": "Dairy and Egg Products",
+      "calories_per_100g": 717.0,
+      "protein_per_100g": 0.85,
+      "fat_per_100g": 81.1,
+      "carbs_per_100g": 0.06
+    },
+    {
+      "slug": "olive_oil",
+      "name_ru": "масло оливковое",
+      "category": "жиры и масла",
+      "state": "готовый продукт",
+      "usda_description": "Oil, olive, salad or cooking",
+      "aliases": [
+        "масло оливковое",
+        "оливковое масло",
+        "olive oil"
+      ],
+      "fdc_id": 171413,
+      "usda_category": "Fats and Oils",
+      "calories_per_100g": 884.0,
+      "protein_per_100g": 0.0,
+      "fat_per_100g": 100.0,
+      "carbs_per_100g": 0.0
+    },
+    {
+      "slug": "sunflower_oil",
+      "name_ru": "масло подсолнечное",
+      "category": "жиры и масла",
+      "state": "готовый продукт",
+      "usda_description": "Oil, sunflower, linoleic, (approx. 65%)",
+      "aliases": [
+        "масло подсолнечное",
+        "подсолнечное масло",
+        "sunflower oil"
+      ],
+      "fdc_id": 171025,
+      "usda_category": "Fats and Oils",
+      "calories_per_100g": 884.0,
+      "protein_per_100g": 0.0,
+      "fat_per_100g": 100.0,
+      "carbs_per_100g": 0.0
+    },
+    {
+      "slug": "almonds",
+      "name_ru": "миндаль",
+      "category": "орехи и семечки",
+      "state": "готовый продукт",
+      "usda_description": "Nuts, almonds",
+      "aliases": [
+        "миндаль",
+        "almonds"
+      ],
+      "fdc_id": 170567,
+      "usda_category": "Nut and Seed Products",
+      "calories_per_100g": 579.0,
+      "protein_per_100g": 21.2,
+      "fat_per_100g": 49.9,
+      "carbs_per_100g": 21.6
+    },
+    {
+      "slug": "walnuts",
+      "name_ru": "грецкий орех",
+      "category": "орехи и семечки",
+      "state": "готовый продукт",
+      "usda_description": "Nuts, walnuts, english",
+      "aliases": [
+        "грецкий орех",
+        "грецкие орехи",
+        "walnuts"
+      ],
+      "fdc_id": 170187,
+      "usda_category": "Nut and Seed Products",
+      "calories_per_100g": 654.0,
+      "protein_per_100g": 15.2,
+      "fat_per_100g": 65.2,
+      "carbs_per_100g": 13.7
+    },
+    {
+      "slug": "sunflower_seeds",
+      "name_ru": "семечки подсолнечника",
+      "category": "орехи и семечки",
+      "state": "готовый продукт",
+      "usda_description": "Seeds, sunflower seed kernels, toasted, without salt",
+      "aliases": [
+        "семечки",
+        "семечки подсолнечника",
+        "sunflower seeds"
+      ],
+      "fdc_id": 170154,
+      "usda_category": "Nut and Seed Products",
+      "calories_per_100g": 619.0,
+      "protein_per_100g": 17.2,
+      "fat_per_100g": 56.8,
+      "carbs_per_100g": 20.6
+    }
+  ]
+}
