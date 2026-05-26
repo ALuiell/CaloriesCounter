@@ -1,0 +1,17 @@
+[Unit]
+Description=CaloriesCounter Telegram Bot
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=caloriesbot
+Group=caloriesbot
+WorkingDirectory=/opt/caloriescounter/app
+EnvironmentFile=/opt/caloriescounter/shared/.env
+ExecStart=/opt/caloriescounter/app/.venv/bin/python -m app.main
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target

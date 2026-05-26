@@ -43,6 +43,7 @@ Technical documents:
 - [Parsing Strategy](F:\Python\CaloriesCounter\docs\parsing-strategy.md)
 - [Implementation Plan](F:\Python\CaloriesCounter\docs\implementation-plan.md)
 - [GCP Deployment Recommendations](F:\Python\CaloriesCounter\docs\gcp-deployment-recommendations.md)
+- [Deploy On GCP VM](F:\Python\CaloriesCounter\docs\deploy-gcp-vm.md)
 
 Data and analysis documents:
 
