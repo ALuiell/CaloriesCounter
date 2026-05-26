@@ -1,207 +1,141 @@
 # Handover
 
-## Текущее состояние проекта
+## Purpose
 
-Проект находится в хорошем подготовленном состоянии. Идея уже зафиксирована не только на словах, но и в виде документации, стартовых данных и анализа USDA.
+This document is the current operational source of truth for the project.
 
-Основная идея проекта:
+Use it to understand what the project is building now, what assets already exist, and what the next implementation task should be.
 
-- Telegram-бот для подсчета калорий и БЖУ по текстовому сообщению пользователя.
+## Current Product Focus
 
-Но развитие идет поэтапно, чтобы сначала довести до рабочего состояния базовую ценность продукта.
+The active implementation scope is Level 1 only.
 
-## Зафиксированная продуктовая стратегия
+Level 1 means:
 
-Развитие проекта разбито на 3 уровня:
+- the bot accepts one or more food lines in a message
+- the expected format is `product + grams`
+- the primary input language is Russian
+- product lookup is based on the curated starter seed
+- the bot returns calories, protein, fat, and carbs for recognized lines
+- the bot returns a message-level total
 
-1. Уровень 1: базовый счетчик калорий и БЖУ по введенным продуктам.
-2. Уровень 2: персональные данные пользователя и расчет личной нормы.
-3. Уровень 3: режимы `поддержание`, `набор`, `диета`.
+Level 1 does not include:
 
-На текущем этапе главный фокус именно на уровне 1.
+- profile onboarding
+- personal daily targets
+- goal modes
+- day history
+- saved food entries
+- daily totals
+- remaining intake calculations
+- free-form portion understanding such as `2 eggs` or `a slice of pizza`
 
-## Что уже сделано
+## Language and Input Policy
 
-### 1. Подготовлена документация проекта
+Current MVP language policy:
 
-Готовые документы:
+- Russian is the primary supported input language
+- Russian names and Russian aliases are the main lookup path
+- English and Ukrainian aliases may be added later
+- the MVP should not promise multilingual parity yet
 
-- [README.md](README.md:1)
-- [Progress Levels](docs/progress-levels.md:1)
-- [Functional Requirements](docs/functional-requirements.md:1)
-- [Implementation Plan](docs/implementation-plan.md:1)
-- [Product Vision](docs/product-vision.md:1)
-- [Architecture](docs/architecture.md:1)
-- [Data Model](docs/data-model.md:1)
-- [Parsing Strategy](docs/parsing-strategy.md:1)
-- [Roadmap](docs/roadmap.md:1)
+Current MVP input policy:
 
-Эти документы уже можно использовать как основу для реализации.
+- one line describes one product entry
+- each line must contain a product name and a gram value
+- the parser treats the numeric value as grams
+- partially successful messages are allowed
 
-### 2. Собран стартовый seed продуктов для уровня 1
-
-Создан curated seed:
-
-- [starter_products_usda_sr_legacy.json](data/seeds/starter_products_usda_sr_legacy.json:1)
-- [starter-products.md](docs/starter-products.md:1)
-
-Сейчас в seed:
-
-- `178` стартовых продуктов;
-- русские названия;
-- алиасы для поиска;
-- категории;
-- состояние продукта;
-- БЖУ и калории на `100 г`;
-- ссылки на USDA через `fdc_id` и `usda_description`.
-
-Последнее расширение seed усилило слабые базовые категории:
-
-- мясо и птица;
-- рыба и морепродукты;
-- жиры и масла;
-- орехи и семечки;
-- хлеб и выпечка;
-- немного расширены молочные продукты.
-
-Структура записи сейчас включает:
-
-- `slug`
-- `name_ru`
-- `category`
-- `state`
-- `usda_description`
-- `aliases`
-- `fdc_id`
-- `usda_category`
-- `calories_per_100g`
-- `protein_per_100g`
-- `fat_per_100g`
-- `carbs_per_100g`
-
-### 3. Проанализирован USDA SR Legacy JSON
-
-Сделан отдельный анализ большого USDA-файла:
-
-- исходный файл: `FoodData_Central_sr_legacy_food_json_2018-04.json`
-- скрипт анализа: [analyze_usda_sr_legacy.py](scripts/analyze_usda_sr_legacy.py:1)
-- JSON-отчет: [usda_sr_legacy_analysis.json](data/analysis/usda_sr_legacy_analysis.json:1)
-- Markdown-отчет: [usda-analysis.md](docs/usda-analysis.md:1)
-
-### 4. Подготовлен git-репозиторий
-
-Сделано:
-
-- локальный git-репозиторий инициализирован;
-- удаленный GitHub-репозиторий подключен;
-- первый коммит и пуш уже выполнены;
-- большой USDA JSON исключен из git через [`.gitignore`](.gitignore:1).
-
-## Что мы поняли по USDA
-
-Из анализа USDA SR Legacy:
-
-- всего записей: `7793`;
-- всего категорий: `25`;
-- у всех `7793` записей есть базовые поля:
-  - калории;
-  - белки;
-  - жиры;
-  - углеводы.
-
-Главный вывод:
-
-- проблема USDA не в отсутствии БЖУ;
-- проблема в шуме данных и неудобных названиях.
-
-Шум включает:
-
-- брендовые записи;
-- restaurant / fast food записи;
-- baby food;
-- слишком специфичные или неочевидные продукты;
-- множество вариантов одного и того же продукта в разных формах.
-
-После базового фильтра:
-
-- остается `7213` потенциально полезных записей;
-- исключается шум:
-  - `371` prepared / restaurant;
-  - `98` brand-like;
-  - `111` category-level noise.
-
-## Текущий технический вывод
-
-USDA не стоит использовать как runtime-файл бота.
-
-Правильная стратегия:
-
-1. Держать USDA как сырьевой источник.
-2. Импортировать из него только нужные поля.
-3. Нормализовать данные.
-4. Сохранять их в своей рабочей таблице `products`.
-
-Иными словами:
-
-- не использовать огромный `211 МБ` JSON напрямую во время работы бота;
-- не строить поиск по большому сырому USDA-файлу;
-- использовать USDA как источник для импорта и расширения своей локальной базы.
-
-## Что делаем сейчас по смыслу
-
-На текущем этапе мы не строим “умного AI-диетолога”.
-
-Мы строим надежный MVP счетчика:
-
-- пользователь пишет продукт;
-- пишет вес;
-- бот находит продукт;
-- считает калории и БЖУ;
-- суммирует результат.
-
-Пример целевого сценария уровня 1:
+Example:
 
 ```text
-Рис 100 грамм
-Куриная грудка 150 грамм
-Помидор 80 грамм
+гречка 120
+курица 150 г
+помидор 80
 ```
 
-Бот должен ответить:
+## What Already Exists
 
-- сколько калорий;
-- сколько белков;
-- сколько жиров;
-- сколько углеводов.
+### Documentation
 
-## Что логично делать следующим шагом
+- [README.md](F:\Python\CaloriesCounter\README.md)
+- [Product Vision](F:\Python\CaloriesCounter\docs\product-vision.md)
+- [Functional Requirements](F:\Python\CaloriesCounter\docs\functional-requirements.md)
+- [Roadmap](F:\Python\CaloriesCounter\docs\roadmap.md)
+- [Architecture](F:\Python\CaloriesCounter\docs\architecture.md)
+- [Data Model](F:\Python\CaloriesCounter\docs\data-model.md)
+- [Parsing Strategy](F:\Python\CaloriesCounter\docs\parsing-strategy.md)
+- [Implementation Plan](F:\Python\CaloriesCounter\docs\implementation-plan.md)
 
-Самый логичный следующий этап реализации:
+### Data Assets
 
-1. Сделать SQLite-базу.
-2. Создать таблицу `products`.
-3. Импортировать туда текущий starter seed.
-4. Реализовать поиск по `name_ru` и `aliases`.
-5. Сделать парсер формата `продукт + граммы`.
-6. Собрать уровень 1 в рабочий прототип.
+- starter seed:
+  - [starter_products_usda_sr_legacy.json](F:\Python\CaloriesCounter\data\seeds\starter_products_usda_sr_legacy.json)
+- USDA analysis report:
+  - [usda_sr_legacy_analysis.json](F:\Python\CaloriesCounter\data\analysis\usda_sr_legacy_analysis.json)
+- local USDA source dataset:
+  - `FoodData_Central_sr_legacy_food_json_2018-04.json`
 
-## Документы, которые можно использовать сразу
+### Scripts
 
-Если новому человеку нужно быстро войти в проект, в первую очередь стоит читать:
+- [analyze_usda_sr_legacy.py](F:\Python\CaloriesCounter\scripts\analyze_usda_sr_legacy.py)
+- [find_usda_candidates.py](F:\Python\CaloriesCounter\scripts\find_usda_candidates.py)
+- [validate_starter_seed.py](F:\Python\CaloriesCounter\scripts\validate_starter_seed.py)
+- [fix_starter_seed.py](F:\Python\CaloriesCounter\scripts\fix_starter_seed.py)
 
-1. [README.md](README.md:1)
-2. [Progress Levels](docs/progress-levels.md:1)
-3. [Functional Requirements](docs/functional-requirements.md:1)
-4. [Implementation Plan](docs/implementation-plan.md:1)
-5. [Starter Products](docs/starter-products.md:1)
-6. [USDA Analysis](docs/usda-analysis.md:1)
+### Starter Seed Status
 
-## Полезные служебные файлы
+The current starter seed contains `178` curated products with:
 
-- [fix_starter_seed.py](scripts/fix_starter_seed.py:1) — исправление seed-файла после проблемы с кириллицей
-- [analyze_usda_sr_legacy.py](scripts/analyze_usda_sr_legacy.py:1) — воспроизводимый анализ USDA SR Legacy
-- [starter_products_usda_sr_legacy.json](data/seeds/starter_products_usda_sr_legacy.json:1) — текущая стартовая база для уровня 1
+- Russian names
+- Russian aliases
+- category labels
+- explicit product state
+- USDA references
+- macros per 100 grams
 
-## Короткая передача в одном абзаце
+The seed is intended for Level 1 lookup and calculation, not for direct end-user editing.
 
-Проект уже оформлен как MVP Telegram-бота для подсчета калорий. Зафиксированы 3 уровня развития, собран и расширен starter seed до 178 продуктов, отдельно проанализирован USDA SR Legacy как источник для будущего импорта. Следующий рабочий шаг — SQLite, таблица `products`, импорт starter seed, поиск по продуктам и парсер сообщений для уровня 1.
+## Current Product Behavior
+
+For Level 1, the bot should behave as follows:
+
+1. Split the incoming message into lines.
+2. Parse each line independently.
+3. Normalize the product text.
+4. Look up the product by the imported product name and aliases.
+5. Calculate calories and macros for recognized lines.
+6. Return a message response that:
+   - lists recognized lines
+   - lists unrecognized lines
+   - shows total calories and macros for recognized lines only
+
+If one line fails, the whole message should not fail.
+
+## Next Implementation Step
+
+The next practical build step is the Level 1 runtime path:
+
+1. create the SQLite schema
+2. create the `products` and `product_aliases` tables
+3. import the starter seed into SQLite
+4. implement normalized lookup by Russian product name and aliases
+5. implement `product + grams` parsing
+6. implement message-level calorie and macro calculation
+7. return a user-facing response for recognized and unrecognized lines
+
+## Future Direction
+
+Later product growth is still planned in this order:
+
+1. Level 2: user profile data and base target calculation
+2. Level 3: goal modes and target comparison
+3. after that: history, stored entries, daily totals, editing, richer parsing, and broader alias coverage
+
+These later stages are intentionally not part of the current implementation-ready scope.
+
+## Related Files
+
+- [Functional Requirements](F:\Python\CaloriesCounter\docs\functional-requirements.md)
+- [Implementation Plan](F:\Python\CaloriesCounter\docs\implementation-plan.md)
+- [Starter Products](F:\Python\CaloriesCounter\docs\starter-products.md)

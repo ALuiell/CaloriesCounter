@@ -1,92 +1,55 @@
 # Progress Levels
 
-## Общая идея
+## Purpose
 
-Проект развивается в 3 простых этапа. Это помогает не перегружать первую версию и сначала довести до рабочего состояния самую главную функцию: подсчет калорий и БЖУ по тексту пользователя.
+This document gives a compact summary of the staged product growth.
 
-## Уровень 1. Базовый счетчик
+For implementation-ready details, use [Handover](F:\Python\CaloriesCounter\docs\handover.md) and [Functional Requirements](F:\Python\CaloriesCounter\docs\functional-requirements.md).
 
-### Что делает бот
+## Level 1
 
-- принимает сообщение с продуктами;
-- понимает формат `продукт + граммы`;
-- ищет продукты в базе;
-- считает калории, белки, жиры и углеводы;
-- возвращает итог по сообщению.
+Current active scope:
 
-### Пример
+- Russian-first `product + grams` input
+- product lookup in the curated starter database
+- calories and macros for recognized lines
+- totals for the current message only
 
-```text
-Рис 100 грамм
-Курица жареная 150 грамм
-Помидор 78 грамм
-```
+Not included yet:
 
-Ответ:
+- profiles
+- daily targets
+- stored entries
+- daily totals
+- goal comparison
 
-```text
-Итого:
-589 ккал
-Белки: 42 г
-Жиры: 11 г
-Углеводы: 30 г
-```
+## Level 2
 
-### Что не делает
+Planned next:
 
-- не спрашивает данные пользователя;
-- не считает личную дневную норму;
-- не сравнивает результат с целью;
-- не делит на режимы.
+- user profile data
+- base daily target calculation
+- profile updates
 
-## Уровень 2. Персональные данные
+## Level 3
 
-### Что добавляется
+Planned after Level 2:
 
-- возраст;
-- вес;
-- рост;
-- пол;
-- расчет базовой дневной нормы.
+- goal modes
+- target comparison
+- remaining intake logic
 
-### Что умеет бот
+## Later Work
 
-- сохранить профиль пользователя;
-- пересчитать норму после изменения данных;
-- показать личную норму калорий.
+- entry storage
+- daily totals
+- history
+- editing and deletion
+- broader alias coverage
+- richer parsing
 
-### Что пока не делает
+## Related Files
 
-- не применяет специальные режимы цели;
-- не меняет норму под похудение или набор.
-
-## Уровень 3. Режимы работы
-
-### Что добавляется
-
-- `поддержание`;
-- `набор`;
-- `диета`.
-
-### Что умеет бот
-
-- выбрать режим;
-- скорректировать норму под режим;
-- показать, сколько осталось до дневной цели после введенной еды.
-
-### Итоговая логика
-
-1. Пользователь заполняет данные.
-2. Бот считает базовую норму.
-3. Пользователь выбирает режим.
-4. Бот корректирует норму.
-5. После каждого сообщения с едой бот показывает:
-   - сколько калорий и БЖУ в сообщении;
-   - сколько осталось до дневной нормы.
-
-## Почему такой порядок правильный
-
-- сначала реализуется ключевая ценность продукта;
-- потом добавляется персонализация;
-- затем добавляется цель пользователя;
-- это уменьшает сложность и ускоряет запуск первой рабочей версии.
+- [Handover](F:\Python\CaloriesCounter\docs\handover.md)
+- [Functional Requirements](F:\Python\CaloriesCounter\docs\functional-requirements.md)
+- [Roadmap](F:\Python\CaloriesCounter\docs\roadmap.md)

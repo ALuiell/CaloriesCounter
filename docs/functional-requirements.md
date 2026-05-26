@@ -1,120 +1,121 @@
 # Functional Requirements
 
-## 1. Уровень 1. Базовый счетчик калорий
+## Purpose
 
-На первом уровне бот должен:
+This document defines the required user-facing behavior for the current MVP scope.
 
-- принимать одно или несколько блюд в одном сообщении;
-- обрабатывать формат `название продукта + количество в граммах`;
-- искать продукт в базе;
-- рассчитывать калории и БЖУ на введенный вес;
-- суммировать все позиции из сообщения;
-- возвращать итог по текущему сообщению.
+The detailed implementation scope is Level 1 only.
 
-Пример ответа:
+## Level 1 Scope
 
-```text
-Итого:
-589 ккал
-Белки: 42 г
-Жиры: 11 г
-Углеводы: 30 г
-```
+At Level 1, the bot must:
 
-## 2. Уровень 2. Персональные данные пользователя
+- accept one or more food lines in a single message
+- support the format `product name + grams`
+- treat Russian as the primary input language
+- parse each line independently
+- find products in the database by imported product names and aliases
+- calculate calories and macros for the entered weight
+- sum recognized lines from the current message
+- return a short result for the current message
 
-На втором уровне бот должен:
+Level 1 does not require:
 
-- создавать профиль по Telegram ID;
-- хранить имя пользователя;
-- запрашивать пол;
-- запрашивать возраст;
-- запрашивать рост;
-- запрашивать вес;
-- рассчитывать базовую дневную норму калорий;
-- сохранять целевые значения;
-- уметь пересчитывать норму после обновления профиля.
+- user profiles
+- daily targets
+- goal modes
+- saved history
+- daily totals
+- remaining intake output
 
-## 3. Уровень 3. Режимы работы
+## Input Expectations
 
-На третьем уровне бот должен:
-
-- поддерживать 3 режима: `поддержание`, `набор`, `диета`;
-- корректировать дневную норму под выбранный режим;
-- показывать остаток до дневной нормы;
-- учитывать введенные продукты в сравнении с целью пользователя.
-
-## 4. Ответ пользователю
-
-После обработки сообщения бот должен отправлять:
-
-- итог по текущему сообщению;
-- после 2 и 3 уровня общий итог за текущий день;
-- после 3 уровня остаток до дневной нормы.
-
-Пример структуры ответа:
+Supported examples:
 
 ```text
-По этому сообщению:
-589 ккал
-Белки: 42 г
-Жиры: 11 г
-Углеводы: 30 г
-
-За сегодня:
-1230 ккал
-Белки: 87 г
-Жиры: 36 г
-Углеводы: 102 г
-
-Осталось до цели:
-670 ккал
-Белки: 43 г
-Жиры: 24 г
-Углеводы: 98 г
+гречка 100
+рис 120 г
+курица 150 грамм
 ```
 
-## 5. История и просмотр статистики
+Input rules:
 
-Это следующий шаг после 3 основных уровней:
+- one line represents one product
+- each line must contain a numeric gram value
+- the numeric value is interpreted as grams
+- the remaining text is interpreted as the product name
 
-- просмотр итогов за сегодня;
-- просмотр последних записей;
-- удаление ошибочной записи;
-- редактирование записи;
-- просмотр истории по дням.
+## Recognition and Error Handling
 
-## 6. Команды
+If a line is recognized, the bot must:
 
-Минимальный набор:
+- calculate calories
+- calculate protein
+- calculate fat
+- calculate carbs
+- include that line in the total
 
-- `/start` - запуск;
-- `/help` - подсказка;
-- `/calc` - подсказка по формату ввода;
+If a line is not recognized, the bot must:
 
-После уровня 2:
+- keep processing the rest of the message
+- show that the line could not be recognized
+- remind the user to use the `product + grams` format when helpful
 
-- `/profile` - просмотр профиля;
-- `/goal` - просмотр нормы;
+The whole message should not fail because one line failed.
 
-После уровня 3:
+## Output Requirements
 
-- `/today` - итоги за день;
-- `/mode` - текущий режим.
+After processing a message, the bot must return:
 
-## 7. Админские возможности
+- recognized lines
+- unrecognized lines, if any
+- the total calories and macros for recognized lines only
 
-Желательно предусмотреть:
+Example response:
 
-- добавление новых продуктов в базу;
-- редактирование карточек продуктов;
-- просмотр непонятых пользовательских запросов;
-- логирование ошибок парсинга.
+```text
+Calculated:
+- гречка 100 г
+- курица 150 г
 
-## 8. Нефункциональные требования
+Could not recognize:
+- домашний пирог кусок
 
-- Ответ бота должен быть быстрым и понятным.
-- Данные пользователя должны храниться безопасно.
-- Бот должен корректно работать с кириллицей.
-- Система должна быть готова к расширению базы продуктов.
-- Архитектура должна позволять позже добавить распознавание порций, рецептов и фото.
+Total:
+410 kcal
+Protein: 36 g
+Fat: 8 g
+Carbs: 43 g
+```
+
+## Commands
+
+Minimum command set:
+
+- `/start` - start the bot
+- `/help` - usage help
+- `/calc` - input format help
+
+## Future Levels
+
+Later planned work:
+
+- Level 2: profile data and base daily target calculation
+- Level 3: goal modes and target comparison
+- after Level 3: stored entries, daily totals, history, editing, and richer reporting
+
+These are future capabilities and are not part of the current Level 1 requirements.
+
+## Non-Functional Requirements
+
+- Bot responses must be fast and understandable.
+- The system must handle Cyrillic input correctly.
+- The product database must be easy to expand.
+- The system should tolerate partially valid messages.
+- The architecture should support later additions such as broader alias coverage, recipes, and portion handling.
+
+## Related Files
+
+- [Handover](F:\Python\CaloriesCounter\docs\handover.md)
+- [Parsing Strategy](F:\Python\CaloriesCounter\docs\parsing-strategy.md)
+- [Implementation Plan](F:\Python\CaloriesCounter\docs\implementation-plan.md)

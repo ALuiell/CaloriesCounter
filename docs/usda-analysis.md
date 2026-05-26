@@ -1,5 +1,9 @@
 # USDA SR Legacy Analysis
 
+## Purpose
+
+This document summarizes what the project currently knows about the USDA SR Legacy dataset and how that affects implementation decisions.
+
 ## Summary
 
 - Source file: `FoodData_Central_sr_legacy_food_json_2018-04.json`
@@ -147,3 +151,9 @@ All 4 core values exist for all `7793` records, so the main problem is not missi
 - Build a second-stage importer that writes normalized products into SQLite.
 - Treat dry/cooked/raw variants as separate products when calories differ materially.
 - Filter out restaurant, fast-food, baby-food, and obvious brand-heavy records before broad import.
+
+## Related Files
+
+- [Starter Products](F:\Python\CaloriesCounter\docs\starter-products.md)
+- [Seed Expansion Candidates](F:\Python\CaloriesCounter\docs\seed-expansion-candidates.md)
+- [Documentation Standard](F:\Python\CaloriesCounter\docs\documentation-standard.md)

@@ -1,47 +1,54 @@
 # Roadmap
 
-## Уровень 1. Базовый счетчик
+## Purpose
 
-- запуск Telegram-бота;
-- ввод еды в формате `продукт + граммы`;
-- база продуктов с БЖУ;
-- подсчет калорий и БЖУ;
-- итог по текущему сообщению.
+This document gives a high-level sequence for product growth after the current MVP work.
 
-## Уровень 2. Персональные данные
+It is intentionally brief and should not duplicate current functional requirements.
 
-- анкета пользователя;
-- пол, возраст, рост, вес;
-- расчет личной дневной нормы;
-- обновление анкеты;
-- просмотр своей нормы.
+## Current Delivery Priority
 
-## Уровень 3. Режимы работы
+Current priority:
 
-- режим `поддержание`;
-- режим `набор`;
-- режим `диета`;
-- пересчет нормы под выбранный режим;
-- остаток до дневной нормы.
+1. finish the Level 1 runtime path
+2. make the Level 1 bot reliable for Russian-first `product + grams` input
 
-## После базовых 3 уровней
+## Planned Growth Sequence
 
-- итоги за день;
-- история записей;
-- редактирование и удаление записей;
-- синонимы продуктов;
-- улучшенный поиск;
-- пользовательские продукты;
-- рецепты и составные блюда;
-- единицы измерения кроме граммов;
-- рекомендации по рациону;
-- импорт внешней базы продуктов;
-- AI-помощник для более свободного ввода.
+### Level 2
 
-## Критерии успеха
+- add user onboarding
+- collect sex, age, height, and weight
+- calculate a base daily target
+- allow profile updates
 
-- уровень 1 работает стабильно и считает продукты без лишних действий;
-- уровень 2 корректно считает личную норму;
-- уровень 3 правильно переключает цель пользователя;
-- ошибки распознавания понятны;
-- продуктом можно пользоваться ежедневно без лишних действий.
+### Level 3
+
+- add goal modes
+- support `maintenance`
+- support `gain`
+- support `diet`
+- compare intake against the selected target
+
+### Later Expansions
+
+- save food entries
+- calculate daily totals
+- show history
+- support editing and deletion
+- improve search and alias coverage
+- add user-defined products
+- add recipes and richer units
+- add freer AI-assisted input later if needed
+
+## Success Direction
+
+- Level 1 is dependable and easy to use.
+- Later profile and goal features are added on top of that foundation.
+- The data model and parser stay expandable without breaking the simple MVP flow.
+
+## Related Files
+
+- [Handover](F:\Python\CaloriesCounter\docs\handover.md)
+- [Functional Requirements](F:\Python\CaloriesCounter\docs\functional-requirements.md)
+- [Implementation Plan](F:\Python\CaloriesCounter\docs\implementation-plan.md)

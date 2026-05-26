@@ -1,78 +1,71 @@
 # Product Vision
 
-## Идея
+## Purpose
 
-Telegram-бот помогает человеку быстро считать калории и БЖУ без ручного заполнения сложных таблиц. На старте это именно счетчик калорий по введенным пользователем продуктам. Пользователь пишет еду обычным текстом, а бот считает:
+This document defines the product idea, users, and long-term boundaries for CaloriesCounter.
 
-- калории;
-- белки;
-- жиры;
-- углеводы;
-- калории;
-- белки;
-- жиры;
-- углеводы.
+## Product Idea
 
-## Ценность
+CaloriesCounter is a Telegram bot that helps users count calories and macros from simple food messages.
 
-Главная ценность продукта в простоте:
+The intended experience is lightweight:
 
-- не нужно открывать отдельное приложение;
-- не нужно вручную искать каждый продукт в таблице;
-- можно писать еду почти как сообщение другу;
-- пользователь сразу получает понятный итог.
+- the user sends food as text
+- the bot replies with calories and macros
+- the interaction stays faster and simpler than a full calorie-tracking app
 
-## Для кого продукт
+## Core Value
 
-- люди, которые хотят похудеть;
-- люди, которые хотят поддерживать вес;
-- люди, которые хотят набирать массу;
-- новички, которым сложно пользоваться сложными трекерами питания.
+The main product value is simplicity:
 
-## Основной пользовательский сценарий
+- no manual table lookup
+- no heavy food-diary interface
+- no need to open a traditional tracking app for every meal
+- understandable nutrition feedback in chat
 
-1. Пользователь запускает бота.
-2. Пользователь пишет еду сообщением:
+## Target Users
 
-```text
-Рис 100 грамм
-Курица жареная 150 грамм
-Помидор 78 грамм
-```
+The product is intended for:
 
-3. Бот отвечает суммой по сообщению.
-4. На следующих этапах бот начинает учитывать личную норму и режим пользователя.
+- users who want to lose weight
+- users who want to maintain weight
+- users who want to gain weight
+- beginners who want a simpler alternative to traditional calorie trackers
 
-## Продуктовые принципы
+## Product Principles
 
-- Ввод должен быть проще, чем в классических счетчиках калорий.
-- Ответ должен быть коротким и понятным.
-- На старте лучше простота и предсказуемость, чем "магическое" распознавание всего подряд.
-- Ошибки распознавания нужно объяснять мягко и прозрачно.
+- Input should stay predictable and easy to explain.
+- Early versions should favor reliability over magical interpretation.
+- Output should be short and practical.
+- Parsing failures should be explained clearly and politely.
 
-## Границы MVP
+## MVP Boundaries
 
-Что включаем:
+Included in the MVP direction:
 
-- Telegram-бот;
-- текстовый ввод еды;
-- базу продуктов с калориями и БЖУ;
-- формат `продукт + граммы`;
-- подсчет суммы по сообщению;
-- понятный ответ с итоговыми значениями.
+- Telegram bot interface
+- food input as plain text
+- calorie and macro calculation from a curated product database
+- a simple `product + grams` contract
 
-Что пока не включаем:
+Not included in the MVP direction:
 
-- фото-распознавание еды;
-- распознавание сложных домашних блюд;
-- автоматическое понимание "тарелка", "ложка", "кусок";
-- глубокая медицинская персонализация;
-- полноценные рекомендации по здоровью.
+- image recognition
+- broad recipe understanding
+- automatic portion understanding such as `slice`, `spoon`, or `plate`
+- diet coaching
+- medical-grade personalization
 
-## Порядок развития
+## Growth Direction
 
-Развитие продукта фиксируется в 3 уровня:
+The product is expected to grow in stages:
 
-1. Базовый счетчик калорий и БЖУ по введенным продуктам.
-2. Персональные данные пользователя и расчет личной нормы.
-3. Режимы цели: `поддержание`, `набор`, `диета`.
+1. Basic calorie and macro counting from products
+2. User profile data and base target calculation
+3. Goal modes and target comparison
+
+## Related Files
+
+- [Handover](F:\Python\CaloriesCounter\docs\handover.md)
+- [Functional Requirements](F:\Python\CaloriesCounter\docs\functional-requirements.md)
+- [Roadmap](F:\Python\CaloriesCounter\docs\roadmap.md)

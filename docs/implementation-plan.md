@@ -1,82 +1,66 @@
 # Implementation Plan
 
-## Рекомендуемый стек
+## Purpose
+
+This document describes the recommended implementation order for the current active scope.
+
+The implementation-ready scope is Level 1 only.
+
+## Recommended Stack
 
 - Python 3.12+
-- `aiogram` или `python-telegram-bot`
-- SQLite для MVP
-- SQLAlchemy или SQLModel
-- Pydantic для схем
-- Alembic для миграций
+- `aiogram` or `python-telegram-bot`
+- SQLite for MVP
+- SQLAlchemy or SQLModel
+- Pydantic for schemas
+- Alembic for migrations
 
-## Этап 1. Уровень 1. Базовый счетчик
+## Level 1 Build Order
 
-Сделать:
+Build:
 
-- структуру проекта;
-- конфиг через `.env`;
-- инициализацию бота;
-- подключение БД;
-- базовое логирование;
-- таблицу продуктов;
-- импорт или загрузку списка продуктов с БЖУ;
-- разбор сообщений по строкам;
-- выделение названия продукта и граммов;
-- поиск продукта;
-- расчет калорий и БЖУ;
-- ответ с итогом по сообщению.
+- project structure
+- `.env`-based configuration
+- bot initialization
+- database connection
+- basic logging
+- `products` table
+- `product_aliases` table
+- product import from the starter seed
+- line-by-line message parsing
+- product and gram extraction
+- Russian-first product lookup
+- calorie and macro calculation
+- response formatting for recognized and unrecognized lines
 
-Результат:
+## Level 1 Expected Result
 
-- бот запускается;
-- отвечает на `/start`;
-- считает калории и БЖУ из сообщений вроде `рис 100 грамм`.
+After Level 1:
 
-## Этап 2. Уровень 2. Персональные данные
+- the bot starts
+- the bot responds to `/start`
+- the bot explains the expected input format
+- the bot accepts Russian-first `product + grams` messages
+- the bot calculates calories and macros for recognized lines
+- the bot reports unrecognized lines without failing the whole message
+- the bot returns totals for the current message only
 
-Сделать:
+## Later Work
 
-- пошаговый сценарий заполнения профиля;
-- валидацию возраста, роста, веса;
-- запрос пола;
-- сохранение анкеты в БД;
-- обновление анкеты;
-- расчет базовой дневной нормы.
+Planned after Level 1:
 
-Результат:
+- profile onboarding
+- base daily target calculation
+- goal modes
+- stored food entries
+- daily totals
+- history view
+- editing and deletion
+- broader alias coverage, including possible English and Ukrainian aliases
+- better parsing hints and richer food input
 
-- пользователь может заполнить и изменить профиль;
-- у него рассчитывается личная норма калорий.
+## Related Files
 
-## Этап 3. Уровень 3. Режимы работы
-
-Сделать:
-
-- выбор одного из 3 режимов;
-- режим `поддержание`;
-- режим `набор`;
-- режим `диета`;
-- пересчет дневной нормы под режим;
-- вывод остатка до цели.
-
-Результат:
-
-- пользователь выбирает цель;
-- бот считает остаток до нормы в зависимости от режима.
-
-## Что можно добавить после 3 уровней
-
-Сделать:
-
-- сохранение записей о еде;
-- итог за день;
-- просмотр истории;
-- удаление и редактирование записи.
-- более дружелюбные ответы;
-- кнопки и быстрые действия;
-- подсказки по формату ввода;
-- сообщения об ошибках с примерами.
-- сбор непонятых сообщений;
-- метрики по часто вводимым продуктам;
-- расширение словаря;
-- поддержку рецептов и порций.
+- [Handover](F:\Python\CaloriesCounter\docs\handover.md)
+- [Functional Requirements](F:\Python\CaloriesCounter\docs\functional-requirements.md)
+- [Parsing Strategy](F:\Python\CaloriesCounter\docs\parsing-strategy.md)

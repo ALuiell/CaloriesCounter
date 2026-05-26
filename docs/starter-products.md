@@ -1,94 +1,98 @@
 # Starter Products
 
-## Что это
+## Purpose
 
-Это стартовый curated seed для уровня 1: базового счетчика калорий и БЖУ по введенным продуктам.
+This document describes the curated starter seed used for Level 1 product lookup and macro calculation.
 
-Файл:
+## Source Files
 
 - [starter_products_usda_sr_legacy.json](F:\Python\CaloriesCounter\data\seeds\starter_products_usda_sr_legacy.json)
+- source dataset: `FoodData_Central_sr_legacy_food_json_2018-04.json`
 
-Источник:
+## Current Scope
 
-- `USDA FoodData Central SR Legacy`
-- исходный файл: `FoodData_Central_sr_legacy_food_json_2018-04.json`
+The current starter seed contains `178` curated products.
 
-## Почему это хороший старт
+Category coverage:
 
-- база уже достаточно широкая для первых реальных пользователей;
-- продукты сгруппированы по понятным категориям;
-- добавлены русские названия и алиасы для поиска;
-- значения уже приведены к формату `на 100 грамм`;
-- для спорных продуктов добавлены отдельные варианты `сухой` и `готовый`.
+- vegetables - `27`
+- grains and side dishes - `23`
+- legumes - `22`
+- fruits and berries - `22`
+- dairy products - `21`
+- meat and poultry - `16`
+- fish and seafood - `14`
+- bread and baked products - `11`
+- nuts and seeds - `11`
+- fats and oils - `7`
+- eggs - `4`
 
-## Что вошло в seed
+## Role in the MVP
 
-Всего в seed сейчас `178` продуктов.
+The starter seed is the Level 1 lookup foundation.
 
-Покрытие по категориям:
+It exists to provide:
 
-- овощи — `27`;
-- крупы и гарниры — `23`;
-- бобовые — `22`;
-- фрукты и ягоды — `22`;
-- молочные продукты — `21`;
-- мясо и птица — `16`;
-- рыба и морепродукты — `14`;
-- орехи и семечки — `11`;
-- хлеб и выпечка — `11`;
-- жиры и масла — `7`;
-- яйца — `4`.
+- Russian product names for primary lookup
+- Russian aliases for user-entered variants
+- explicit product states where nutrition differs materially
+- practical product coverage without full USDA runtime noise
 
-В последнем расширении особенно усилены слабые базовые категории:
+The current seed should not be treated as a multilingual product catalog.
 
-- добавлены сырые и готовые базовые мясные продукты;
-- расширены рыба и морепродукты: лосось, треска, минтай, креветки, тилапия, скумбрия;
-- добавлены орехи, семечки и базовые масла;
-- заметно расширены хлеб и выпечка;
-- немного расширены молочные продукты за счет греческого йогурта и дополнительных вариантов творога.
+## Record Structure
 
-## Принцип подбора
+Each product entry contains:
 
-Для уровня 1 важнее не максимальное количество позиций, а хорошее покрытие самых частых пользовательских запросов.
+- `slug`
+- `name_ru`
+- `category`
+- `state`
+- `usda_description`
+- `aliases`
+- `fdc_id`
+- `usda_category`
+- `calories_per_100g`
+- `protein_per_100g`
+- `fat_per_100g`
+- `carbs_per_100g`
 
-Поэтому в seed включены:
+## Recommended Import Model
 
-- базовые продукты, которые люди реально пишут каждый день;
-- generic USDA-позиции без лишнего брендового шума;
-- отдельные состояния продукта там, где это сильно влияет на калории.
+For Level 1, this seed should be imported into:
 
-Примеры:
+- a `products` table for the main product record
+- a `product_aliases` table for imported aliases
 
-- `рис` и `рис сухой`;
-- `гречка` и `гречка сухая`;
-- `чечевица` и `чечевица сухая`;
-- `макароны` и `макароны сухие`.
+Recommended lookup order:
 
-## Как использовать в боте
+1. exact normalized `name_ru` match
+2. normalized alias match
+3. later: clarification when multiple candidates match
 
-На уровне 1 лучше использовать этот seed как основную таблицу `products`.
+## Important Modeling Rule
 
-Минимальная логика:
+Some products vary significantly by preparation state.
 
-1. Загружать `name_ru`, `aliases`, калории и БЖУ.
-2. Искать сначала по точному `name_ru`.
-3. Потом искать по alias.
-4. Если найдено несколько вариантов, позже можно добавить уточнение.
+Recommended defaults:
 
-## Важное замечание
+- treat `rice`, `buckwheat`, `pasta`, `lentils`, and `chickpeas` as cooked by default
+- only use dry or raw variants when the user explicitly says `dry`, `raw`, or an equivalent form
+- keep meat and fish in a small number of clear default forms instead of trying to cover every cooking method immediately
 
-Некоторые продукты зависят от способа приготовления намного сильнее других.
+## Expansion Direction
 
-Поэтому на старте лучше:
+Later improvements may include:
 
-- по умолчанию считать `рис`, `гречка`, `макароны`, `чечевица`, `нут` как готовый продукт;
-- сухие варианты обрабатывать только когда пользователь явно пишет `сухой`, `сырой` или похожее уточнение;
-- мясо и рыбу сначала держать в нескольких самых понятных формах, а не пытаться покрыть все способы приготовления.
+- English aliases
+- Ukrainian aliases
+- additional common Russian variants
+- gradual seed expansion from USDA
 
-## Что можно сделать следующим шагом
+The goal is still a clean user-facing seed, not a full USDA mirror.
 
-- вынести этот seed в SQLite;
-- добавить таблицу `product_aliases`;
-- включить поиск по нормализованным названиям;
-- постепенно расширять seed новыми продуктами из USDA;
-- отдельно вести список непонятых пользовательских запросов.
+## Related Files
+
+- [Data Model](F:\Python\CaloriesCounter\docs\data-model.md)
+- [USDA Analysis](F:\Python\CaloriesCounter\docs\usda-analysis.md)
+- [Seed Expansion Candidates](F:\Python\CaloriesCounter\docs\seed-expansion-candidates.md)
