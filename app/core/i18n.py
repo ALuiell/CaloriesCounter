@@ -191,9 +191,9 @@ LOCALES = {
         ),
 
         # Language selection
-        "lang_choose": "Выбери язык интерфейса / Оберіть мову інтерфейсу / Choose interface language:",
+        "lang_choose": "Choose interface language / Оберіть мову інтерфейсу / Выбери язык интерфейса:",
         "lang_changed": "Язык интерфейса изменен на Русский. 🇷🇺",
-        "btn_change_lang": "Сменить язык 🇷🇺/🇺🇦/🇬🇧",
+        "btn_change_lang": "Сменить язык EN/UA/RU",
     },
     "uk": {
         # Buttons & Labels
@@ -385,9 +385,9 @@ LOCALES = {
         ),
 
         # Language selection
-        "lang_choose": "Вибери язык интерфейса / Оберіть мову інтерфейсу / Choose interface language:",
+        "lang_choose": "Choose interface language / Оберіть мову інтерфейсу / Выбери язык интерфейса:",
         "lang_changed": "Мову інтерфейсу змінено на Українську. 🇺🇦",
-        "btn_change_lang": "Змінити мову 🇷🇺/🇺🇦/🇬🇧",
+        "btn_change_lang": "Змінити мову EN/UA/RU",
     },
     "en": {
         # Buttons & Labels
@@ -579,9 +579,9 @@ LOCALES = {
         ),
 
         # Language selection
-        "lang_choose": "Выбери язык интерфейса / Оберіть мову інтерфейсу / Choose interface language:",
+        "lang_choose": "Choose interface language / Оберіть мову інтерфейсу / Выбери язык интерфейса:",
         "lang_changed": "Interface language changed to English. 🇬🇧",
-        "btn_change_lang": "Change language 🇷🇺/🇺🇦/🇬🇧",
+        "btn_change_lang": "Change language EN/UA/RU",
     }
 }
 
