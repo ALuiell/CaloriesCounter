@@ -15,6 +15,10 @@ CREATE TABLE IF NOT EXISTS products (
     slug TEXT NOT NULL UNIQUE,
     name_ru TEXT NOT NULL,
     normalized_name_ru TEXT NOT NULL UNIQUE,
+    name_en TEXT,
+    normalized_name_en TEXT,
+    name_uk TEXT,
+    normalized_name_uk TEXT,
     category TEXT NOT NULL,
     state TEXT NOT NULL,
     usda_description TEXT NOT NULL,
@@ -48,6 +52,8 @@ CREATE TABLE IF NOT EXISTS users (
     height_cm REAL,
     weight_kg REAL,
     activity_level TEXT,
+    language TEXT NOT NULL DEFAULT 'ru',
+    language_set INTEGER NOT NULL DEFAULT 0,
     created_at TEXT NOT NULL,
     updated_at TEXT NOT NULL
 );
@@ -57,6 +63,10 @@ CREATE TABLE IF NOT EXISTS user_products (
     user_id INTEGER NOT NULL REFERENCES users(id) ON DELETE CASCADE,
     name_ru TEXT NOT NULL,
     normalized_name_ru TEXT NOT NULL,
+    name_en TEXT,
+    normalized_name_en TEXT,
+    name_uk TEXT,
+    normalized_name_uk TEXT,
     calories_per_100g REAL NOT NULL,
     protein_per_100g REAL NOT NULL,
     fat_per_100g REAL NOT NULL,
@@ -138,6 +148,21 @@ class Database:
         user_columns = {row["name"] for row in conn.execute("PRAGMA table_info(users)").fetchall()}
         if "activity_level" not in user_columns:
             conn.execute("ALTER TABLE users ADD COLUMN activity_level TEXT")
+        if "language" not in user_columns:
+            conn.execute("ALTER TABLE users ADD COLUMN language TEXT DEFAULT 'ru'")
+        if "language_set" not in user_columns:
+            conn.execute("ALTER TABLE users ADD COLUMN language_set INTEGER NOT NULL DEFAULT 0")
+
+        product_columns = {row["name"] for row in conn.execute("PRAGMA table_info(products)").fetchall()}
+        for col in ["name_en", "name_uk", "normalized_name_en", "normalized_name_uk"]:
+            if col not in product_columns:
+                conn.execute(f"ALTER TABLE products ADD COLUMN {col} TEXT")
+
+        user_product_columns = {row["name"] for row in conn.execute("PRAGMA table_info(user_products)").fetchall()}
+        for col in ["name_en", "name_uk", "normalized_name_en", "normalized_name_uk"]:
+            if col not in user_product_columns:
+                conn.execute(f"ALTER TABLE user_products ADD COLUMN {col} TEXT")
+        Database._backfill_multilingual_names(conn)
 
         food_entry_columns = {
             row["name"]: row for row in conn.execute("PRAGMA table_info(food_entries)").fetchall()
@@ -208,3 +233,42 @@ class Database:
                 "CREATE INDEX IF NOT EXISTS idx_food_entries_user_consumed_at ON food_entries(user_id, consumed_at)"
             )
             conn.execute("PRAGMA foreign_keys = ON")
+
+        conn.execute("CREATE INDEX IF NOT EXISTS idx_products_name_en ON products(normalized_name_en)")
+        conn.execute("CREATE INDEX IF NOT EXISTS idx_products_name_uk ON products(normalized_name_uk)")
+        conn.execute("CREATE INDEX IF NOT EXISTS idx_user_products_name_en ON user_products(user_id, normalized_name_en)")
+        conn.execute("CREATE INDEX IF NOT EXISTS idx_user_products_name_uk ON user_products(user_id, normalized_name_uk)")
+
+    @staticmethod
+    def _backfill_multilingual_names(conn: sqlite3.Connection) -> None:
+        from app.services.normalization import normalize_product_name
+        from app.services.translator import translate_food_name
+
+        for table in ("products", "user_products"):
+            rows = conn.execute(
+                f"""
+                SELECT id, name_ru, name_en, normalized_name_en, name_uk, normalized_name_uk
+                FROM {table}
+                WHERE
+                    name_en IS NULL OR normalized_name_en IS NULL OR
+                    name_uk IS NULL OR normalized_name_uk IS NULL
+                """
+            ).fetchall()
+            for row in rows:
+                name_ru = str(row["name_ru"])
+                name_en = row["name_en"] or translate_food_name(name_ru, "en")
+                name_uk = row["name_uk"] or translate_food_name(name_ru, "uk")
+                normalized_name_en = row["normalized_name_en"] or normalize_product_name(name_en)
+                normalized_name_uk = row["normalized_name_uk"] or normalize_product_name(name_uk)
+                conn.execute(
+                    f"""
+                    UPDATE {table}
+                    SET
+                        name_en = ?,
+                        normalized_name_en = ?,
+                        name_uk = ?,
+                        normalized_name_uk = ?
+                    WHERE id = ?
+                    """,
+                    (name_en, normalized_name_en, name_uk, normalized_name_uk, row["id"]),
+                )

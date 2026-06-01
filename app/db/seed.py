@@ -5,6 +5,7 @@ from pathlib import Path
 
 from app.db.database import Database
 from app.services.normalization import normalize_product_name
+from app.services.translator import translate_food_name
 
 
 def seed_products_if_empty(database: Database, seed_path: Path) -> None:
@@ -28,6 +29,14 @@ def seed_products_if_empty(database: Database, seed_path: Path) -> None:
                 (product["slug"],),
             ).fetchone()
 
+            name_ru = product["name_ru"]
+            name_en = translate_food_name(name_ru, "en")
+            name_uk = translate_food_name(name_ru, "uk")
+
+            normalized_name_ru = normalize_product_name(name_ru)
+            normalized_name_en = normalize_product_name(name_en)
+            normalized_name_uk = normalize_product_name(name_uk)
+
             if row is None:
                 conn.execute(
                     """
@@ -35,6 +44,10 @@ def seed_products_if_empty(database: Database, seed_path: Path) -> None:
                         slug,
                         name_ru,
                         normalized_name_ru,
+                        name_en,
+                        normalized_name_en,
+                        name_uk,
+                        normalized_name_uk,
                         category,
                         state,
                         usda_description,
@@ -47,12 +60,16 @@ def seed_products_if_empty(database: Database, seed_path: Path) -> None:
                         is_active,
                         created_at,
                         updated_at
-                    ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 1, ?, ?)
+                    ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 1, ?, ?)
                     """,
                     (
                         product["slug"],
-                        product["name_ru"],
-                        normalize_product_name(product["name_ru"]),
+                        name_ru,
+                        normalized_name_ru,
+                        name_en,
+                        normalized_name_en,
+                        name_uk,
+                        normalized_name_uk,
                         product["category"],
                         product["state"],
                         product["usda_description"],
@@ -75,12 +92,19 @@ def seed_products_if_empty(database: Database, seed_path: Path) -> None:
                 conn.execute(
                     """
                     UPDATE products
-                    SET name_ru = ?, normalized_name_ru = ?, category = ?, state = ?, is_active = 1, updated_at = ?
+                    SET name_ru = ?, normalized_name_ru = ?,
+                        name_en = ?, normalized_name_en = ?,
+                        name_uk = ?, normalized_name_uk = ?,
+                        category = ?, state = ?, is_active = 1, updated_at = ?
                     WHERE id = ?
                     """,
                     (
-                        product["name_ru"],
-                        normalize_product_name(product["name_ru"]),
+                        name_ru,
+                        normalized_name_ru,
+                        name_en,
+                        normalized_name_en,
+                        name_uk,
+                        normalized_name_uk,
                         product["category"],
                         product["state"],
                         now,
@@ -89,11 +113,23 @@ def seed_products_if_empty(database: Database, seed_path: Path) -> None:
                 )
 
             product_id = row["id"]
-            aliases = set(product.get("aliases", []))
-            aliases.add(product["name_ru"])
+            all_aliases_ru = set(product.get("aliases", []))
+            all_aliases_ru.add(name_ru)
+
+            # Generate translations for all aliases
+            all_aliases_en = {translate_food_name(a, "en") for a in all_aliases_ru}
+            all_aliases_uk = {translate_food_name(a, "uk") for a in all_aliases_ru}
+
+            db_aliases: list[tuple[str, str]] = []
+            for a in all_aliases_ru:
+                db_aliases.append((a, "ru"))
+            for a in all_aliases_en:
+                db_aliases.append((a, "en"))
+            for a in all_aliases_uk:
+                db_aliases.append((a, "uk"))
 
             # Delete aliases in DB for this product that are not in the seed file anymore
-            normalized_aliases = {normalize_product_name(a) for a in aliases}
+            normalized_aliases = {normalize_product_name(alias) for alias, lang in db_aliases}
             conn.execute(
                 "DELETE FROM product_aliases WHERE product_id = ? AND normalized_alias NOT IN ({})".format(
                     ",".join("?" for _ in normalized_aliases)
@@ -101,7 +137,7 @@ def seed_products_if_empty(database: Database, seed_path: Path) -> None:
                 (product_id, *normalized_aliases)
             )
 
-            for alias in aliases:
+            for alias, lang in db_aliases:
                 conn.execute(
                     """
                     INSERT OR IGNORE INTO product_aliases (
@@ -110,13 +146,13 @@ def seed_products_if_empty(database: Database, seed_path: Path) -> None:
                         normalized_alias,
                         language,
                         created_at
-                    ) VALUES (?, ?, ?, 'ru', ?)
+                    ) VALUES (?, ?, ?, ?, ?)
                     """,
                     (
                         product_id,
                         alias,
                         normalize_product_name(alias),
+                        lang,
                         now,
                     ),
                 )
-

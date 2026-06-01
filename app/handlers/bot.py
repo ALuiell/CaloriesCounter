@@ -9,14 +9,15 @@ from aiogram.types import (
     InlineKeyboardButton,
     InlineKeyboardMarkup,
     KeyboardButton,
-    Message,
     ReplyKeyboardMarkup,
     ReplyKeyboardRemove,
+    Message,
 )
 
 from app.db.database import Database
 from app.services.nutrition import NutritionService
-from app.services.profile import DailyNutritionTargets, ProfileService, UserProfile, activity_label
+from app.services.profile import DailyNutritionTargets, ProfileService, UserProfile
+from app.core.i18n import get_text
 
 
 class ProfileCreateStates(StatesGroup):
@@ -44,30 +45,24 @@ class SearchStates(StatesGroup):
     waiting_for_query = State()
 
 
-class AddFoodStates(StatesGroup):
-    waiting_for_product = State()
-
-
-BUTTON_ADD_FOOD = "Добавить еду"
-BUTTON_CREATE_PROFILE = "Профиль+"
-BUTTON_PROFILE = "Профиль"
-BUTTON_TODAY = "Сегодня"
-BUTTON_ACTIVITY = "Активность"
-BUTTON_SEARCH = "Поиск"
-BUTTON_HELP = "Помощь"
-BUTTON_ASSISTANT_ON = "Вкл. assistant"
-BUTTON_ASSISTANT_OFF = "Выкл. assistant"
-
-CANCEL_TEXT = "Отмена"
+BUTTON_ADD_FOOD = get_text("ru", "btn_add_food")
+BUTTON_CREATE_PROFILE = get_text("ru", "btn_create_profile")
+BUTTON_PROFILE = get_text("ru", "btn_profile")
+BUTTON_TODAY = get_text("ru", "btn_today")
+BUTTON_ACTIVITY = get_text("ru", "btn_activity")
+BUTTON_SEARCH = get_text("ru", "btn_search")
+BUTTON_HELP = get_text("ru", "btn_help")
+BUTTON_ASSISTANT_ON = get_text("ru", "btn_assistant_on")
+BUTTON_ASSISTANT_OFF = get_text("ru", "btn_assistant_off")
+CANCEL_TEXT = get_text("ru", "btn_cancel")
 CANCEL_EDIT_PROFILE_TEXT = CANCEL_TEXT
 CANCEL_SEARCH_TEXT = CANCEL_TEXT
 CANCEL_ADD_FOOD_TEXT = CANCEL_TEXT
 
-BUTTON_ACTIVITY_TODAY = "Активность на сегодня"
-BUTTON_ACTIVITY_RESET = "Сбросить активность"
-BUTTON_PROFILE_EDIT = "Изменить профиль"
-BUTTON_TERMS = "Что такое BMR и TDEE"
-BUTTON_BACK = "Назад"
+
+class AddFoodStates(StatesGroup):
+    waiting_for_product = State()
+
 
 CALLBACK_PROFILE_EDIT = "profile:edit"
 CALLBACK_PROFILE_ACTIVITY_TODAY = "profile:activity_today"
@@ -83,133 +78,121 @@ CALLBACK_ADD_FOOD_NEW = "add_food:new"
 CALLBACK_ADD_FOOD_LIST = "add_food:list"
 CALLBACK_ADD_FOOD_DELETE_PREFIX = "add_food:delete:"
 CALLBACK_ADD_FOOD_BACK = "add_food:back"
-
-SEX_KEYBOARD = ReplyKeyboardMarkup(
-    keyboard=[[KeyboardButton(text="male"), KeyboardButton(text="female")]],
-    resize_keyboard=True,
-    one_time_keyboard=True,
-)
-
-ACTIVITY_VALUE_BY_BUTTON = {
-    "Спокойный день": "sedentary",
-    "Легкая активность": "light",
-    "Умеренная активность": "moderate",
-    "Высокая активность": "active",
-    "Очень высокая активность": "very_active",
-}
-
-ACTIVITY_KEYBOARD = ReplyKeyboardMarkup(
-    keyboard=[
-        [KeyboardButton(text="Спокойный день"), KeyboardButton(text="Легкая активность")],
-        [KeyboardButton(text="Умеренная активность"), KeyboardButton(text="Высокая активность")],
-        [KeyboardButton(text="Очень высокая активность")],
-        [KeyboardButton(text=CANCEL_TEXT)],
-    ],
-    resize_keyboard=True,
-    one_time_keyboard=True,
-)
-
-EDIT_PROFILE_KEYBOARD = ReplyKeyboardMarkup(
-    keyboard=[
-        [KeyboardButton(text="Пол"), KeyboardButton(text="Возраст")],
-        [KeyboardButton(text="Рост"), KeyboardButton(text="Вес")],
-        [KeyboardButton(text="Активность по умолчанию")],
-        [KeyboardButton(text=CANCEL_EDIT_PROFILE_TEXT)],
-    ],
-    resize_keyboard=True,
-    one_time_keyboard=True,
-)
-
-SEARCH_CANCEL_KEYBOARD = ReplyKeyboardMarkup(
-    keyboard=[[KeyboardButton(text=CANCEL_SEARCH_TEXT)]],
-    resize_keyboard=True,
-    one_time_keyboard=True,
-)
-
-ADD_FOOD_CANCEL_KEYBOARD = ReplyKeyboardMarkup(
-    keyboard=[[KeyboardButton(text=CANCEL_ADD_FOOD_TEXT)]],
-    resize_keyboard=True,
-    one_time_keyboard=True,
-)
-
-EDIT_FIELD_CONFIG = {
-    "Пол": {
-        "field": "sex",
-        "state": ProfileEditStates.waiting_for_sex,
-        "prompt": "Укажи новый пол: male или female.",
-        "reply_markup": SEX_KEYBOARD,
-    },
-    "Возраст": {
-        "field": "age",
-        "state": ProfileEditStates.waiting_for_age,
-        "prompt": "Отправь новый возраст в годах.",
-        "reply_markup": ReplyKeyboardRemove(),
-    },
-    "Рост": {
-        "field": "height_cm",
-        "state": ProfileEditStates.waiting_for_height,
-        "prompt": "Отправь новый рост в см.",
-        "reply_markup": ReplyKeyboardRemove(),
-    },
-    "Вес": {
-        "field": "weight_kg",
-        "state": ProfileEditStates.waiting_for_weight,
-        "prompt": "Отправь новый вес в кг.",
-        "reply_markup": ReplyKeyboardRemove(),
-    },
-    "Активность по умолчанию": {
-        "field": "activity_level",
-        "state": ProfileEditStates.waiting_for_activity_level,
-        "prompt": "Выбери новую активность по умолчанию.",
-        "reply_markup": ACTIVITY_KEYBOARD,
-    },
-}
+CALLBACK_CHOOSE_LANG_PREFIX = "lang:set:"
 
 
-def build_main_menu(profile: UserProfile | None, assistant_enabled: bool) -> ReplyKeyboardMarkup:
+def _get_user_lang(telegram_id: int, profile_service: ProfileService, from_user=None) -> str:
+    profile = profile_service.get_profile(telegram_id)
+    if profile:
+        if profile.language_set:
+            return profile.language
+        if from_user and from_user.language_code:
+            code = from_user.language_code.lower()
+            if code in {"ru", "uk", "en"}:
+                return code
+        return profile.language
+    if from_user and from_user.language_code:
+        code = from_user.language_code.lower()
+        if code in {"ru", "uk", "en"}:
+            return code
+    return "ru"
+
+
+def build_sex_keyboard(lang: str = "ru") -> ReplyKeyboardMarkup:
+    return ReplyKeyboardMarkup(
+        keyboard=[[KeyboardButton(text=get_text(lang, "sex_male")), KeyboardButton(text=get_text(lang, "sex_female"))]],
+        resize_keyboard=True,
+        one_time_keyboard=True,
+    )
+
+
+def build_activity_keyboard(lang: str = "ru") -> ReplyKeyboardMarkup:
+    return ReplyKeyboardMarkup(
+        keyboard=[
+            [KeyboardButton(text=get_text(lang, "activity_sedentary")), KeyboardButton(text=get_text(lang, "activity_light"))],
+            [KeyboardButton(text=get_text(lang, "activity_moderate")), KeyboardButton(text=get_text(lang, "activity_active"))],
+            [KeyboardButton(text=get_text(lang, "activity_very_active"))],
+            [KeyboardButton(text=get_text(lang, "btn_cancel"))],
+        ],
+        resize_keyboard=True,
+        one_time_keyboard=True,
+    )
+
+
+def build_edit_profile_keyboard(lang: str = "ru") -> ReplyKeyboardMarkup:
+    return ReplyKeyboardMarkup(
+        keyboard=[
+            [KeyboardButton(text=get_text(lang, "field_sex")), KeyboardButton(text=get_text(lang, "field_age"))],
+            [KeyboardButton(text=get_text(lang, "field_height")), KeyboardButton(text=get_text(lang, "field_weight"))],
+            [KeyboardButton(text=get_text(lang, "field_activity"))],
+            [KeyboardButton(text=get_text(lang, "btn_cancel"))],
+        ],
+        resize_keyboard=True,
+        one_time_keyboard=True,
+    )
+
+
+def build_search_cancel_keyboard(lang: str = "ru") -> ReplyKeyboardMarkup:
+    return ReplyKeyboardMarkup(
+        keyboard=[[KeyboardButton(text=get_text(lang, "btn_cancel"))]],
+        resize_keyboard=True,
+        one_time_keyboard=True,
+    )
+
+
+def build_add_food_cancel_keyboard(lang: str = "ru") -> ReplyKeyboardMarkup:
+    return ReplyKeyboardMarkup(
+        keyboard=[[KeyboardButton(text=get_text(lang, "btn_cancel"))]],
+        resize_keyboard=True,
+        one_time_keyboard=True,
+    )
+
+
+def build_main_menu(profile: UserProfile | None, assistant_enabled: bool, lang: str = "ru") -> ReplyKeyboardMarkup:
     if profile is None or not profile.is_complete:
         keyboard = [
-            [KeyboardButton(text=BUTTON_ADD_FOOD), KeyboardButton(text=BUTTON_CREATE_PROFILE)],
-            [KeyboardButton(text=BUTTON_SEARCH), KeyboardButton(text=BUTTON_HELP)],
+            [KeyboardButton(text=get_text(lang, "btn_add_food")), KeyboardButton(text=get_text(lang, "btn_create_profile"))],
+            [KeyboardButton(text=get_text(lang, "btn_search")), KeyboardButton(text=get_text(lang, "btn_help"))],
         ]
     elif assistant_enabled:
         keyboard = [
-            [KeyboardButton(text=BUTTON_ADD_FOOD), KeyboardButton(text=BUTTON_TODAY)],
-            [KeyboardButton(text=BUTTON_PROFILE), KeyboardButton(text=BUTTON_ACTIVITY)],
-            [KeyboardButton(text=BUTTON_SEARCH), KeyboardButton(text=BUTTON_ASSISTANT_OFF)],
+            [KeyboardButton(text=get_text(lang, "btn_add_food")), KeyboardButton(text=get_text(lang, "btn_today"))],
+            [KeyboardButton(text=get_text(lang, "btn_profile")), KeyboardButton(text=get_text(lang, "btn_activity"))],
+            [KeyboardButton(text=get_text(lang, "btn_search")), KeyboardButton(text=get_text(lang, "btn_assistant_off"))],
         ]
     else:
         keyboard = [
-            [KeyboardButton(text=BUTTON_ADD_FOOD), KeyboardButton(text=BUTTON_PROFILE)],
-            [KeyboardButton(text=BUTTON_SEARCH), KeyboardButton(text=BUTTON_HELP)],
-            [KeyboardButton(text=BUTTON_ASSISTANT_ON)],
+            [KeyboardButton(text=get_text(lang, "btn_add_food")), KeyboardButton(text=get_text(lang, "btn_profile"))],
+            [KeyboardButton(text=get_text(lang, "btn_search")), KeyboardButton(text=get_text(lang, "btn_help"))],
+            [KeyboardButton(text=get_text(lang, "btn_assistant_on"))],
         ]
     return ReplyKeyboardMarkup(keyboard=keyboard, resize_keyboard=True)
 
 
-def build_profile_actions(profile: UserProfile) -> InlineKeyboardMarkup:
-    assistant_text = BUTTON_ASSISTANT_OFF if profile.assistant_enabled else BUTTON_ASSISTANT_ON
+def build_profile_actions(profile: UserProfile, lang: str = "ru") -> InlineKeyboardMarkup:
+    assistant_text = get_text(lang, "btn_assistant_off") if profile.assistant_enabled else get_text(lang, "btn_assistant_on")
     return InlineKeyboardMarkup(
         inline_keyboard=[
-            [InlineKeyboardButton(text=BUTTON_PROFILE_EDIT, callback_data=CALLBACK_PROFILE_EDIT)],
+            [InlineKeyboardButton(text=get_text(lang, "btn_profile_edit"), callback_data=CALLBACK_PROFILE_EDIT)],
             [
-                InlineKeyboardButton(text=BUTTON_ACTIVITY_TODAY, callback_data=CALLBACK_PROFILE_ACTIVITY_TODAY),
-                InlineKeyboardButton(text=BUTTON_ACTIVITY_RESET, callback_data=CALLBACK_PROFILE_ACTIVITY_RESET),
+                InlineKeyboardButton(text=get_text(lang, "btn_activity_today"), callback_data=CALLBACK_PROFILE_ACTIVITY_TODAY),
+                InlineKeyboardButton(text=get_text(lang, "btn_activity_reset"), callback_data=CALLBACK_PROFILE_ACTIVITY_RESET),
             ],
             [
                 InlineKeyboardButton(text=assistant_text, callback_data=CALLBACK_PROFILE_ASSISTANT),
-                InlineKeyboardButton(text=BUTTON_TERMS, callback_data=CALLBACK_PROFILE_TERMS),
+                InlineKeyboardButton(text=get_text(lang, "btn_terms"), callback_data=CALLBACK_PROFILE_TERMS),
             ],
+            [InlineKeyboardButton(text=get_text(lang, "btn_change_lang"), callback_data="profile:change_lang")],
         ]
     )
 
 
-def build_activity_actions() -> InlineKeyboardMarkup:
+def build_activity_actions(lang: str = "ru") -> InlineKeyboardMarkup:
     return InlineKeyboardMarkup(
         inline_keyboard=[
-            [InlineKeyboardButton(text=BUTTON_ACTIVITY_TODAY, callback_data=CALLBACK_ACTIVITY_CHANGE)],
-            [InlineKeyboardButton(text=BUTTON_ACTIVITY_RESET, callback_data=CALLBACK_ACTIVITY_RESET)],
-            [InlineKeyboardButton(text=BUTTON_BACK, callback_data=CALLBACK_ACTIVITY_BACK)],
+            [InlineKeyboardButton(text=get_text(lang, "btn_activity_today"), callback_data=CALLBACK_ACTIVITY_CHANGE)],
+            [InlineKeyboardButton(text=get_text(lang, "btn_activity_reset"), callback_data=CALLBACK_ACTIVITY_RESET)],
+            [InlineKeyboardButton(text=get_text(lang, "btn_back"), callback_data=CALLBACK_ACTIVITY_BACK)],
         ]
     )
 
@@ -227,27 +210,59 @@ def build_search_categories(categories) -> InlineKeyboardMarkup:
     return InlineKeyboardMarkup(inline_keyboard=rows)
 
 
-def build_add_food_actions() -> InlineKeyboardMarkup:
+def build_add_food_actions(lang: str = "ru") -> InlineKeyboardMarkup:
     return InlineKeyboardMarkup(
         inline_keyboard=[
-            [InlineKeyboardButton(text="Добавить продукт", callback_data=CALLBACK_ADD_FOOD_NEW)],
-            [InlineKeyboardButton(text="Мои продукты", callback_data=CALLBACK_ADD_FOOD_LIST)],
+            [InlineKeyboardButton(text=get_text(lang, "btn_add_product"), callback_data=CALLBACK_ADD_FOOD_NEW)],
+            [InlineKeyboardButton(text=get_text(lang, "btn_my_products"), callback_data=CALLBACK_ADD_FOOD_LIST)],
         ]
     )
 
 
-def build_user_product_actions(products) -> InlineKeyboardMarkup:
+def build_user_product_actions(products, lang: str = "ru") -> InlineKeyboardMarkup:
     rows = [
         [
             InlineKeyboardButton(
-                text=f"Удалить: {product.name}",
+                text=get_text(lang, "btn_delete_product", name=product.name),
                 callback_data=f"{CALLBACK_ADD_FOOD_DELETE_PREFIX}{product.id}",
             )
         ]
         for product in products
     ]
-    rows.append([InlineKeyboardButton(text=BUTTON_BACK, callback_data=CALLBACK_ADD_FOOD_BACK)])
+    rows.append([InlineKeyboardButton(text=get_text(lang, "btn_back"), callback_data=CALLBACK_ADD_FOOD_BACK)])
     return InlineKeyboardMarkup(inline_keyboard=rows)
+
+
+def build_language_keyboard() -> InlineKeyboardMarkup:
+    return InlineKeyboardMarkup(
+        inline_keyboard=[
+            [
+                InlineKeyboardButton(text="🇷🇺 Русский (RU)", callback_data=f"{CALLBACK_CHOOSE_LANG_PREFIX}ru"),
+                InlineKeyboardButton(text="🇺🇦 Українська (UK)", callback_data=f"{CALLBACK_CHOOSE_LANG_PREFIX}uk"),
+            ],
+            [
+                InlineKeyboardButton(text="🇬🇧 English (EN)", callback_data=f"{CALLBACK_CHOOSE_LANG_PREFIX}en"),
+            ]
+        ]
+    )
+
+
+def _parse_activity_button(value: str | None) -> str | None:
+    if value is None:
+        return None
+    cleaned = value.strip()
+    for lang in ["ru", "uk", "en"]:
+        if cleaned == get_text(lang, "activity_sedentary"):
+            return "sedentary"
+        if cleaned == get_text(lang, "activity_light"):
+            return "light"
+        if cleaned == get_text(lang, "activity_moderate"):
+            return "moderate"
+        if cleaned == get_text(lang, "activity_active"):
+            return "active"
+        if cleaned == get_text(lang, "activity_very_active"):
+            return "very_active"
+    return None
 
 
 def register_handlers(dispatcher: Dispatcher, database: Database) -> None:
@@ -258,7 +273,41 @@ def register_handlers(dispatcher: Dispatcher, database: Database) -> None:
     @router.message(Command("start"))
     async def start_handler(message: Message, state: FSMContext) -> None:
         await state.clear()
+        lang = _get_user_lang(message.from_user.id, profile_service, message.from_user)
+        profile_service.ensure_user(message.from_user.id, message.from_user.username, default_lang=lang)
         await _show_welcome(message, profile_service, message.from_user.id, message.from_user.username)
+
+    @router.message(Command("lang"))
+    async def lang_handler(message: Message) -> None:
+        lang = _get_user_lang(message.from_user.id, profile_service, message.from_user)
+        await message.answer(
+            get_text(lang, "lang_choose"),
+            reply_markup=build_language_keyboard(),
+        )
+
+    @router.callback_query(F.data.startswith(CALLBACK_CHOOSE_LANG_PREFIX))
+    async def choose_lang_callback(callback: CallbackQuery) -> None:
+        await callback.answer()
+        lang_code = callback.data.removeprefix(CALLBACK_CHOOSE_LANG_PREFIX)
+        profile_service.ensure_user(callback.from_user.id, callback.from_user.username)
+        profile_service.update_profile_language(callback.from_user.id, lang_code)
+        profile = profile_service.get_profile(callback.from_user.id)
+        if callback.message is not None:
+            await callback.message.delete()
+            await callback.message.answer(
+                get_text(lang_code, "lang_changed"),
+                reply_markup=build_main_menu(profile, bool(profile and profile.assistant_enabled), lang_code)
+            )
+
+    @router.callback_query(F.data == "profile:change_lang")
+    async def profile_change_lang_callback(callback: CallbackQuery) -> None:
+        await callback.answer()
+        lang = _get_user_lang(callback.from_user.id, profile_service, callback.from_user)
+        if callback.message is not None:
+            await callback.message.answer(
+                get_text(lang, "lang_choose"),
+                reply_markup=build_language_keyboard(),
+            )
 
     @router.message(Command("help"))
     @router.message(Command("calc"))
@@ -267,12 +316,13 @@ def register_handlers(dispatcher: Dispatcher, database: Database) -> None:
 
     @router.message(Command("terms"))
     async def terms_handler(message: Message) -> None:
+        lang = _get_user_lang(message.from_user.id, profile_service, message.from_user)
         await _send_with_main_menu(
             message,
             profile_service,
             message.from_user.id,
             message.from_user.username,
-            _terms_text(),
+            get_text(lang, "terms"),
         )
 
     @router.message(Command("profile"))
@@ -376,13 +426,14 @@ def register_handlers(dispatcher: Dispatcher, database: Database) -> None:
     @router.callback_query(F.data == CALLBACK_PROFILE_TERMS)
     async def profile_terms_callback(callback: CallbackQuery) -> None:
         await callback.answer()
+        lang = _get_user_lang(callback.from_user.id, profile_service, callback.from_user)
         if callback.message is not None:
             await _send_with_main_menu(
                 callback.message,
                 profile_service,
                 callback.from_user.id,
                 callback.from_user.username,
-                _terms_text(),
+                get_text(lang, "terms"),
             )
 
     @router.callback_query(F.data == CALLBACK_ACTIVITY_CHANGE)
@@ -483,10 +534,11 @@ def register_handlers(dispatcher: Dispatcher, database: Database) -> None:
 
     @router.callback_query(F.data.startswith(CALLBACK_ADD_FOOD_DELETE_PREFIX))
     async def add_food_delete_callback(callback: CallbackQuery) -> None:
+        lang = _get_user_lang(callback.from_user.id, profile_service, callback.from_user)
         product_id_text = str(callback.data).removeprefix(CALLBACK_ADD_FOOD_DELETE_PREFIX)
         product_id = _parse_int(product_id_text)
         deleted = product_id is not None and nutrition_service.delete_user_product(callback.from_user.id, product_id)
-        await callback.answer("Удалено" if deleted else "Не найдено")
+        await callback.answer(get_text(lang, "personal_product_deleted") if deleted else get_text(lang, "personal_product_not_found"))
         if callback.message is not None:
             await _show_user_products(
                 callback.message,
@@ -496,20 +548,20 @@ def register_handlers(dispatcher: Dispatcher, database: Database) -> None:
                 callback.from_user.username,
             )
 
-    @router.message(F.text == BUTTON_ADD_FOOD)
+    @router.message(F.text.in_({get_text("ru", "btn_add_food"), get_text("uk", "btn_add_food"), get_text("en", "btn_add_food")}))
     async def add_food_button_handler(message: Message, state: FSMContext) -> None:
         await state.clear()
         await _show_add_food_menu(message, profile_service, message.from_user.id, message.from_user.username)
 
-    @router.message(F.text == BUTTON_CREATE_PROFILE)
+    @router.message(F.text.in_({get_text("ru", "btn_create_profile"), get_text("uk", "btn_create_profile"), get_text("en", "btn_create_profile")}))
     async def create_profile_button_handler(message: Message, state: FSMContext) -> None:
         await _show_profile(message, state, profile_service, message.from_user.id, message.from_user.username)
 
-    @router.message(F.text == BUTTON_PROFILE)
+    @router.message(F.text.in_({get_text("ru", "btn_profile"), get_text("uk", "btn_profile"), get_text("en", "btn_profile")}))
     async def profile_button_handler(message: Message, state: FSMContext) -> None:
         await _show_profile(message, state, profile_service, message.from_user.id, message.from_user.username)
 
-    @router.message(F.text == BUTTON_TODAY)
+    @router.message(F.text.in_({get_text("ru", "btn_today"), get_text("uk", "btn_today"), get_text("en", "btn_today")}))
     async def today_button_handler(message: Message) -> None:
         await _show_today(
             message,
@@ -519,68 +571,97 @@ def register_handlers(dispatcher: Dispatcher, database: Database) -> None:
             message.from_user.username,
         )
 
-    @router.message(F.text == BUTTON_ACTIVITY)
+    @router.message(F.text.in_({get_text("ru", "btn_activity"), get_text("uk", "btn_activity"), get_text("en", "btn_activity")}))
     async def activity_button_handler(message: Message, state: FSMContext) -> None:
         await state.clear()
         await _show_activity_screen(message, profile_service, message.from_user.id, message.from_user.username)
 
-    @router.message(F.text == BUTTON_SEARCH)
+    @router.message(F.text.in_({get_text("ru", "btn_search"), get_text("uk", "btn_search"), get_text("en", "btn_search")}))
     async def search_button_handler(message: Message, state: FSMContext) -> None:
         await state.clear()
         await _show_search_categories(message, nutrition_service, profile_service, message.from_user.id, message.from_user.username)
 
-    @router.message(F.text == BUTTON_HELP)
+    @router.message(F.text.in_({get_text("ru", "btn_help"), get_text("uk", "btn_help"), get_text("en", "btn_help")}))
     async def help_button_handler(message: Message) -> None:
         await _show_help(message, profile_service, message.from_user.id, message.from_user.username)
 
-    @router.message(F.text == BUTTON_ASSISTANT_ON)
+    @router.message(F.text.in_({get_text("ru", "btn_assistant_on"), get_text("uk", "btn_assistant_on"), get_text("en", "btn_assistant_on")}))
     async def assistant_on_button_handler(message: Message) -> None:
         await _set_assistant_mode(message, profile_service, message.from_user.id, message.from_user.username, enabled=True)
 
-    @router.message(F.text == BUTTON_ASSISTANT_OFF)
+    @router.message(F.text.in_({get_text("ru", "btn_assistant_off"), get_text("uk", "btn_assistant_off"), get_text("en", "btn_assistant_off")}))
     async def assistant_off_button_handler(message: Message) -> None:
         await _set_assistant_mode(message, profile_service, message.from_user.id, message.from_user.username, enabled=False)
 
     @router.message(ProfileEditStates.choosing_field)
     async def edit_profile_choose_field_handler(message: Message, state: FSMContext) -> None:
+        lang = _get_user_lang(message.from_user.id, profile_service, message.from_user)
         text = (message.text or "").strip()
-        if text == CANCEL_EDIT_PROFILE_TEXT:
+        
+        if text in {get_text("ru", "btn_cancel"), get_text("uk", "btn_cancel"), get_text("en", "btn_cancel")}:
             await state.clear()
             profile = profile_service.get_profile(message.from_user.id)
             targets = profile_service.get_daily_targets(message.from_user.id) if profile and profile.is_complete else None
-            body = "Изменения не вносились."
+            body = get_text(lang, "changes_not_made")
             if profile is not None and targets is not None:
-                body = f"{body}\n\n{_format_profile_card(profile, targets)}"
+                body = f"{body}\n\n{_format_profile_card(profile, targets, lang)}"
             await message.answer(
                 body,
-                reply_markup=build_main_menu(profile, bool(profile and profile.assistant_enabled)),
+                reply_markup=build_main_menu(profile, bool(profile and profile.assistant_enabled), lang),
             )
             if profile is not None and profile.is_complete:
-                await message.answer("Быстрые действия профиля:", reply_markup=build_profile_actions(profile))
+                await message.answer(get_text(lang, "profile_quick_actions"), reply_markup=build_profile_actions(profile, lang))
             return
 
-        config = EDIT_FIELD_CONFIG.get(text)
-        if config is None:
-            await message.answer(
-                "Выбери поле: Пол, Возраст, Рост, Вес, Активность по умолчанию или Отмена."
-            )
-            return
+        # Check field choice across all languages to route correctly
+        field_choice = None
+        for l in ["ru", "uk", "en"]:
+            if text == get_text(l, "field_sex"):
+                field_choice = "sex"
+            elif text == get_text(l, "field_age"):
+                field_choice = "age"
+            elif text == get_text(l, "field_height"):
+                field_choice = "height"
+            elif text == get_text(l, "field_weight"):
+                field_choice = "weight"
+            elif text == get_text(l, "field_activity"):
+                field_choice = "activity"
 
-        await state.update_data(edit_field=config["field"])
-        await state.set_state(config["state"])
-        await message.answer(config["prompt"], reply_markup=config["reply_markup"])
+        if field_choice == "sex":
+            await state.update_data(edit_field="sex")
+            await state.set_state(ProfileEditStates.waiting_for_sex)
+            await message.answer(get_text(lang, "prompt_sex_new"), reply_markup=build_sex_keyboard(lang))
+        elif field_choice == "age":
+            await state.update_data(edit_field="age")
+            await state.set_state(ProfileEditStates.waiting_for_age)
+            await message.answer(get_text(lang, "prompt_age_new"), reply_markup=ReplyKeyboardRemove())
+        elif field_choice == "height":
+            await state.update_data(edit_field="height_cm")
+            await state.set_state(ProfileEditStates.waiting_for_height)
+            await message.answer(get_text(lang, "prompt_height_new"), reply_markup=ReplyKeyboardRemove())
+        elif field_choice == "weight":
+            await state.update_data(edit_field="weight_kg")
+            await state.set_state(ProfileEditStates.waiting_for_weight)
+            await message.answer(get_text(lang, "prompt_weight_new"), reply_markup=ReplyKeyboardRemove())
+        elif field_choice == "activity":
+            await state.update_data(edit_field="activity_level")
+            await state.set_state(ProfileEditStates.waiting_for_activity_level)
+            await message.answer(get_text(lang, "prompt_activity_new"), reply_markup=build_activity_keyboard(lang))
+        else:
+            await message.answer(get_text(lang, "choose_field_to_edit_invalid"))
 
     @router.message(SearchStates.waiting_for_query)
     async def search_query_handler(message: Message, state: FSMContext) -> None:
+        lang = _get_user_lang(message.from_user.id, profile_service, message.from_user)
         text = (message.text or "").strip()
-        if text == CANCEL_SEARCH_TEXT:
+        if text in {get_text("ru", "btn_cancel"), get_text("uk", "btn_cancel"), get_text("en", "btn_cancel")}:
             await state.clear()
             await _send_with_main_menu(
                 message,
                 profile_service,
                 message.from_user.id,
                 message.from_user.username,
-                "Поиск отменен.",
+                get_text(lang, "search_cancelled"),
             )
             return
 
@@ -596,25 +677,24 @@ def register_handlers(dispatcher: Dispatcher, database: Database) -> None:
 
     @router.message(AddFoodStates.waiting_for_product)
     async def add_food_product_handler(message: Message, state: FSMContext) -> None:
+        lang = _get_user_lang(message.from_user.id, profile_service, message.from_user)
         text = (message.text or "").strip()
-        if text == CANCEL_ADD_FOOD_TEXT:
+        if text in {get_text("ru", "btn_cancel"), get_text("uk", "btn_cancel"), get_text("en", "btn_cancel")}:
             await state.clear()
             await _send_with_main_menu(
                 message,
                 profile_service,
                 message.from_user.id,
                 message.from_user.username,
-                "Добавление еды отменено.",
+                get_text(lang, "add_food_cancelled"),
             )
             return
 
         parsed = _parse_user_product_input(text)
         if parsed is None:
             await message.answer(
-                "Не получилось разобрать продукт.\n"
-                "Формат: <code>название; ккал; белки; жиры; углеводы</code>\n"
-                "Пример: <code>сырники домашние; 210; 14; 9; 20</code>",
-                reply_markup=ADD_FOOD_CANCEL_KEYBOARD,
+                get_text(lang, "personal_product_parse_error"),
+                reply_markup=build_add_food_cancel_keyboard(lang),
             )
             return
 
@@ -627,64 +707,85 @@ def register_handlers(dispatcher: Dispatcher, database: Database) -> None:
             protein,
             fat,
             carbs,
+            input_lang=lang,
         )
         await state.clear()
+        
+        # Display localized name back to user
+        name_display = name_ru
+        if lang == "en":
+            from app.services.translator import translate_food_name
+            name_display = translate_food_name(name_ru, "en")
+        elif lang == "uk":
+            from app.services.translator import translate_food_name
+            name_display = translate_food_name(name_ru, "uk")
+
         await _send_with_main_menu(
             message,
             profile_service,
             message.from_user.id,
             message.from_user.username,
-            "Сохранил личную еду:\n"
-            f"<b>{name_ru}</b> на 100 г: {round(calories)} ккал, "
-            f"Б {_format_number(protein)} / Ж {_format_number(fat)} / У {_format_number(carbs)}.\n\n"
-            f"Теперь можно писать: <code>{name_ru} 150</code>",
+            get_text(
+                lang,
+                "personal_product_saved",
+                name=name_display,
+                calories=round(calories),
+                protein=_format_number(protein),
+                fat=_format_number(fat),
+                carbs=_format_number(carbs),
+            )
         )
 
     @router.message(ProfileCreateStates.waiting_for_sex)
     async def profile_sex_handler(message: Message, state: FSMContext) -> None:
+        lang = _get_user_lang(message.from_user.id, profile_service, message.from_user)
         value = (message.text or "").strip().lower()
         if value not in {"male", "female"}:
-            await message.answer("Укажи пол: male или female.", reply_markup=SEX_KEYBOARD)
+            await message.answer(get_text(lang, "prompt_sex"), reply_markup=build_sex_keyboard(lang))
             return
         await state.update_data(sex=value)
         await state.set_state(ProfileCreateStates.waiting_for_age)
-        await message.answer("Отправь возраст в годах.", reply_markup=ReplyKeyboardRemove())
+        await message.answer(get_text(lang, "prompt_age"), reply_markup=ReplyKeyboardRemove())
 
     @router.message(ProfileCreateStates.waiting_for_age)
     async def profile_age_handler(message: Message, state: FSMContext) -> None:
+        lang = _get_user_lang(message.from_user.id, profile_service, message.from_user)
         age = _parse_int(message.text)
         if age is None or age < 10 or age > 120:
-            await message.answer("Возраст должен быть числом от 10 до 120.")
+            await message.answer(get_text(lang, "error_age_range"))
             return
         await state.update_data(age=age)
         await state.set_state(ProfileCreateStates.waiting_for_height)
-        await message.answer("Отправь рост в см.")
+        await message.answer(get_text(lang, "prompt_height"))
 
     @router.message(ProfileCreateStates.waiting_for_height)
     async def profile_height_handler(message: Message, state: FSMContext) -> None:
+        lang = _get_user_lang(message.from_user.id, profile_service, message.from_user)
         height_cm = _parse_float(message.text)
         if height_cm is None or height_cm < 80 or height_cm > 250:
-            await message.answer("Рост должен быть числом от 80 до 250 см.")
+            await message.answer(get_text(lang, "error_height_range"))
             return
         await state.update_data(height_cm=height_cm)
         await state.set_state(ProfileCreateStates.waiting_for_weight)
-        await message.answer("Отправь вес в кг.")
+        await message.answer(get_text(lang, "prompt_weight"))
 
     @router.message(ProfileCreateStates.waiting_for_weight)
     async def profile_weight_handler(message: Message, state: FSMContext) -> None:
+        lang = _get_user_lang(message.from_user.id, profile_service, message.from_user)
         weight_kg = _parse_float(message.text)
         if weight_kg is None or weight_kg < 20 or weight_kg > 300:
-            await message.answer("Вес должен быть числом от 20 до 300 кг.")
+            await message.answer(get_text(lang, "error_weight_range"))
             return
         await state.update_data(weight_kg=weight_kg)
         await state.set_state(ProfileCreateStates.waiting_for_activity_level)
-        await message.answer("Выбери активность по умолчанию.", reply_markup=ACTIVITY_KEYBOARD)
+        await message.answer(get_text(lang, "prompt_activity"), reply_markup=build_activity_keyboard(lang))
 
     @router.message(ProfileCreateStates.waiting_for_activity_level)
     async def profile_activity_handler(message: Message, state: FSMContext) -> None:
+        lang = _get_user_lang(message.from_user.id, profile_service, message.from_user)
         activity_level = _parse_activity_button(message.text)
         if activity_level is None:
-            await message.answer("Выбери один из вариантов активности.", reply_markup=ACTIVITY_KEYBOARD)
+            await message.answer(get_text(lang, "prompt_activity"), reply_markup=build_activity_keyboard(lang))
             return
 
         data = await state.get_data()
@@ -701,60 +802,68 @@ def register_handlers(dispatcher: Dispatcher, database: Database) -> None:
         profile = profile_service.get_profile(message.from_user.id)
         targets = profile_service.get_daily_targets(message.from_user.id)
         await message.answer(
-            f"Профиль сохранен.\n\n{_format_profile_card(profile, targets)}",
-            reply_markup=build_main_menu(profile, bool(profile and profile.assistant_enabled)),
+            f"{get_text(lang, 'profile_saved')}\n\n{_format_profile_card(profile, targets, lang)}",
+            reply_markup=build_main_menu(profile, bool(profile and profile.assistant_enabled), lang),
         )
         if profile is not None:
-            await message.answer("Быстрые действия профиля:", reply_markup=build_profile_actions(profile))
+            await message.answer(get_text(lang, "profile_quick_actions"), reply_markup=build_profile_actions(profile, lang))
 
     @router.message(ProfileEditStates.waiting_for_sex)
     async def edit_profile_sex_handler(message: Message, state: FSMContext) -> None:
+        lang = _get_user_lang(message.from_user.id, profile_service, message.from_user)
         value = (message.text or "").strip().lower()
         if value not in {"male", "female"}:
-            await message.answer("Укажи пол: male или female.", reply_markup=SEX_KEYBOARD)
+            await message.answer(get_text(lang, "prompt_sex"), reply_markup=build_sex_keyboard(lang))
             return
         await _save_profile_edit(message, state, profile_service, "sex", value)
 
     @router.message(ProfileEditStates.waiting_for_age)
     async def edit_profile_age_handler(message: Message, state: FSMContext) -> None:
+        lang = _get_user_lang(message.from_user.id, profile_service, message.from_user)
         age = _parse_int(message.text)
         if age is None or age < 10 or age > 120:
-            await message.answer("Возраст должен быть числом от 10 до 120.")
+            await message.answer(get_text(lang, "error_age_range"))
             return
         await _save_profile_edit(message, state, profile_service, "age", age)
 
     @router.message(ProfileEditStates.waiting_for_height)
     async def edit_profile_height_handler(message: Message, state: FSMContext) -> None:
+        lang = _get_user_lang(message.from_user.id, profile_service, message.from_user)
         height_cm = _parse_float(message.text)
         if height_cm is None or height_cm < 80 or height_cm > 250:
-            await message.answer("Рост должен быть числом от 80 до 250 см.")
+            await message.answer(get_text(lang, "error_height_range"))
             return
         await _save_profile_edit(message, state, profile_service, "height_cm", height_cm)
 
     @router.message(ProfileEditStates.waiting_for_weight)
     async def edit_profile_weight_handler(message: Message, state: FSMContext) -> None:
+        lang = _get_user_lang(message.from_user.id, profile_service, message.from_user)
         weight_kg = _parse_float(message.text)
         if weight_kg is None or weight_kg < 20 or weight_kg > 300:
-            await message.answer("Вес должен быть числом от 20 до 300 кг.")
+            await message.answer(get_text(lang, "error_weight_range"))
             return
         await _save_profile_edit(message, state, profile_service, "weight_kg", weight_kg)
 
     @router.message(ProfileEditStates.waiting_for_activity_level)
     async def edit_profile_activity_handler(message: Message, state: FSMContext) -> None:
-        if (message.text or "").strip() == CANCEL_TEXT:
+        lang = _get_user_lang(message.from_user.id, profile_service, message.from_user)
+        text_val = (message.text or "").strip()
+        if text_val in {get_text("ru", "btn_cancel"), get_text("uk", "btn_cancel"), get_text("en", "btn_cancel")}:
             await state.set_state(ProfileEditStates.choosing_field)
-            await message.answer("Что хочешь изменить?", reply_markup=EDIT_PROFILE_KEYBOARD)
+            await message.answer(get_text(lang, "choose_field_to_edit"), reply_markup=build_edit_profile_keyboard(lang))
             return
 
         activity_level = _parse_activity_button(message.text)
         if activity_level is None:
-            await message.answer("Выбери один из вариантов активности.", reply_markup=ACTIVITY_KEYBOARD)
+            await message.answer(get_text(lang, "prompt_activity"), reply_markup=build_activity_keyboard(lang))
             return
         await _save_profile_edit(message, state, profile_service, "activity_level", activity_level)
 
     @router.message(ActivityTodayStates.waiting_for_activity_level)
     async def activity_today_value_handler(message: Message, state: FSMContext) -> None:
-        if (message.text or "").strip() == CANCEL_TEXT:
+        lang = _get_user_lang(message.from_user.id, profile_service, message.from_user)
+        text_val = (message.text or "").strip()
+        if text_val in {get_text("ru", "btn_cancel"), get_text("uk", "btn_cancel"), get_text("en", "btn_cancel")}:
             await state.clear()
             await _show_activity_screen(
                 message,
@@ -766,33 +875,50 @@ def register_handlers(dispatcher: Dispatcher, database: Database) -> None:
 
         activity_level = _parse_activity_button(message.text)
         if activity_level is None:
-            await message.answer("Выбери один из вариантов активности.", reply_markup=ACTIVITY_KEYBOARD)
+            await message.answer(get_text(lang, "prompt_activity"), reply_markup=build_activity_keyboard(lang))
             return
 
         profile_service.set_activity_override_for_today(message.from_user.id, activity_level)
         await state.clear()
         profile = profile_service.get_profile(message.from_user.id)
         targets = profile_service.get_daily_targets(message.from_user.id)
+        
+        # Format targets block
+        macros_text = get_text(
+            lang,
+            "macro_norms_values",
+            protein=_format_number(targets.protein_g),
+            fat=_format_number(targets.fat_g),
+            carbs=_format_number(targets.carbs_g),
+        )
+        targets_block = (
+            get_text(lang, "bmr_label", bmr=round(targets.bmr)) + "\n" +
+            get_text(lang, "tdee_label", tdee=round(targets.tdee)) + "\n" +
+            get_text(lang, "activity_for_calc", activity=targets.effective_activity_label(lang)) + "\n" +
+            targets.activity_source_label(lang) + "\n" +
+            get_text(lang, "macro_norms_header") + "\n" +
+            macros_text
+        )
+
         await message.answer(
-            "Активность на сегодня сохранена.\n"
-            "Этот выбор действует только до конца текущего дня.\n\n"
-            f"{_format_targets_short_block(targets)}",
-            reply_markup=build_main_menu(profile, bool(profile and profile.assistant_enabled)),
+            get_text(lang, "activity_saved_today", targets=targets_block),
+            reply_markup=build_main_menu(profile, bool(profile and profile.assistant_enabled), lang),
         )
 
     @router.message(F.text)
     async def food_message_handler(message: Message, state: FSMContext) -> None:
         await state.clear()
-        profile_service.ensure_user(message.from_user.id, message.from_user.username)
+        lang = _get_user_lang(message.from_user.id, profile_service, message.from_user)
+        profile_service.ensure_user(message.from_user.id, message.from_user.username, default_lang=lang)
         result = nutrition_service.process_message(message.from_user.id, message.text or "")
 
         if result.assistant_enabled:
             nutrition_service.store_entries(message.from_user.id, result.recognized_items)
             today = nutrition_service.get_today_summary(message.from_user.id)
             targets = profile_service.get_daily_targets(message.from_user.id)
-            reply = nutrition_service.format_assistant_reply(result, today, targets)
+            reply = nutrition_service.format_assistant_reply(result, today, targets, lang)
         else:
-            reply = nutrition_service.format_calc_reply(result)
+            reply = nutrition_service.format_calc_reply(result, lang)
 
         await _send_with_main_menu(
             message,
@@ -811,16 +937,13 @@ async def _show_welcome(
     telegram_id: int,
     username: str | None,
 ) -> None:
+    lang = _get_user_lang(telegram_id, profile_service, output_message.from_user)
     await _send_with_main_menu(
         output_message,
         profile_service,
         telegram_id,
         username,
-        "Бот готов.\n\n"
-        "Отправь еду, например:\n"
-        "<code>гречка 120, курица 180, помидор 80</code>\n\n"
-        "Используй кнопки внизу для навигации.\n"
-        "Короткая справка по метрикам: /terms.",
+        get_text(lang, "welcome"),
     )
 
 
@@ -830,23 +953,22 @@ async def _show_help(
     telegram_id: int,
     username: str | None,
 ) -> None:
+    lang = _get_user_lang(telegram_id, profile_service, output_message.from_user)
     await _send_with_main_menu(
         output_message,
         profile_service,
         telegram_id,
         username,
-        "Как пользоваться ботом:\n\n"
-        "1. Отправь еду обычным текстом.\n"
-        "Примеры:\n"
-        "<code>гречка 120, курица 180</code>\n"
-        "<code>рис 100\nпомидор 80</code>\n\n"
-        f"2. {BUTTON_ADD_FOOD} — добавь личный продукт или готовое блюдо, если его нет в базе.\n"
-        f"3. {BUTTON_PROFILE} или {BUTTON_CREATE_PROFILE} — настрой профиль.\n"
-        f"4. {BUTTON_TODAY} — смотри итог за сегодня.\n"
-        f"5. {BUTTON_ACTIVITY} — меняй активность на сегодня.\n"
-        f"6. {BUTTON_SEARCH} — ищи продукты по базе.\n\n"
-        "Команды тоже работают, но кнопки теперь основной способ навигации.\n"
-        "Что такое BMR и TDEE: /terms",
+        get_text(
+            lang,
+            "help",
+            btn_add_food=get_text(lang, "btn_add_food"),
+            btn_profile=get_text(lang, "btn_profile"),
+            btn_create_profile=get_text(lang, "btn_create_profile"),
+            btn_today=get_text(lang, "btn_today"),
+            btn_activity=get_text(lang, "btn_activity"),
+            btn_search=get_text(lang, "btn_search"),
+        ),
     )
 
 
@@ -857,19 +979,20 @@ async def _show_profile(
     telegram_id: int,
     username: str | None,
 ) -> None:
-    profile_service.ensure_user(telegram_id, username)
+    lang = _get_user_lang(telegram_id, profile_service, output_message.from_user)
+    profile_service.ensure_user(telegram_id, username, default_lang=lang)
     profile = profile_service.get_profile(telegram_id)
     if profile is not None and profile.is_complete:
         await state.clear()
         targets = profile_service.get_daily_targets(telegram_id)
         await output_message.answer(
-            _format_profile_card(profile, targets),
-            reply_markup=build_main_menu(profile, bool(profile.assistant_enabled)),
+            _format_profile_card(profile, targets, lang),
+            reply_markup=build_main_menu(profile, bool(profile.assistant_enabled), lang),
         )
-        await output_message.answer("Быстрые действия профиля:", reply_markup=build_profile_actions(profile))
+        await output_message.answer(get_text(lang, "profile_quick_actions"), reply_markup=build_profile_actions(profile, lang))
         return
 
-    await _start_profile_onboarding(output_message, state, profile)
+    await _start_profile_onboarding(output_message, state, profile, lang)
 
 
 async def _show_edit_profile(
@@ -879,7 +1002,8 @@ async def _show_edit_profile(
     telegram_id: int,
     username: str | None,
 ) -> None:
-    profile_service.ensure_user(telegram_id, username)
+    lang = _get_user_lang(telegram_id, profile_service, output_message.from_user)
+    profile_service.ensure_user(telegram_id, username, default_lang=lang)
     profile = profile_service.get_profile(telegram_id)
     if profile is None or not profile.is_complete:
         await state.clear()
@@ -888,15 +1012,15 @@ async def _show_edit_profile(
             profile_service,
             telegram_id,
             username,
-            "Профиль еще не заполнен полностью. Сначала используй /profile.",
+            get_text(lang, "profile_incomplete"),
         )
         return
 
     targets = profile_service.get_daily_targets(telegram_id)
     await state.set_state(ProfileEditStates.choosing_field)
     await output_message.answer(
-        f"{_format_profile_card(profile, targets)}\n\nЧто хочешь изменить?",
-        reply_markup=EDIT_PROFILE_KEYBOARD,
+        f"{_format_profile_card(profile, targets, lang)}\n\n{get_text(lang, 'choose_field_to_edit')}",
+        reply_markup=build_edit_profile_keyboard(lang),
     )
 
 
@@ -906,7 +1030,8 @@ async def _show_activity_screen(
     telegram_id: int,
     username: str | None,
 ) -> None:
-    profile_service.ensure_user(telegram_id, username)
+    lang = _get_user_lang(telegram_id, profile_service, output_message.from_user)
+    profile_service.ensure_user(telegram_id, username, default_lang=lang)
     profile = profile_service.get_profile(telegram_id)
     if profile is None or not profile.is_complete:
         await _send_with_main_menu(
@@ -914,22 +1039,22 @@ async def _show_activity_screen(
             profile_service,
             telegram_id,
             username,
-            "Чтобы открыть активность, сначала заполни профиль через /profile.",
+            get_text(lang, "profile_incomplete_activity"),
         )
         return
 
     targets = profile_service.get_daily_targets(telegram_id)
     text = (
-        "Активность:\n"
-        f"По умолчанию: {targets.default_activity_label}\n"
-        f"Для расчета сегодня: {targets.effective_activity_label}\n"
-        f"{targets.activity_source_label}"
+        get_text(lang, "activity_header") + "\n" +
+        get_text(lang, "activity_default", activity=targets.default_activity_label(lang)) + "\n" +
+        get_text(lang, "activity_for_calc", activity=targets.effective_activity_label(lang)) + "\n" +
+        targets.activity_source_label(lang)
     )
     await output_message.answer(
         text,
-        reply_markup=build_main_menu(profile, bool(profile.assistant_enabled)),
+        reply_markup=build_main_menu(profile, bool(profile.assistant_enabled), lang),
     )
-    await output_message.answer("Действия:", reply_markup=build_activity_actions())
+    await output_message.answer(get_text(lang, "actions_header"), reply_markup=build_activity_actions(lang))
 
 
 async def _prompt_activity_today(
@@ -939,7 +1064,8 @@ async def _prompt_activity_today(
     telegram_id: int,
     username: str | None,
 ) -> None:
-    profile_service.ensure_user(telegram_id, username)
+    lang = _get_user_lang(telegram_id, profile_service, output_message.from_user)
+    profile_service.ensure_user(telegram_id, username, default_lang=lang)
     profile = profile_service.get_profile(telegram_id)
     if profile is None or not profile.is_complete:
         await state.clear()
@@ -948,17 +1074,17 @@ async def _prompt_activity_today(
             profile_service,
             telegram_id,
             username,
-            "Чтобы выбрать активность на сегодня, сначала заполни профиль через /profile.",
+            get_text(lang, "profile_incomplete_activity_today"),
         )
         return
 
     targets = profile_service.get_daily_targets(telegram_id)
     await state.set_state(ActivityTodayStates.waiting_for_activity_level)
     await output_message.answer(
-        "Выбери активность на сегодня.\n\n"
-        f"Сейчас для расчетов используется: {targets.effective_activity_label}\n"
-        f"{targets.activity_source_label}",
-        reply_markup=ACTIVITY_KEYBOARD,
+        get_text(lang, "prompt_activity_today") + "\n\n" +
+        get_text(lang, "activity_for_calc", activity=targets.effective_activity_label(lang)) + "\n" +
+        targets.activity_source_label(lang),
+        reply_markup=build_activity_keyboard(lang),
     )
 
 
@@ -968,7 +1094,8 @@ async def _reset_activity_today(
     telegram_id: int,
     username: str | None,
 ) -> None:
-    profile_service.ensure_user(telegram_id, username)
+    lang = _get_user_lang(telegram_id, profile_service, output_message.from_user)
+    profile_service.ensure_user(telegram_id, username, default_lang=lang)
     profile = profile_service.get_profile(telegram_id)
     if profile is None or profile.activity_level is None:
         await _send_with_main_menu(
@@ -976,16 +1103,33 @@ async def _reset_activity_today(
             profile_service,
             telegram_id,
             username,
-            "Сначала заполни профиль через /profile.",
+            get_text(lang, "profile_incomplete_activity_reset"),
         )
         return
 
     profile_service.clear_activity_override_for_today(telegram_id)
     targets = profile_service.get_daily_targets(telegram_id)
+    
+    # Format targets block
+    macros_text = get_text(
+        lang,
+        "macro_norms_values",
+        protein=_format_number(targets.protein_g),
+        fat=_format_number(targets.fat_g),
+        carbs=_format_number(targets.carbs_g),
+    )
+    targets_block = (
+        get_text(lang, "bmr_label", bmr=round(targets.bmr)) + "\n" +
+        get_text(lang, "tdee_label", tdee=round(targets.tdee)) + "\n" +
+        get_text(lang, "activity_for_calc", activity=targets.effective_activity_label(lang)) + "\n" +
+        targets.activity_source_label(lang) + "\n" +
+        get_text(lang, "macro_norms_header") + "\n" +
+        macros_text
+    )
+
     await output_message.answer(
-        "Активность на сегодня сброшена. Снова используется активность по умолчанию.\n\n"
-        f"{_format_targets_short_block(targets)}",
-        reply_markup=build_main_menu(profile, bool(profile.assistant_enabled)),
+        get_text(lang, "activity_reset_today", targets=targets_block),
+        reply_markup=build_main_menu(profile, bool(profile.assistant_enabled), lang),
     )
 
 
@@ -996,14 +1140,15 @@ async def _show_today(
     telegram_id: int,
     username: str | None,
 ) -> None:
-    profile_service.ensure_user(telegram_id, username)
+    lang = _get_user_lang(telegram_id, profile_service, output_message.from_user)
+    profile_service.ensure_user(telegram_id, username, default_lang=lang)
     if not profile_service.has_complete_profile(telegram_id):
         await _send_with_main_menu(
             output_message,
             profile_service,
             telegram_id,
             username,
-            "Профиль заполнен не полностью. Сначала используй /profile.",
+            get_text(lang, "profile_incomplete_today"),
         )
         return
 
@@ -1011,8 +1156,8 @@ async def _show_today(
     targets = profile_service.get_daily_targets(telegram_id)
     profile = profile_service.get_profile(telegram_id)
     await output_message.answer(
-        nutrition_service.format_today_with_targets(today, targets),
-        reply_markup=build_main_menu(profile, bool(profile and profile.assistant_enabled)),
+        nutrition_service.format_today_with_targets(today, targets, lang),
+        reply_markup=build_main_menu(profile, bool(profile and profile.assistant_enabled), lang),
     )
 
 
@@ -1023,10 +1168,11 @@ async def _prompt_search(
     telegram_id: int,
     username: str | None,
 ) -> None:
+    lang = _get_user_lang(telegram_id, profile_service, output_message.from_user)
     await state.set_state(SearchStates.waiting_for_query)
     await output_message.answer(
-        "Напиши название продукта для поиска.\nДля отмены нажми «Отмена».",
-        reply_markup=SEARCH_CANCEL_KEYBOARD,
+        get_text(lang, "prompt_search_query"),
+        reply_markup=build_search_cancel_keyboard(lang),
     )
 
 
@@ -1037,24 +1183,25 @@ async def _show_search_categories(
     telegram_id: int,
     username: str | None,
 ) -> None:
-    profile_service.ensure_user(telegram_id, username)
-    categories = nutrition_service.list_categories()
+    lang = _get_user_lang(telegram_id, profile_service, output_message.from_user)
+    profile_service.ensure_user(telegram_id, username, default_lang=lang)
+    categories = nutrition_service.list_categories(lang=lang)
     if not categories:
         await _send_with_main_menu(
             output_message,
             profile_service,
             telegram_id,
             username,
-            "Категории пока недоступны.",
+            get_text(lang, "categories_not_available"),
         )
         return
 
     profile = profile_service.get_profile(telegram_id)
     await output_message.answer(
-        "Выбери категорию или напиши /search с названием продукта.",
-        reply_markup=build_main_menu(profile, bool(profile and profile.assistant_enabled)),
+        get_text(lang, "choose_category_or_search"),
+        reply_markup=build_main_menu(profile, bool(profile and profile.assistant_enabled), lang),
     )
-    await output_message.answer("Категории:", reply_markup=build_search_categories(categories))
+    await output_message.answer(get_text(lang, "categories_header"), reply_markup=build_search_categories(categories))
 
 
 async def _show_category_products(
@@ -1065,18 +1212,19 @@ async def _show_category_products(
     username: str | None,
     category_slug: str,
 ) -> None:
-    products = nutrition_service.list_products_by_category(category_slug)
+    lang = _get_user_lang(telegram_id, profile_service, output_message.from_user)
+    products = nutrition_service.list_products_by_category(category_slug, lang=lang)
     if not products:
         await _send_with_main_menu(
             output_message,
             profile_service,
             telegram_id,
             username,
-            "В этой категории ничего не найдено.",
+            get_text(lang, "category_empty"),
         )
         return
 
-    lines = ["Продукты в категории:"]
+    lines = [get_text(lang, "category_products_header")]
     lines.extend(_format_product_summary(product) for product in products)
     await _send_with_main_menu(
         output_message,
@@ -1086,9 +1234,9 @@ async def _show_category_products(
         "\n".join(lines),
     )
     await output_message.answer(
-        "Можно отправить продукт обычным сообщением, например: <code>название 100</code>",
+        get_text(lang, "category_how_to_send"),
         reply_markup=InlineKeyboardMarkup(
-            inline_keyboard=[[InlineKeyboardButton(text=BUTTON_BACK, callback_data=CALLBACK_SEARCH_BACK)]]
+            inline_keyboard=[[InlineKeyboardButton(text=get_text(lang, "btn_back"), callback_data=CALLBACK_SEARCH_BACK)]]
         ),
     )
 
@@ -1101,6 +1249,7 @@ async def _perform_search(
     username: str | None,
     query: str,
 ) -> None:
+    lang = _get_user_lang(telegram_id, profile_service, output_message.from_user)
     matches = nutrition_service.search_products(query, telegram_id)
     if not matches:
         await _send_with_main_menu(
@@ -1108,11 +1257,11 @@ async def _perform_search(
             profile_service,
             telegram_id,
             username,
-            f"По запросу <code>{query}</code> ничего не найдено.",
+            get_text(lang, "search_not_found", query=query),
         )
         return
 
-    lines = ["Найдено:"]
+    lines = [get_text(lang, "search_found")]
     lines.extend(f"- {name}" for name in matches)
     await _send_with_main_menu(
         output_message,
@@ -1129,13 +1278,14 @@ async def _show_add_food_menu(
     telegram_id: int,
     username: str | None,
 ) -> None:
-    profile_service.ensure_user(telegram_id, username)
+    lang = _get_user_lang(telegram_id, profile_service, output_message.from_user)
+    profile_service.ensure_user(telegram_id, username, default_lang=lang)
     profile = profile_service.get_profile(telegram_id)
     await output_message.answer(
-        "Что сделать с личной едой?",
-        reply_markup=build_main_menu(profile, bool(profile and profile.assistant_enabled)),
+        get_text(lang, "add_food_menu_header"),
+        reply_markup=build_main_menu(profile, bool(profile and profile.assistant_enabled), lang),
     )
-    await output_message.answer("Выбери действие:", reply_markup=build_add_food_actions())
+    await output_message.answer(get_text(lang, "prompt_choose_action"), reply_markup=build_add_food_actions(lang))
 
 
 async def _prompt_add_food_product(
@@ -1145,16 +1295,12 @@ async def _prompt_add_food_product(
     telegram_id: int,
     username: str | None,
 ) -> None:
-    profile_service.ensure_user(telegram_id, username)
+    lang = _get_user_lang(telegram_id, profile_service, output_message.from_user)
+    profile_service.ensure_user(telegram_id, username, default_lang=lang)
     await state.set_state(AddFoodStates.waiting_for_product)
     await output_message.answer(
-        "Добавь личный продукт или готовое блюдо.\n\n"
-        "Формат на 100 г:\n"
-        "<code>название; ккал; белки; жиры; углеводы</code>\n\n"
-        "Пример:\n"
-        "<code>сырники домашние; 210; 14; 9; 20</code>\n\n"
-        "Эта еда будет видна только тебе.",
-        reply_markup=ADD_FOOD_CANCEL_KEYBOARD,
+        get_text(lang, "prompt_add_food_product"),
+        reply_markup=build_add_food_cancel_keyboard(lang),
     )
 
 
@@ -1165,20 +1311,21 @@ async def _show_user_products(
     telegram_id: int,
     username: str | None,
 ) -> None:
-    profile_service.ensure_user(telegram_id, username)
-    products = nutrition_service.list_user_products(telegram_id)
+    lang = _get_user_lang(telegram_id, profile_service, output_message.from_user)
+    profile_service.ensure_user(telegram_id, username, default_lang=lang)
+    products = nutrition_service.list_user_products(telegram_id, lang=lang)
     if not products:
         await _send_with_main_menu(
             output_message,
             profile_service,
             telegram_id,
             username,
-            "Личных продуктов пока нет. Нажми «Добавить продукт», чтобы сохранить свой вариант.",
+            get_text(lang, "personal_products_empty"),
         )
-        await output_message.answer("Действия:", reply_markup=build_add_food_actions())
+        await output_message.answer(get_text(lang, "prompt_choose_action"), reply_markup=build_add_food_actions(lang))
         return
 
-    lines = ["Мои продукты:"]
+    lines = [get_text(lang, "personal_products_header")]
     lines.extend(_format_product_summary(product) for product in products)
     await _send_with_main_menu(
         output_message,
@@ -1187,7 +1334,7 @@ async def _show_user_products(
         username,
         "\n".join(lines),
     )
-    await output_message.answer("Удаление:", reply_markup=build_user_product_actions(products))
+    await output_message.answer(get_text(lang, "actions_header"), reply_markup=build_user_product_actions(products, lang))
 
 
 async def _set_assistant_mode(
@@ -1197,25 +1344,26 @@ async def _set_assistant_mode(
     username: str | None,
     enabled: bool,
 ) -> None:
-    profile_service.ensure_user(telegram_id, username)
+    lang = _get_user_lang(telegram_id, profile_service, output_message.from_user)
+    profile_service.ensure_user(telegram_id, username, default_lang=lang)
     if enabled and not profile_service.has_complete_profile(telegram_id):
         await _send_with_main_menu(
             output_message,
             profile_service,
             telegram_id,
             username,
-            "Профиль заполнен не полностью. Сначала используй /profile.",
+            get_text(lang, "profile_incomplete_assistant"),
         )
         return
 
     profile_service.set_assistant_mode(telegram_id, enabled)
     profile = profile_service.get_profile(telegram_id)
     text = (
-        "Assistant mode включен. Теперь ответы на еду будут содержать итоги за сегодня, BMR, TDEE и расчетную норму БЖУ."
+        get_text(lang, "assistant_enabled_msg")
         if enabled
-        else "Assistant mode выключен. Бот снова отвечает только расчетом по сообщению."
+        else get_text(lang, "assistant_disabled_msg")
     )
-    await output_message.answer(text, reply_markup=build_main_menu(profile, bool(profile and profile.assistant_enabled)))
+    await output_message.answer(text, reply_markup=build_main_menu(profile, bool(profile and profile.assistant_enabled), lang))
 
 
 async def _send_with_main_menu(
@@ -1225,15 +1373,17 @@ async def _send_with_main_menu(
     username: str | None,
     text: str,
 ) -> None:
-    profile_service.ensure_user(telegram_id, username)
+    lang = _get_user_lang(telegram_id, profile_service, output_message.from_user)
+    profile_service.ensure_user(telegram_id, username, default_lang=lang)
     profile = profile_service.get_profile(telegram_id)
-    await output_message.answer(text, reply_markup=build_main_menu(profile, bool(profile and profile.assistant_enabled)))
+    await output_message.answer(text, reply_markup=build_main_menu(profile, bool(profile and profile.assistant_enabled), lang))
 
 
 async def _start_profile_onboarding(
     message: Message,
     state: FSMContext,
     profile: UserProfile | None,
+    lang: str = "ru",
 ) -> None:
     await state.clear()
     initial_data = {
@@ -1247,25 +1397,25 @@ async def _start_profile_onboarding(
     if profile is None or profile.sex is None:
         await state.set_state(ProfileCreateStates.waiting_for_sex)
         await message.answer(
-            "Давай настроим профиль.\nУкажи пол: male или female.",
-            reply_markup=SEX_KEYBOARD,
+            get_text(lang, "prompt_sex"),
+            reply_markup=build_sex_keyboard(lang),
         )
         return
     if profile.age is None:
         await state.set_state(ProfileCreateStates.waiting_for_age)
-        await message.answer("Отправь возраст в годах.", reply_markup=ReplyKeyboardRemove())
+        await message.answer(get_text(lang, "prompt_age"), reply_markup=ReplyKeyboardRemove())
         return
     if profile.height_cm is None:
         await state.set_state(ProfileCreateStates.waiting_for_height)
-        await message.answer("Отправь рост в см.", reply_markup=ReplyKeyboardRemove())
+        await message.answer(get_text(lang, "prompt_height"), reply_markup=ReplyKeyboardRemove())
         return
     if profile.weight_kg is None:
         await state.set_state(ProfileCreateStates.waiting_for_weight)
-        await message.answer("Отправь вес в кг.", reply_markup=ReplyKeyboardRemove())
+        await message.answer(get_text(lang, "prompt_weight"), reply_markup=ReplyKeyboardRemove())
         return
 
     await state.set_state(ProfileCreateStates.waiting_for_activity_level)
-    await message.answer("Осталось выбрать активность по умолчанию.", reply_markup=ACTIVITY_KEYBOARD)
+    await message.answer(get_text(lang, "prompt_activity"), reply_markup=build_activity_keyboard(lang))
 
 
 async def _save_profile_edit(
@@ -1275,67 +1425,54 @@ async def _save_profile_edit(
     field_name: str,
     value: str | int | float,
 ) -> None:
+    lang = _get_user_lang(message.from_user.id, profile_service, message.from_user)
     profile_service.update_profile_field(message.from_user.id, message.from_user.username, field_name, value)
     await state.clear()
     profile = profile_service.get_profile(message.from_user.id)
     targets = profile_service.get_daily_targets(message.from_user.id)
     await message.answer(
-        f"Профиль обновлен.\n\n{_format_profile_card(profile, targets)}",
-        reply_markup=build_main_menu(profile, bool(profile and profile.assistant_enabled)),
+        f"{get_text(lang, 'profile_updated')}\n\n{_format_profile_card(profile, targets, lang)}",
+        reply_markup=build_main_menu(profile, bool(profile and profile.assistant_enabled), lang),
     )
     if profile is not None:
-        await message.answer("Быстрые действия профиля:", reply_markup=build_profile_actions(profile))
+        await message.answer(get_text(lang, "profile_quick_actions"), reply_markup=build_profile_actions(profile, lang))
 
 
-def _format_profile_card(profile: UserProfile | None, targets: DailyNutritionTargets) -> str:
+def _format_profile_card(profile: UserProfile | None, targets: DailyNutritionTargets, lang: str = "ru") -> str:
     if profile is None or not profile.is_complete:
-        return "Профиль еще не заполнен."
+        return get_text(lang, "profile_incomplete")
 
-    sex_label = "Мужской" if profile.sex == "male" else "Женский"
-    assistant_label = "включен" if profile.assistant_enabled else "выключен"
-    return (
-        "Твой профиль:\n"
-        f"Пол: {sex_label}\n"
-        f"Возраст: {profile.age}\n"
-        f"Рост: {_format_number(profile.height_cm)} см\n"
-        f"Вес: {_format_number(profile.weight_kg)} кг\n"
-        f"Активность по умолчанию: {activity_label(str(profile.activity_level))}\n"
-        f"Assistant mode: {assistant_label}\n\n"
-        f"{_format_targets_short_block(targets)}"
+    sex_label = get_text(lang, "sex_male_label") if profile.sex == "male" else get_text(lang, "sex_female_label")
+    assistant_label = get_text(lang, "profile_status_enabled") if profile.assistant_enabled else get_text(lang, "profile_status_disabled")
+    
+    # Format targets block
+    macros_text = get_text(
+        lang,
+        "macro_norms_values",
+        protein=_format_number(targets.protein_g),
+        fat=_format_number(targets.fat_g),
+        carbs=_format_number(targets.carbs_g),
+    )
+    targets_block = (
+        get_text(lang, "bmr_label", bmr=round(targets.bmr)) + "\n" +
+        get_text(lang, "tdee_label", tdee=round(targets.tdee)) + "\n" +
+        get_text(lang, "activity_for_calc", activity=targets.effective_activity_label(lang)) + "\n" +
+        targets.activity_source_label(lang) + "\n" +
+        get_text(lang, "macro_norms_header") + "\n" +
+        macros_text + "\n" +
+        get_text(lang, "bmr_tdee_hint")
     )
 
-
-def _format_targets_short_block(targets: DailyNutritionTargets) -> str:
     return (
-        f"BMR: <b>{round(targets.bmr)}</b> ккал\n"
-        f"TDEE: <b>{round(targets.tdee)}</b> ккал\n"
-        f"Активность для расчета сегодня: {targets.effective_activity_label}\n"
-        f"{targets.activity_source_label}\n"
-        "Расчетная дневная норма БЖУ (приблизительно):\n"
-        f"Б: {_format_number(targets.protein_g)} г / "
-        f"Ж: {_format_number(targets.fat_g)} г / "
-        f"У: {_format_number(targets.carbs_g)} г\n"
-        "BMR — расход в покое, TDEE — расход с учетом активности.\n"
-        "Подробнее: /terms"
+        get_text(lang, "profile_card_header") + "\n" +
+        get_text(lang, "profile_sex_label", sex=sex_label) + "\n" +
+        get_text(lang, "profile_age_label", age=profile.age) + "\n" +
+        get_text(lang, "profile_height_label", height=_format_number(profile.height_cm)) + "\n" +
+        get_text(lang, "profile_weight_label", weight=_format_number(profile.weight_kg)) + "\n" +
+        get_text(lang, "profile_activity_label", activity=targets.default_activity_label(lang)) + "\n" +
+        get_text(lang, "profile_assistant_label", status=assistant_label) + "\n\n" +
+        targets_block
     )
-
-
-def _terms_text() -> str:
-    return (
-        "Короткая справка по метрикам:\n\n"
-        "BMR — базовый обмен веществ.\n"
-        "Это сколько калорий организм тратит в покое: на дыхание, работу сердца, мозга и органов.\n\n"
-        "TDEE — примерный расход калорий за день с учетом активности.\n"
-        "Это BMR, умноженный на выбранный уровень активности.\n\n"
-        "Расчетная дневная норма БЖУ — ориентир по белкам, жирам и углеводам, рассчитанный от TDEE.\n"
-        "Это приблизительный расчет, а не медицинская рекомендация."
-    )
-
-
-def _parse_activity_button(value: str | None) -> str | None:
-    if value is None:
-        return None
-    return ACTIVITY_VALUE_BY_BUTTON.get(value.strip())
 
 
 def _format_number(value: float | int | None) -> str:
@@ -1349,10 +1486,10 @@ def _format_number(value: float | int | None) -> str:
 
 def _format_product_summary(product) -> str:
     return (
-        f"- {product.name}: {round(product.calories_per_100g)} ккал, "
-        f"Б {_format_number(product.protein_per_100g)} / "
-        f"Ж {_format_number(product.fat_per_100g)} / "
-        f"У {_format_number(product.carbs_per_100g)}"
+        f"- {product.name}: {round(product.calories_per_100g)} kcal, "
+        f"P {_format_number(product.protein_per_100g)} / "
+        f"F {_format_number(product.fat_per_100g)} / "
+        f"C {_format_number(product.carbs_per_100g)}"
     )
 
 

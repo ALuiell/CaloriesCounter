@@ -466,6 +466,81 @@ def test_legacy_food_entries_schema_migrates_for_user_products(tmp_path: Path):
     assert entry_row["user_product_id"] is None
 
 
+def test_legacy_user_products_schema_backfills_multilingual_names(tmp_path: Path):
+    database_path = tmp_path / "legacy_user_products.sqlite3"
+    with sqlite3.connect(database_path) as conn:
+        conn.executescript(
+            """
+            CREATE TABLE users (
+                id INTEGER PRIMARY KEY AUTOINCREMENT,
+                telegram_id INTEGER NOT NULL UNIQUE,
+                username TEXT,
+                assistant_enabled INTEGER NOT NULL DEFAULT 0,
+                sex TEXT,
+                age INTEGER,
+                height_cm REAL,
+                weight_kg REAL,
+                activity_level TEXT,
+                created_at TEXT NOT NULL,
+                updated_at TEXT NOT NULL
+            );
+            CREATE TABLE user_products (
+                id INTEGER PRIMARY KEY AUTOINCREMENT,
+                user_id INTEGER NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+                name_ru TEXT NOT NULL,
+                normalized_name_ru TEXT NOT NULL,
+                calories_per_100g REAL NOT NULL,
+                protein_per_100g REAL NOT NULL,
+                fat_per_100g REAL NOT NULL,
+                carbs_per_100g REAL NOT NULL,
+                is_active INTEGER NOT NULL DEFAULT 1,
+                created_at TEXT NOT NULL,
+                updated_at TEXT NOT NULL,
+                UNIQUE(user_id, normalized_name_ru)
+            );
+            INSERT INTO users (telegram_id, username, created_at, updated_at)
+            VALUES (1, 'tester', 'now', 'now');
+            INSERT INTO user_products (
+                user_id,
+                name_ru,
+                normalized_name_ru,
+                calories_per_100g,
+                protein_per_100g,
+                fat_per_100g,
+                carbs_per_100g,
+                created_at,
+                updated_at
+            ) VALUES (1, 'сырники домашние', 'сырники домашние', 210, 14, 9, 20, 'now', 'now');
+            """
+        )
+
+    database = Database(database_path, "Europe/Kiev")
+    database.initialize()
+    profile_service = ProfileService(database)
+    profile_service.update_profile_language(1, "en")
+    nutrition_service = NutritionService(database)
+
+    with database.connection() as conn:
+        row = conn.execute(
+            """
+            SELECT name_en, normalized_name_en, name_uk, normalized_name_uk
+            FROM user_products
+            WHERE user_id = 1
+            """
+        ).fetchone()
+
+    assert row["name_en"] == "Syrniki homemade"
+    assert row["normalized_name_en"] == "syrniki homemade"
+    assert row["name_uk"] == "сирники домашні"
+    assert row["normalized_name_uk"] == "сирники домашні"
+    assert "Syrniki homemade (personal)" in nutrition_service.search_products("syrniki", telegram_id=1)
+
+    result = nutrition_service.process_message(1, "syrniki homemade 150")
+    assert len(result.recognized_items) == 1
+    assert result.recognized_items[0].product_source == "user"
+    assert round(result.total_calories) == 315
+
+
 def test_activity_override_affects_today_targets_only(tmp_path: Path):
     database = build_db(tmp_path)
     profile_service = ProfileService(database)
@@ -535,3 +610,127 @@ def test_cancel_labels_are_stable():
     assert BUTTON_ADD_FOOD == "Добавить еду"
     assert CANCEL_EDIT_PROFILE_TEXT == "Отмена"
     assert CANCEL_SEARCH_TEXT == "Отмена"
+
+
+def test_multilingual_profile_language_get_set(tmp_path: Path):
+    database = build_db(tmp_path)
+    profile_service = ProfileService(database)
+    
+    # 1. Default creation sets default language
+    profile_service.ensure_user(1, "tester", default_lang="uk")
+    profile = profile_service.get_profile(1)
+    assert profile.language == "uk"
+    
+    # 2. Update language updates correctly
+    profile_service.update_profile_language(1, "en")
+    profile = profile_service.get_profile(1)
+    assert profile.language == "en"
+
+
+def test_multilingual_product_search_and_calculation(tmp_path: Path):
+    database = build_db(tmp_path)
+    profile_service = ProfileService(database)
+    profile_service.ensure_user(1, "tester", default_lang="en")
+    service = NutritionService(database)
+    
+    # 1. Search product in English
+    matches_en = service.search_products("rice", telegram_id=1)
+    assert matches_en
+    assert any("rice" in m.lower() for m in matches_en)
+    
+    # 2. Process message in English
+    result_en = service.process_message(1, "rice 150")
+    assert len(result_en.recognized_items) == 1
+    assert result_en.recognized_items[0].display_name == "Rice white cooked"
+    assert result_en.recognized_items[0].weight_g == 150.0
+    
+    # 3. Ukrainian support
+    profile_service.update_profile_language(1, "uk")
+    result_uk = service.process_message(1, "рис 150")
+    assert len(result_uk.recognized_items) == 1
+    assert result_uk.recognized_items[0].display_name == "рис білий варений"
+
+
+def test_multilingual_formatting_replies(tmp_path: Path):
+    database = build_db(tmp_path)
+    profile_service = ProfileService(database)
+    create_complete_profile(profile_service, telegram_id=1)
+    profile_service.update_profile_language(1, "en")
+    service = NutritionService(database)
+    
+    # Process message in English
+    result = service.process_message(1, "rice 100")
+    reply = service.format_calc_reply(result, lang="en")
+    
+    assert "Total:" in reply
+    assert "Protein:" in reply
+    assert "Fat:" in reply
+    assert "Carbs:" in reply
+
+
+def test_multilingual_personal_product_creation_and_parsing(tmp_path: Path):
+    database = build_db(tmp_path)
+    profile_service = ProfileService(database)
+    profile_service.ensure_user(1, "tester", default_lang="en")
+    service = NutritionService(database)
+
+    # 1. Create personal product in English
+    service.create_user_product(
+        telegram_id=1,
+        username="tester",
+        name_input="syrniki",
+        calories_per_100g=210,
+        protein_per_100g=14,
+        fat_per_100g=9,
+        carbs_per_100g=20,
+        input_lang="en"
+    )
+
+    # 2. Search for it in English
+    matches_en = service.search_products("syrniki", telegram_id=1)
+    assert matches_en
+    assert "Syrniki (personal)" in matches_en
+
+    # 3. Parse it in English
+    result_en = service.process_message(1, "syrniki 150")
+    assert len(result_en.recognized_items) == 1
+    assert result_en.recognized_items[0].product_source == "user"
+    assert round(result_en.total_calories) == 315
+
+
+def test_multilingual_language_autodetection(tmp_path: Path):
+    from unittest.mock import Mock
+    database = build_db(tmp_path)
+    profile_service = ProfileService(database)
+    
+    # Simulate a user migrated with 'ru' and language_set=0
+    profile_service.ensure_user(1, "legacy_user", default_lang="ru")
+    with database.connection() as conn:
+        conn.execute("UPDATE users SET language_set = 0 WHERE telegram_id = 1")
+    
+    # Now simulate they send a message with English TG client
+    from app.handlers.bot import _get_user_lang
+    mock_from_user = Mock()
+    mock_from_user.language_code = "en"
+    
+    # 1. _get_user_lang should return "en" because language_set is 0
+    detected_lang = _get_user_lang(1, profile_service, mock_from_user)
+    assert detected_lang == "en"
+    
+    # 2. ensure_user is called with the detected_lang
+    profile_service.ensure_user(1, "legacy_user", default_lang=detected_lang)
+    
+    # 3. The database should now have 'en', but language_set should still be 0
+    profile = profile_service.get_profile(1)
+    assert profile.language == "en"
+    assert not profile.language_set
+    
+    # 4. If they explicitly change it
+    profile_service.update_profile_language(1, "uk")
+    profile = profile_service.get_profile(1)
+    assert profile.language == "uk"
+    assert profile.language_set
+    
+    # 5. _get_user_lang should now stick to "uk" even if TG is "en"
+    detected_lang_again = _get_user_lang(1, profile_service, mock_from_user)
+    assert detected_lang_again == "uk"

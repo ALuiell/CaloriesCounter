@@ -32,6 +32,8 @@ class UserProfile:
     height_cm: float | None
     weight_kg: float | None
     activity_level: str | None
+    language: str = "ru"
+    language_set: bool = False
 
     @property
     def is_complete(self) -> bool:
@@ -52,23 +54,22 @@ class DailyNutritionTargets:
     effective_activity_level: str
     activity_source: str
 
-    @property
-    def default_activity_label(self) -> str:
-        return activity_label(self.default_activity_level)
+    def default_activity_label(self, lang: str = "ru") -> str:
+        return activity_label(self.default_activity_level, lang)
 
-    @property
-    def effective_activity_label(self) -> str:
-        return activity_label(self.effective_activity_level)
+    def effective_activity_label(self, lang: str = "ru") -> str:
+        return activity_label(self.effective_activity_level, lang)
 
-    @property
-    def activity_source_label(self) -> str:
+    def activity_source_label(self, lang: str = "ru") -> str:
+        from app.core.i18n import get_text
         if self.activity_source == "override":
-            return "На сегодня используется override активности."
-        return "Использована активность по умолчанию."
+            return get_text(lang, "activity_override_active")
+        return get_text(lang, "activity_default_used")
 
 
-def activity_label(activity_level: str) -> str:
-    return ACTIVITY_LABELS.get(activity_level, activity_level)
+def activity_label(activity_level: str, lang: str = "ru") -> str:
+    from app.core.i18n import get_text
+    return get_text(lang, f"activity_{activity_level}")
 
 
 def calculate_bmr(sex: str, age: int, height_cm: float, weight_kg: float) -> float:
@@ -93,31 +94,41 @@ class ProfileService:
     def __init__(self, database: Database) -> None:
         self.database = database
 
-    def ensure_user(self, telegram_id: int, username: str | None) -> None:
+    def ensure_user(self, telegram_id: int, username: str | None, default_lang: str | None = None) -> None:
         now = self.database.now_iso()
         with self.database.connection() as conn:
             existing = conn.execute(
-                "SELECT id FROM users WHERE telegram_id = ?",
+                "SELECT id, language_set, language FROM users WHERE telegram_id = ?",
                 (telegram_id,),
             ).fetchone()
             if existing:
-                conn.execute(
-                    "UPDATE users SET username = ?, updated_at = ? WHERE telegram_id = ?",
-                    (username, now, telegram_id),
-                )
+                lang_set = bool(existing["language_set"]) if "language_set" in existing.keys() else True
+                current_lang = existing["language"] if "language" in existing.keys() else "ru"
+                if not lang_set and default_lang and current_lang != default_lang:
+                    conn.execute(
+                        "UPDATE users SET username = ?, language = ?, updated_at = ? WHERE telegram_id = ?",
+                        (username, default_lang, now, telegram_id),
+                    )
+                else:
+                    conn.execute(
+                        "UPDATE users SET username = ?, updated_at = ? WHERE telegram_id = ?",
+                        (username, now, telegram_id),
+                    )
                 return
 
+            lang_to_insert = default_lang if default_lang else "ru"
             conn.execute(
                 """
                 INSERT INTO users (
                     telegram_id,
                     username,
                     assistant_enabled,
+                    language,
                     created_at,
                     updated_at
-                ) VALUES (?, ?, 0, ?, ?)
+                ) VALUES (?, ?, 0, ?, ?, ?)
                 """,
-                (telegram_id, username, now, now),
+                (telegram_id, username, lang_to_insert, now, now),
             )
 
     def update_profile(
@@ -198,7 +209,7 @@ class ProfileService:
         with self.database.connection() as conn:
             row = conn.execute(
                 """
-                SELECT telegram_id, username, assistant_enabled, sex, age, height_cm, weight_kg, activity_level
+                SELECT telegram_id, username, assistant_enabled, sex, age, height_cm, weight_kg, activity_level, language, language_set
                 FROM users
                 WHERE telegram_id = ?
                 """,
@@ -206,6 +217,16 @@ class ProfileService:
             ).fetchone()
         if row is None:
             return None
+        
+        # Check if language column exists in database keys (handles pre-migration in unit tests)
+        lang = "ru"
+        if "language" in row.keys() and row["language"] is not None:
+            lang = row["language"]
+            
+        lang_set = False
+        if "language_set" in row.keys() and row["language_set"] is not None:
+            lang_set = bool(row["language_set"])
+
         return UserProfile(
             telegram_id=int(row["telegram_id"]),
             username=row["username"],
@@ -215,7 +236,17 @@ class ProfileService:
             height_cm=float(row["height_cm"]) if row["height_cm"] is not None else None,
             weight_kg=float(row["weight_kg"]) if row["weight_kg"] is not None else None,
             activity_level=row["activity_level"],
+            language=lang,
+            language_set=lang_set,
         )
+
+    def update_profile_language(self, telegram_id: int, language: str) -> None:
+        now = self.database.now_iso()
+        with self.database.connection() as conn:
+            conn.execute(
+                "UPDATE users SET language = ?, language_set = 1, updated_at = ? WHERE telegram_id = ?",
+                (language, now, telegram_id),
+            )
 
     def set_activity_override_for_today(self, telegram_id: int, activity_level: str) -> None:
         self._validate_activity_level(activity_level)
