@@ -44,7 +44,11 @@ class SearchStates(StatesGroup):
     waiting_for_query = State()
 
 
-BUTTON_ADD_FOOD = "Еда"
+class AddFoodStates(StatesGroup):
+    waiting_for_product = State()
+
+
+BUTTON_ADD_FOOD = "Добавить еду"
 BUTTON_CREATE_PROFILE = "Профиль+"
 BUTTON_PROFILE = "Профиль"
 BUTTON_TODAY = "Сегодня"
@@ -57,6 +61,7 @@ BUTTON_ASSISTANT_OFF = "Выкл. assistant"
 CANCEL_TEXT = "Отмена"
 CANCEL_EDIT_PROFILE_TEXT = CANCEL_TEXT
 CANCEL_SEARCH_TEXT = CANCEL_TEXT
+CANCEL_ADD_FOOD_TEXT = CANCEL_TEXT
 
 BUTTON_ACTIVITY_TODAY = "Активность на сегодня"
 BUTTON_ACTIVITY_RESET = "Сбросить активность"
@@ -72,6 +77,12 @@ CALLBACK_PROFILE_TERMS = "profile:terms"
 CALLBACK_ACTIVITY_CHANGE = "activity:change"
 CALLBACK_ACTIVITY_RESET = "activity:reset"
 CALLBACK_ACTIVITY_BACK = "activity:back"
+CALLBACK_SEARCH_CATEGORY_PREFIX = "search:cat:"
+CALLBACK_SEARCH_BACK = "search:back"
+CALLBACK_ADD_FOOD_NEW = "add_food:new"
+CALLBACK_ADD_FOOD_LIST = "add_food:list"
+CALLBACK_ADD_FOOD_DELETE_PREFIX = "add_food:delete:"
+CALLBACK_ADD_FOOD_BACK = "add_food:back"
 
 SEX_KEYBOARD = ReplyKeyboardMarkup(
     keyboard=[[KeyboardButton(text="male"), KeyboardButton(text="female")]],
@@ -111,6 +122,12 @@ EDIT_PROFILE_KEYBOARD = ReplyKeyboardMarkup(
 
 SEARCH_CANCEL_KEYBOARD = ReplyKeyboardMarkup(
     keyboard=[[KeyboardButton(text=CANCEL_SEARCH_TEXT)]],
+    resize_keyboard=True,
+    one_time_keyboard=True,
+)
+
+ADD_FOOD_CANCEL_KEYBOARD = ReplyKeyboardMarkup(
+    keyboard=[[KeyboardButton(text=CANCEL_ADD_FOOD_TEXT)]],
     resize_keyboard=True,
     one_time_keyboard=True,
 )
@@ -195,6 +212,42 @@ def build_activity_actions() -> InlineKeyboardMarkup:
             [InlineKeyboardButton(text=BUTTON_BACK, callback_data=CALLBACK_ACTIVITY_BACK)],
         ]
     )
+
+
+def build_search_categories(categories) -> InlineKeyboardMarkup:
+    rows = [
+        [
+            InlineKeyboardButton(
+                text=f"{category.name} ({category.count})",
+                callback_data=f"{CALLBACK_SEARCH_CATEGORY_PREFIX}{category.slug}",
+            )
+        ]
+        for category in categories
+    ]
+    return InlineKeyboardMarkup(inline_keyboard=rows)
+
+
+def build_add_food_actions() -> InlineKeyboardMarkup:
+    return InlineKeyboardMarkup(
+        inline_keyboard=[
+            [InlineKeyboardButton(text="Добавить продукт", callback_data=CALLBACK_ADD_FOOD_NEW)],
+            [InlineKeyboardButton(text="Мои продукты", callback_data=CALLBACK_ADD_FOOD_LIST)],
+        ]
+    )
+
+
+def build_user_product_actions(products) -> InlineKeyboardMarkup:
+    rows = [
+        [
+            InlineKeyboardButton(
+                text=f"Удалить: {product.name}",
+                callback_data=f"{CALLBACK_ADD_FOOD_DELETE_PREFIX}{product.id}",
+            )
+        ]
+        for product in products
+    ]
+    rows.append([InlineKeyboardButton(text=BUTTON_BACK, callback_data=CALLBACK_ADD_FOOD_BACK)])
+    return InlineKeyboardMarkup(inline_keyboard=rows)
 
 
 def register_handlers(dispatcher: Dispatcher, database: Database) -> None:
@@ -367,19 +420,86 @@ def register_handlers(dispatcher: Dispatcher, database: Database) -> None:
                 callback.from_user.username,
             )
 
+    @router.callback_query(F.data == CALLBACK_SEARCH_BACK)
+    async def search_back_callback(callback: CallbackQuery) -> None:
+        await callback.answer()
+        if callback.message is not None:
+            await _show_search_categories(
+                callback.message,
+                nutrition_service,
+                profile_service,
+                callback.from_user.id,
+                callback.from_user.username,
+            )
+
+    @router.callback_query(F.data.startswith(CALLBACK_SEARCH_CATEGORY_PREFIX))
+    async def search_category_callback(callback: CallbackQuery) -> None:
+        await callback.answer()
+        category_slug = str(callback.data).removeprefix(CALLBACK_SEARCH_CATEGORY_PREFIX)
+        if callback.message is not None:
+            await _show_category_products(
+                callback.message,
+                nutrition_service,
+                profile_service,
+                callback.from_user.id,
+                callback.from_user.username,
+                category_slug,
+            )
+
+    @router.callback_query(F.data == CALLBACK_ADD_FOOD_NEW)
+    async def add_food_new_callback(callback: CallbackQuery, state: FSMContext) -> None:
+        await callback.answer()
+        if callback.message is not None:
+            await _prompt_add_food_product(
+                callback.message,
+                state,
+                profile_service,
+                callback.from_user.id,
+                callback.from_user.username,
+            )
+
+    @router.callback_query(F.data == CALLBACK_ADD_FOOD_LIST)
+    async def add_food_list_callback(callback: CallbackQuery) -> None:
+        await callback.answer()
+        if callback.message is not None:
+            await _show_user_products(
+                callback.message,
+                nutrition_service,
+                profile_service,
+                callback.from_user.id,
+                callback.from_user.username,
+            )
+
+    @router.callback_query(F.data == CALLBACK_ADD_FOOD_BACK)
+    async def add_food_back_callback(callback: CallbackQuery) -> None:
+        await callback.answer()
+        if callback.message is not None:
+            await _show_add_food_menu(
+                callback.message,
+                profile_service,
+                callback.from_user.id,
+                callback.from_user.username,
+            )
+
+    @router.callback_query(F.data.startswith(CALLBACK_ADD_FOOD_DELETE_PREFIX))
+    async def add_food_delete_callback(callback: CallbackQuery) -> None:
+        product_id_text = str(callback.data).removeprefix(CALLBACK_ADD_FOOD_DELETE_PREFIX)
+        product_id = _parse_int(product_id_text)
+        deleted = product_id is not None and nutrition_service.delete_user_product(callback.from_user.id, product_id)
+        await callback.answer("Удалено" if deleted else "Не найдено")
+        if callback.message is not None:
+            await _show_user_products(
+                callback.message,
+                nutrition_service,
+                profile_service,
+                callback.from_user.id,
+                callback.from_user.username,
+            )
+
     @router.message(F.text == BUTTON_ADD_FOOD)
     async def add_food_button_handler(message: Message, state: FSMContext) -> None:
         await state.clear()
-        await _send_with_main_menu(
-            message,
-            profile_service,
-            message.from_user.id,
-            message.from_user.username,
-            "Отправь еду обычным текстом.\n"
-            "Примеры:\n"
-            "<code>гречка 120, курица 180</code>\n"
-            "<code>рис 100\nпомидор 80</code>",
-        )
+        await _show_add_food_menu(message, profile_service, message.from_user.id, message.from_user.username)
 
     @router.message(F.text == BUTTON_CREATE_PROFILE)
     async def create_profile_button_handler(message: Message, state: FSMContext) -> None:
@@ -406,7 +526,8 @@ def register_handlers(dispatcher: Dispatcher, database: Database) -> None:
 
     @router.message(F.text == BUTTON_SEARCH)
     async def search_button_handler(message: Message, state: FSMContext) -> None:
-        await _prompt_search(message, state, profile_service, message.from_user.id, message.from_user.username)
+        await state.clear()
+        await _show_search_categories(message, nutrition_service, profile_service, message.from_user.id, message.from_user.username)
 
     @router.message(F.text == BUTTON_HELP)
     async def help_button_handler(message: Message) -> None:
@@ -471,6 +592,52 @@ def register_handlers(dispatcher: Dispatcher, database: Database) -> None:
             message.from_user.id,
             message.from_user.username,
             text,
+        )
+
+    @router.message(AddFoodStates.waiting_for_product)
+    async def add_food_product_handler(message: Message, state: FSMContext) -> None:
+        text = (message.text or "").strip()
+        if text == CANCEL_ADD_FOOD_TEXT:
+            await state.clear()
+            await _send_with_main_menu(
+                message,
+                profile_service,
+                message.from_user.id,
+                message.from_user.username,
+                "Добавление еды отменено.",
+            )
+            return
+
+        parsed = _parse_user_product_input(text)
+        if parsed is None:
+            await message.answer(
+                "Не получилось разобрать продукт.\n"
+                "Формат: <code>название; ккал; белки; жиры; углеводы</code>\n"
+                "Пример: <code>сырники домашние; 210; 14; 9; 20</code>",
+                reply_markup=ADD_FOOD_CANCEL_KEYBOARD,
+            )
+            return
+
+        name_ru, calories, protein, fat, carbs = parsed
+        nutrition_service.create_user_product(
+            message.from_user.id,
+            message.from_user.username,
+            name_ru,
+            calories,
+            protein,
+            fat,
+            carbs,
+        )
+        await state.clear()
+        await _send_with_main_menu(
+            message,
+            profile_service,
+            message.from_user.id,
+            message.from_user.username,
+            "Сохранил личную еду:\n"
+            f"<b>{name_ru}</b> на 100 г: {round(calories)} ккал, "
+            f"Б {_format_number(protein)} / Ж {_format_number(fat)} / У {_format_number(carbs)}.\n\n"
+            f"Теперь можно писать: <code>{name_ru} 150</code>",
         )
 
     @router.message(ProfileCreateStates.waiting_for_sex)
@@ -669,11 +836,15 @@ async def _show_help(
         telegram_id,
         username,
         "Как пользоваться ботом:\n\n"
-        f"1. {BUTTON_ADD_FOOD} — отправь еду обычным текстом.\n"
-        f"2. {BUTTON_PROFILE} или {BUTTON_CREATE_PROFILE} — настрой профиль.\n"
-        f"3. {BUTTON_TODAY} — смотри итог за сегодня.\n"
-        f"4. {BUTTON_ACTIVITY} — меняй активность на сегодня.\n"
-        f"5. {BUTTON_SEARCH} — ищи продукты по базе.\n\n"
+        "1. Отправь еду обычным текстом.\n"
+        "Примеры:\n"
+        "<code>гречка 120, курица 180</code>\n"
+        "<code>рис 100\nпомидор 80</code>\n\n"
+        f"2. {BUTTON_ADD_FOOD} — добавь личный продукт или готовое блюдо, если его нет в базе.\n"
+        f"3. {BUTTON_PROFILE} или {BUTTON_CREATE_PROFILE} — настрой профиль.\n"
+        f"4. {BUTTON_TODAY} — смотри итог за сегодня.\n"
+        f"5. {BUTTON_ACTIVITY} — меняй активность на сегодня.\n"
+        f"6. {BUTTON_SEARCH} — ищи продукты по базе.\n\n"
         "Команды тоже работают, но кнопки теперь основной способ навигации.\n"
         "Что такое BMR и TDEE: /terms",
     )
@@ -859,6 +1030,69 @@ async def _prompt_search(
     )
 
 
+async def _show_search_categories(
+    output_message: Message,
+    nutrition_service: NutritionService,
+    profile_service: ProfileService,
+    telegram_id: int,
+    username: str | None,
+) -> None:
+    profile_service.ensure_user(telegram_id, username)
+    categories = nutrition_service.list_categories()
+    if not categories:
+        await _send_with_main_menu(
+            output_message,
+            profile_service,
+            telegram_id,
+            username,
+            "Категории пока недоступны.",
+        )
+        return
+
+    profile = profile_service.get_profile(telegram_id)
+    await output_message.answer(
+        "Выбери категорию или напиши /search с названием продукта.",
+        reply_markup=build_main_menu(profile, bool(profile and profile.assistant_enabled)),
+    )
+    await output_message.answer("Категории:", reply_markup=build_search_categories(categories))
+
+
+async def _show_category_products(
+    output_message: Message,
+    nutrition_service: NutritionService,
+    profile_service: ProfileService,
+    telegram_id: int,
+    username: str | None,
+    category_slug: str,
+) -> None:
+    products = nutrition_service.list_products_by_category(category_slug)
+    if not products:
+        await _send_with_main_menu(
+            output_message,
+            profile_service,
+            telegram_id,
+            username,
+            "В этой категории ничего не найдено.",
+        )
+        return
+
+    lines = ["Продукты в категории:"]
+    lines.extend(_format_product_summary(product) for product in products)
+    await _send_with_main_menu(
+        output_message,
+        profile_service,
+        telegram_id,
+        username,
+        "\n".join(lines),
+    )
+    await output_message.answer(
+        "Можно отправить продукт обычным сообщением, например: <code>название 100</code>",
+        reply_markup=InlineKeyboardMarkup(
+            inline_keyboard=[[InlineKeyboardButton(text=BUTTON_BACK, callback_data=CALLBACK_SEARCH_BACK)]]
+        ),
+    )
+
+
 async def _perform_search(
     output_message: Message,
     nutrition_service: NutritionService,
@@ -867,7 +1101,7 @@ async def _perform_search(
     username: str | None,
     query: str,
 ) -> None:
-    matches = nutrition_service.search_products(query)
+    matches = nutrition_service.search_products(query, telegram_id)
     if not matches:
         await _send_with_main_menu(
             output_message,
@@ -887,6 +1121,73 @@ async def _perform_search(
         username,
         "\n".join(lines),
     )
+
+
+async def _show_add_food_menu(
+    output_message: Message,
+    profile_service: ProfileService,
+    telegram_id: int,
+    username: str | None,
+) -> None:
+    profile_service.ensure_user(telegram_id, username)
+    profile = profile_service.get_profile(telegram_id)
+    await output_message.answer(
+        "Что сделать с личной едой?",
+        reply_markup=build_main_menu(profile, bool(profile and profile.assistant_enabled)),
+    )
+    await output_message.answer("Выбери действие:", reply_markup=build_add_food_actions())
+
+
+async def _prompt_add_food_product(
+    output_message: Message,
+    state: FSMContext,
+    profile_service: ProfileService,
+    telegram_id: int,
+    username: str | None,
+) -> None:
+    profile_service.ensure_user(telegram_id, username)
+    await state.set_state(AddFoodStates.waiting_for_product)
+    await output_message.answer(
+        "Добавь личный продукт или готовое блюдо.\n\n"
+        "Формат на 100 г:\n"
+        "<code>название; ккал; белки; жиры; углеводы</code>\n\n"
+        "Пример:\n"
+        "<code>сырники домашние; 210; 14; 9; 20</code>\n\n"
+        "Эта еда будет видна только тебе.",
+        reply_markup=ADD_FOOD_CANCEL_KEYBOARD,
+    )
+
+
+async def _show_user_products(
+    output_message: Message,
+    nutrition_service: NutritionService,
+    profile_service: ProfileService,
+    telegram_id: int,
+    username: str | None,
+) -> None:
+    profile_service.ensure_user(telegram_id, username)
+    products = nutrition_service.list_user_products(telegram_id)
+    if not products:
+        await _send_with_main_menu(
+            output_message,
+            profile_service,
+            telegram_id,
+            username,
+            "Личных продуктов пока нет. Нажми «Добавить продукт», чтобы сохранить свой вариант.",
+        )
+        await output_message.answer("Действия:", reply_markup=build_add_food_actions())
+        return
+
+    lines = ["Мои продукты:"]
+    lines.extend(_format_product_summary(product) for product in products)
+    await _send_with_main_menu(
+        output_message,
+        profile_service,
+        telegram_id,
+        username,
+        "\n".join(lines),
+    )
+    await output_message.answer("Удаление:", reply_markup=build_user_product_actions(products))
 
 
 async def _set_assistant_mode(
@@ -1046,6 +1347,15 @@ def _format_number(value: float | int | None) -> str:
     return text
 
 
+def _format_product_summary(product) -> str:
+    return (
+        f"- {product.name}: {round(product.calories_per_100g)} ккал, "
+        f"Б {_format_number(product.protein_per_100g)} / "
+        f"Ж {_format_number(product.fat_per_100g)} / "
+        f"У {_format_number(product.carbs_per_100g)}"
+    )
+
+
 def _parse_int(value: str | None) -> int | None:
     if value is None:
         return None
@@ -1062,3 +1372,27 @@ def _parse_float(value: str | None) -> float | None:
         return float(value.strip().replace(",", "."))
     except ValueError:
         return None
+
+
+def _parse_user_product_input(value: str) -> tuple[str, float, float, float, float] | None:
+    parts = [part.strip() for part in value.split(";")]
+    if len(parts) != 5:
+        return None
+
+    name_ru = parts[0]
+    if len(name_ru) < 2:
+        return None
+
+    calories = _parse_float(parts[1])
+    protein = _parse_float(parts[2])
+    fat = _parse_float(parts[3])
+    carbs = _parse_float(parts[4])
+    if calories is None or protein is None or fat is None or carbs is None:
+        return None
+
+    if not (0 <= calories <= 1000):
+        return None
+    if not (0 <= protein <= 100 and 0 <= fat <= 100 and 0 <= carbs <= 100):
+        return None
+
+    return name_ru, calories, protein, fat, carbs

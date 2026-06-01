@@ -2,21 +2,20 @@
 
 ## Purpose
 
-This document defines the data structures needed for the current Level 1 MVP and for later expansion.
+This document defines the data structures used by the current bot and the main expected expansion points.
 
-The Level 1 priority is product import and product lookup.
-
-## Level 1 Core Entities
+## Current Core Entities
 
 ### Product
 
-This is the main imported product record used for lookup and macro calculation.
+Imported product record used for lookup and macro calculation.
 
-Recommended fields:
+Current fields:
 
 - `id`
 - `slug`
 - `name_ru`
+- `normalized_name_ru`
 - `category`
 - `state`
 - `usda_description`
@@ -32,59 +31,88 @@ Recommended fields:
 
 Notes:
 
-- `name_ru` is the primary Level 1 lookup name
+- `name_ru` is the main display and lookup name
+- normalized fields are used for exact normalized matching
 - macros are stored per 100 grams
-- `state` is important for cases such as cooked vs dry products
-- USDA reference fields are stored for traceability and future seed expansion
 
 ### ProductAlias
 
-Used for lookup variants.
+Lookup variants for products.
 
-Recommended fields:
+Current fields:
 
 - `id`
 - `product_id`
 - `alias`
+- `normalized_alias`
 - `language`
 - `created_at`
 
 Notes:
 
-- Level 1 should primarily store Russian aliases
-- later expansion may add English and Ukrainian aliases
-- a normalized alias index is recommended for fast lookup
-
-## Later Expansion Entities
+- current primary language is Russian
+- normalized aliases are indexed for fast lookup
 
 ### User
 
-Useful after Level 1:
+Current profile and assistant-mode user record.
+
+Current fields:
 
 - `id`
 - `telegram_id`
 - `username`
+- `assistant_enabled`
 - `sex`
 - `age`
 - `height_cm`
 - `weight_kg`
 - `activity_level`
-- `goal_type`
-- `target_calories`
-- `target_protein_g`
-- `target_fat_g`
-- `target_carbs_g`
 - `created_at`
 - `updated_at`
 
-### FoodEntry
+Notes:
 
-Useful after Level 1 when entry storage is introduced:
+- the profile is considered complete only when all profile fields are filled
+- `assistant_enabled` controls whether diary-style replies and entry storage are active
+
+### UserProduct
+
+User-scoped product or prepared meal added by a Telegram user.
+
+Current fields:
 
 - `id`
 - `user_id`
+- `name_ru`
+- `normalized_name_ru`
+- `calories_per_100g`
+- `protein_per_100g`
+- `fat_per_100g`
+- `carbs_per_100g`
+- `is_active`
+- `created_at`
+- `updated_at`
+
+Notes:
+
+- personal products are unique by user and normalized name
+- personal products are visible only to their owner
+- lookup checks personal products before the shared curated database
+- deletion is currently a soft delete through `is_active`
+
+### FoodEntry
+
+Stored recognized food item used for daily totals.
+
+Current fields:
+
+- `id`
+- `user_id`
+- `product_source`
 - `product_id`
-- `raw_text`
+- `user_product_id`
+- `raw_item_text`
 - `product_text`
 - `weight_g`
 - `calories`
@@ -94,30 +122,58 @@ Useful after Level 1 when entry storage is introduced:
 - `consumed_at`
 - `created_at`
 
-### ParseLog
+Notes:
 
-Useful when parse logging is introduced:
+- entries are currently used for `/today`
+- storage is tied to assistant-mode flows
+- entries can point to either a shared product or a personal product
+
+### UserActivityOverride
+
+Temporary activity selection for the current day.
+
+Current fields:
 
 - `id`
 - `user_id`
-- `raw_message`
-- `status`
-- `error_reason`
+- `activity_level`
+- `activity_date`
 - `created_at`
+- `updated_at`
+
+Notes:
+
+- one override is allowed per user per date
+- if no override exists for today, the profile activity level is used
+
+## Derived Domain Objects
+
+The service layer also uses derived objects:
+
+- `UserProfile` - read model for current profile state
+- `DailyNutritionTargets` - BMR, TDEE, macro targets, and effective activity metadata
+
+These are runtime objects, not database tables.
 
 ## Recommended Indexes
 
-- `products.name_ru`
-- `products.slug`
-- `product_aliases.alias`
-- later: `users.telegram_id`
-- later: `food_entries.user_id + consumed_at`
+Current indexes:
 
-## Data Notes
+- `products.normalized_name_ru`
+- `product_aliases.normalized_alias`
+- `users.telegram_id`
+- `user_products.user_id + normalized_name_ru`
+- `food_entries.user_id + consumed_at`
+- `user_activity_overrides.user_id + activity_date`
 
-- Products should be imported from the starter seed, not queried directly from the large USDA JSON at runtime.
-- Product lookup should be aligned with the current starter seed fields and alias model.
-- SQLite is sufficient for MVP.
+## Expansion Points
+
+Likely later additions:
+
+- goal fields for target adjustment
+- richer history queries
+- personal product aliases and edit/delete flows
+- optional parse logging if operational visibility becomes necessary
 
 ## Related Files
 

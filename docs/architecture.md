@@ -2,48 +2,43 @@
 
 ## Purpose
 
-This document describes the recommended project structure and responsibility split for the MVP foundation.
+This document describes the current project structure and responsibility split.
 
 ## Architectural Approach
 
-For MVP, a simple modular architecture is recommended:
+The project uses a compact modular structure:
 
-- `bot` - Telegram handlers and flows
-- `services` - business logic
-- `repositories` - database access
-- `models` - ORM models
-- `schemas` - input and output schemas
-- `parsers` - text message parsing
-- `utils` - shared helper functions
+- `handlers` - Telegram command, button, and FSM flows
+- `services` - business logic for nutrition, parsing, normalization, and profile behavior
+- `db` - SQLite schema bootstrap and seed import
+- `schemas` - structured nutrition result models
+- `core` - configuration and logging
 
-## Proposed Project Structure
+## Current Project Structure
 
 ```text
 CaloriesCounter/
   app/
-    bot/
-      handlers/
-      keyboards/
-      middlewares/
     core/
       config.py
       logging.py
     db/
-      models/
-      repositories/
-      migrations/
-    services/
-      nutrition_service.py
-      profile_service.py
-      diary_service.py
-    parsers/
-      food_parser.py
+      database.py
+      seed.py
+    handlers/
+      bot.py
     schemas/
-      user.py
-      food_entry.py
       nutrition.py
+    services/
+      normalization.py
+      nutrition.py
+      parser.py
+      profile.py
+    bot.py
     main.py
+  data/
   docs/
+  scripts/
   tests/
 ```
 
@@ -51,44 +46,54 @@ CaloriesCounter/
 
 ### Nutrition Service
 
-Current Level 1 priority:
+Current responsibilities:
 
-- product lookup
-- calorie and macro calculation
-- result aggregation for the current message
+- parse food messages through the parser service
+- resolve products by normalized Russian name or alias
+- calculate calories and macros
+- format calc and assistant replies
+- persist recognized items for assistant-mode diary behavior
+- aggregate current-day totals
+- search products
+- create and resolve personal user-scoped products
 
 ### Food Parser
 
-Current Level 1 priority:
+Current responsibilities:
 
-- splitting messages into lines
-- extracting product name and weight
-- text normalization
-- returning structured parse results
+- split messages into independent items
+- accept comma-separated and newline-separated input
+- extract product name and weight
+- return structured parse results even for partially invalid input
 
 ### Profile Service
 
-Planned for later levels:
+Current responsibilities:
 
-- profile creation
-- profile updates
-- daily target calculation
+- ensure user records exist
+- create and update profile fields
+- validate activity levels
+- calculate BMR and TDEE
+- derive approximate daily macro targets
+- manage current-day activity overrides
+- expose complete-profile checks for assistant mode
 
-### Diary Service
+### Database Layer
 
-Planned for later levels:
+Current responsibilities:
 
-- saving entries
-- daily totals
-- entry editing
-- entry deletion
+- initialize SQLite schema
+- apply lightweight legacy migration support
+- expose timezone-aware timestamps and current local date
+- support tables for products, aliases, users, food entries, and activity overrides
+- support personal products without exposing them to other users
 
 ## Why This Structure Works
 
-- it is easy to test by module
+- it is easy to test by service
 - it keeps Telegram-specific code separate from business logic
-- it supports later database changes
-- it makes future feature growth easier
+- it keeps the SQLite MVP lightweight
+- it supports further growth into goals, history, and richer parsing
 
 ## Related Files
 

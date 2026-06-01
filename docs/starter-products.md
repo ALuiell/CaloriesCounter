@@ -7,29 +7,39 @@ This document describes the curated starter seed used for Level 1 product lookup
 ## Source Files
 
 - [starter_products_usda_sr_legacy.json](F:\Python\CaloriesCounter\data\seeds\starter_products_usda_sr_legacy.json)
+- [products_international_sources.json](F:\Python\CaloriesCounter\data\products_international_sources.json)
 - source dataset: `FoodData_Central_sr_legacy_food_json_2018-04.json`
 
 ## Current Scope
 
-The current starter seed contains `178` curated products.
+The current starter seed contains `372` curated products.
 
 Category coverage:
 
-- vegetables - `27`
-- grains and side dishes - `23`
+- vegetables - `32`
+- grains and side dishes - `28`
 - legumes - `22`
-- fruits and berries - `22`
+- fruits and berries - `27`
 - dairy products - `21`
-- meat and poultry - `16`
-- fish and seafood - `14`
-- bread and baked products - `11`
+- meat and poultry - `26`
+- fish and seafood - `23`
+- bread and baked products - `12`
+- bakery - `17`
+- cakes and desserts - `23`
+- soups - `10`
+- salads and snacks - `11`
+- sweets - `32`
+- drinks - `30`
 - nuts and seeds - `11`
 - fats and oils - `7`
-- eggs - `4`
+- eggs - `6`
+- sauces - `5`
 
 ## Role in the MVP
 
 The starter seed is the Level 1 lookup foundation.
+
+It is still mostly USDA-based, but now also includes a larger layer of curated external-source products, prepared dishes, sweets, and drinks where USDA coverage is awkward or too noisy.
 
 It exists to provide:
 
@@ -87,7 +97,7 @@ Later improvements may include:
 - English aliases
 - Ukrainian aliases
 - additional common Russian variants
-- gradual seed expansion from USDA
+- gradual seed expansion from USDA and other reliable nutrition sources
 
 The goal is still a clean user-facing seed, not a full USDA mirror.
 

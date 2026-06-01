@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 from collections.abc import Iterable
+from dataclasses import dataclass
 from datetime import datetime, time
 
 from app.db.database import Database
@@ -8,6 +9,27 @@ from app.schemas.nutrition import CalculationResult, RecognizedItem
 from app.services.normalization import normalize_product_name
 from app.services.parser import parse_food_message
 from app.services.profile import DailyNutritionTargets, ProfileService
+
+
+@dataclass(frozen=True)
+class ProductCategory:
+    slug: str
+    name: str
+    count: int
+
+
+@dataclass(frozen=True)
+class ProductSummary:
+    name: str
+    calories_per_100g: float
+    protein_per_100g: float
+    fat_per_100g: float
+    carbs_per_100g: float
+
+
+@dataclass(frozen=True)
+class UserProductSummary(ProductSummary):
+    id: int
 
 
 class NutritionService:
@@ -29,7 +51,7 @@ class NutritionService:
                 result.unrecognized_items.append(item.raw_item_text)
                 continue
 
-            product = self._find_product(item.product_text)
+            product = self._find_product(telegram_id, item.product_text)
             if product is None:
                 result.unrecognized_items.append(item.raw_item_text)
                 continue
@@ -38,6 +60,7 @@ class NutritionService:
             result.recognized_items.append(
                 RecognizedItem(
                     product_id=product["id"],
+                    product_source=product["source"],
                     raw_item_text=item.raw_item_text,
                     product_text=item.product_text,
                     display_name=product["name_ru"],
@@ -50,16 +73,72 @@ class NutritionService:
             )
         return result
 
+    def create_user_product(
+        self,
+        telegram_id: int,
+        username: str | None,
+        name_ru: str,
+        calories_per_100g: float,
+        protein_per_100g: float,
+        fat_per_100g: float,
+        carbs_per_100g: float,
+    ) -> None:
+        self.profile_service.ensure_user(telegram_id, username)
+        user_id = self.profile_service.get_user_id(telegram_id)
+        now = self.database.now_iso()
+        normalized_name = normalize_product_name(name_ru)
+        with self.database.connection() as conn:
+            conn.execute(
+                """
+                INSERT INTO user_products (
+                    user_id,
+                    name_ru,
+                    normalized_name_ru,
+                    calories_per_100g,
+                    protein_per_100g,
+                    fat_per_100g,
+                    carbs_per_100g,
+                    is_active,
+                    created_at,
+                    updated_at
+                ) VALUES (?, ?, ?, ?, ?, ?, ?, 1, ?, ?)
+                ON CONFLICT(user_id, normalized_name_ru)
+                DO UPDATE SET
+                    name_ru = excluded.name_ru,
+                    calories_per_100g = excluded.calories_per_100g,
+                    protein_per_100g = excluded.protein_per_100g,
+                    fat_per_100g = excluded.fat_per_100g,
+                    carbs_per_100g = excluded.carbs_per_100g,
+                    is_active = 1,
+                    updated_at = excluded.updated_at
+                """,
+                (
+                    user_id,
+                    name_ru,
+                    normalized_name,
+                    calories_per_100g,
+                    protein_per_100g,
+                    fat_per_100g,
+                    carbs_per_100g,
+                    now,
+                    now,
+                ),
+            )
+
     def store_entries(self, telegram_id: int, items: Iterable[RecognizedItem]) -> None:
         user_id = self.profile_service.get_user_id(telegram_id)
         now = self.database.now_iso()
         with self.database.connection() as conn:
             for item in items:
+                product_id = item.product_id if item.product_source == "base" else None
+                user_product_id = item.product_id if item.product_source == "user" else None
                 conn.execute(
                     """
                     INSERT INTO food_entries (
                         user_id,
+                        product_source,
                         product_id,
+                        user_product_id,
                         raw_item_text,
                         product_text,
                         weight_g,
@@ -69,11 +148,13 @@ class NutritionService:
                         carbs_g,
                         consumed_at,
                         created_at
-                    ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+                    ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
                     """,
                     (
                         user_id,
-                        item.product_id,
+                        item.product_source,
+                        product_id,
+                        user_product_id,
                         item.raw_item_text,
                         item.product_text,
                         item.weight_g,
@@ -114,13 +195,32 @@ class NutritionService:
             "carbs_g": float(row["carbs_g"]),
         }
 
-    def search_products(self, query: str, limit: int = 10) -> list[str]:
+    def search_products(self, query: str, telegram_id: int | None = None, limit: int = 10) -> list[str]:
         normalized = normalize_product_name(query)
         if not normalized:
             return []
 
         pattern = f"%{normalized}%"
+        matches: list[str] = []
         with self.database.connection() as conn:
+            user_id = self._get_user_id_or_none(conn, telegram_id)
+            if user_id is not None:
+                rows = conn.execute(
+                    """
+                    SELECT name_ru
+                    FROM user_products
+                    WHERE user_id = ? AND is_active = 1 AND normalized_name_ru LIKE ?
+                    ORDER BY name_ru
+                    LIMIT ?
+                    """,
+                    (user_id, pattern, limit),
+                ).fetchall()
+                matches.extend(f"{row['name_ru']} (личное)" for row in rows)
+
+            remaining_limit = max(limit - len(matches), 0)
+            if remaining_limit == 0:
+                return matches
+
             rows = conn.execute(
                 """
                 SELECT name_ru
@@ -139,9 +239,116 @@ class NutritionService:
                 ORDER BY name_ru
                 LIMIT ?
                 """,
-                (pattern, pattern, limit),
+                (pattern, pattern, remaining_limit),
             ).fetchall()
-        return [str(row["name_ru"]) for row in rows]
+        for row in rows:
+            name = str(row["name_ru"])
+            if name not in matches:
+                matches.append(name)
+        return matches
+
+    def list_categories(self) -> list[ProductCategory]:
+        with self.database.connection() as conn:
+            rows = conn.execute(
+                """
+                SELECT category, COUNT(*) AS count
+                FROM products
+                WHERE is_active = 1
+                GROUP BY category
+                ORDER BY category
+                """
+            ).fetchall()
+        return [
+            ProductCategory(
+                slug=self._category_slug(str(row["category"])),
+                name=str(row["category"]),
+                count=int(row["count"]),
+            )
+            for row in rows
+        ]
+
+    def list_products_by_category(self, category_slug: str, limit: int = 30) -> list[ProductSummary]:
+        category = self._category_name_by_slug(category_slug)
+        if category is None:
+            return []
+
+        with self.database.connection() as conn:
+            rows = conn.execute(
+                """
+                SELECT
+                    name_ru,
+                    calories_per_100g,
+                    protein_per_100g,
+                    fat_per_100g,
+                    carbs_per_100g
+                FROM products
+                WHERE is_active = 1 AND category = ?
+                ORDER BY name_ru
+                LIMIT ?
+                """,
+                (category, limit),
+            ).fetchall()
+        return [
+            ProductSummary(
+                name=str(row["name_ru"]),
+                calories_per_100g=float(row["calories_per_100g"]),
+                protein_per_100g=float(row["protein_per_100g"]),
+                fat_per_100g=float(row["fat_per_100g"]),
+                carbs_per_100g=float(row["carbs_per_100g"]),
+            )
+            for row in rows
+        ]
+
+    def list_user_products(self, telegram_id: int, limit: int = 20) -> list[UserProductSummary]:
+        with self.database.connection() as conn:
+            user_id = self._get_user_id_or_none(conn, telegram_id)
+            if user_id is None:
+                return []
+
+            rows = conn.execute(
+                """
+                SELECT
+                    id,
+                    name_ru,
+                    calories_per_100g,
+                    protein_per_100g,
+                    fat_per_100g,
+                    carbs_per_100g
+                FROM user_products
+                WHERE user_id = ? AND is_active = 1
+                ORDER BY name_ru
+                LIMIT ?
+                """,
+                (user_id, limit),
+            ).fetchall()
+        return [
+            UserProductSummary(
+                id=int(row["id"]),
+                name=str(row["name_ru"]),
+                calories_per_100g=float(row["calories_per_100g"]),
+                protein_per_100g=float(row["protein_per_100g"]),
+                fat_per_100g=float(row["fat_per_100g"]),
+                carbs_per_100g=float(row["carbs_per_100g"]),
+            )
+            for row in rows
+        ]
+
+    def delete_user_product(self, telegram_id: int, product_id: int) -> bool:
+        now = self.database.now_iso()
+        with self.database.connection() as conn:
+            user_id = self._get_user_id_or_none(conn, telegram_id)
+            if user_id is None:
+                return False
+
+            cursor = conn.execute(
+                """
+                UPDATE user_products
+                SET is_active = 0, updated_at = ?
+                WHERE id = ? AND user_id = ? AND is_active = 1
+                """,
+                (now, product_id, user_id),
+            )
+        return cursor.rowcount > 0
 
     def format_calc_reply(self, result: CalculationResult) -> str:
         parts: list[str] = []
@@ -190,12 +397,32 @@ class NutritionService:
     ) -> str:
         return f"{self._format_today_block(today)}\n\n{self._format_targets_block(targets)}"
 
-    def _find_product(self, product_text: str):
+    def _find_product(self, telegram_id: int, product_text: str):
         normalized = normalize_product_name(product_text)
         with self.database.connection() as conn:
+            user_id = self._get_user_id_or_none(conn, telegram_id)
+            if user_id is not None:
+                row = conn.execute(
+                    """
+                    SELECT
+                        id,
+                        name_ru,
+                        calories_per_100g,
+                        protein_per_100g,
+                        fat_per_100g,
+                        carbs_per_100g,
+                        'user' AS source
+                    FROM user_products
+                    WHERE user_id = ? AND normalized_name_ru = ? AND is_active = 1
+                    """,
+                    (user_id, normalized),
+                ).fetchone()
+                if row is not None:
+                    return row
+
             row = conn.execute(
                 """
-                SELECT p.*
+                SELECT p.*, 'base' AS source
                 FROM products p
                 WHERE p.normalized_name_ru = ? AND p.is_active = 1
                 """,
@@ -206,7 +433,7 @@ class NutritionService:
 
             row = conn.execute(
                 """
-                SELECT p.*
+                SELECT p.*, 'base' AS source
                 FROM product_aliases pa
                 JOIN products p ON p.id = pa.product_id
                 WHERE pa.normalized_alias = ? AND p.is_active = 1
@@ -215,6 +442,28 @@ class NutritionService:
                 (normalized,),
             ).fetchone()
             return row
+
+    @staticmethod
+    def _get_user_id_or_none(conn, telegram_id: int | None) -> int | None:
+        if telegram_id is None:
+            return None
+        row = conn.execute(
+            "SELECT id FROM users WHERE telegram_id = ?",
+            (telegram_id,),
+        ).fetchone()
+        if row is None:
+            return None
+        return int(row["id"])
+
+    @staticmethod
+    def _category_slug(category: str) -> str:
+        return normalize_product_name(category).replace(" ", "_")
+
+    def _category_name_by_slug(self, category_slug: str) -> str | None:
+        for category in self.list_categories():
+            if category.slug == category_slug:
+                return category.name
+        return None
 
     @staticmethod
     def _format_total_block(calories: float, protein: float, fat: float, carbs: float) -> str:

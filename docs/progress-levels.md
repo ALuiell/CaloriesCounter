@@ -2,51 +2,44 @@
 
 ## Purpose
 
-This document gives a compact summary of the staged product growth.
+This document gives a compact summary of staged product growth.
 
 For implementation-ready details, use [Handover](F:\Python\CaloriesCounter\docs\handover.md) and [Functional Requirements](F:\Python\CaloriesCounter\docs\functional-requirements.md).
 
-## Level 1
+## Current Baseline
 
-Current active scope:
+Already implemented:
 
 - Russian-first `product + grams` input
 - product lookup in the curated starter database
-- calories and macros for recognized lines
-- totals for the current message only
-
-Not included yet:
-
+- calories and macros for recognized items
+- totals for the current message
 - profiles
 - daily targets
-- stored entries
-- daily totals
-- goal comparison
+- assistant mode
+- stored entries for assistant flows
+- `/today`
+- `/search`
+- per-day activity override
+- personal user-added products and prepared meals
+- category browsing
+- listing and deleting personal products
 
-## Level 2
+## Next Level
 
 Planned next:
 
-- user profile data
-- base daily target calculation
-- profile updates
-
-## Level 3
-
-Planned after Level 2:
-
 - goal modes
 - target comparison
-- remaining intake logic
+- remaining intake logic if it stays product-appropriate
 
 ## Later Work
 
-- entry storage
-- daily totals
-- history
-- editing and deletion
+- broader history
+- entry editing and deletion
 - broader alias coverage
 - richer parsing
+- personal product editing
 
 ## Related Files
 

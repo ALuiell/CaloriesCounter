@@ -1,3 +1,4 @@
+import sqlite3
 from pathlib import Path
 
 from app.db.database import Database
@@ -98,6 +99,86 @@ def test_alias_lookup_and_calculation(tmp_path: Path):
     assert round(result.total_calories) > 0
 
 
+def test_common_russian_aliases_lookup(tmp_path: Path):
+    database = build_db(tmp_path)
+    profile_service = ProfileService(database)
+    profile_service.ensure_user(1, "tester")
+    service = NutritionService(database)
+
+    result = service.process_message(1, "курица 100, куриное филе 100, белок 100")
+
+    assert len(result.recognized_items) == 3
+    assert not result.unrecognized_items
+    assert result.recognized_items[0].display_name == "куриная грудка запеченная"
+    assert result.recognized_items[1].display_name == "куриная грудка запеченная"
+    assert result.recognized_items[2].display_name == "яичный белок сырой"
+
+
+def test_seed_expansion_products_lookup(tmp_path: Path):
+    database = build_db(tmp_path)
+    profile_service = ProfileService(database)
+    profile_service.ensure_user(1, "tester")
+    service = NutritionService(database)
+
+    result = service.process_message(
+        1,
+        (
+            "\u043e\u043c\u043b\u0435\u0442 100, "
+            "\u043a\u0435\u0442\u0447\u0443\u043f 20, "
+            "\u043a\u0440\u0443\u0430\u0441\u0441\u0430\u043d 100, "
+            "\u0433\u043e\u0440\u043e\u0448\u0435\u043a \u0438\u0437 \u0431\u0430\u043d\u043a\u0438 50"
+        ),
+    )
+
+    assert not result.unrecognized_items
+    assert [item.display_name for item in result.recognized_items] == [
+        "\u043e\u043c\u043b\u0435\u0442",
+        "\u043a\u0435\u0442\u0447\u0443\u043f",
+        "\u043a\u0440\u0443\u0430\u0441\u0441\u0430\u043d \u0441\u043b\u0438\u0432\u043e\u0447\u043d\u044b\u0439",
+        "\u0433\u043e\u0440\u043e\u0448\u0435\u043a \u0437\u0435\u043b\u0435\u043d\u044b\u0439 \u043a\u043e\u043d\u0441\u0435\u0440\u0432\u0438\u0440\u043e\u0432\u0430\u043d\u043d\u044b\u0439",
+    ]
+
+
+def test_external_source_products_lookup(tmp_path: Path):
+    database = build_db(tmp_path)
+    profile_service = ProfileService(database)
+    profile_service.ensure_user(1, "tester")
+    service = NutritionService(database)
+
+    result = service.process_message(
+        1,
+        (
+            "\u0430\u0439\u0440\u0430\u043d 200, "
+            "\u043c\u0430\u0439\u043e\u043d\u0435\u0437 15, "
+            "\u0441\u044b\u0440\u043d\u0438\u043a\u0438 150, "
+            "\u0445\u0435\u043a 100"
+        ),
+    )
+
+    assert not result.unrecognized_items
+    assert [item.display_name for item in result.recognized_items] == [
+        "\u0430\u0439\u0440\u0430\u043d",
+        "\u043c\u0430\u0439\u043e\u043d\u0435\u0437",
+        "\u0441\u044b\u0440\u043d\u0438\u043a\u0438",
+        "\u0445\u0435\u043a \u0441\u044b\u0440\u043e\u0439",
+    ]
+
+
+def test_seed_sync_adds_missing_aliases_to_existing_database(tmp_path: Path):
+    database = build_db(tmp_path)
+    with database.connection() as conn:
+        conn.execute("DELETE FROM product_aliases WHERE normalized_alias = ?", ("курица",))
+
+    seed_products_if_empty(database, Path("data/seeds/starter_products_usda_sr_legacy.json"))
+    profile_service = ProfileService(database)
+    profile_service.ensure_user(1, "tester")
+    service = NutritionService(database)
+    result = service.process_message(1, "курица 100")
+
+    assert len(result.recognized_items) == 1
+    assert result.recognized_items[0].display_name == "куриная грудка запеченная"
+
+
 def test_partial_success(tmp_path: Path):
     database = build_db(tmp_path)
     profile_service = ProfileService(database)
@@ -193,6 +274,198 @@ def test_search_products_returns_matches(tmp_path: Path):
     assert any("греч" in item.lower() for item in matches)
 
 
+def test_categories_and_category_products_are_listed(tmp_path: Path):
+    database = build_db(tmp_path)
+    service = NutritionService(database)
+
+    categories = service.list_categories()
+    category_names = {category.name for category in categories}
+    vegetables = next(category for category in categories if category.name == "овощи")
+    products = service.list_products_by_category(vegetables.slug)
+
+    assert "овощи" in category_names
+    assert vegetables.count > 0
+    assert products
+    assert any(product.name == "помидор" for product in products)
+
+
+def test_user_product_is_visible_only_to_owner(tmp_path: Path):
+    database = build_db(tmp_path)
+    profile_service = ProfileService(database)
+    profile_service.ensure_user(1, "owner")
+    profile_service.ensure_user(2, "other")
+    service = NutritionService(database)
+
+    service.create_user_product(1, "owner", "сырники домашние", 210, 14, 9, 20)
+
+    owner_result = service.process_message(1, "сырники домашние 150")
+    other_result = service.process_message(2, "сырники домашние 150")
+
+    assert len(owner_result.recognized_items) == 1
+    assert owner_result.recognized_items[0].product_source == "user"
+    assert round(owner_result.total_calories) == 315
+    assert other_result.unrecognized_items == ["сырники домашние 150"]
+
+
+def test_user_products_can_be_listed_and_deleted(tmp_path: Path):
+    database = build_db(tmp_path)
+    profile_service = ProfileService(database)
+    profile_service.ensure_user(1, "owner")
+    service = NutritionService(database)
+
+    service.create_user_product(1, "owner", "сырники домашние", 210, 14, 9, 20)
+    products = service.list_user_products(1)
+    deleted = service.delete_user_product(1, products[0].id)
+    result = service.process_message(1, "сырники домашние 100")
+
+    assert len(products) == 1
+    assert products[0].name == "сырники домашние"
+    assert deleted
+    assert service.list_user_products(1) == []
+    assert result.unrecognized_items == ["сырники домашние 100"]
+
+
+def test_user_product_search_is_scoped_to_owner(tmp_path: Path):
+    database = build_db(tmp_path)
+    profile_service = ProfileService(database)
+    profile_service.ensure_user(1, "owner")
+    profile_service.ensure_user(2, "other")
+    service = NutritionService(database)
+
+    service.create_user_product(1, "owner", "сырники домашние", 210, 14, 9, 20)
+
+    owner_matches = service.search_products("сыр", telegram_id=1)
+    other_matches = service.search_products("сыр", telegram_id=2)
+
+    assert "сырники домашние (личное)" in owner_matches
+    assert "сырники домашние (личное)" not in other_matches
+
+
+def test_user_product_can_be_stored_in_today_summary(tmp_path: Path):
+    database = build_db(tmp_path)
+    profile_service = ProfileService(database)
+    create_complete_profile(profile_service)
+    profile_service.set_assistant_mode(1, True)
+    service = NutritionService(database)
+    service.create_user_product(1, "tester", "сырники домашние", 210, 14, 9, 20)
+
+    result = service.process_message(1, "сырники домашние 100")
+    service.store_entries(1, result.recognized_items)
+    today = service.get_today_summary(1)
+
+    assert today["count"] == 1
+    assert round(float(today["calories"])) == 210
+
+
+def test_legacy_food_entries_schema_migrates_for_user_products(tmp_path: Path):
+    database_path = tmp_path / "legacy.sqlite3"
+    with sqlite3.connect(database_path) as conn:
+        conn.executescript(
+            """
+            CREATE TABLE products (
+                id INTEGER PRIMARY KEY AUTOINCREMENT,
+                slug TEXT NOT NULL UNIQUE,
+                name_ru TEXT NOT NULL,
+                normalized_name_ru TEXT NOT NULL UNIQUE,
+                category TEXT NOT NULL,
+                state TEXT NOT NULL,
+                usda_description TEXT NOT NULL,
+                fdc_id INTEGER NOT NULL,
+                usda_category TEXT NOT NULL,
+                calories_per_100g REAL NOT NULL,
+                protein_per_100g REAL NOT NULL,
+                fat_per_100g REAL NOT NULL,
+                carbs_per_100g REAL NOT NULL,
+                is_active INTEGER NOT NULL DEFAULT 1,
+                created_at TEXT NOT NULL,
+                updated_at TEXT NOT NULL
+            );
+            CREATE TABLE product_aliases (
+                id INTEGER PRIMARY KEY AUTOINCREMENT,
+                product_id INTEGER NOT NULL REFERENCES products(id) ON DELETE CASCADE,
+                alias TEXT NOT NULL,
+                normalized_alias TEXT NOT NULL UNIQUE,
+                language TEXT NOT NULL DEFAULT 'ru',
+                created_at TEXT NOT NULL
+            );
+            CREATE TABLE users (
+                id INTEGER PRIMARY KEY AUTOINCREMENT,
+                telegram_id INTEGER NOT NULL UNIQUE,
+                username TEXT,
+                assistant_enabled INTEGER NOT NULL DEFAULT 0,
+                sex TEXT,
+                age INTEGER,
+                height_cm REAL,
+                weight_kg REAL,
+                activity_level TEXT,
+                created_at TEXT NOT NULL,
+                updated_at TEXT NOT NULL
+            );
+            CREATE TABLE food_entries (
+                id INTEGER PRIMARY KEY AUTOINCREMENT,
+                user_id INTEGER NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+                product_id INTEGER NOT NULL REFERENCES products(id) ON DELETE CASCADE,
+                raw_item_text TEXT NOT NULL,
+                product_text TEXT NOT NULL,
+                weight_g REAL NOT NULL,
+                calories REAL NOT NULL,
+                protein_g REAL NOT NULL,
+                fat_g REAL NOT NULL,
+                carbs_g REAL NOT NULL,
+                consumed_at TEXT NOT NULL,
+                created_at TEXT NOT NULL
+            );
+            INSERT INTO products (
+                slug,
+                name_ru,
+                normalized_name_ru,
+                category,
+                state,
+                usda_description,
+                fdc_id,
+                usda_category,
+                calories_per_100g,
+                protein_per_100g,
+                fat_per_100g,
+                carbs_per_100g,
+                created_at,
+                updated_at
+            ) VALUES ('rice', 'рис', 'рис', 'grain', 'cooked', 'Rice', 1, 'Grain', 130, 2.7, 0.3, 28, 'now', 'now');
+            INSERT INTO users (telegram_id, username, created_at, updated_at)
+            VALUES (1, 'tester', 'now', 'now');
+            INSERT INTO food_entries (
+                user_id,
+                product_id,
+                raw_item_text,
+                product_text,
+                weight_g,
+                calories,
+                protein_g,
+                fat_g,
+                carbs_g,
+                consumed_at,
+                created_at
+            ) VALUES (1, 1, 'рис 100', 'рис', 100, 130, 2.7, 0.3, 28, 'now', 'now');
+            """
+        )
+
+    database = Database(database_path, "Europe/Kiev")
+    database.initialize()
+
+    with database.connection() as conn:
+        food_entry_columns = {row["name"]: row for row in conn.execute("PRAGMA table_info(food_entries)").fetchall()}
+        entry_row = conn.execute("SELECT product_source, product_id, user_product_id FROM food_entries").fetchone()
+        table_names = {
+            row["name"] for row in conn.execute("SELECT name FROM sqlite_master WHERE type = 'table'").fetchall()
+        }
+
+    assert food_entry_columns["product_id"]["notnull"] == 0
+    assert "user_products" in table_names
+    assert entry_row["product_source"] == "base"
+    assert entry_row["product_id"] == 1
+    assert entry_row["user_product_id"] is None
+
+
 def test_activity_override_affects_today_targets_only(tmp_path: Path):
     database = build_db(tmp_path)
     profile_service = ProfileService(database)
@@ -259,5 +532,6 @@ def test_assistant_reply_contains_targets_and_non_medical_copy(tmp_path: Path):
 
 
 def test_cancel_labels_are_stable():
+    assert BUTTON_ADD_FOOD == "Добавить еду"
     assert CANCEL_EDIT_PROFILE_TEXT == "Отмена"
     assert CANCEL_SEARCH_TEXT == "Отмена"

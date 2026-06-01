@@ -6,7 +6,7 @@ This document explains how USDA expansion candidates are generated and how to us
 
 ## Status
 
-The starter seed has already been expanded to `178` products. This document is now a workflow reference rather than a pending to-do list.
+The starter seed has already been expanded to `372` products. This document is now a workflow reference rather than a pending to-do list.
 
 ## Expansion Method
 
@@ -62,7 +62,7 @@ Useful categories for future expansion:
 
 ## Practical Rule
 
-The goal is not to import USDA at full size. The goal is to continue growing a clean, user-friendly seed.
+The goal is not to import USDA at full size. The goal is to continue growing a clean, user-friendly seed, even when some additions come from other reliable nutrition references.
 
 That means:
 

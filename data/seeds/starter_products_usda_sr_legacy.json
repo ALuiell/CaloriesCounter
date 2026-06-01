@@ -439,7 +439,8 @@
         "хлеб белый",
         "белый хлеб",
         "батон",
-        "white bread"
+        "white bread",
+        "хлеб"
       ],
       "fdc_id": 167532,
       "usda_category": "Baked Products",
@@ -494,7 +495,9 @@
       "aliases": [
         "картофель вареный",
         "картошка вареная",
-        "potato boiled"
+        "potato boiled",
+        "картошка",
+        "картофель"
       ],
       "fdc_id": 170438,
       "usda_category": "Vegetables and Vegetable Products",
@@ -744,7 +747,8 @@
       "aliases": [
         "шампиньоны",
         "грибы шампиньоны",
-        "white mushrooms"
+        "white mushrooms",
+        "грибы"
       ],
       "fdc_id": 169251,
       "usda_category": "Vegetables and Vegetable Products",
@@ -1748,6 +1752,8 @@
         "яйцо",
         "яйцо вареное",
         "вареное яйцо",
+        "яйца",
+        "яйца вареные",
         "egg boiled"
       ],
       "fdc_id": 173424,
@@ -1766,6 +1772,9 @@
       "aliases": [
         "яичный белок",
         "белок яйца",
+        "белок",
+        "яичные белки",
+        "белки яиц",
         "egg white raw"
       ],
       "fdc_id": 172183,
@@ -1784,6 +1793,9 @@
       "aliases": [
         "яичный желток",
         "желток яйца",
+        "желток",
+        "яичные желтки",
+        "желтки яиц",
         "egg yolk raw"
       ],
       "fdc_id": 172184,
@@ -1803,6 +1815,15 @@
         "куриная грудка",
         "грудка куриная",
         "курица грудка",
+        "курица",
+        "курица готовая",
+        "курица запеченная",
+        "куриное филе",
+        "филе курицы",
+        "филе куриное",
+        "грудка",
+        "куриная грудка готовая",
+        "куриная грудка вареная",
         "chicken breast"
       ],
       "fdc_id": 171477,
@@ -1821,6 +1842,10 @@
       "aliases": [
         "куриное бедро",
         "бедро куриное",
+        "бедро",
+        "куриное бедро готовое",
+        "куриные бедра",
+        "бедра куриные",
         "chicken thigh"
       ],
       "fdc_id": 172388,
@@ -1839,6 +1864,10 @@
       "aliases": [
         "индейка грудка",
         "грудка индейки",
+        "индейка",
+        "индейка готовая",
+        "филе индейки",
+        "грудка индейки готовая",
         "turkey breast"
       ],
       "fdc_id": 171492,
@@ -1857,6 +1886,9 @@
       "aliases": [
         "говяжий фарш",
         "фарш говяжий постный",
+        "фарш говяжий",
+        "фарш",
+        "говяжий фарш готовый",
         "lean ground beef"
       ],
       "fdc_id": 171791,
@@ -1875,6 +1907,9 @@
       "aliases": [
         "говядина",
         "стейк говяжий",
+        "говядина готовая",
+        "говядина запеченная",
+        "говядина вареная",
         "beef steak"
       ],
       "fdc_id": 168611,
@@ -1893,6 +1928,9 @@
       "aliases": [
         "свиная вырезка",
         "свинина постная",
+        "свинина",
+        "свинина готовая",
+        "свинина запеченная",
         "pork tenderloin"
       ],
       "fdc_id": 168250,
@@ -1959,7 +1997,7 @@
     {
       "slug": "milk_1pct",
       "name_ru": "молоко 1%",
-      "category": "молочные продукты",
+      "category": "напитки",
       "state": "готовый продукт",
       "usda_description": "Milk, lowfat, fluid, 1% milkfat, with added vitamin A and vitamin D",
       "aliases": [
@@ -1977,7 +2015,7 @@
     {
       "slug": "milk_2pct",
       "name_ru": "молоко 2%",
-      "category": "молочные продукты",
+      "category": "напитки",
       "state": "готовый продукт",
       "usda_description": "Milk, reduced fat, fluid, 2% milkfat, with added vitamin A and vitamin D",
       "aliases": [
@@ -1995,7 +2033,7 @@
     {
       "slug": "milk_whole_3_25pct",
       "name_ru": "молоко цельное 3.25%",
-      "category": "молочные продукты",
+      "category": "напитки",
       "state": "готовый продукт",
       "usda_description": "Milk, whole, 3.25% milkfat, with added vitamin D",
       "aliases": [
@@ -2016,7 +2054,7 @@
     {
       "slug": "milk_nonfat",
       "name_ru": "молоко обезжиренное",
-      "category": "молочные продукты",
+      "category": "напитки",
       "state": "готовый продукт",
       "usda_description": "Milk, nonfat, fluid, with added vitamin A and vitamin D (fat free or skim)",
       "aliases": [
@@ -2059,7 +2097,8 @@
       "aliases": [
         "йогурт натуральный",
         "йогурт нежирный",
-        "plain yogurt low fat"
+        "plain yogurt low fat",
+        "йогурт"
       ],
       "fdc_id": 170886,
       "usda_category": "Dairy and Egg Products",
@@ -2276,7 +2315,8 @@
       "aliases": [
         "масло сливочное",
         "сливочное масло",
-        "butter"
+        "butter",
+        "масло"
       ],
       "fdc_id": 173410,
       "usda_category": "Dairy and Egg Products",
@@ -2384,6 +2424,10 @@
         "куриная грудка сырая",
         "грудка куриная сырая",
         "сырая куриная грудка",
+        "курица сырая",
+        "куриное филе сырое",
+        "филе курицы сырое",
+        "сырая курица",
         "chicken breast raw"
       ],
       "fdc_id": 171077,
@@ -3211,6 +3255,3271 @@
       "protein_per_100g": 11.1,
       "fat_per_100g": 4.3,
       "carbs_per_100g": 3.38
+    },
+    {
+      "slug": "omelet_plain",
+      "name_ru": "омлет",
+      "category": "готовые блюда",
+      "state": "готовый продукт",
+      "usda_description": "Egg, whole, cooked, omelet",
+      "aliases": [
+        "омлет",
+        "омлет готовый",
+        "омлет из яиц",
+        "omelet"
+      ],
+      "fdc_id": 172185,
+      "usda_category": "Dairy and Egg Products",
+      "calories_per_100g": 154.0,
+      "protein_per_100g": 10.6,
+      "fat_per_100g": 11.7,
+      "carbs_per_100g": 0.64
+    },
+    {
+      "slug": "chicken_wing_roasted",
+      "name_ru": "крыло куриное запеченное",
+      "category": "мясо и птица",
+      "state": "готовый продукт",
+      "usda_description": "Chicken, broilers or fryers, wing, meat only, cooked, roasted",
+      "aliases": [
+        "крыло куриное",
+        "куриное крыло",
+        "куриные крылья",
+        "крылышко куриное",
+        "крыло куриное запеченное",
+        "chicken wing"
+      ],
+      "fdc_id": 172392,
+      "usda_category": "Poultry Products",
+      "calories_per_100g": 203.0,
+      "protein_per_100g": 30.5,
+      "fat_per_100g": 8.13,
+      "carbs_per_100g": 0.0
+    },
+    {
+      "slug": "chicken_drumstick_roasted",
+      "name_ru": "голень куриная запеченная",
+      "category": "мясо и птица",
+      "state": "готовый продукт",
+      "usda_description": "Chicken, broilers or fryers, drumstick, meat and skin, cooked, roasted",
+      "aliases": [
+        "голень куриная",
+        "куриная голень",
+        "куриные голени",
+        "ножка куриная",
+        "голень куриная запеченная",
+        "chicken drumstick"
+      ],
+      "fdc_id": 173612,
+      "usda_category": "Poultry Products",
+      "calories_per_100g": 191.0,
+      "protein_per_100g": 23.4,
+      "fat_per_100g": 10.2,
+      "carbs_per_100g": 0.0
+    },
+    {
+      "slug": "chicken_stewed_meat_skin",
+      "name_ru": "курица тушеная",
+      "category": "мясо и птица",
+      "state": "готовый продукт",
+      "usda_description": "Chicken, broilers or fryers, meat and skin, cooked, stewed",
+      "aliases": [
+        "курица тушеная",
+        "тушеная курица",
+        "курица тушёная",
+        "тушёная курица",
+        "chicken stewed"
+      ],
+      "fdc_id": 171051,
+      "usda_category": "Poultry Products",
+      "calories_per_100g": 219.0,
+      "protein_per_100g": 24.7,
+      "fat_per_100g": 12.6,
+      "carbs_per_100g": 0.0
+    },
+    {
+      "slug": "chicken_fried_batter",
+      "name_ru": "курица жареная в кляре",
+      "category": "мясо и птица",
+      "state": "готовый продукт",
+      "usda_description": "Chicken, broilers or fryers, meat and skin, cooked, fried, batter",
+      "aliases": [
+        "курица жареная",
+        "жареная курица",
+        "курица в кляре",
+        "курица жареная в кляре",
+        "fried chicken"
+      ],
+      "fdc_id": 171448,
+      "usda_category": "Poultry Products",
+      "calories_per_100g": 289.0,
+      "protein_per_100g": 22.5,
+      "fat_per_100g": 17.4,
+      "carbs_per_100g": 9.42
+    },
+    {
+      "slug": "beef_braised",
+      "name_ru": "говядина тушеная",
+      "category": "мясо и птица",
+      "state": "готовый продукт",
+      "usda_description": "Beef, flank, steak, separable lean only, trimmed to 0\" fat, choice, cooked, braised",
+      "aliases": [
+        "говядина тушеная",
+        "тушеная говядина",
+        "говядина тушёная",
+        "тушёная говядина",
+        "beef braised"
+      ],
+      "fdc_id": 168610,
+      "usda_category": "Beef Products",
+      "calories_per_100g": 237.0,
+      "protein_per_100g": 28.0,
+      "fat_per_100g": 13.0,
+      "carbs_per_100g": 0.0
+    },
+    {
+      "slug": "bacon_cooked_baked",
+      "name_ru": "бекон запеченный",
+      "category": "мясо и птица",
+      "state": "готовый продукт",
+      "usda_description": "Pork, cured, bacon, cooked, baked",
+      "aliases": [
+        "бекон",
+        "бекон готовый",
+        "бекон запеченный",
+        "bacon"
+      ],
+      "fdc_id": 167914,
+      "usda_category": "Pork Products",
+      "calories_per_100g": 548.0,
+      "protein_per_100g": 35.7,
+      "fat_per_100g": 43.3,
+      "carbs_per_100g": 1.35
+    },
+    {
+      "slug": "frankfurter_meat_heated",
+      "name_ru": "сосиска вареная",
+      "category": "мясо и птица",
+      "state": "готовый продукт",
+      "usda_description": "Frankfurter, meat, heated",
+      "aliases": [
+        "сосиска",
+        "сосиски",
+        "сосиска вареная",
+        "сосиски вареные",
+        "frankfurter",
+        "hot dog"
+      ],
+      "fdc_id": 174615,
+      "usda_category": "Sausages and Luncheon Meats",
+      "calories_per_100g": 278.0,
+      "protein_per_100g": 9.77,
+      "fat_per_100g": 24.3,
+      "carbs_per_100g": 4.9
+    },
+    {
+      "slug": "kefir_lowfat_plain",
+      "name_ru": "кефир нежирный",
+      "category": "напитки",
+      "state": "готовый продукт",
+      "usda_description": "Kefir, lowfat, plain, LIFEWAY",
+      "aliases": [
+        "кефир",
+        "кефир нежирный",
+        "кефир низкожирный",
+        "kefir"
+      ],
+      "fdc_id": 170904,
+      "usda_category": "Dairy and Egg Products",
+      "calories_per_100g": 43.0,
+      "protein_per_100g": 3.79,
+      "fat_per_100g": 1.02,
+      "carbs_per_100g": 4.77
+    },
+    {
+      "slug": "processed_cheese_american",
+      "name_ru": "сыр плавленый",
+      "category": "молочные продукты",
+      "state": "готовый продукт",
+      "usda_description": "Cheese, pasteurized process, American, fortified with vitamin D",
+      "aliases": [
+        "сыр плавленый",
+        "плавленый сыр",
+        "сыр процессированный",
+        "processed cheese"
+      ],
+      "fdc_id": 170853,
+      "usda_category": "Dairy and Egg Products",
+      "calories_per_100g": 366.0,
+      "protein_per_100g": 18.1,
+      "fat_per_100g": 30.7,
+      "carbs_per_100g": 4.78
+    },
+    {
+      "slug": "corn_canned_drained",
+      "name_ru": "кукуруза консервированная",
+      "category": "овощи",
+      "state": "готовый продукт",
+      "usda_description": "Corn, sweet, yellow, canned, whole kernel, drained solids",
+      "aliases": [
+        "кукуруза консервированная",
+        "консервированная кукуруза",
+        "кукуруза из банки",
+        "canned corn"
+      ],
+      "fdc_id": 169214,
+      "usda_category": "Vegetables and Vegetable Products",
+      "calories_per_100g": 67.0,
+      "protein_per_100g": 2.29,
+      "fat_per_100g": 1.22,
+      "carbs_per_100g": 14.3
+    },
+    {
+      "slug": "peas_green_canned_drained",
+      "name_ru": "горошек зеленый консервированный",
+      "category": "овощи",
+      "state": "готовый продукт",
+      "usda_description": "Peas, green, canned, drained solids, rinsed in tap water",
+      "aliases": [
+        "горошек консервированный",
+        "горошек зеленый консервированный",
+        "консервированный горошек",
+        "горошек из банки",
+        "canned peas"
+      ],
+      "fdc_id": 170015,
+      "usda_category": "Vegetables and Vegetable Products",
+      "calories_per_100g": 71.0,
+      "protein_per_100g": 4.33,
+      "fat_per_100g": 0.95,
+      "carbs_per_100g": 11.8
+    },
+    {
+      "slug": "pickles_cucumber_dill",
+      "name_ru": "огурцы маринованные",
+      "category": "овощи",
+      "state": "готовый продукт",
+      "usda_description": "Pickles, cucumber, dill or kosher dill",
+      "aliases": [
+        "огурцы маринованные",
+        "огурцы соленые",
+        "соленый огурец",
+        "маринованный огурец",
+        "pickles"
+      ],
+      "fdc_id": 168558,
+      "usda_category": "Vegetables and Vegetable Products",
+      "calories_per_100g": 12.0,
+      "protein_per_100g": 0.5,
+      "fat_per_100g": 0.3,
+      "carbs_per_100g": 2.41
+    },
+    {
+      "slug": "sauerkraut_canned",
+      "name_ru": "капуста квашеная",
+      "category": "овощи",
+      "state": "готовый продукт",
+      "usda_description": "Sauerkraut, canned, solids and liquids",
+      "aliases": [
+        "капуста квашеная",
+        "квашеная капуста",
+        "sauerkraut"
+      ],
+      "fdc_id": 169279,
+      "usda_category": "Vegetables and Vegetable Products",
+      "calories_per_100g": 19.0,
+      "protein_per_100g": 0.91,
+      "fat_per_100g": 0.14,
+      "carbs_per_100g": 4.28
+    },
+    {
+      "slug": "catsup",
+      "name_ru": "кетчуп",
+      "category": "соусы",
+      "state": "готовый продукт",
+      "usda_description": "Catsup",
+      "aliases": [
+        "кетчуп",
+        "томатный кетчуп",
+        "ketchup",
+        "catsup"
+      ],
+      "fdc_id": 168556,
+      "usda_category": "Vegetables and Vegetable Products",
+      "calories_per_100g": 101.0,
+      "protein_per_100g": 1.04,
+      "fat_per_100g": 0.1,
+      "carbs_per_100g": 27.4
+    },
+    {
+      "slug": "herring_atlantic_cooked",
+      "name_ru": "сельдь запеченная",
+      "category": "рыба и морепродукты",
+      "state": "готовый продукт",
+      "usda_description": "Fish, herring, Atlantic, cooked, dry heat",
+      "aliases": [
+        "сельдь",
+        "селедка",
+        "сельдь запеченная",
+        "селедка запеченная",
+        "herring"
+      ],
+      "fdc_id": 175117,
+      "usda_category": "Finfish and Shellfish Products",
+      "calories_per_100g": 203.0,
+      "protein_per_100g": 23.0,
+      "fat_per_100g": 11.6,
+      "carbs_per_100g": 0.0
+    },
+    {
+      "slug": "sardine_canned_oil",
+      "name_ru": "сардины в масле",
+      "category": "рыба и морепродукты",
+      "state": "готовый продукт",
+      "usda_description": "Fish, sardine, Atlantic, canned in oil, drained solids with bone",
+      "aliases": [
+        "сардина",
+        "сардины",
+        "сардины в масле",
+        "консервированные сардины",
+        "sardines"
+      ],
+      "fdc_id": 175139,
+      "usda_category": "Finfish and Shellfish Products",
+      "calories_per_100g": 208.0,
+      "protein_per_100g": 24.6,
+      "fat_per_100g": 11.4,
+      "carbs_per_100g": 0.0
+    },
+    {
+      "slug": "fish_sticks_prepared",
+      "name_ru": "рыбные палочки готовые",
+      "category": "рыба и морепродукты",
+      "state": "готовый продукт",
+      "usda_description": "Fish, fish sticks, frozen, prepared",
+      "aliases": [
+        "рыбные палочки",
+        "рыбные палочки готовые",
+        "fish sticks"
+      ],
+      "fdc_id": 174195,
+      "usda_category": "Finfish and Shellfish Products",
+      "calories_per_100g": 277.0,
+      "protein_per_100g": 11.0,
+      "fat_per_100g": 16.2,
+      "carbs_per_100g": 21.7
+    },
+    {
+      "slug": "croissant_butter",
+      "name_ru": "круассан сливочный",
+      "category": "выпечка",
+      "state": "готовый продукт",
+      "usda_description": "Croissants, butter",
+      "aliases": [
+        "круассан",
+        "круассан сливочный",
+        "croissant"
+      ],
+      "fdc_id": 174987,
+      "usda_category": "Baked Products",
+      "calories_per_100g": 406.0,
+      "protein_per_100g": 8.2,
+      "fat_per_100g": 21.0,
+      "carbs_per_100g": 45.8
+    },
+    {
+      "slug": "ice_cream_vanilla",
+      "name_ru": "мороженое ванильное",
+      "category": "торты и десерты",
+      "state": "готовый продукт",
+      "usda_description": "Ice creams, vanilla",
+      "aliases": [
+        "мороженое",
+        "мороженое ванильное",
+        "ванильное мороженое",
+        "ice cream"
+      ],
+      "fdc_id": 167575,
+      "usda_category": "Sweets",
+      "calories_per_100g": 207.0,
+      "protein_per_100g": 3.5,
+      "fat_per_100g": 11.0,
+      "carbs_per_100g": 23.6
+    },
+    {
+      "slug": "jam_preserves",
+      "name_ru": "варенье",
+      "category": "сладости",
+      "state": "готовый продукт",
+      "usda_description": "Jams and preserves",
+      "aliases": [
+        "варенье",
+        "повидло",
+        "preserves"
+      ],
+      "fdc_id": 169641,
+      "usda_category": "Sweets",
+      "calories_per_100g": 278.0,
+      "protein_per_100g": 0.37,
+      "fat_per_100g": 0.07,
+      "carbs_per_100g": 68.9
+    },
+    {
+      "slug": "ryazhenka_plain",
+      "name_ru": "ряженка",
+      "category": "напитки",
+      "state": "готовый продукт",
+      "usda_description": "External source: Rud / Yagotynske open labels",
+      "aliases": [
+        "ряженка",
+        "ряженка 2.5%",
+        "ряженка 3.2%"
+      ],
+      "fdc_id": 900000001,
+      "usda_category": "External Sources",
+      "calories_per_100g": 54.0,
+      "protein_per_100g": 2.9,
+      "fat_per_100g": 2.5,
+      "carbs_per_100g": 4.2
+    },
+    {
+      "slug": "ayran_plain",
+      "name_ru": "айран",
+      "category": "напитки",
+      "state": "готовый продукт",
+      "usda_description": "External source: FatSecret generic / Serene Dairy label",
+      "aliases": [
+        "айран",
+        "айран питьевой"
+      ],
+      "fdc_id": 900000002,
+      "usda_category": "External Sources",
+      "calories_per_100g": 41.0,
+      "protein_per_100g": 2.32,
+      "fat_per_100g": 2.15,
+      "carbs_per_100g": 3.17
+    },
+    {
+      "slug": "suluguni_cheese",
+      "name_ru": "сыр сулугуни",
+      "category": "молочные продукты",
+      "state": "готовый продукт",
+      "usda_description": "External source: Milkiland / FatSecret search",
+      "aliases": [
+        "сулугуни",
+        "сыр сулугуни",
+        "suluguni"
+      ],
+      "fdc_id": 900000003,
+      "usda_category": "External Sources",
+      "calories_per_100g": 295.0,
+      "protein_per_100g": 22.5,
+      "fat_per_100g": 22.5,
+      "carbs_per_100g": 0.0
+    },
+    {
+      "slug": "brynza_cheese",
+      "name_ru": "брынза",
+      "category": "молочные продукты",
+      "state": "готовый продукт",
+      "usda_description": "External source: Czech Food Composition Database",
+      "aliases": [
+        "брынза",
+        "бринза",
+        "brynza",
+        "bryndza"
+      ],
+      "fdc_id": 900000004,
+      "usda_category": "External Sources",
+      "calories_per_100g": 314.0,
+      "protein_per_100g": 20.5,
+      "fat_per_100g": 25.4,
+      "carbs_per_100g": 1.7
+    },
+    {
+      "slug": "tvorozhnyy_syr",
+      "name_ru": "творожный сыр",
+      "category": "молочные продукты",
+      "state": "готовый продукт",
+      "usda_description": "External source: USDA / FatSecret generic cream cheese",
+      "aliases": [
+        "творожный сыр",
+        "крем-сыр"
+      ],
+      "fdc_id": 900000005,
+      "usda_category": "External Sources",
+      "calories_per_100g": 349.0,
+      "protein_per_100g": 7.55,
+      "fat_per_100g": 34.87,
+      "carbs_per_100g": 2.66
+    },
+    {
+      "slug": "hake_cooked",
+      "name_ru": "хек готовый",
+      "category": "рыба и морепродукты",
+      "state": "готовый продукт",
+      "usda_description": "External source: MyNetDiary / generic cooked hake",
+      "aliases": [
+        "хек готовый",
+        "хек приготовленный",
+        "хек отварной",
+        "мерлуза готовая"
+      ],
+      "fdc_id": 900000006,
+      "usda_category": "External Sources",
+      "calories_per_100g": 116.0,
+      "protein_per_100g": 23.5,
+      "fat_per_100g": 2.0,
+      "carbs_per_100g": 0.0
+    },
+    {
+      "slug": "hake_raw",
+      "name_ru": "хек сырой",
+      "category": "рыба и морепродукты",
+      "state": "сырой продукт",
+      "usda_description": "External source: Czech Food Composition Database",
+      "aliases": [
+        "хек",
+        "хек сырой",
+        "мерлуза",
+        "рыба хек"
+      ],
+      "fdc_id": 900000007,
+      "usda_category": "External Sources",
+      "calories_per_100g": 75.0,
+      "protein_per_100g": 15.9,
+      "fat_per_100g": 1.3,
+      "carbs_per_100g": 0.0
+    },
+    {
+      "slug": "tuna_cooked",
+      "name_ru": "тунец готовый",
+      "category": "рыба и морепродукты",
+      "state": "готовый продукт",
+      "usda_description": "External source: FatSecret generic cooked tuna",
+      "aliases": [
+        "тунец готовый",
+        "тунец приготовленный",
+        "тунец отварной",
+        "тунец запеченный"
+      ],
+      "fdc_id": 900000008,
+      "usda_category": "External Sources",
+      "calories_per_100g": 153.0,
+      "protein_per_100g": 27.3,
+      "fat_per_100g": 3.96,
+      "carbs_per_100g": 0.41
+    },
+    {
+      "slug": "tuna_raw",
+      "name_ru": "тунец сырой",
+      "category": "рыба и морепродукты",
+      "state": "сырой продукт",
+      "usda_description": "External source: FatSecret generic raw tuna",
+      "aliases": [
+        "тунец сырой",
+        "свежий тунец",
+        "raw tuna"
+      ],
+      "fdc_id": 900000009,
+      "usda_category": "External Sources",
+      "calories_per_100g": 108.0,
+      "protein_per_100g": 23.38,
+      "fat_per_100g": 0.95,
+      "carbs_per_100g": 0.0
+    },
+    {
+      "slug": "herring_salted",
+      "name_ru": "сельдь соленая",
+      "category": "рыба и морепродукты",
+      "state": "готовый продукт",
+      "usda_description": "External source: FatSecret USDA Atlantic herring / note",
+      "aliases": [
+        "сельдь соленая",
+        "соленая сельдь",
+        "herring salted"
+      ],
+      "fdc_id": 900000010,
+      "usda_category": "External Sources",
+      "calories_per_100g": 158.0,
+      "protein_per_100g": 17.96,
+      "fat_per_100g": 9.04,
+      "carbs_per_100g": 0.0
+    },
+    {
+      "slug": "crab_sticks",
+      "name_ru": "крабовые палочки",
+      "category": "рыба и морепродукты",
+      "state": "готовый продукт",
+      "usda_description": "External source: USDA/FatSecret surimi fish",
+      "aliases": [
+        "крабовые палочки",
+        "сурими",
+        "имитация краба",
+        "crab sticks"
+      ],
+      "fdc_id": 900000011,
+      "usda_category": "External Sources",
+      "calories_per_100g": 99.0,
+      "protein_per_100g": 15.18,
+      "fat_per_100g": 0.9,
+      "carbs_per_100g": 6.85
+    },
+    {
+      "slug": "mayonnaise_regular",
+      "name_ru": "майонез",
+      "category": "соусы",
+      "state": "готовый продукт",
+      "usda_description": "External source: NutritionValue / USDA regular mayonnaise",
+      "aliases": [
+        "майонез",
+        "mayo",
+        "майонез классический"
+      ],
+      "fdc_id": 900000012,
+      "usda_category": "External Sources",
+      "calories_per_100g": 680.0,
+      "protein_per_100g": 0.95,
+      "fat_per_100g": 75.0,
+      "carbs_per_100g": 0.59
+    },
+    {
+      "slug": "mustard_prepared",
+      "name_ru": "горчица",
+      "category": "соусы",
+      "state": "готовый продукт",
+      "usda_description": "External source: USDA / Recipal yellow prepared mustard",
+      "aliases": [
+        "горчица",
+        "желтая горчица",
+        "столовая горчица",
+        "prepared mustard"
+      ],
+      "fdc_id": 900000013,
+      "usda_category": "External Sources",
+      "calories_per_100g": 60.0,
+      "protein_per_100g": 3.74,
+      "fat_per_100g": 3.34,
+      "carbs_per_100g": 5.83
+    },
+    {
+      "slug": "honey_plain",
+      "name_ru": "мед",
+      "category": "сладости",
+      "state": "готовый продукт",
+      "usda_description": "External source: USDA/FatSecret honey",
+      "aliases": [
+        "мед",
+        "мёд",
+        "пчелиный мед",
+        "натуральный мед"
+      ],
+      "fdc_id": 900000014,
+      "usda_category": "External Sources",
+      "calories_per_100g": 304.0,
+      "protein_per_100g": 0.3,
+      "fat_per_100g": 0.0,
+      "carbs_per_100g": 82.4
+    },
+    {
+      "slug": "fried_egg_plain",
+      "name_ru": "яичница",
+      "category": "яйца",
+      "state": "готовый продукт",
+      "usda_description": "External source: USDA/FatSecret fried egg",
+      "aliases": [
+        "яичница",
+        "глазунья",
+        "жареное яйцо",
+        "fried egg"
+      ],
+      "fdc_id": 900000015,
+      "usda_category": "External Sources",
+      "calories_per_100g": 201.0,
+      "protein_per_100g": 13.63,
+      "fat_per_100g": 15.31,
+      "carbs_per_100g": 0.88
+    },
+    {
+      "slug": "mashed_potatoes",
+      "name_ru": "пюре картофельное",
+      "category": "крупы и гарниры",
+      "state": "готовый продукт",
+      "usda_description": "External source: NutritionValue / USDA mashed potatoes with milk and butter",
+      "aliases": [
+        "картофельное пюре",
+        "пюре картофельное",
+        "пюрешка",
+        "mashed potatoes"
+      ],
+      "fdc_id": 900000016,
+      "usda_category": "External Sources",
+      "calories_per_100g": 113.0,
+      "protein_per_100g": 1.86,
+      "fat_per_100g": 4.24,
+      "carbs_per_100g": 16.57
+    },
+    {
+      "slug": "plov_average_recipe",
+      "name_ru": "плов",
+      "category": "готовые блюда",
+      "state": "готовый продукт",
+      "usda_description": "External source: FatSecret generic rice pilaf",
+      "aliases": [
+        "плов",
+        "рисовый плов",
+        "rice pilaf"
+      ],
+      "fdc_id": 900000017,
+      "usda_category": "External Sources",
+      "calories_per_100g": 125.0,
+      "protein_per_100g": 2.07,
+      "fat_per_100g": 3.24,
+      "carbs_per_100g": 21.57
+    },
+    {
+      "slug": "borscht_average_recipe",
+      "name_ru": "борщ",
+      "category": "супы",
+      "state": "готовый продукт",
+      "usda_description": "External source: FatSecret generic beet soup/borscht",
+      "aliases": [
+        "борщ",
+        "красный борщ",
+        "borscht"
+      ],
+      "fdc_id": 900000018,
+      "usda_category": "External Sources",
+      "calories_per_100g": 32.0,
+      "protein_per_100g": 1.37,
+      "fat_per_100g": 1.64,
+      "carbs_per_100g": 3.37
+    },
+    {
+      "slug": "chicken_soup_average_recipe",
+      "name_ru": "куриный суп",
+      "category": "супы",
+      "state": "готовый продукт",
+      "usda_description": "External source: FatSecret generic chicken soup",
+      "aliases": [
+        "куриный суп",
+        "суп с курицей",
+        "chicken soup",
+        "куриный бульон с овощами"
+      ],
+      "fdc_id": 900000019,
+      "usda_category": "External Sources",
+      "calories_per_100g": 31.0,
+      "protein_per_100g": 1.68,
+      "fat_per_100g": 1.02,
+      "carbs_per_100g": 3.88
+    },
+    {
+      "slug": "syrniki_average_recipe",
+      "name_ru": "сырники",
+      "category": "готовые блюда",
+      "state": "готовый продукт",
+      "usda_description": "External source: FatSecret generic syrniki",
+      "aliases": [
+        "сырники",
+        "творожники",
+        "syrniki",
+        "cottage cheese pancakes"
+      ],
+      "fdc_id": 900000020,
+      "usda_category": "External Sources",
+      "calories_per_100g": 175.0,
+      "protein_per_100g": 14.44,
+      "fat_per_100g": 7.97,
+      "carbs_per_100g": 11.5
+    },
+    {
+      "slug": "product",
+      "name_ru": "щи",
+      "category": "супы",
+      "state": "готовый продукт",
+      "usda_description": "External source: FatSecret generic",
+      "aliases": [
+        "русские щи"
+      ],
+      "fdc_id": 900000101,
+      "usda_category": "External Sources",
+      "calories_per_100g": 29.0,
+      "protein_per_100g": 1.6,
+      "fat_per_100g": 1.33,
+      "carbs_per_100g": 3.14
+    },
+    {
+      "slug": "product_alt",
+      "name_ru": "овощной суп",
+      "category": "супы",
+      "state": "готовый продукт",
+      "usda_description": "External source: FatSecret generic",
+      "aliases": [
+        "суп из овощей"
+      ],
+      "fdc_id": 900000102,
+      "usda_category": "External Sources",
+      "calories_per_100g": 42.0,
+      "protein_per_100g": 1.76,
+      "fat_per_100g": 1.9,
+      "carbs_per_100g": 5.13
+    },
+    {
+      "slug": "product_alt_alt",
+      "name_ru": "суп с фрикадельками",
+      "category": "супы",
+      "state": "готовый продукт",
+      "usda_description": "External source: Generic recipe estimate",
+      "aliases": [
+        "суп с мясными шариками"
+      ],
+      "fdc_id": 900000103,
+      "usda_category": "External Sources",
+      "calories_per_100g": 57.0,
+      "protein_per_100g": 3.3,
+      "fat_per_100g": 2.8,
+      "carbs_per_100g": 4.6
+    },
+    {
+      "slug": "product_alt_alt_alt",
+      "name_ru": "чечевичный суп",
+      "category": "супы",
+      "state": "готовый продукт",
+      "usda_description": "External source: FatSecret generic",
+      "aliases": [
+        "lentil soup",
+        "суп из чечевицы"
+      ],
+      "fdc_id": 900000104,
+      "usda_category": "External Sources",
+      "calories_per_100g": 75.0,
+      "protein_per_100g": 4.2,
+      "fat_per_100g": 1.85,
+      "carbs_per_100g": 10.73
+    },
+    {
+      "slug": "product_alt_alt_alt_alt",
+      "name_ru": "гороховый суп",
+      "category": "супы",
+      "state": "готовый продукт",
+      "usda_description": "External source: FatSecret generic",
+      "aliases": [
+        "суп из гороха"
+      ],
+      "fdc_id": 900000105,
+      "usda_category": "External Sources",
+      "calories_per_100g": 66.0,
+      "protein_per_100g": 3.44,
+      "fat_per_100g": 1.17,
+      "carbs_per_100g": 10.6
+    },
+    {
+      "slug": "product_alt_alt_alt_alt_alt",
+      "name_ru": "грибной суп",
+      "category": "супы",
+      "state": "готовый продукт",
+      "usda_description": "External source: FatSecret generic",
+      "aliases": [
+        "суп с грибами"
+      ],
+      "fdc_id": 900000106,
+      "usda_category": "External Sources",
+      "calories_per_100g": 39.0,
+      "protein_per_100g": 1.6,
+      "fat_per_100g": 1.8,
+      "carbs_per_100g": 4.3
+    },
+    {
+      "slug": "product_alt_alt_alt_alt_alt_alt",
+      "name_ru": "уха",
+      "category": "супы",
+      "state": "готовый продукт",
+      "usda_description": "External source: FatSecret generic / recipe estimate",
+      "aliases": [
+        "уха"
+      ],
+      "fdc_id": 900000107,
+      "usda_category": "External Sources",
+      "calories_per_100g": 36.0,
+      "protein_per_100g": 3.5,
+      "fat_per_100g": 1.2,
+      "carbs_per_100g": 2.8
+    },
+    {
+      "slug": "product_alt_alt_alt_alt_alt_alt_alt",
+      "name_ru": "солянка",
+      "category": "супы",
+      "state": "готовый продукт",
+      "usda_description": "External source: Generic recipe estimate",
+      "aliases": [
+        "солянка мясная"
+      ],
+      "fdc_id": 900000108,
+      "usda_category": "External Sources",
+      "calories_per_100g": 73.0,
+      "protein_per_100g": 3.5,
+      "fat_per_100g": 5.2,
+      "carbs_per_100g": 3.1
+    },
+    {
+      "slug": "product_alt_alt_alt_alt_alt_alt_alt_alt",
+      "name_ru": "гречка с мясом",
+      "category": "готовые блюда",
+      "state": "готовый продукт",
+      "usda_description": "External source: Generic recipe estimate",
+      "aliases": [
+        "buckwheat with meat",
+        "гречка по-купечески"
+      ],
+      "fdc_id": 900000109,
+      "usda_category": "External Sources",
+      "calories_per_100g": 145.0,
+      "protein_per_100g": 7.5,
+      "fat_per_100g": 5.2,
+      "carbs_per_100g": 17.0
+    },
+    {
+      "slug": "product_alt_alt_alt_alt_alt_alt_alt_alt_alt",
+      "name_ru": "рис с овощами",
+      "category": "крупы и гарниры",
+      "state": "готовый продукт",
+      "usda_description": "External source: FatSecret generic / USDA-style",
+      "aliases": [
+        "рис овощной"
+      ],
+      "fdc_id": 900000110,
+      "usda_category": "External Sources",
+      "calories_per_100g": 117.0,
+      "protein_per_100g": 2.5,
+      "fat_per_100g": 2.0,
+      "carbs_per_100g": 22.0
+    },
+    {
+      "slug": "product_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt",
+      "name_ru": "макароны по-флотски",
+      "category": "готовые блюда",
+      "state": "готовый продукт",
+      "usda_description": "External source: Generic recipe estimate",
+      "aliases": [
+        "pasta with meat",
+        "макароны с фаршем"
+      ],
+      "fdc_id": 900000111,
+      "usda_category": "External Sources",
+      "calories_per_100g": 185.0,
+      "protein_per_100g": 8.5,
+      "fat_per_100g": 7.0,
+      "carbs_per_100g": 22.0
+    },
+    {
+      "slug": "product_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt",
+      "name_ru": "жаркое",
+      "category": "готовые блюда",
+      "state": "готовый продукт",
+      "usda_description": "External source: Generic recipe estimate",
+      "aliases": [
+        "жаркое с мясом"
+      ],
+      "fdc_id": 900000112,
+      "usda_category": "External Sources",
+      "calories_per_100g": 123.0,
+      "protein_per_100g": 6.8,
+      "fat_per_100g": 6.0,
+      "carbs_per_100g": 10.5
+    },
+    {
+      "slug": "product_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt",
+      "name_ru": "рагу овощное",
+      "category": "готовые блюда",
+      "state": "готовый продукт",
+      "usda_description": "External source: FatSecret generic / recipe estimate",
+      "aliases": [
+        "овощное рагу"
+      ],
+      "fdc_id": 900000113,
+      "usda_category": "External Sources",
+      "calories_per_100g": 45.0,
+      "protein_per_100g": 1.3,
+      "fat_per_100g": 2.0,
+      "carbs_per_100g": 6.0
+    },
+    {
+      "slug": "product_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt",
+      "name_ru": "тушеная капуста",
+      "category": "овощи",
+      "state": "готовый продукт",
+      "usda_description": "External source: FatSecret generic / recipe estimate",
+      "aliases": [
+        "stewed cabbage",
+        "капуста тушеная"
+      ],
+      "fdc_id": 900000114,
+      "usda_category": "External Sources",
+      "calories_per_100g": 56.0,
+      "protein_per_100g": 1.4,
+      "fat_per_100g": 3.1,
+      "carbs_per_100g": 6.3
+    },
+    {
+      "slug": "product_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt",
+      "name_ru": "голубцы",
+      "category": "готовые блюда",
+      "state": "готовый продукт",
+      "usda_description": "External source: FatSecret generic",
+      "aliases": [
+        "голубцы"
+      ],
+      "fdc_id": 900000115,
+      "usda_category": "External Sources",
+      "calories_per_100g": 110.0,
+      "protein_per_100g": 5.5,
+      "fat_per_100g": 5.0,
+      "carbs_per_100g": 10.5
+    },
+    {
+      "slug": "product_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt",
+      "name_ru": "фаршированный перец",
+      "category": "готовые блюда",
+      "state": "готовый продукт",
+      "usda_description": "External source: FatSecret generic",
+      "aliases": [
+        "перец с фаршем",
+        "перец фаршированный"
+      ],
+      "fdc_id": 900000116,
+      "usda_category": "External Sources",
+      "calories_per_100g": 105.0,
+      "protein_per_100g": 5.0,
+      "fat_per_100g": 5.2,
+      "carbs_per_100g": 9.5
+    },
+    {
+      "slug": "product_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt",
+      "name_ru": "тефтели в соусе",
+      "category": "готовые блюда",
+      "state": "готовый продукт",
+      "usda_description": "External source: FatSecret generic",
+      "aliases": [
+        "тефтели"
+      ],
+      "fdc_id": 900000117,
+      "usda_category": "External Sources",
+      "calories_per_100g": 175.0,
+      "protein_per_100g": 10.0,
+      "fat_per_100g": 11.0,
+      "carbs_per_100g": 8.0
+    },
+    {
+      "slug": "product_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt",
+      "name_ru": "котлета куриная",
+      "category": "мясо и птица",
+      "state": "готовый продукт",
+      "usda_description": "External source: FatSecret generic",
+      "aliases": [
+        "куриная котлета"
+      ],
+      "fdc_id": 900000118,
+      "usda_category": "External Sources",
+      "calories_per_100g": 220.0,
+      "protein_per_100g": 17.0,
+      "fat_per_100g": 13.0,
+      "carbs_per_100g": 8.0
+    },
+    {
+      "slug": "product_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt",
+      "name_ru": "котлета говяжья",
+      "category": "мясо и птица",
+      "state": "готовый продукт",
+      "usda_description": "External source: FatSecret generic",
+      "aliases": [
+        "говяжья котлета"
+      ],
+      "fdc_id": 900000119,
+      "usda_category": "External Sources",
+      "calories_per_100g": 250.0,
+      "protein_per_100g": 17.0,
+      "fat_per_100g": 18.0,
+      "carbs_per_100g": 5.0
+    },
+    {
+      "slug": "product_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt",
+      "name_ru": "отбивная куриная",
+      "category": "мясо и птица",
+      "state": "готовый продукт",
+      "usda_description": "External source: FatSecret generic",
+      "aliases": [
+        "куриная отбивная"
+      ],
+      "fdc_id": 900000120,
+      "usda_category": "External Sources",
+      "calories_per_100g": 210.0,
+      "protein_per_100g": 23.0,
+      "fat_per_100g": 10.0,
+      "carbs_per_100g": 6.0
+    },
+    {
+      "slug": "product_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt",
+      "name_ru": "гуляш",
+      "category": "готовые блюда",
+      "state": "готовый продукт",
+      "usda_description": "External source: FatSecret generic",
+      "aliases": [
+        "мясной гуляш",
+        "goulash"
+      ],
+      "fdc_id": 900000121,
+      "usda_category": "External Sources",
+      "calories_per_100g": 120.0,
+      "protein_per_100g": 9.0,
+      "fat_per_100g": 7.0,
+      "carbs_per_100g": 5.5
+    },
+    {
+      "slug": "product_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt",
+      "name_ru": "бефстроганов",
+      "category": "готовые блюда",
+      "state": "готовый продукт",
+      "usda_description": "External source: FatSecret generic",
+      "aliases": [
+        "beef stroganoff",
+        "говядина строганов"
+      ],
+      "fdc_id": 900000122,
+      "usda_category": "External Sources",
+      "calories_per_100g": 170.0,
+      "protein_per_100g": 9.5,
+      "fat_per_100g": 11.0,
+      "carbs_per_100g": 7.5
+    },
+    {
+      "slug": "product_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt",
+      "name_ru": "омлет с молоком",
+      "category": "яйца",
+      "state": "готовый продукт",
+      "usda_description": "External source: FatSecret generic",
+      "aliases": [
+        "молочный омлет"
+      ],
+      "fdc_id": 900000123,
+      "usda_category": "External Sources",
+      "calories_per_100g": 154.0,
+      "protein_per_100g": 10.0,
+      "fat_per_100g": 11.0,
+      "carbs_per_100g": 2.5
+    },
+    {
+      "slug": "product_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt",
+      "name_ru": "творожная запеканка",
+      "category": "готовые блюда",
+      "state": "готовый продукт",
+      "usda_description": "External source: Generic recipe estimate",
+      "aliases": [
+        "запеканка из творога"
+      ],
+      "fdc_id": 900000124,
+      "usda_category": "External Sources",
+      "calories_per_100g": 165.0,
+      "protein_per_100g": 13.0,
+      "fat_per_100g": 6.0,
+      "carbs_per_100g": 15.0
+    },
+    {
+      "slug": "product_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt",
+      "name_ru": "овсянка на молоке",
+      "category": "крупы и гарниры",
+      "state": "готовый продукт",
+      "usda_description": "External source: FatSecret generic / USDA-style",
+      "aliases": [
+        "молочная овсянка"
+      ],
+      "fdc_id": 900000125,
+      "usda_category": "External Sources",
+      "calories_per_100g": 102.0,
+      "protein_per_100g": 3.7,
+      "fat_per_100g": 2.6,
+      "carbs_per_100g": 16.2
+    },
+    {
+      "slug": "product_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt",
+      "name_ru": "рисовая каша на молоке",
+      "category": "крупы и гарниры",
+      "state": "готовый продукт",
+      "usda_description": "External source: Generic recipe estimate",
+      "aliases": [
+        "рисовая каша",
+        "молочная рисовая каша"
+      ],
+      "fdc_id": 900000126,
+      "usda_category": "External Sources",
+      "calories_per_100g": 97.0,
+      "protein_per_100g": 2.7,
+      "fat_per_100g": 2.2,
+      "carbs_per_100g": 16.8
+    },
+    {
+      "slug": "product_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt",
+      "name_ru": "гречка с молоком",
+      "category": "крупы и гарниры",
+      "state": "готовый продукт",
+      "usda_description": "External source: Generic recipe estimate",
+      "aliases": [
+        "молочная гречка"
+      ],
+      "fdc_id": 900000127,
+      "usda_category": "External Sources",
+      "calories_per_100g": 95.0,
+      "protein_per_100g": 3.8,
+      "fat_per_100g": 2.4,
+      "carbs_per_100g": 14.5
+    },
+    {
+      "slug": "product_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt",
+      "name_ru": "блины",
+      "category": "готовые блюда",
+      "state": "готовый продукт",
+      "usda_description": "External source: USDA/FatSecret generic pancakes",
+      "aliases": [
+        "тонкие блины",
+        "домашние блины"
+      ],
+      "fdc_id": 900000128,
+      "usda_category": "External Sources",
+      "calories_per_100g": 227.0,
+      "protein_per_100g": 6.4,
+      "fat_per_100g": 9.7,
+      "carbs_per_100g": 28.3
+    },
+    {
+      "slug": "product_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt",
+      "name_ru": "оладьи",
+      "category": "готовые блюда",
+      "state": "готовый продукт",
+      "usda_description": "External source: Generic recipe estimate",
+      "aliases": [
+        "пышные оладьи"
+      ],
+      "fdc_id": 900000129,
+      "usda_category": "External Sources",
+      "calories_per_100g": 240.0,
+      "protein_per_100g": 6.0,
+      "fat_per_100g": 10.5,
+      "carbs_per_100g": 30.0
+    },
+    {
+      "slug": "product_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt",
+      "name_ru": "вареники с картошкой",
+      "category": "готовые блюда",
+      "state": "готовый продукт",
+      "usda_description": "External source: FatSecret generic / recipe estimate",
+      "aliases": [
+        "вареники картофельные"
+      ],
+      "fdc_id": 900000130,
+      "usda_category": "External Sources",
+      "calories_per_100g": 160.0,
+      "protein_per_100g": 4.5,
+      "fat_per_100g": 3.0,
+      "carbs_per_100g": 29.0
+    },
+    {
+      "slug": "product_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt",
+      "name_ru": "вареники с творогом",
+      "category": "готовые блюда",
+      "state": "готовый продукт",
+      "usda_description": "External source: FatSecret generic / recipe estimate",
+      "aliases": [
+        "творожные вареники"
+      ],
+      "fdc_id": 900000131,
+      "usda_category": "External Sources",
+      "calories_per_100g": 185.0,
+      "protein_per_100g": 10.0,
+      "fat_per_100g": 5.0,
+      "carbs_per_100g": 25.0
+    },
+    {
+      "slug": "product_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt",
+      "name_ru": "пельмени отварные",
+      "category": "готовые блюда",
+      "state": "готовый продукт",
+      "usda_description": "External source: FatSecret generic",
+      "aliases": [
+        "пельмени"
+      ],
+      "fdc_id": 900000132,
+      "usda_category": "External Sources",
+      "calories_per_100g": 230.0,
+      "protein_per_100g": 11.0,
+      "fat_per_100g": 12.0,
+      "carbs_per_100g": 20.0
+    },
+    {
+      "slug": "product_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt",
+      "name_ru": "оливье",
+      "category": "салаты и закуски",
+      "state": "готовый продукт",
+      "usda_description": "External source: FatSecret generic / recipe estimate",
+      "aliases": [
+        "салат оливье"
+      ],
+      "fdc_id": 900000133,
+      "usda_category": "External Sources",
+      "calories_per_100g": 198.0,
+      "protein_per_100g": 5.0,
+      "fat_per_100g": 16.0,
+      "carbs_per_100g": 8.0
+    },
+    {
+      "slug": "product_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt",
+      "name_ru": "винегрет",
+      "category": "салаты и закуски",
+      "state": "готовый продукт",
+      "usda_description": "External source: FatSecret generic / recipe estimate",
+      "aliases": [
+        "vinegret",
+        "салат винегрет"
+      ],
+      "fdc_id": 900000134,
+      "usda_category": "External Sources",
+      "calories_per_100g": 90.0,
+      "protein_per_100g": 1.5,
+      "fat_per_100g": 4.5,
+      "carbs_per_100g": 11.0
+    },
+    {
+      "slug": "product_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt",
+      "name_ru": "крабовый салат",
+      "category": "салаты и закуски",
+      "state": "готовый продукт",
+      "usda_description": "External source: Generic recipe estimate",
+      "aliases": [
+        "салат с крабовыми палочками"
+      ],
+      "fdc_id": 900000135,
+      "usda_category": "External Sources",
+      "calories_per_100g": 170.0,
+      "protein_per_100g": 6.5,
+      "fat_per_100g": 12.0,
+      "carbs_per_100g": 9.0
+    },
+    {
+      "slug": "product_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt",
+      "name_ru": "салат из капусты",
+      "category": "салаты и закуски",
+      "state": "готовый продукт",
+      "usda_description": "External source: FatSecret generic / recipe estimate",
+      "aliases": [
+        "капустный салат"
+      ],
+      "fdc_id": 900000136,
+      "usda_category": "External Sources",
+      "calories_per_100g": 50.0,
+      "protein_per_100g": 1.3,
+      "fat_per_100g": 2.8,
+      "carbs_per_100g": 5.6
+    },
+    {
+      "slug": "product_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt",
+      "name_ru": "салат огурцы помидоры",
+      "category": "салаты и закуски",
+      "state": "готовый продукт",
+      "usda_description": "External source: Generic recipe estimate",
+      "aliases": [
+        "огурцы помидоры"
+      ],
+      "fdc_id": 900000137,
+      "usda_category": "External Sources",
+      "calories_per_100g": 20.0,
+      "protein_per_100g": 0.9,
+      "fat_per_100g": 0.2,
+      "carbs_per_100g": 3.8
+    },
+    {
+      "slug": "product_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt",
+      "name_ru": "свекла с чесноком",
+      "category": "салаты и закуски",
+      "state": "готовый продукт",
+      "usda_description": "External source: Generic recipe estimate",
+      "aliases": [
+        "салат из свеклы"
+      ],
+      "fdc_id": 900000138,
+      "usda_category": "External Sources",
+      "calories_per_100g": 115.0,
+      "protein_per_100g": 2.0,
+      "fat_per_100g": 7.0,
+      "carbs_per_100g": 11.0
+    },
+    {
+      "slug": "product_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt",
+      "name_ru": "морковь по-корейски",
+      "category": "салаты и закуски",
+      "state": "готовый продукт",
+      "usda_description": "External source: Generic recipe estimate",
+      "aliases": [
+        "морковча"
+      ],
+      "fdc_id": 900000139,
+      "usda_category": "External Sources",
+      "calories_per_100g": 112.0,
+      "protein_per_100g": 1.2,
+      "fat_per_100g": 7.5,
+      "carbs_per_100g": 10.0
+    },
+    {
+      "slug": "product_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt",
+      "name_ru": "сельдь под шубой",
+      "category": "салаты и закуски",
+      "state": "готовый продукт",
+      "usda_description": "External source: Generic recipe estimate",
+      "aliases": [
+        "шуба",
+        "селедка под шубой"
+      ],
+      "fdc_id": 900000140,
+      "usda_category": "External Sources",
+      "calories_per_100g": 190.0,
+      "protein_per_100g": 6.0,
+      "fat_per_100g": 14.0,
+      "carbs_per_100g": 10.0
+    },
+    {
+      "slug": "product_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt",
+      "name_ru": "тан",
+      "category": "напитки",
+      "state": "готовый продукт",
+      "usda_description": "External source: Generic label estimate",
+      "aliases": [
+        "кисломолочный тан"
+      ],
+      "fdc_id": 900000141,
+      "usda_category": "External Sources",
+      "calories_per_100g": 27.0,
+      "protein_per_100g": 1.5,
+      "fat_per_100g": 1.0,
+      "carbs_per_100g": 2.9
+    },
+    {
+      "slug": "1",
+      "name_ru": "кефир 1%",
+      "category": "напитки",
+      "state": "готовый продукт",
+      "usda_description": "External source: FatSecret / USDA kefir lowfat",
+      "aliases": [
+        "кефир один процент"
+      ],
+      "fdc_id": 900000142,
+      "usda_category": "External Sources",
+      "calories_per_100g": 41.0,
+      "protein_per_100g": 3.8,
+      "fat_per_100g": 1.0,
+      "carbs_per_100g": 4.5
+    },
+    {
+      "slug": "2_5",
+      "name_ru": "кефир 2.5%",
+      "category": "напитки",
+      "state": "готовый продукт",
+      "usda_description": "External source: FatSecret / generic kefir",
+      "aliases": [
+        "кефир классический",
+        "кефир два и пять"
+      ],
+      "fdc_id": 900000143,
+      "usda_category": "External Sources",
+      "calories_per_100g": 53.0,
+      "protein_per_100g": 3.0,
+      "fat_per_100g": 2.5,
+      "carbs_per_100g": 4.0
+    },
+    {
+      "slug": "product_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt",
+      "name_ru": "йогурт питьевой без сахара",
+      "category": "напитки",
+      "state": "готовый продукт",
+      "usda_description": "External source: USDA/FatSecret yogurt plain",
+      "aliases": [
+        "питьевой йогурт без сахара",
+        "йогурт питьевой натуральный"
+      ],
+      "fdc_id": 900000144,
+      "usda_category": "External Sources",
+      "calories_per_100g": 61.0,
+      "protein_per_100g": 3.5,
+      "fat_per_100g": 3.3,
+      "carbs_per_100g": 4.7
+    },
+    {
+      "slug": "product_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt",
+      "name_ru": "йогурт питьевой сладкий",
+      "category": "напитки",
+      "state": "готовый продукт",
+      "usda_description": "External source: USDA/FatSecret flavored yogurt",
+      "aliases": [
+        "питьевой йогурт сладкий",
+        "сладкий питьевой йогурт"
+      ],
+      "fdc_id": 900000145,
+      "usda_category": "External Sources",
+      "calories_per_100g": 82.0,
+      "protein_per_100g": 3.2,
+      "fat_per_100g": 2.0,
+      "carbs_per_100g": 13.0
+    },
+    {
+      "slug": "product_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt",
+      "name_ru": "какао на молоке",
+      "category": "напитки",
+      "state": "готовый продукт",
+      "usda_description": "External source: FatSecret generic cocoa milk",
+      "aliases": [
+        "горячий какао"
+      ],
+      "fdc_id": 900000146,
+      "usda_category": "External Sources",
+      "calories_per_100g": 77.0,
+      "protein_per_100g": 3.2,
+      "fat_per_100g": 2.7,
+      "carbs_per_100g": 10.0
+    },
+    {
+      "slug": "product_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt",
+      "name_ru": "чай с сахаром",
+      "category": "напитки",
+      "state": "готовый продукт",
+      "usda_description": "External source: USDA/FatSecret tea + sugar estimate",
+      "aliases": [
+        "черный чай с сахаром"
+      ],
+      "fdc_id": 900000147,
+      "usda_category": "External Sources",
+      "calories_per_100g": 20.0,
+      "protein_per_100g": 0.0,
+      "fat_per_100g": 0.0,
+      "carbs_per_100g": 5.0
+    },
+    {
+      "slug": "product_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt",
+      "name_ru": "чай без сахара",
+      "category": "напитки",
+      "state": "готовый продукт",
+      "usda_description": "External source: USDA/FatSecret brewed tea",
+      "aliases": [
+        "черный чай",
+        "зеленый чай",
+        "чай"
+      ],
+      "fdc_id": 900000148,
+      "usda_category": "External Sources",
+      "calories_per_100g": 1.0,
+      "protein_per_100g": 0.0,
+      "fat_per_100g": 0.0,
+      "carbs_per_100g": 0.2
+    },
+    {
+      "slug": "product_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt",
+      "name_ru": "чай с медом",
+      "category": "напитки",
+      "state": "готовый продукт",
+      "usda_description": "External source: USDA/FatSecret tea + honey estimate",
+      "aliases": [
+        "черный чай с медом"
+      ],
+      "fdc_id": 900000149,
+      "usda_category": "External Sources",
+      "calories_per_100g": 22.0,
+      "protein_per_100g": 0.02,
+      "fat_per_100g": 0.0,
+      "carbs_per_100g": 5.8
+    },
+    {
+      "slug": "product_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt",
+      "name_ru": "кофе черный",
+      "category": "напитки",
+      "state": "готовый продукт",
+      "usda_description": "External source: USDA/FatSecret brewed coffee",
+      "aliases": [
+        "американо",
+        "кофе без сахара",
+        "кофе"
+      ],
+      "fdc_id": 900000150,
+      "usda_category": "External Sources",
+      "calories_per_100g": 1.0,
+      "protein_per_100g": 0.12,
+      "fat_per_100g": 0.02,
+      "carbs_per_100g": 0.0
+    },
+    {
+      "slug": "product_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt",
+      "name_ru": "кофе с молоком",
+      "category": "напитки",
+      "state": "готовый продукт",
+      "usda_description": "External source: USDA/FatSecret coffee milk estimate",
+      "aliases": [
+        "кофе молочный"
+      ],
+      "fdc_id": 900000151,
+      "usda_category": "External Sources",
+      "calories_per_100g": 13.0,
+      "protein_per_100g": 0.7,
+      "fat_per_100g": 0.5,
+      "carbs_per_100g": 1.0
+    },
+    {
+      "slug": "product_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt",
+      "name_ru": "кофе с сахаром",
+      "category": "напитки",
+      "state": "готовый продукт",
+      "usda_description": "External source: USDA/FatSecret coffee + sugar estimate",
+      "aliases": [
+        "кофе сладкий"
+      ],
+      "fdc_id": 900000152,
+      "usda_category": "External Sources",
+      "calories_per_100g": 21.0,
+      "protein_per_100g": 0.1,
+      "fat_per_100g": 0.0,
+      "carbs_per_100g": 5.0
+    },
+    {
+      "slug": "3_1",
+      "name_ru": "кофе 3 в 1",
+      "category": "напитки",
+      "state": "готовый продукт",
+      "usda_description": "External source: Generic label estimate",
+      "aliases": [
+        "растворимый кофе 3в1"
+      ],
+      "fdc_id": 900000153,
+      "usda_category": "External Sources",
+      "calories_per_100g": 45.0,
+      "protein_per_100g": 0.5,
+      "fat_per_100g": 1.3,
+      "carbs_per_100g": 8.0
+    },
+    {
+      "slug": "product_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt",
+      "name_ru": "капучино",
+      "category": "напитки",
+      "state": "готовый продукт",
+      "usda_description": "External source: USDA/FatSecret cappuccino",
+      "aliases": [
+        "cappuccino",
+        "кофе капучино"
+      ],
+      "fdc_id": 900000154,
+      "usda_category": "External Sources",
+      "calories_per_100g": 27.0,
+      "protein_per_100g": 1.7,
+      "fat_per_100g": 1.4,
+      "carbs_per_100g": 2.1
+    },
+    {
+      "slug": "product_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt",
+      "name_ru": "латте",
+      "category": "напитки",
+      "state": "готовый продукт",
+      "usda_description": "External source: USDA/FatSecret latte",
+      "aliases": [
+        "caffe latte",
+        "кофе латте",
+        "latte"
+      ],
+      "fdc_id": 900000155,
+      "usda_category": "External Sources",
+      "calories_per_100g": 43.0,
+      "protein_per_100g": 2.2,
+      "fat_per_100g": 2.0,
+      "carbs_per_100g": 4.0
+    },
+    {
+      "slug": "product_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt",
+      "name_ru": "компот",
+      "category": "напитки",
+      "state": "готовый продукт",
+      "usda_description": "External source: Generic recipe estimate",
+      "aliases": [
+        "компот"
+      ],
+      "fdc_id": 900000156,
+      "usda_category": "External Sources",
+      "calories_per_100g": 35.0,
+      "protein_per_100g": 0.1,
+      "fat_per_100g": 0.0,
+      "carbs_per_100g": 8.5
+    },
+    {
+      "slug": "product_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt",
+      "name_ru": "морс",
+      "category": "напитки",
+      "state": "готовый продукт",
+      "usda_description": "External source: Generic recipe estimate",
+      "aliases": [
+        "клюквенный морс",
+        "ягодный морс"
+      ],
+      "fdc_id": 900000157,
+      "usda_category": "External Sources",
+      "calories_per_100g": 40.0,
+      "protein_per_100g": 0.1,
+      "fat_per_100g": 0.0,
+      "carbs_per_100g": 9.8
+    },
+    {
+      "slug": "product_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt",
+      "name_ru": "кисель",
+      "category": "напитки",
+      "state": "готовый продукт",
+      "usda_description": "External source: Generic recipe estimate",
+      "aliases": [
+        "ягодный кисель"
+      ],
+      "fdc_id": 900000158,
+      "usda_category": "External Sources",
+      "calories_per_100g": 55.0,
+      "protein_per_100g": 0.1,
+      "fat_per_100g": 0.0,
+      "carbs_per_100g": 13.5
+    },
+    {
+      "slug": "product_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt",
+      "name_ru": "лимонад",
+      "category": "напитки",
+      "state": "готовый продукт",
+      "usda_description": "External source: USDA/FatSecret lemonade",
+      "aliases": [
+        "газированный лимонад"
+      ],
+      "fdc_id": 900000159,
+      "usda_category": "External Sources",
+      "calories_per_100g": 40.0,
+      "protein_per_100g": 0.0,
+      "fat_per_100g": 0.0,
+      "carbs_per_100g": 10.4
+    },
+    {
+      "slug": "product_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt",
+      "name_ru": "сок яблочный",
+      "category": "напитки",
+      "state": "готовый продукт",
+      "usda_description": "External source: USDA/FatSecret apple juice",
+      "aliases": [
+        "яблочный сок"
+      ],
+      "fdc_id": 900000160,
+      "usda_category": "External Sources",
+      "calories_per_100g": 46.0,
+      "protein_per_100g": 0.1,
+      "fat_per_100g": 0.1,
+      "carbs_per_100g": 11.3
+    },
+    {
+      "slug": "product_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt",
+      "name_ru": "сок апельсиновый",
+      "category": "напитки",
+      "state": "готовый продукт",
+      "usda_description": "External source: USDA/FatSecret orange juice",
+      "aliases": [
+        "апельсиновый сок"
+      ],
+      "fdc_id": 900000161,
+      "usda_category": "External Sources",
+      "calories_per_100g": 45.0,
+      "protein_per_100g": 0.7,
+      "fat_per_100g": 0.2,
+      "carbs_per_100g": 10.4
+    },
+    {
+      "slug": "product_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt",
+      "name_ru": "квас",
+      "category": "напитки",
+      "state": "готовый продукт",
+      "usda_description": "External source: Generic label estimate",
+      "aliases": [
+        "kvass",
+        "хлебный квас"
+      ],
+      "fdc_id": 900000162,
+      "usda_category": "External Sources",
+      "calories_per_100g": 27.0,
+      "protein_per_100g": 0.2,
+      "fat_per_100g": 0.0,
+      "carbs_per_100g": 5.2
+    },
+    {
+      "slug": "product_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt",
+      "name_ru": "сметанный соус",
+      "category": "соусы",
+      "state": "готовый продукт",
+      "usda_description": "External source: Generic recipe estimate",
+      "aliases": [
+        "соус со сметаной"
+      ],
+      "fdc_id": 900000163,
+      "usda_category": "External Sources",
+      "calories_per_100g": 160.0,
+      "protein_per_100g": 2.5,
+      "fat_per_100g": 15.0,
+      "carbs_per_100g": 4.0
+    },
+    {
+      "slug": "product_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt",
+      "name_ru": "чесночный соус",
+      "category": "соусы",
+      "state": "готовый продукт",
+      "usda_description": "External source: Generic recipe estimate",
+      "aliases": [
+        "соус с чесноком"
+      ],
+      "fdc_id": 900000164,
+      "usda_category": "External Sources",
+      "calories_per_100g": 260.0,
+      "protein_per_100g": 2.0,
+      "fat_per_100g": 25.0,
+      "carbs_per_100g": 6.0
+    },
+    {
+      "slug": "product_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt",
+      "name_ru": "сахар",
+      "category": "сладости",
+      "state": "сухой продукт",
+      "usda_description": "External source: USDA/FatSecret sugar",
+      "aliases": [
+        "белый сахар",
+        "сахар песок",
+        "сахар белый"
+      ],
+      "fdc_id": 900000165,
+      "usda_category": "External Sources",
+      "calories_per_100g": 387.0,
+      "protein_per_100g": 0.0,
+      "fat_per_100g": 0.0,
+      "carbs_per_100g": 100.0
+    },
+    {
+      "slug": "product_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt",
+      "name_ru": "сгущенка",
+      "category": "сладости",
+      "state": "готовый продукт",
+      "usda_description": "External source: USDA/FatSecret sweetened condensed milk",
+      "aliases": [
+        "сгущенное молоко",
+        "сгущенка обычная"
+      ],
+      "fdc_id": 900000166,
+      "usda_category": "External Sources",
+      "calories_per_100g": 321.0,
+      "protein_per_100g": 7.9,
+      "fat_per_100g": 8.7,
+      "carbs_per_100g": 54.4
+    },
+    {
+      "slug": "product_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt",
+      "name_ru": "джем",
+      "category": "сладости",
+      "state": "готовый продукт",
+      "usda_description": "External source: USDA/FatSecret jam",
+      "aliases": [
+        "jam",
+        "fruit jam",
+        "ягодный джем"
+      ],
+      "fdc_id": 900000167,
+      "usda_category": "External Sources",
+      "calories_per_100g": 250.0,
+      "protein_per_100g": 0.4,
+      "fat_per_100g": 0.1,
+      "carbs_per_100g": 65.0
+    },
+    {
+      "slug": "product_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt",
+      "name_ru": "хлеб с маслом",
+      "category": "салаты и закуски",
+      "state": "готовый продукт",
+      "usda_description": "External source: Calculated from USDA bread + butter",
+      "aliases": [
+        "бутерброд с маслом"
+      ],
+      "fdc_id": 900000168,
+      "usda_category": "External Sources",
+      "calories_per_100g": 340.0,
+      "protein_per_100g": 7.1,
+      "fat_per_100g": 14.0,
+      "carbs_per_100g": 46.0
+    },
+    {
+      "slug": "product_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt",
+      "name_ru": "бутерброд с сыром",
+      "category": "салаты и закуски",
+      "state": "готовый продукт",
+      "usda_description": "External source: Calculated from USDA bread + cheese",
+      "aliases": [
+        "хлеб с сыром"
+      ],
+      "fdc_id": 900000169,
+      "usda_category": "External Sources",
+      "calories_per_100g": 310.0,
+      "protein_per_100g": 13.5,
+      "fat_per_100g": 12.0,
+      "carbs_per_100g": 36.0
+    },
+    {
+      "slug": "product_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt",
+      "name_ru": "бутерброд с колбасой",
+      "category": "салаты и закуски",
+      "state": "готовый продукт",
+      "usda_description": "External source: Calculated from USDA bread + cooked sausage",
+      "aliases": [
+        "хлеб с колбасой"
+      ],
+      "fdc_id": 900000170,
+      "usda_category": "External Sources",
+      "calories_per_100g": 300.0,
+      "protein_per_100g": 10.5,
+      "fat_per_100g": 13.0,
+      "carbs_per_100g": 35.0
+    },
+    {
+      "slug": "product_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt",
+      "name_ru": "шоколад молочный",
+      "category": "сладости",
+      "state": "готовый продукт",
+      "usda_description": "External source: USDA/FatSecret",
+      "aliases": [
+        "шоколад молочный"
+      ],
+      "fdc_id": 900000171,
+      "usda_category": "External Sources",
+      "calories_per_100g": 535.0,
+      "protein_per_100g": 7.65,
+      "fat_per_100g": 29.66,
+      "carbs_per_100g": 59.4
+    },
+    {
+      "slug": "product_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt",
+      "name_ru": "шоколад темный",
+      "category": "сладости",
+      "state": "готовый продукт",
+      "usda_description": "External source: FatSecret generic",
+      "aliases": [
+        "шоколад темный"
+      ],
+      "fdc_id": 900000172,
+      "usda_category": "External Sources",
+      "calories_per_100g": 505.0,
+      "protein_per_100g": 3.9,
+      "fat_per_100g": 34.2,
+      "carbs_per_100g": 59.6
+    },
+    {
+      "slug": "product_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt",
+      "name_ru": "шоколад белый",
+      "category": "сладости",
+      "state": "готовый продукт",
+      "usda_description": "External source: USDA/FatSecret search",
+      "aliases": [
+        "шоколад белый"
+      ],
+      "fdc_id": 900000173,
+      "usda_category": "External Sources",
+      "calories_per_100g": 539.0,
+      "protein_per_100g": 5.9,
+      "fat_per_100g": 32.1,
+      "carbs_per_100g": 59.2
+    },
+    {
+      "slug": "product_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt",
+      "name_ru": "шоколадная конфета",
+      "category": "сладости",
+      "state": "готовый продукт",
+      "usda_description": "External source: USDA/FatSecret",
+      "aliases": [
+        "шоколадная конфета"
+      ],
+      "fdc_id": 900000174,
+      "usda_category": "External Sources",
+      "calories_per_100g": 535.0,
+      "protein_per_100g": 7.65,
+      "fat_per_100g": 29.66,
+      "carbs_per_100g": 59.4
+    },
+    {
+      "slug": "product_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt",
+      "name_ru": "батончик шоколадный с арахисом",
+      "category": "сладости",
+      "state": "готовый продукт",
+      "usda_description": "External source: FatSecret generic",
+      "aliases": [
+        "батончик шоколадный с арахисом"
+      ],
+      "fdc_id": 900000175,
+      "usda_category": "External Sources",
+      "calories_per_100g": 526.0,
+      "protein_per_100g": 13.07,
+      "fat_per_100g": 32.45,
+      "carbs_per_100g": 51.12
+    },
+    {
+      "slug": "product_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt",
+      "name_ru": "шоколадная паста",
+      "category": "сладости",
+      "state": "готовый продукт",
+      "usda_description": "External source: USDA/FatSecret search",
+      "aliases": [
+        "шоколадная паста"
+      ],
+      "fdc_id": 900000176,
+      "usda_category": "External Sources",
+      "calories_per_100g": 541.0,
+      "protein_per_100g": 6.0,
+      "fat_per_100g": 31.0,
+      "carbs_per_100g": 57.0
+    },
+    {
+      "slug": "product_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt",
+      "name_ru": "какао-порошок сладкий",
+      "category": "сладости",
+      "state": "сухой продукт",
+      "usda_description": "External source: USDA/FatSecret search",
+      "aliases": [
+        "какао-порошок сладкий"
+      ],
+      "fdc_id": 900000177,
+      "usda_category": "External Sources",
+      "calories_per_100g": 398.0,
+      "protein_per_100g": 7.0,
+      "fat_per_100g": 4.0,
+      "carbs_per_100g": 83.0
+    },
+    {
+      "slug": "product_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt",
+      "name_ru": "карамель",
+      "category": "сладости",
+      "state": "готовый продукт",
+      "usda_description": "External source: USDA/FatSecret search",
+      "aliases": [
+        "карамель"
+      ],
+      "fdc_id": 900000178,
+      "usda_category": "External Sources",
+      "calories_per_100g": 394.0,
+      "protein_per_100g": 0.0,
+      "fat_per_100g": 0.2,
+      "carbs_per_100g": 98.0
+    },
+    {
+      "slug": "product_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt",
+      "name_ru": "ирис",
+      "category": "сладости",
+      "state": "готовый продукт",
+      "usda_description": "External source: USDA/FatSecret search",
+      "aliases": [
+        "ирис"
+      ],
+      "fdc_id": 900000179,
+      "usda_category": "External Sources",
+      "calories_per_100g": 560.0,
+      "protein_per_100g": 3.0,
+      "fat_per_100g": 34.0,
+      "carbs_per_100g": 62.0
+    },
+    {
+      "slug": "product_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt",
+      "name_ru": "мармелад",
+      "category": "сладости",
+      "state": "готовый продукт",
+      "usda_description": "External source: USDA/FatSecret search",
+      "aliases": [
+        "мармелад"
+      ],
+      "fdc_id": 900000180,
+      "usda_category": "External Sources",
+      "calories_per_100g": 330.0,
+      "protein_per_100g": 0.2,
+      "fat_per_100g": 0.0,
+      "carbs_per_100g": 82.0
+    },
+    {
+      "slug": "product_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt",
+      "name_ru": "зефир",
+      "category": "сладости",
+      "state": "готовый продукт",
+      "usda_description": "External source: USDA/FatSecret search",
+      "aliases": [
+        "зефир"
+      ],
+      "fdc_id": 900000181,
+      "usda_category": "External Sources",
+      "calories_per_100g": 318.0,
+      "protein_per_100g": 1.8,
+      "fat_per_100g": 0.2,
+      "carbs_per_100g": 81.3
+    },
+    {
+      "slug": "product_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt",
+      "name_ru": "пастила",
+      "category": "сладости",
+      "state": "готовый продукт",
+      "usda_description": "External source: Generic recipe estimate",
+      "aliases": [
+        "пастила"
+      ],
+      "fdc_id": 900000182,
+      "usda_category": "External Sources",
+      "calories_per_100g": 330.0,
+      "protein_per_100g": 0.5,
+      "fat_per_100g": 0.0,
+      "carbs_per_100g": 82.0
+    },
+    {
+      "slug": "product_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt",
+      "name_ru": "жевательный мармелад",
+      "category": "сладости",
+      "state": "готовый продукт",
+      "usda_description": "External source: USDA/FatSecret search",
+      "aliases": [
+        "жевательный мармелад"
+      ],
+      "fdc_id": 900000183,
+      "usda_category": "External Sources",
+      "calories_per_100g": 350.0,
+      "protein_per_100g": 6.0,
+      "fat_per_100g": 0.1,
+      "carbs_per_100g": 78.0
+    },
+    {
+      "slug": "product_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt",
+      "name_ru": "халва подсолнечная",
+      "category": "сладости",
+      "state": "готовый продукт",
+      "usda_description": "External source: Generic international label estimate",
+      "aliases": [
+        "халва подсолнечная"
+      ],
+      "fdc_id": 900000184,
+      "usda_category": "External Sources",
+      "calories_per_100g": 523.0,
+      "protein_per_100g": 11.6,
+      "fat_per_100g": 29.7,
+      "carbs_per_100g": 54.0
+    },
+    {
+      "slug": "product_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt",
+      "name_ru": "лукум",
+      "category": "сладости",
+      "state": "готовый продукт",
+      "usda_description": "External source: USDA/FatSecret search",
+      "aliases": [
+        "лукум"
+      ],
+      "fdc_id": 900000185,
+      "usda_category": "External Sources",
+      "calories_per_100g": 360.0,
+      "protein_per_100g": 0.8,
+      "fat_per_100g": 0.2,
+      "carbs_per_100g": 89.0
+    },
+    {
+      "slug": "product_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt",
+      "name_ru": "нуга",
+      "category": "сладости",
+      "state": "готовый продукт",
+      "usda_description": "External source: USDA/FatSecret search",
+      "aliases": [
+        "нуга"
+      ],
+      "fdc_id": 900000186,
+      "usda_category": "External Sources",
+      "calories_per_100g": 398.0,
+      "protein_per_100g": 3.5,
+      "fat_per_100g": 9.0,
+      "carbs_per_100g": 75.0
+    },
+    {
+      "slug": "product_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt",
+      "name_ru": "козинак",
+      "category": "сладости",
+      "state": "готовый продукт",
+      "usda_description": "External source: Generic international label estimate",
+      "aliases": [
+        "козинак"
+      ],
+      "fdc_id": 900000187,
+      "usda_category": "External Sources",
+      "calories_per_100g": 510.0,
+      "protein_per_100g": 12.0,
+      "fat_per_100g": 28.0,
+      "carbs_per_100g": 52.0
+    },
+    {
+      "slug": "product_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt",
+      "name_ru": "печенье сахарное",
+      "category": "выпечка",
+      "state": "готовый продукт",
+      "usda_description": "External source: USDA/FatSecret search",
+      "aliases": [
+        "печенье сахарное"
+      ],
+      "fdc_id": 900000188,
+      "usda_category": "External Sources",
+      "calories_per_100g": 480.0,
+      "protein_per_100g": 5.0,
+      "fat_per_100g": 20.0,
+      "carbs_per_100g": 70.0
+    },
+    {
+      "slug": "product_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt",
+      "name_ru": "печенье шоколадное",
+      "category": "выпечка",
+      "state": "готовый продукт",
+      "usda_description": "External source: USDA/FatSecret search",
+      "aliases": [
+        "печенье шоколадное"
+      ],
+      "fdc_id": 900000189,
+      "usda_category": "External Sources",
+      "calories_per_100g": 500.0,
+      "protein_per_100g": 5.0,
+      "fat_per_100g": 24.0,
+      "carbs_per_100g": 66.0
+    },
+    {
+      "slug": "product_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt",
+      "name_ru": "печенье с шоколадной крошкой",
+      "category": "выпечка",
+      "state": "готовый продукт",
+      "usda_description": "External source: USDA/FatSecret",
+      "aliases": [
+        "печенье с шоколадной крошкой"
+      ],
+      "fdc_id": 900000190,
+      "usda_category": "External Sources",
+      "calories_per_100g": 458.0,
+      "protein_per_100g": 3.5,
+      "fat_per_100g": 24.3,
+      "carbs_per_100g": 59.1
+    },
+    {
+      "slug": "product_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt",
+      "name_ru": "овсяное печенье",
+      "category": "выпечка",
+      "state": "готовый продукт",
+      "usda_description": "External source: USDA/FatSecret search",
+      "aliases": [
+        "овсяное печенье"
+      ],
+      "fdc_id": 900000191,
+      "usda_category": "External Sources",
+      "calories_per_100g": 450.0,
+      "protein_per_100g": 6.0,
+      "fat_per_100g": 18.0,
+      "carbs_per_100g": 68.0
+    },
+    {
+      "slug": "product_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt",
+      "name_ru": "крекеры сладкие",
+      "category": "выпечка",
+      "state": "готовый продукт",
+      "usda_description": "External source: USDA/FatSecret search",
+      "aliases": [
+        "крекеры сладкие"
+      ],
+      "fdc_id": 900000192,
+      "usda_category": "External Sources",
+      "calories_per_100g": 430.0,
+      "protein_per_100g": 7.0,
+      "fat_per_100g": 12.0,
+      "carbs_per_100g": 73.0
+    },
+    {
+      "slug": "product_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt",
+      "name_ru": "галеты",
+      "category": "выпечка",
+      "state": "готовый продукт",
+      "usda_description": "External source: USDA/FatSecret search",
+      "aliases": [
+        "галеты"
+      ],
+      "fdc_id": 900000193,
+      "usda_category": "External Sources",
+      "calories_per_100g": 420.0,
+      "protein_per_100g": 9.0,
+      "fat_per_100g": 10.0,
+      "carbs_per_100g": 74.0
+    },
+    {
+      "slug": "product_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt",
+      "name_ru": "вафли",
+      "category": "выпечка",
+      "state": "готовый продукт",
+      "usda_description": "External source: USDA/FatSecret search",
+      "aliases": [
+        "вафли"
+      ],
+      "fdc_id": 900000194,
+      "usda_category": "External Sources",
+      "calories_per_100g": 520.0,
+      "protein_per_100g": 5.5,
+      "fat_per_100g": 27.0,
+      "carbs_per_100g": 64.0
+    },
+    {
+      "slug": "product_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt",
+      "name_ru": "пряники",
+      "category": "выпечка",
+      "state": "готовый продукт",
+      "usda_description": "External source: USDA/FatSecret search",
+      "aliases": [
+        "пряники"
+      ],
+      "fdc_id": 900000195,
+      "usda_category": "External Sources",
+      "calories_per_100g": 360.0,
+      "protein_per_100g": 5.0,
+      "fat_per_100g": 7.0,
+      "carbs_per_100g": 70.0
+    },
+    {
+      "slug": "product_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt",
+      "name_ru": "сухари сладкие",
+      "category": "выпечка",
+      "state": "готовый продукт",
+      "usda_description": "External source: Generic international label estimate",
+      "aliases": [
+        "сухари сладкие"
+      ],
+      "fdc_id": 900000196,
+      "usda_category": "External Sources",
+      "calories_per_100g": 405.0,
+      "protein_per_100g": 10.0,
+      "fat_per_100g": 7.0,
+      "carbs_per_100g": 75.0
+    },
+    {
+      "slug": "product_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt",
+      "name_ru": "батончик мюсли",
+      "category": "сладости",
+      "state": "готовый продукт",
+      "usda_description": "External source: USDA/FatSecret search",
+      "aliases": [
+        "батончик мюсли"
+      ],
+      "fdc_id": 900000197,
+      "usda_category": "External Sources",
+      "calories_per_100g": 471.0,
+      "protein_per_100g": 8.0,
+      "fat_per_100g": 19.0,
+      "carbs_per_100g": 64.0
+    },
+    {
+      "slug": "product_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt",
+      "name_ru": "батончик протеиновый",
+      "category": "сладости",
+      "state": "готовый продукт",
+      "usda_description": "External source: Generic label estimate",
+      "aliases": [
+        "батончик протеиновый"
+      ],
+      "fdc_id": 900000198,
+      "usda_category": "External Sources",
+      "calories_per_100g": 370.0,
+      "protein_per_100g": 30.0,
+      "fat_per_100g": 11.0,
+      "carbs_per_100g": 35.0
+    },
+    {
+      "slug": "product_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt",
+      "name_ru": "попкорн карамельный",
+      "category": "сладости",
+      "state": "готовый продукт",
+      "usda_description": "External source: USDA/FatSecret search",
+      "aliases": [
+        "попкорн карамельный"
+      ],
+      "fdc_id": 900000199,
+      "usda_category": "External Sources",
+      "calories_per_100g": 430.0,
+      "protein_per_100g": 4.5,
+      "fat_per_100g": 12.0,
+      "carbs_per_100g": 78.0
+    },
+    {
+      "slug": "product_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt",
+      "name_ru": "кукурузные палочки сладкие",
+      "category": "сладости",
+      "state": "готовый продукт",
+      "usda_description": "External source: Generic label estimate",
+      "aliases": [
+        "кукурузные палочки сладкие"
+      ],
+      "fdc_id": 900000200,
+      "usda_category": "External Sources",
+      "calories_per_100g": 470.0,
+      "protein_per_100g": 5.5,
+      "fat_per_100g": 15.0,
+      "carbs_per_100g": 78.0
+    },
+    {
+      "slug": "product_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt",
+      "name_ru": "эклер",
+      "category": "выпечка",
+      "state": "готовый продукт",
+      "usda_description": "External source: USDA/FatSecret search",
+      "aliases": [
+        "эклер"
+      ],
+      "fdc_id": 900000201,
+      "usda_category": "External Sources",
+      "calories_per_100g": 260.0,
+      "protein_per_100g": 5.0,
+      "fat_per_100g": 14.0,
+      "carbs_per_100g": 29.0
+    },
+    {
+      "slug": "product_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt",
+      "name_ru": "профитроли",
+      "category": "выпечка",
+      "state": "готовый продукт",
+      "usda_description": "External source: Generic recipe estimate",
+      "aliases": [
+        "профитроли"
+      ],
+      "fdc_id": 900000202,
+      "usda_category": "External Sources",
+      "calories_per_100g": 280.0,
+      "protein_per_100g": 5.5,
+      "fat_per_100g": 16.0,
+      "carbs_per_100g": 29.0
+    },
+    {
+      "slug": "product_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt",
+      "name_ru": "безе",
+      "category": "торты и десерты",
+      "state": "готовый продукт",
+      "usda_description": "External source: USDA/FatSecret search",
+      "aliases": [
+        "безе"
+      ],
+      "fdc_id": 900000203,
+      "usda_category": "External Sources",
+      "calories_per_100g": 390.0,
+      "protein_per_100g": 4.0,
+      "fat_per_100g": 0.0,
+      "carbs_per_100g": 94.0
+    },
+    {
+      "slug": "product_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt",
+      "name_ru": "пирожное картошка",
+      "category": "торты и десерты",
+      "state": "готовый продукт",
+      "usda_description": "External source: Generic recipe estimate",
+      "aliases": [
+        "пирожное картошка"
+      ],
+      "fdc_id": 900000204,
+      "usda_category": "External Sources",
+      "calories_per_100g": 390.0,
+      "protein_per_100g": 5.0,
+      "fat_per_100g": 19.0,
+      "carbs_per_100g": 50.0
+    },
+    {
+      "slug": "product_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt",
+      "name_ru": "маффин ванильный",
+      "category": "выпечка",
+      "state": "готовый продукт",
+      "usda_description": "External source: USDA/FatSecret search",
+      "aliases": [
+        "маффин ванильный"
+      ],
+      "fdc_id": 900000205,
+      "usda_category": "External Sources",
+      "calories_per_100g": 360.0,
+      "protein_per_100g": 6.0,
+      "fat_per_100g": 14.0,
+      "carbs_per_100g": 53.0
+    },
+    {
+      "slug": "product_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt",
+      "name_ru": "маффин шоколадный",
+      "category": "выпечка",
+      "state": "готовый продукт",
+      "usda_description": "External source: USDA/FatSecret search",
+      "aliases": [
+        "маффин шоколадный"
+      ],
+      "fdc_id": 900000206,
+      "usda_category": "External Sources",
+      "calories_per_100g": 390.0,
+      "protein_per_100g": 5.0,
+      "fat_per_100g": 18.0,
+      "carbs_per_100g": 54.0
+    },
+    {
+      "slug": "product_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt",
+      "name_ru": "круассан сладкий",
+      "category": "выпечка",
+      "state": "готовый продукт",
+      "usda_description": "External source: USDA/FatSecret search",
+      "aliases": [
+        "круассан сладкий"
+      ],
+      "fdc_id": 900000207,
+      "usda_category": "External Sources",
+      "calories_per_100g": 406.0,
+      "protein_per_100g": 8.2,
+      "fat_per_100g": 21.0,
+      "carbs_per_100g": 45.8
+    },
+    {
+      "slug": "product_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt",
+      "name_ru": "донат",
+      "category": "выпечка",
+      "state": "готовый продукт",
+      "usda_description": "External source: USDA/FatSecret search",
+      "aliases": [
+        "донат"
+      ],
+      "fdc_id": 900000208,
+      "usda_category": "External Sources",
+      "calories_per_100g": 410.0,
+      "protein_per_100g": 5.0,
+      "fat_per_100g": 22.0,
+      "carbs_per_100g": 48.0
+    },
+    {
+      "slug": "product_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt",
+      "name_ru": "панкейк сладкий",
+      "category": "хлеб и выпечка",
+      "state": "готовый продукт",
+      "usda_description": "External source: USDA/FatSecret search",
+      "aliases": [
+        "панкейк сладкий"
+      ],
+      "fdc_id": 900000209,
+      "usda_category": "External Sources",
+      "calories_per_100g": 227.0,
+      "protein_per_100g": 6.4,
+      "fat_per_100g": 9.7,
+      "carbs_per_100g": 28.3
+    },
+    {
+      "slug": "product_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt",
+      "name_ru": "вафельный рожок",
+      "category": "выпечка",
+      "state": "готовый продукт",
+      "usda_description": "External source: USDA/FatSecret search",
+      "aliases": [
+        "вафельный рожок"
+      ],
+      "fdc_id": 900000210,
+      "usda_category": "External Sources",
+      "calories_per_100g": 417.0,
+      "protein_per_100g": 7.0,
+      "fat_per_100g": 9.0,
+      "carbs_per_100g": 77.0
+    },
+    {
+      "slug": "product_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt",
+      "name_ru": "мороженое пломбир",
+      "category": "торты и десерты",
+      "state": "готовый продукт",
+      "usda_description": "External source: USDA/FatSecret search",
+      "aliases": [
+        "мороженое пломбир"
+      ],
+      "fdc_id": 900000211,
+      "usda_category": "External Sources",
+      "calories_per_100g": 207.0,
+      "protein_per_100g": 3.5,
+      "fat_per_100g": 11.0,
+      "carbs_per_100g": 23.6
+    },
+    {
+      "slug": "product_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt",
+      "name_ru": "мороженое шоколадное",
+      "category": "торты и десерты",
+      "state": "готовый продукт",
+      "usda_description": "External source: USDA/FatSecret search",
+      "aliases": [
+        "мороженое шоколадное"
+      ],
+      "fdc_id": 900000212,
+      "usda_category": "External Sources",
+      "calories_per_100g": 216.0,
+      "protein_per_100g": 3.8,
+      "fat_per_100g": 11.0,
+      "carbs_per_100g": 28.0
+    },
+    {
+      "slug": "product_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt",
+      "name_ru": "сорбет фруктовый",
+      "category": "торты и десерты",
+      "state": "готовый продукт",
+      "usda_description": "External source: USDA/FatSecret search",
+      "aliases": [
+        "сорбет фруктовый"
+      ],
+      "fdc_id": 900000213,
+      "usda_category": "External Sources",
+      "calories_per_100g": 130.0,
+      "protein_per_100g": 0.5,
+      "fat_per_100g": 0.2,
+      "carbs_per_100g": 32.0
+    },
+    {
+      "slug": "product_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt",
+      "name_ru": "пудинг ванильный",
+      "category": "торты и десерты",
+      "state": "готовый продукт",
+      "usda_description": "External source: USDA/FatSecret search",
+      "aliases": [
+        "пудинг ванильный"
+      ],
+      "fdc_id": 900000214,
+      "usda_category": "External Sources",
+      "calories_per_100g": 130.0,
+      "protein_per_100g": 3.0,
+      "fat_per_100g": 3.0,
+      "carbs_per_100g": 22.0
+    },
+    {
+      "slug": "product_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt",
+      "name_ru": "пудинг шоколадный",
+      "category": "торты и десерты",
+      "state": "готовый продукт",
+      "usda_description": "External source: USDA/FatSecret search",
+      "aliases": [
+        "пудинг шоколадный"
+      ],
+      "fdc_id": 900000215,
+      "usda_category": "External Sources",
+      "calories_per_100g": 142.0,
+      "protein_per_100g": 3.0,
+      "fat_per_100g": 4.0,
+      "carbs_per_100g": 23.0
+    },
+    {
+      "slug": "product_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt",
+      "name_ru": "рисовый пудинг",
+      "category": "торты и десерты",
+      "state": "готовый продукт",
+      "usda_description": "External source: USDA/FatSecret search",
+      "aliases": [
+        "рисовый пудинг"
+      ],
+      "fdc_id": 900000216,
+      "usda_category": "External Sources",
+      "calories_per_100g": 108.0,
+      "protein_per_100g": 3.2,
+      "fat_per_100g": 2.1,
+      "carbs_per_100g": 19.0
+    },
+    {
+      "slug": "product_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt",
+      "name_ru": "торт шоколадный без глазури",
+      "category": "торты и десерты",
+      "state": "готовый продукт",
+      "usda_description": "External source: FatSecret generic",
+      "aliases": [
+        "торт шоколадный без глазури"
+      ],
+      "fdc_id": 900000217,
+      "usda_category": "External Sources",
+      "calories_per_100g": 358.0,
+      "protein_per_100g": 5.3,
+      "fat_per_100g": 15.1,
+      "carbs_per_100g": 53.4
+    },
+    {
+      "slug": "product_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt",
+      "name_ru": "торт шоколадный с кремом",
+      "category": "торты и десерты",
+      "state": "готовый продукт",
+      "usda_description": "External source: FatSecret generic / estimate",
+      "aliases": [
+        "торт шоколадный с кремом"
+      ],
+      "fdc_id": 900000218,
+      "usda_category": "External Sources",
+      "calories_per_100g": 371.0,
+      "protein_per_100g": 4.0,
+      "fat_per_100g": 16.0,
+      "carbs_per_100g": 55.0
+    },
+    {
+      "slug": "product_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt",
+      "name_ru": "чизкейк",
+      "category": "торты и десерты",
+      "state": "готовый продукт",
+      "usda_description": "External source: USDA/FatSecret",
+      "aliases": [
+        "чизкейк"
+      ],
+      "fdc_id": 900000219,
+      "usda_category": "External Sources",
+      "calories_per_100g": 321.0,
+      "protein_per_100g": 5.5,
+      "fat_per_100g": 22.5,
+      "carbs_per_100g": 25.5
+    },
+    {
+      "slug": "product_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt",
+      "name_ru": "бисквитный торт",
+      "category": "торты и десерты",
+      "state": "готовый продукт",
+      "usda_description": "External source: USDA/FatSecret search",
+      "aliases": [
+        "бисквитный торт"
+      ],
+      "fdc_id": 900000220,
+      "usda_category": "External Sources",
+      "calories_per_100g": 290.0,
+      "protein_per_100g": 5.4,
+      "fat_per_100g": 4.5,
+      "carbs_per_100g": 58.0
+    },
+    {
+      "slug": "product_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt",
+      "name_ru": "медовик",
+      "category": "торты и десерты",
+      "state": "готовый продукт",
+      "usda_description": "External source: Generic recipe estimate",
+      "aliases": [
+        "медовик"
+      ],
+      "fdc_id": 900000221,
+      "usda_category": "External Sources",
+      "calories_per_100g": 420.0,
+      "protein_per_100g": 6.0,
+      "fat_per_100g": 22.0,
+      "carbs_per_100g": 50.0
+    },
+    {
+      "slug": "product_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt",
+      "name_ru": "наполеон",
+      "category": "торты и десерты",
+      "state": "готовый продукт",
+      "usda_description": "External source: Generic recipe estimate",
+      "aliases": [
+        "наполеон"
+      ],
+      "fdc_id": 900000222,
+      "usda_category": "External Sources",
+      "calories_per_100g": 370.0,
+      "protein_per_100g": 5.0,
+      "fat_per_100g": 22.0,
+      "carbs_per_100g": 38.0
+    },
+    {
+      "slug": "product_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt",
+      "name_ru": "морковный торт",
+      "category": "торты и десерты",
+      "state": "готовый продукт",
+      "usda_description": "External source: USDA/FatSecret search",
+      "aliases": [
+        "морковный торт"
+      ],
+      "fdc_id": 900000223,
+      "usda_category": "External Sources",
+      "calories_per_100g": 415.0,
+      "protein_per_100g": 4.0,
+      "fat_per_100g": 23.0,
+      "carbs_per_100g": 49.0
+    },
+    {
+      "slug": "product_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt",
+      "name_ru": "торт красный бархат",
+      "category": "торты и десерты",
+      "state": "готовый продукт",
+      "usda_description": "External source: Generic recipe estimate",
+      "aliases": [
+        "торт красный бархат"
+      ],
+      "fdc_id": 900000224,
+      "usda_category": "External Sources",
+      "calories_per_100g": 380.0,
+      "protein_per_100g": 4.5,
+      "fat_per_100g": 20.0,
+      "carbs_per_100g": 47.0
+    },
+    {
+      "slug": "product_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt",
+      "name_ru": "торт тирамису",
+      "category": "торты и десерты",
+      "state": "готовый продукт",
+      "usda_description": "External source: USDA/FatSecret search",
+      "aliases": [
+        "торт тирамису"
+      ],
+      "fdc_id": 900000225,
+      "usda_category": "External Sources",
+      "calories_per_100g": 300.0,
+      "protein_per_100g": 6.0,
+      "fat_per_100g": 18.0,
+      "carbs_per_100g": 28.0
+    },
+    {
+      "slug": "product_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt",
+      "name_ru": "торт прага",
+      "category": "торты и десерты",
+      "state": "готовый продукт",
+      "usda_description": "External source: Generic recipe estimate",
+      "aliases": [
+        "торт прага"
+      ],
+      "fdc_id": 900000226,
+      "usda_category": "External Sources",
+      "calories_per_100g": 390.0,
+      "protein_per_100g": 5.0,
+      "fat_per_100g": 23.0,
+      "carbs_per_100g": 41.0
+    },
+    {
+      "slug": "product_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt",
+      "name_ru": "торт птичье молоко",
+      "category": "торты и десерты",
+      "state": "готовый продукт",
+      "usda_description": "External source: Generic recipe estimate",
+      "aliases": [
+        "торт птичье молоко"
+      ],
+      "fdc_id": 900000227,
+      "usda_category": "External Sources",
+      "calories_per_100g": 340.0,
+      "protein_per_100g": 5.5,
+      "fat_per_100g": 18.0,
+      "carbs_per_100g": 39.0
+    },
+    {
+      "slug": "product_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt",
+      "name_ru": "торт сметанник",
+      "category": "торты и десерты",
+      "state": "готовый продукт",
+      "usda_description": "External source: Generic recipe estimate",
+      "aliases": [
+        "торт сметанник"
+      ],
+      "fdc_id": 900000228,
+      "usda_category": "External Sources",
+      "calories_per_100g": 330.0,
+      "protein_per_100g": 5.0,
+      "fat_per_100g": 18.0,
+      "carbs_per_100g": 37.0
+    },
+    {
+      "slug": "product_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt",
+      "name_ru": "фруктовый торт",
+      "category": "торты и десерты",
+      "state": "готовый продукт",
+      "usda_description": "External source: USDA/FatSecret search",
+      "aliases": [
+        "фруктовый торт"
+      ],
+      "fdc_id": 900000229,
+      "usda_category": "External Sources",
+      "calories_per_100g": 324.0,
+      "protein_per_100g": 3.3,
+      "fat_per_100g": 9.1,
+      "carbs_per_100g": 61.0
+    },
+    {
+      "slug": "product_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt",
+      "name_ru": "торт с заварным кремом",
+      "category": "торты и десерты",
+      "state": "готовый продукт",
+      "usda_description": "External source: Generic recipe estimate",
+      "aliases": [
+        "торт с заварным кремом"
+      ],
+      "fdc_id": 900000230,
+      "usda_category": "External Sources",
+      "calories_per_100g": 310.0,
+      "protein_per_100g": 5.0,
+      "fat_per_100g": 15.0,
+      "carbs_per_100g": 39.0
+    },
+    {
+      "slug": "product_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt",
+      "name_ru": "шоколадный сироп",
+      "category": "сладости",
+      "state": "готовый продукт",
+      "usda_description": "External source: USDA/FatSecret search",
+      "aliases": [
+        "шоколадный сироп"
+      ],
+      "fdc_id": 900000231,
+      "usda_category": "External Sources",
+      "calories_per_100g": 279.0,
+      "protein_per_100g": 2.1,
+      "fat_per_100g": 1.0,
+      "carbs_per_100g": 65.0
+    },
+    {
+      "slug": "product_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt",
+      "name_ru": "кленовый сироп",
+      "category": "сладости",
+      "state": "готовый продукт",
+      "usda_description": "External source: USDA/FatSecret search",
+      "aliases": [
+        "кленовый сироп"
+      ],
+      "fdc_id": 900000232,
+      "usda_category": "External Sources",
+      "calories_per_100g": 260.0,
+      "protein_per_100g": 0.0,
+      "fat_per_100g": 0.1,
+      "carbs_per_100g": 67.0
+    },
+    {
+      "slug": "product_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt",
+      "name_ru": "сгущенка вареная",
+      "category": "сладости",
+      "state": "готовый продукт",
+      "usda_description": "External source: Generic label estimate",
+      "aliases": [
+        "сгущенка вареная"
+      ],
+      "fdc_id": 900000233,
+      "usda_category": "External Sources",
+      "calories_per_100g": 315.0,
+      "protein_per_100g": 6.5,
+      "fat_per_100g": 7.5,
+      "carbs_per_100g": 55.0
+    },
+    {
+      "slug": "product_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt",
+      "name_ru": "сахарная пудра",
+      "category": "сладости",
+      "state": "сухой продукт",
+      "usda_description": "External source: USDA/FatSecret search",
+      "aliases": [
+        "сахарная пудра"
+      ],
+      "fdc_id": 900000236,
+      "usda_category": "External Sources",
+      "calories_per_100g": 389.0,
+      "protein_per_100g": 0.0,
+      "fat_per_100g": 0.0,
+      "carbs_per_100g": 100.0
+    },
+    {
+      "slug": "product_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt",
+      "name_ru": "сухофрукты смесь",
+      "category": "фрукты и ягоды",
+      "state": "сухой продукт",
+      "usda_description": "External source: Generic USDA-style estimate",
+      "aliases": [
+        "сухофрукты смесь"
+      ],
+      "fdc_id": 900000237,
+      "usda_category": "External Sources",
+      "calories_per_100g": 300.0,
+      "protein_per_100g": 2.5,
+      "fat_per_100g": 0.6,
+      "carbs_per_100g": 73.0
+    },
+    {
+      "slug": "product_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt",
+      "name_ru": "изюм",
+      "category": "фрукты и ягоды",
+      "state": "сухой продукт",
+      "usda_description": "External source: USDA/FatSecret search",
+      "aliases": [
+        "изюм"
+      ],
+      "fdc_id": 900000238,
+      "usda_category": "External Sources",
+      "calories_per_100g": 299.0,
+      "protein_per_100g": 3.1,
+      "fat_per_100g": 0.5,
+      "carbs_per_100g": 79.0
+    },
+    {
+      "slug": "product_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt",
+      "name_ru": "курага",
+      "category": "фрукты и ягоды",
+      "state": "сухой продукт",
+      "usda_description": "External source: USDA/FatSecret search",
+      "aliases": [
+        "курага"
+      ],
+      "fdc_id": 900000239,
+      "usda_category": "External Sources",
+      "calories_per_100g": 241.0,
+      "protein_per_100g": 3.4,
+      "fat_per_100g": 0.5,
+      "carbs_per_100g": 63.9
+    },
+    {
+      "slug": "product_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt_alt",
+      "name_ru": "финики",
+      "category": "фрукты и ягоды",
+      "state": "сухой продукт",
+      "usda_description": "External source: USDA/FatSecret search",
+      "aliases": [
+        "финики"
+      ],
+      "fdc_id": 900000240,
+      "usda_category": "External Sources",
+      "calories_per_100g": 282.0,
+      "protein_per_100g": 2.5,
+      "fat_per_100g": 0.4,
+      "carbs_per_100g": 75.0
+    },
+    {
+      "slug": "water_plain",
+      "name_ru": "вода",
+      "category": "напитки",
+      "state": "готовый продукт",
+      "usda_description": "Water, tap, drinking",
+      "aliases": [
+        "вода",
+        "вода обычная",
+        "минералка",
+        "вода без газа",
+        "plain water"
+      ],
+      "fdc_id": 999001,
+      "usda_category": "Beverages",
+      "calories_per_100g": 0.0,
+      "protein_per_100g": 0.0,
+      "fat_per_100g": 0.0,
+      "carbs_per_100g": 0.0
+    },
+    {
+      "slug": "shawarma_chicken",
+      "name_ru": "шаурма с курицей",
+      "category": "готовые блюда",
+      "state": "готовый продукт",
+      "usda_description": "Shawarma, chicken, sandwich wrapped in pita bread with vegetables and sauce",
+      "aliases": [
+        "шаурма",
+        "шаверма",
+        "шаурма с курицей",
+        "shawarma"
+      ],
+      "fdc_id": 999002,
+      "usda_category": "Prepared Meals",
+      "calories_per_100g": 175.0,
+      "protein_per_100g": 9.0,
+      "fat_per_100g": 8.5,
+      "carbs_per_100g": 15.5
+    },
+    {
+      "slug": "pizza_margarita",
+      "name_ru": "пицца маргарита",
+      "category": "готовые блюда",
+      "state": "готовый продукт",
+      "usda_description": "Pizza, cheese or Margherita, thin crust",
+      "aliases": [
+        "пицца",
+        "пицца маргарита",
+        "пицца сырная",
+        "pizza"
+      ],
+      "fdc_id": 999003,
+      "usda_category": "Prepared Meals",
+      "calories_per_100g": 266.0,
+      "protein_per_100g": 11.4,
+      "fat_per_100g": 9.8,
+      "carbs_per_100g": 33.0
+    },
+    {
+      "slug": "sushi_roll_philadelphia",
+      "name_ru": "роллы филадельфия",
+      "category": "готовые блюда",
+      "state": "готовый продукт",
+      "usda_description": "Sushi, Philadelphia roll with salmon, cream cheese, and cucumber",
+      "aliases": [
+        "роллы филадельфия",
+        "роллы",
+        "суши",
+        "филадельфия ролл",
+        "sushi",
+        "philadelphia roll"
+      ],
+      "fdc_id": 999004,
+      "usda_category": "Prepared Meals",
+      "calories_per_100g": 170.0,
+      "protein_per_100g": 6.5,
+      "fat_per_100g": 5.5,
+      "carbs_per_100g": 23.5
+    },
+    {
+      "slug": "burger_hamburger",
+      "name_ru": "бургер",
+      "category": "готовые блюда",
+      "state": "готовый продукт",
+      "usda_description": "Fast foods, hamburger, single patty, plain",
+      "aliases": [
+        "бургер",
+        "гамбургер",
+        "чизбургер",
+        "burger",
+        "hamburger"
+      ],
+      "fdc_id": 999005,
+      "usda_category": "Fast Foods",
+      "calories_per_100g": 264.0,
+      "protein_per_100g": 13.0,
+      "fat_per_100g": 10.0,
+      "carbs_per_100g": 30.0
+    },
+    {
+      "slug": "potato_french_fries",
+      "name_ru": "картофель фри",
+      "category": "готовые блюда",
+      "state": "готовый продукт",
+      "usda_description": "Fast foods, potatoes, french fried, salt not added in processing, frozen, oven-heated",
+      "aliases": [
+        "картошка фри",
+        "картофель фри",
+        "фри",
+        "french fries"
+      ],
+      "fdc_id": 999006,
+      "usda_category": "Fast Foods",
+      "calories_per_100g": 270.0,
+      "protein_per_100g": 3.4,
+      "fat_per_100g": 13.0,
+      "carbs_per_100g": 35.0
+    },
+    {
+      "slug": "salad_caesar_chicken",
+      "name_ru": "салат цезарь",
+      "category": "готовые блюда",
+      "state": "готовый продукт",
+      "usda_description": "Salad, Caesar with chicken, croutons and dressing",
+      "aliases": [
+        "салат цезарь",
+        "цезарь",
+        "цезарь с курицей",
+        "caesar salad"
+      ],
+      "fdc_id": 999007,
+      "usda_category": "Prepared Meals",
+      "calories_per_100g": 160.0,
+      "protein_per_100g": 9.5,
+      "fat_per_100g": 11.5,
+      "carbs_per_100g": 4.5
+    },
+    {
+      "slug": "potato_fried_home",
+      "name_ru": "картошка жареная",
+      "category": "готовые блюда",
+      "state": "готовый продукт",
+      "usda_description": "Potatoes, pan-fried or home-fried with vegetable oil",
+      "aliases": [
+        "картошка жареная",
+        "картофель жареный",
+        "жареная картошка",
+        "fried potatoes"
+      ],
+      "fdc_id": 999008,
+      "usda_category": "Prepared Meals",
+      "calories_per_100g": 190.0,
+      "protein_per_100g": 2.5,
+      "fat_per_100g": 9.5,
+      "carbs_per_100g": 24.0
+    },
+    {
+      "slug": "potato_pancakes_draniki",
+      "name_ru": "драники",
+      "category": "готовые блюда",
+      "state": "готовый продукт",
+      "usda_description": "Potato pancakes, pan-fried (Draniki)",
+      "aliases": [
+        "драники",
+        "картофельные оладьи",
+        "деруны",
+        "potato pancakes"
+      ],
+      "fdc_id": 999009,
+      "usda_category": "Prepared Meals",
+      "calories_per_100g": 210.0,
+      "protein_per_100g": 3.0,
+      "fat_per_100g": 11.0,
+      "carbs_per_100g": 25.0
+    },
+    {
+      "slug": "pasta_carbonara",
+      "name_ru": "паста карбонара",
+      "category": "готовые блюда",
+      "state": "готовый продукт",
+      "usda_description": "Pasta Carbonara with bacon, cream and egg sauce",
+      "aliases": [
+        "паста карбонара",
+        "карбонара",
+        "макароны карбонара",
+        "pasta carbonara"
+      ],
+      "fdc_id": 999010,
+      "usda_category": "Prepared Meals",
+      "calories_per_100g": 220.0,
+      "protein_per_100g": 8.5,
+      "fat_per_100g": 11.0,
+      "carbs_per_100g": 22.0
+    },
+    {
+      "slug": "pancakes_filled_meat",
+      "name_ru": "блины с мясом",
+      "category": "готовые блюда",
+      "state": "готовый продукт",
+      "usda_description": "Pancakes (crepes) filled with minced beef and onion",
+      "aliases": [
+        "блины с мясом",
+        "блинчики с мясом",
+        "блин с мясом",
+        "pancakes with meat"
+      ],
+      "fdc_id": 999011,
+      "usda_category": "Prepared Meals",
+      "calories_per_100g": 195.0,
+      "protein_per_100g": 8.0,
+      "fat_per_100g": 7.5,
+      "carbs_per_100g": 24.0
+    },
+    {
+      "slug": "pancakes_filled_cottage_cheese",
+      "name_ru": "блины с творогом",
+      "category": "готовые блюда",
+      "state": "готовый продукт",
+      "usda_description": "Pancakes (crepes) filled with sweetened cottage cheese (sweet curds)",
+      "aliases": [
+        "блины с творогом",
+        "блинчики с творогом",
+        "блин с творогом",
+        "налистники с творогом",
+        "pancakes with cottage cheese"
+      ],
+      "fdc_id": 999012,
+      "usda_category": "Prepared Meals",
+      "calories_per_100g": 180.0,
+      "protein_per_100g": 7.0,
+      "fat_per_100g": 5.0,
+      "carbs_per_100g": 26.7
+    },
+    {
+      "slug": "clementine_mandarin_raw",
+      "name_ru": "мандарин",
+      "category": "фрукты и ягоды",
+      "state": "сырой продукт",
+      "usda_description": "Tangerines (mandarins), raw",
+      "aliases": [
+        "мандарин",
+        "мандарины",
+        "tangerine",
+        "mandarin"
+      ],
+      "fdc_id": 999013,
+      "usda_category": "Fruits and Fruit Juices",
+      "calories_per_100g": 53.0,
+      "protein_per_100g": 0.81,
+      "fat_per_100g": 0.31,
+      "carbs_per_100g": 13.3
     }
   ]
 }

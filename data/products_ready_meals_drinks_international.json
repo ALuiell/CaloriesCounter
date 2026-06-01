@@ -1,0 +1,1363 @@
+[
+  {
+    "name_ru": "борщ",
+    "aliases": [
+      "борщ",
+      "красный борщ",
+      "beet soup",
+      "borscht"
+    ],
+    "category": "готовые блюда",
+    "state": "готовый продукт",
+    "source_name": "FatSecret generic",
+    "source_note_or_url": "https://foods.fatsecret.com/calories-nutrition/generic/beet-soup-%28borscht%29?portionamount=100.000&portionid=55501 ; рецепт сильно влияет",
+    "calories_per_100g": 32,
+    "protein_per_100g": 1.37,
+    "fat_per_100g": 1.64,
+    "carbs_per_100g": 3.37
+  },
+  {
+    "name_ru": "щи",
+    "aliases": [
+      "щи",
+      "капустный суп",
+      "cabbage soup",
+      "русские щи"
+    ],
+    "category": "готовые блюда",
+    "state": "готовый продукт",
+    "source_name": "FatSecret generic",
+    "source_note_or_url": "https://foods.fatsecret.com/calories-nutrition/generic/cabbage-soup?portionamount=100.000&portionid=55502 ; использован cabbage soup как ближайший международный аналог",
+    "calories_per_100g": 29,
+    "protein_per_100g": 1.6,
+    "fat_per_100g": 1.33,
+    "carbs_per_100g": 3.14
+  },
+  {
+    "name_ru": "куриный суп",
+    "aliases": [
+      "куриный суп",
+      "суп с курицей",
+      "chicken soup",
+      "куриный бульон с овощами"
+    ],
+    "category": "готовые блюда",
+    "state": "готовый продукт",
+    "source_name": "FatSecret generic",
+    "source_note_or_url": "https://www.fatsecret.co.in/calories-nutrition/generic/chicken-soup?portionamount=100.000&portionid=51693 ; зависит от лапши/картофеля",
+    "calories_per_100g": 31,
+    "protein_per_100g": 1.68,
+    "fat_per_100g": 1.02,
+    "carbs_per_100g": 3.88
+  },
+  {
+    "name_ru": "овощной суп",
+    "aliases": [
+      "овощной суп",
+      "vegetable soup",
+      "суп из овощей",
+      "постный суп"
+    ],
+    "category": "готовые блюда",
+    "state": "готовый продукт",
+    "source_name": "FatSecret generic",
+    "source_note_or_url": "https://foods.fatsecret.com/calories-nutrition/generic/vegetable-soup-home-recipe?portionamount=100.000&portionid=55588 ; home recipe",
+    "calories_per_100g": 42,
+    "protein_per_100g": 1.76,
+    "fat_per_100g": 1.9,
+    "carbs_per_100g": 5.13
+  },
+  {
+    "name_ru": "суп с фрикадельками",
+    "aliases": [
+      "суп с фрикадельками",
+      "meatball soup",
+      "суп с мясными шариками"
+    ],
+    "category": "готовые блюда",
+    "state": "готовый продукт",
+    "source_name": "Generic recipe estimate",
+    "source_note_or_url": "Международной универсальной позиции не найдено; оценка по типовой домашней формуле супа с мясными фрикадельками, картофелем/овощами; спорно",
+    "calories_per_100g": 57,
+    "protein_per_100g": 3.3,
+    "fat_per_100g": 2.8,
+    "carbs_per_100g": 4.6
+  },
+  {
+    "name_ru": "чечевичный суп",
+    "aliases": [
+      "чечевичный суп",
+      "lentil soup",
+      "суп из чечевицы"
+    ],
+    "category": "готовые блюда",
+    "state": "готовый продукт",
+    "source_name": "FatSecret generic",
+    "source_note_or_url": "https://foods.fatsecret.com/calories-nutrition/generic/lentil-soup?portionamount=100.000&portionid=52000",
+    "calories_per_100g": 75,
+    "protein_per_100g": 4.2,
+    "fat_per_100g": 1.85,
+    "carbs_per_100g": 10.73
+  },
+  {
+    "name_ru": "гороховый суп",
+    "aliases": [
+      "гороховый суп",
+      "pea soup",
+      "split pea soup",
+      "суп из гороха"
+    ],
+    "category": "готовые блюда",
+    "state": "готовый продукт",
+    "source_name": "FatSecret generic",
+    "source_note_or_url": "https://foods.fatsecret.com/calories-nutrition/generic/pea-soup?portionamount=100.000&portionid=55584",
+    "calories_per_100g": 66,
+    "protein_per_100g": 3.44,
+    "fat_per_100g": 1.17,
+    "carbs_per_100g": 10.6
+  },
+  {
+    "name_ru": "грибной суп",
+    "aliases": [
+      "грибной суп",
+      "mushroom soup",
+      "суп с грибами"
+    ],
+    "category": "готовые блюда",
+    "state": "готовый продукт",
+    "source_name": "FatSecret generic",
+    "source_note_or_url": "https://foods.fatsecret.com/calories-nutrition/search?q=mushroom+soup ; выбран базовый не сливочный грибной суп; спорно",
+    "calories_per_100g": 39,
+    "protein_per_100g": 1.6,
+    "fat_per_100g": 1.8,
+    "carbs_per_100g": 4.3
+  },
+  {
+    "name_ru": "уха",
+    "aliases": [
+      "уха",
+      "рыбный суп",
+      "fish soup",
+      "суп из рыбы"
+    ],
+    "category": "готовые блюда",
+    "state": "готовый продукт",
+    "source_name": "FatSecret generic / recipe estimate",
+    "source_note_or_url": "https://foods.fatsecret.com/calories-nutrition/search?q=fish+soup ; базовый рыбный суп без сливок; спорно",
+    "calories_per_100g": 36,
+    "protein_per_100g": 3.5,
+    "fat_per_100g": 1.2,
+    "carbs_per_100g": 2.8
+  },
+  {
+    "name_ru": "солянка",
+    "aliases": [
+      "солянка",
+      "meat solyanka",
+      "солянка мясная",
+      "суп солянка"
+    ],
+    "category": "готовые блюда",
+    "state": "готовый продукт",
+    "source_name": "Generic recipe estimate",
+    "source_note_or_url": "Международной универсальной позиции не найдено; оценка по мясной солянке с колбасными изделиями; очень зависит от рецепта",
+    "calories_per_100g": 73,
+    "protein_per_100g": 3.5,
+    "fat_per_100g": 5.2,
+    "carbs_per_100g": 3.1
+  },
+  {
+    "name_ru": "плов",
+    "aliases": [
+      "плов",
+      "рисовый плов",
+      "rice pilaf",
+      "плов с рисом"
+    ],
+    "category": "готовые блюда",
+    "state": "готовый продукт",
+    "source_name": "FatSecret generic",
+    "source_note_or_url": "https://foods.fatsecret.com/calories-nutrition/generic/rice-pilaf?portionamount=100.000&portionid=53828 ; это rice pilaf без учета жирного мясного узбекского плова; спорно",
+    "calories_per_100g": 125,
+    "protein_per_100g": 2.07,
+    "fat_per_100g": 3.24,
+    "carbs_per_100g": 21.57
+  },
+  {
+    "name_ru": "пюре картофельное",
+    "aliases": [
+      "картофельное пюре",
+      "пюре",
+      "пюрешка",
+      "mashed potatoes"
+    ],
+    "category": "крупы и гарниры",
+    "state": "готовый продукт",
+    "source_name": "USDA via NutritionRef",
+    "source_note_or_url": "https://nutritionref.com/foods/potatoes-mashed-home-prepared-whole-milk-and-butter-added ; whole milk and butter added",
+    "calories_per_100g": 113,
+    "protein_per_100g": 1.9,
+    "fat_per_100g": 4.2,
+    "carbs_per_100g": 16.8
+  },
+  {
+    "name_ru": "гречка с мясом",
+    "aliases": [
+      "гречка с мясом",
+      "buckwheat with meat",
+      "гречка по-купечески"
+    ],
+    "category": "готовые блюда",
+    "state": "готовый продукт",
+    "source_name": "Generic recipe estimate",
+    "source_note_or_url": "Оценка по типовой домашней гречке с мясом; международного стандарта нет; спорно",
+    "calories_per_100g": 145,
+    "protein_per_100g": 7.5,
+    "fat_per_100g": 5.2,
+    "carbs_per_100g": 17.0
+  },
+  {
+    "name_ru": "рис с овощами",
+    "aliases": [
+      "рис с овощами",
+      "vegetable rice",
+      "рис овощной"
+    ],
+    "category": "крупы и гарниры",
+    "state": "готовый продукт",
+    "source_name": "FatSecret generic / USDA-style",
+    "source_note_or_url": "https://foods.fatsecret.com/calories-nutrition/search?q=rice+with+vegetables ; базовый cooked rice with vegetables; спорно",
+    "calories_per_100g": 117,
+    "protein_per_100g": 2.5,
+    "fat_per_100g": 2.0,
+    "carbs_per_100g": 22.0
+  },
+  {
+    "name_ru": "макароны по-флотски",
+    "aliases": [
+      "макароны по-флотски",
+      "pasta with meat",
+      "макароны с фаршем"
+    ],
+    "category": "готовые блюда",
+    "state": "готовый продукт",
+    "source_name": "Generic recipe estimate",
+    "source_note_or_url": "Оценка по пасте с говяжьим фаршем; международного стандарта нет; спорно",
+    "calories_per_100g": 185,
+    "protein_per_100g": 8.5,
+    "fat_per_100g": 7.0,
+    "carbs_per_100g": 22.0
+  },
+  {
+    "name_ru": "жаркое",
+    "aliases": [
+      "жаркое",
+      "stewed meat and potatoes",
+      "жаркое с мясом",
+      "pot roast"
+    ],
+    "category": "готовые блюда",
+    "state": "готовый продукт",
+    "source_name": "Generic recipe estimate",
+    "source_note_or_url": "Оценка по мясу с картофелем/овощами; рецепт сильно влияет",
+    "calories_per_100g": 123,
+    "protein_per_100g": 6.8,
+    "fat_per_100g": 6.0,
+    "carbs_per_100g": 10.5
+  },
+  {
+    "name_ru": "рагу овощное",
+    "aliases": [
+      "овощное рагу",
+      "рагу овощное",
+      "vegetable stew",
+      "тушеные овощи"
+    ],
+    "category": "готовые блюда",
+    "state": "готовый продукт",
+    "source_name": "FatSecret generic / recipe estimate",
+    "source_note_or_url": "https://foods.fatsecret.com/calories-nutrition/search?q=vegetable+stew ; базовое овощное рагу; спорно",
+    "calories_per_100g": 45,
+    "protein_per_100g": 1.3,
+    "fat_per_100g": 2.0,
+    "carbs_per_100g": 6.0
+  },
+  {
+    "name_ru": "тушеная капуста",
+    "aliases": [
+      "тушеная капуста",
+      "stewed cabbage",
+      "капуста тушеная"
+    ],
+    "category": "овощи",
+    "state": "готовый продукт",
+    "source_name": "FatSecret generic / recipe estimate",
+    "source_note_or_url": "https://foods.fatsecret.com/calories-nutrition/search?q=cooked+cabbage ; капуста с небольшим количеством масла; спорно",
+    "calories_per_100g": 56,
+    "protein_per_100g": 1.4,
+    "fat_per_100g": 3.1,
+    "carbs_per_100g": 6.3
+  },
+  {
+    "name_ru": "голубцы",
+    "aliases": [
+      "голубцы",
+      "stuffed cabbage",
+      "cabbage rolls"
+    ],
+    "category": "готовые блюда",
+    "state": "готовый продукт",
+    "source_name": "FatSecret generic",
+    "source_note_or_url": "https://foods.fatsecret.com/calories-nutrition/search?q=stuffed+cabbage ; generic stuffed cabbage/cabbage rolls; спорно",
+    "calories_per_100g": 110,
+    "protein_per_100g": 5.5,
+    "fat_per_100g": 5.0,
+    "carbs_per_100g": 10.5
+  },
+  {
+    "name_ru": "фаршированный перец",
+    "aliases": [
+      "фаршированный перец",
+      "stuffed pepper",
+      "перец с фаршем",
+      "перец фаршированный"
+    ],
+    "category": "готовые блюда",
+    "state": "готовый продукт",
+    "source_name": "FatSecret generic",
+    "source_note_or_url": "https://foods.fatsecret.com/calories-nutrition/search?q=stuffed+pepper ; generic stuffed pepper; спорно",
+    "calories_per_100g": 105,
+    "protein_per_100g": 5.0,
+    "fat_per_100g": 5.2,
+    "carbs_per_100g": 9.5
+  },
+  {
+    "name_ru": "тефтели в соусе",
+    "aliases": [
+      "тефтели",
+      "тефтели в соусе",
+      "meatballs in sauce",
+      "мясные тефтели"
+    ],
+    "category": "готовые блюда",
+    "state": "готовый продукт",
+    "source_name": "FatSecret generic",
+    "source_note_or_url": "https://foods.fatsecret.com/calories-nutrition/search?q=meatballs+with+sauce ; generic meatballs with sauce; спорно",
+    "calories_per_100g": 175,
+    "protein_per_100g": 10.0,
+    "fat_per_100g": 11.0,
+    "carbs_per_100g": 8.0
+  },
+  {
+    "name_ru": "котлета куриная",
+    "aliases": [
+      "куриная котлета",
+      "котлета куриная",
+      "chicken patty",
+      "chicken cutlet"
+    ],
+    "category": "мясо и птица",
+    "state": "готовый продукт",
+    "source_name": "FatSecret generic",
+    "source_note_or_url": "https://foods.fatsecret.com/calories-nutrition/search?q=chicken+patty ; generic chicken patty/cutlet; способ жарки влияет",
+    "calories_per_100g": 220,
+    "protein_per_100g": 17.0,
+    "fat_per_100g": 13.0,
+    "carbs_per_100g": 8.0
+  },
+  {
+    "name_ru": "котлета говяжья",
+    "aliases": [
+      "говяжья котлета",
+      "котлета говяжья",
+      "beef patty",
+      "beef cutlet"
+    ],
+    "category": "мясо и птица",
+    "state": "готовый продукт",
+    "source_name": "FatSecret generic",
+    "source_note_or_url": "https://foods.fatsecret.com/calories-nutrition/search?q=beef+patty ; generic beef patty/cutlet; способ жарки влияет",
+    "calories_per_100g": 250,
+    "protein_per_100g": 17.0,
+    "fat_per_100g": 18.0,
+    "carbs_per_100g": 5.0
+  },
+  {
+    "name_ru": "отбивная куриная",
+    "aliases": [
+      "куриная отбивная",
+      "отбивная куриная",
+      "chicken cutlet",
+      "chicken schnitzel"
+    ],
+    "category": "мясо и птица",
+    "state": "готовый продукт",
+    "source_name": "FatSecret generic",
+    "source_note_or_url": "https://foods.fatsecret.com/calories-nutrition/search?q=chicken+cutlet ; если в панировке, значения выше; спорно",
+    "calories_per_100g": 210,
+    "protein_per_100g": 23.0,
+    "fat_per_100g": 10.0,
+    "carbs_per_100g": 6.0
+  },
+  {
+    "name_ru": "гуляш",
+    "aliases": [
+      "гуляш",
+      "beef goulash",
+      "мясной гуляш",
+      "goulash"
+    ],
+    "category": "готовые блюда",
+    "state": "готовый продукт",
+    "source_name": "FatSecret generic",
+    "source_note_or_url": "https://foods.fatsecret.com/calories-nutrition/search?q=goulash ; generic beef goulash; спорно",
+    "calories_per_100g": 120,
+    "protein_per_100g": 9.0,
+    "fat_per_100g": 7.0,
+    "carbs_per_100g": 5.5
+  },
+  {
+    "name_ru": "бефстроганов",
+    "aliases": [
+      "бефстроганов",
+      "beef stroganoff",
+      "говядина строганов"
+    ],
+    "category": "готовые блюда",
+    "state": "готовый продукт",
+    "source_name": "FatSecret generic",
+    "source_note_or_url": "https://foods.fatsecret.com/calories-nutrition/search?q=beef+stroganoff ; generic beef stroganoff; зависит от сметаны/сливок",
+    "calories_per_100g": 170,
+    "protein_per_100g": 9.5,
+    "fat_per_100g": 11.0,
+    "carbs_per_100g": 7.5
+  },
+  {
+    "name_ru": "яичница",
+    "aliases": [
+      "яичница",
+      "глазунья",
+      "жареное яйцо",
+      "fried egg"
+    ],
+    "category": "яйца",
+    "state": "готовый продукт",
+    "source_name": "USDA/FatSecret",
+    "source_note_or_url": "https://foods.fatsecret.com/calories-nutrition/usda/fried-egg?portionamount=100.000&portionid=56528 ; зависит от масла",
+    "calories_per_100g": 201,
+    "protein_per_100g": 13.63,
+    "fat_per_100g": 15.31,
+    "carbs_per_100g": 0.88
+  },
+  {
+    "name_ru": "омлет с молоком",
+    "aliases": [
+      "омлет",
+      "омлет с молоком",
+      "milk omelet",
+      "omelette"
+    ],
+    "category": "яйца",
+    "state": "готовый продукт",
+    "source_name": "FatSecret generic",
+    "source_note_or_url": "https://foods.fatsecret.com/calories-nutrition/search?q=omelet+with+milk ; базовый омлет с молоком; масло меняет жирность",
+    "calories_per_100g": 154,
+    "protein_per_100g": 10.0,
+    "fat_per_100g": 11.0,
+    "carbs_per_100g": 2.5
+  },
+  {
+    "name_ru": "сырники",
+    "aliases": [
+      "сырники",
+      "творожники",
+      "syrniki",
+      "cottage cheese pancakes"
+    ],
+    "category": "готовые блюда",
+    "state": "готовый продукт",
+    "source_name": "FatSecret generic",
+    "source_note_or_url": "https://www.fatsecret.com.au/calories-nutrition/generic/syrniki?portionamount=100.000&portionid=2673056 ; зависит от творога, сахара, муки и масла",
+    "calories_per_100g": 175,
+    "protein_per_100g": 14.44,
+    "fat_per_100g": 7.97,
+    "carbs_per_100g": 11.5
+  },
+  {
+    "name_ru": "творожная запеканка",
+    "aliases": [
+      "творожная запеканка",
+      "cottage cheese casserole",
+      "запеканка из творога"
+    ],
+    "category": "готовые блюда",
+    "state": "готовый продукт",
+    "source_name": "Generic recipe estimate",
+    "source_note_or_url": "Оценка по cottage cheese casserole; универсальной международной позиции нет; спорно",
+    "calories_per_100g": 165,
+    "protein_per_100g": 13.0,
+    "fat_per_100g": 6.0,
+    "carbs_per_100g": 15.0
+  },
+  {
+    "name_ru": "овсянка на молоке",
+    "aliases": [
+      "овсянка на молоке",
+      "молочная овсянка",
+      "oatmeal with milk",
+      "овсяная каша"
+    ],
+    "category": "крупы и гарниры",
+    "state": "готовый продукт",
+    "source_name": "FatSecret generic / USDA-style",
+    "source_note_or_url": "https://foods.fatsecret.com/calories-nutrition/search?q=oatmeal+with+milk ; без сахара; спорно по густоте",
+    "calories_per_100g": 102,
+    "protein_per_100g": 3.7,
+    "fat_per_100g": 2.6,
+    "carbs_per_100g": 16.2
+  },
+  {
+    "name_ru": "рисовая каша на молоке",
+    "aliases": [
+      "рисовая каша",
+      "рисовая каша на молоке",
+      "rice porridge with milk",
+      "молочная рисовая каша"
+    ],
+    "category": "крупы и гарниры",
+    "state": "готовый продукт",
+    "source_name": "Generic recipe estimate",
+    "source_note_or_url": "Оценка по cooked rice pudding/porridge without much sugar; густота и сахар влияют",
+    "calories_per_100g": 97,
+    "protein_per_100g": 2.7,
+    "fat_per_100g": 2.2,
+    "carbs_per_100g": 16.8
+  },
+  {
+    "name_ru": "гречка с молоком",
+    "aliases": [
+      "гречка с молоком",
+      "buckwheat with milk",
+      "молочная гречка"
+    ],
+    "category": "крупы и гарниры",
+    "state": "готовый продукт",
+    "source_name": "Generic recipe estimate",
+    "source_note_or_url": "Оценка по вареной гречке с молоком; зависит от пропорций",
+    "calories_per_100g": 95,
+    "protein_per_100g": 3.8,
+    "fat_per_100g": 2.4,
+    "carbs_per_100g": 14.5
+  },
+  {
+    "name_ru": "блины",
+    "aliases": [
+      "блины",
+      "pancakes",
+      "тонкие блины",
+      "домашние блины"
+    ],
+    "category": "готовые блюда",
+    "state": "готовый продукт",
+    "source_name": "USDA/FatSecret generic pancakes",
+    "source_note_or_url": "https://foods.fatsecret.com/calories-nutrition/search?q=pancakes ; plain pancakes, no syrup",
+    "calories_per_100g": 227,
+    "protein_per_100g": 6.4,
+    "fat_per_100g": 9.7,
+    "carbs_per_100g": 28.3
+  },
+  {
+    "name_ru": "оладьи",
+    "aliases": [
+      "оладьи",
+      "fritters",
+      "pancake fritters",
+      "пышные оладьи"
+    ],
+    "category": "готовые блюда",
+    "state": "готовый продукт",
+    "source_name": "Generic recipe estimate",
+    "source_note_or_url": "Оценка по small fried pancakes/fritters; сильно зависит от масла",
+    "calories_per_100g": 240,
+    "protein_per_100g": 6.0,
+    "fat_per_100g": 10.5,
+    "carbs_per_100g": 30.0
+  },
+  {
+    "name_ru": "вареники с картошкой",
+    "aliases": [
+      "вареники с картошкой",
+      "potato dumplings",
+      "вареники картофельные"
+    ],
+    "category": "готовые блюда",
+    "state": "готовый продукт",
+    "source_name": "FatSecret generic / recipe estimate",
+    "source_note_or_url": "https://foods.fatsecret.com/calories-nutrition/search?q=potato+dumplings ; boiled potato dumplings; спорно",
+    "calories_per_100g": 160,
+    "protein_per_100g": 4.5,
+    "fat_per_100g": 3.0,
+    "carbs_per_100g": 29.0
+  },
+  {
+    "name_ru": "вареники с творогом",
+    "aliases": [
+      "вареники с творогом",
+      "cheese dumplings",
+      "творожные вареники"
+    ],
+    "category": "готовые блюда",
+    "state": "готовый продукт",
+    "source_name": "FatSecret generic / recipe estimate",
+    "source_note_or_url": "https://foods.fatsecret.com/calories-nutrition/search?q=cheese+dumplings ; boiled cottage cheese dumplings; спорно",
+    "calories_per_100g": 185,
+    "protein_per_100g": 10.0,
+    "fat_per_100g": 5.0,
+    "carbs_per_100g": 25.0
+  },
+  {
+    "name_ru": "пельмени отварные",
+    "aliases": [
+      "пельмени",
+      "пельмени отварные",
+      "boiled dumplings",
+      "meat dumplings"
+    ],
+    "category": "готовые блюда",
+    "state": "готовый продукт",
+    "source_name": "FatSecret generic",
+    "source_note_or_url": "https://foods.fatsecret.com/calories-nutrition/search?q=meat+dumplings ; boiled meat dumplings; спорно по фаршу",
+    "calories_per_100g": 230,
+    "protein_per_100g": 11.0,
+    "fat_per_100g": 12.0,
+    "carbs_per_100g": 20.0
+  },
+  {
+    "name_ru": "оливье",
+    "aliases": [
+      "оливье",
+      "russian salad",
+      "салат оливье",
+      "salad olivier"
+    ],
+    "category": "готовые блюда",
+    "state": "готовый продукт",
+    "source_name": "FatSecret generic / recipe estimate",
+    "source_note_or_url": "https://foods.fatsecret.com/calories-nutrition/search?q=russian+salad ; зависит от майонеза/колбасы; спорно",
+    "calories_per_100g": 198,
+    "protein_per_100g": 5.0,
+    "fat_per_100g": 16.0,
+    "carbs_per_100g": 8.0
+  },
+  {
+    "name_ru": "винегрет",
+    "aliases": [
+      "винегрет",
+      "vinegret",
+      "beet salad",
+      "салат винегрет"
+    ],
+    "category": "готовые блюда",
+    "state": "готовый продукт",
+    "source_name": "FatSecret generic / recipe estimate",
+    "source_note_or_url": "https://foods.fatsecret.com/calories-nutrition/search?q=beet+salad ; базовый свекольно-овощной салат с маслом; спорно",
+    "calories_per_100g": 90,
+    "protein_per_100g": 1.5,
+    "fat_per_100g": 4.5,
+    "carbs_per_100g": 11.0
+  },
+  {
+    "name_ru": "крабовый салат",
+    "aliases": [
+      "крабовый салат",
+      "салат с крабовыми палочками",
+      "surimi salad"
+    ],
+    "category": "готовые блюда",
+    "state": "готовый продукт",
+    "source_name": "Generic recipe estimate",
+    "source_note_or_url": "Оценка по салату с сурими, кукурузой, яйцом и майонезом; рецепт сильно влияет",
+    "calories_per_100g": 170,
+    "protein_per_100g": 6.5,
+    "fat_per_100g": 12.0,
+    "carbs_per_100g": 9.0
+  },
+  {
+    "name_ru": "салат из капусты",
+    "aliases": [
+      "салат из капусты",
+      "cabbage salad",
+      "капустный салат",
+      "coleslaw без майонеза"
+    ],
+    "category": "овощи",
+    "state": "готовый продукт",
+    "source_name": "FatSecret generic / recipe estimate",
+    "source_note_or_url": "https://foods.fatsecret.com/calories-nutrition/search?q=cabbage+salad ; с небольшим количеством масла; спорно",
+    "calories_per_100g": 50,
+    "protein_per_100g": 1.3,
+    "fat_per_100g": 2.8,
+    "carbs_per_100g": 5.6
+  },
+  {
+    "name_ru": "салат огурцы помидоры",
+    "aliases": [
+      "огурцы помидоры",
+      "салат огурцы помидоры",
+      "tomato cucumber salad",
+      "овощной салат"
+    ],
+    "category": "овощи",
+    "state": "готовый продукт",
+    "source_name": "Generic recipe estimate",
+    "source_note_or_url": "Оценка по томатно-огуречному салату без масла; с маслом калорийность выше",
+    "calories_per_100g": 20,
+    "protein_per_100g": 0.9,
+    "fat_per_100g": 0.2,
+    "carbs_per_100g": 3.8
+  },
+  {
+    "name_ru": "свекла с чесноком",
+    "aliases": [
+      "свекла с чесноком",
+      "beetroot garlic salad",
+      "салат из свеклы"
+    ],
+    "category": "готовые блюда",
+    "state": "готовый продукт",
+    "source_name": "Generic recipe estimate",
+    "source_note_or_url": "Оценка по вареной свекле с чесноком и небольшим количеством майонеза; спорно",
+    "calories_per_100g": 115,
+    "protein_per_100g": 2.0,
+    "fat_per_100g": 7.0,
+    "carbs_per_100g": 11.0
+  },
+  {
+    "name_ru": "морковь по-корейски",
+    "aliases": [
+      "морковь по-корейски",
+      "korean carrot salad",
+      "морковча",
+      "острая морковь"
+    ],
+    "category": "готовые блюда",
+    "state": "готовый продукт",
+    "source_name": "Generic recipe estimate",
+    "source_note_or_url": "Оценка по Korean carrot salad с маслом; источники и рецепты сильно отличаются",
+    "calories_per_100g": 112,
+    "protein_per_100g": 1.2,
+    "fat_per_100g": 7.5,
+    "carbs_per_100g": 10.0
+  },
+  {
+    "name_ru": "сельдь под шубой",
+    "aliases": [
+      "сельдь под шубой",
+      "шуба",
+      "herring under fur coat",
+      "селедка под шубой"
+    ],
+    "category": "готовые блюда",
+    "state": "готовый продукт",
+    "source_name": "Generic recipe estimate",
+    "source_note_or_url": "Оценка по классическому салату с сельдью, овощами и майонезом; очень зависит от майонеза",
+    "calories_per_100g": 190,
+    "protein_per_100g": 6.0,
+    "fat_per_100g": 14.0,
+    "carbs_per_100g": 10.0
+  },
+  {
+    "name_ru": "ряженка",
+    "aliases": [
+      "ряженка",
+      "ряженка 2.5%",
+      "ряженка 3.2%",
+      "топленое кисломолоко"
+    ],
+    "category": "молочные продукты",
+    "state": "готовый продукт",
+    "source_name": "Rud / Yagotynske open labels",
+    "source_note_or_url": "https://rud.ua/en/products/dairy/ryazhenka/riazhanka-1kg/ ; https://milkalliance.com.ua/en/ryazhanka-3-2-zhiru-3/tm-yagotynske/ ; базовый вариант 2.5%",
+    "calories_per_100g": 54,
+    "protein_per_100g": 2.9,
+    "fat_per_100g": 2.5,
+    "carbs_per_100g": 4.2
+  },
+  {
+    "name_ru": "айран",
+    "aliases": [
+      "айран",
+      "ayran",
+      "йогуртовый напиток",
+      "кисломолочный напиток"
+    ],
+    "category": "молочные продукты",
+    "state": "готовый продукт",
+    "source_name": "FatSecret generic / Serene Dairy label",
+    "source_note_or_url": "https://foods.fatsecret.com/calories-nutrition/generic/ayran?portionamount=100.000&portionid=21566410 ; https://serenedairy.lv/en/fermented-milk-drinks/ayran ; данные гуляют по жирности и соли",
+    "calories_per_100g": 41,
+    "protein_per_100g": 2.32,
+    "fat_per_100g": 2.15,
+    "carbs_per_100g": 3.17
+  },
+  {
+    "name_ru": "тан",
+    "aliases": [
+      "тан",
+      "tan drink",
+      "кисломолочный тан",
+      "соленый айран"
+    ],
+    "category": "молочные продукты",
+    "state": "готовый продукт",
+    "source_name": "Generic label estimate",
+    "source_note_or_url": "Международной универсальной базы почти нет; взят близкий fermented yogurt drink, данные спорные",
+    "calories_per_100g": 27,
+    "protein_per_100g": 1.5,
+    "fat_per_100g": 1.0,
+    "carbs_per_100g": 2.9
+  },
+  {
+    "name_ru": "кефир 1%",
+    "aliases": [
+      "кефир 1%",
+      "kefir low fat",
+      "кефир нежирный"
+    ],
+    "category": "молочные продукты",
+    "state": "готовый продукт",
+    "source_name": "FatSecret / USDA kefir lowfat",
+    "source_note_or_url": "https://foods.fatsecret.com/calories-nutrition/search?q=kefir+low+fat ; базовый unsweetened low-fat kefir",
+    "calories_per_100g": 41,
+    "protein_per_100g": 3.8,
+    "fat_per_100g": 1.0,
+    "carbs_per_100g": 4.5
+  },
+  {
+    "name_ru": "кефир 2.5%",
+    "aliases": [
+      "кефир 2.5%",
+      "кефир",
+      "kefir",
+      "кефир классический"
+    ],
+    "category": "молочные продукты",
+    "state": "готовый продукт",
+    "source_name": "FatSecret / generic kefir",
+    "source_note_or_url": "https://foods.fatsecret.com/calories-nutrition/search?q=kefir ; базовый unsweetened kefir около 2.5% жирности; спорно",
+    "calories_per_100g": 53,
+    "protein_per_100g": 3.0,
+    "fat_per_100g": 2.5,
+    "carbs_per_100g": 4.0
+  },
+  {
+    "name_ru": "йогурт питьевой без сахара",
+    "aliases": [
+      "питьевой йогурт без сахара",
+      "йогурт питьевой натуральный",
+      "plain drinkable yogurt"
+    ],
+    "category": "молочные продукты",
+    "state": "готовый продукт",
+    "source_name": "USDA/FatSecret yogurt plain",
+    "source_note_or_url": "https://foods.fatsecret.com/calories-nutrition/search?q=plain+drinkable+yogurt ; без сахара, plain",
+    "calories_per_100g": 61,
+    "protein_per_100g": 3.5,
+    "fat_per_100g": 3.3,
+    "carbs_per_100g": 4.7
+  },
+  {
+    "name_ru": "йогурт питьевой сладкий",
+    "aliases": [
+      "питьевой йогурт сладкий",
+      "сладкий питьевой йогурт",
+      "flavored drinkable yogurt"
+    ],
+    "category": "молочные продукты",
+    "state": "готовый продукт",
+    "source_name": "USDA/FatSecret flavored yogurt",
+    "source_note_or_url": "https://foods.fatsecret.com/calories-nutrition/search?q=flavored+drinkable+yogurt ; сладкий/фруктовый, бренды сильно отличаются",
+    "calories_per_100g": 82,
+    "protein_per_100g": 3.2,
+    "fat_per_100g": 2.0,
+    "carbs_per_100g": 13.0
+  },
+  {
+    "name_ru": "какао на молоке",
+    "aliases": [
+      "какао на молоке",
+      "cocoa with milk",
+      "горячий какао",
+      "какао"
+    ],
+    "category": "молочные продукты",
+    "state": "готовый продукт",
+    "source_name": "FatSecret generic cocoa milk",
+    "source_note_or_url": "https://foods.fatsecret.com/calories-nutrition/search?q=cocoa+with+milk ; базовое какао на молоке с сахаром; спорно",
+    "calories_per_100g": 77,
+    "protein_per_100g": 3.2,
+    "fat_per_100g": 2.7,
+    "carbs_per_100g": 10.0
+  },
+  {
+    "name_ru": "чай с сахаром",
+    "aliases": [
+      "чай с сахаром",
+      "sweet tea",
+      "черный чай с сахаром"
+    ],
+    "category": "сладкое",
+    "state": "готовый продукт",
+    "source_name": "USDA/FatSecret tea + sugar estimate",
+    "source_note_or_url": "Расчет: чай почти 0 ккал + около 5 г сахара на 100 г напитка; если сахара меньше/больше, меняется",
+    "calories_per_100g": 20,
+    "protein_per_100g": 0.0,
+    "fat_per_100g": 0.0,
+    "carbs_per_100g": 5.0
+  },
+  {
+    "name_ru": "чай без сахара",
+    "aliases": [
+      "чай без сахара",
+      "unsweetened tea",
+      "черный чай",
+      "зеленый чай"
+    ],
+    "category": "готовые блюда",
+    "state": "готовый продукт",
+    "source_name": "USDA/FatSecret brewed tea",
+    "source_note_or_url": "https://foods.fatsecret.com/calories-nutrition/search?q=tea+brewed ; категория вынужденно 'готовые блюда', так как 'напитки' нет в допустимых",
+    "calories_per_100g": 1,
+    "protein_per_100g": 0.0,
+    "fat_per_100g": 0.0,
+    "carbs_per_100g": 0.2
+  },
+  {
+    "name_ru": "чай с медом",
+    "aliases": [
+      "чай с медом",
+      "tea with honey",
+      "черный чай с медом"
+    ],
+    "category": "сладкое",
+    "state": "готовый продукт",
+    "source_name": "USDA/FatSecret tea + honey estimate",
+    "source_note_or_url": "Расчет: чай почти 0 ккал + около 7 г меда на 100 г напитка; спорно по количеству меда",
+    "calories_per_100g": 22,
+    "protein_per_100g": 0.02,
+    "fat_per_100g": 0.0,
+    "carbs_per_100g": 5.8
+  },
+  {
+    "name_ru": "кофе черный",
+    "aliases": [
+      "кофе черный",
+      "black coffee",
+      "американо",
+      "кофе без сахара"
+    ],
+    "category": "готовые блюда",
+    "state": "готовый продукт",
+    "source_name": "USDA/FatSecret brewed coffee",
+    "source_note_or_url": "https://foods.fatsecret.com/calories-nutrition/search?q=coffee+brewed ; без сахара и молока",
+    "calories_per_100g": 1,
+    "protein_per_100g": 0.12,
+    "fat_per_100g": 0.02,
+    "carbs_per_100g": 0.0
+  },
+  {
+    "name_ru": "кофе с молоком",
+    "aliases": [
+      "кофе с молоком",
+      "coffee with milk",
+      "кофе молочный"
+    ],
+    "category": "молочные продукты",
+    "state": "готовый продукт",
+    "source_name": "USDA/FatSecret coffee milk estimate",
+    "source_note_or_url": "Оценка: кофе + около 20% молока 2.5%; без сахара; спорно",
+    "calories_per_100g": 13,
+    "protein_per_100g": 0.7,
+    "fat_per_100g": 0.5,
+    "carbs_per_100g": 1.0
+  },
+  {
+    "name_ru": "кофе с сахаром",
+    "aliases": [
+      "кофе с сахаром",
+      "sweet coffee",
+      "кофе сладкий"
+    ],
+    "category": "сладкое",
+    "state": "готовый продукт",
+    "source_name": "USDA/FatSecret coffee + sugar estimate",
+    "source_note_or_url": "Расчет: кофе почти 0 ккал + около 5 г сахара на 100 г напитка",
+    "calories_per_100g": 21,
+    "protein_per_100g": 0.1,
+    "fat_per_100g": 0.0,
+    "carbs_per_100g": 5.0
+  },
+  {
+    "name_ru": "кофе 3 в 1",
+    "aliases": [
+      "кофе 3 в 1",
+      "3 in 1 coffee",
+      "растворимый кофе 3в1"
+    ],
+    "category": "сладкое",
+    "state": "готовый продукт",
+    "source_name": "Generic label estimate",
+    "source_note_or_url": "Оценка по готовому напитку из стик-пакета 18-20 г на 180-200 мл; бренды отличаются",
+    "calories_per_100g": 45,
+    "protein_per_100g": 0.5,
+    "fat_per_100g": 1.3,
+    "carbs_per_100g": 8.0
+  },
+  {
+    "name_ru": "капучино",
+    "aliases": [
+      "капучино",
+      "cappuccino",
+      "кофе капучино"
+    ],
+    "category": "молочные продукты",
+    "state": "готовый продукт",
+    "source_name": "USDA/FatSecret cappuccino",
+    "source_note_or_url": "https://foods.fatsecret.com/calories-nutrition/search?q=cappuccino ; без сиропа/сахара; размер и молоко влияют",
+    "calories_per_100g": 27,
+    "protein_per_100g": 1.7,
+    "fat_per_100g": 1.4,
+    "carbs_per_100g": 2.1
+  },
+  {
+    "name_ru": "латте",
+    "aliases": [
+      "латте",
+      "caffe latte",
+      "кофе латте",
+      "latte"
+    ],
+    "category": "молочные продукты",
+    "state": "готовый продукт",
+    "source_name": "USDA/FatSecret latte",
+    "source_note_or_url": "https://foods.fatsecret.com/calories-nutrition/search?q=latte ; без сиропа/сахара; молоко влияет",
+    "calories_per_100g": 43,
+    "protein_per_100g": 2.2,
+    "fat_per_100g": 2.0,
+    "carbs_per_100g": 4.0
+  },
+  {
+    "name_ru": "компот",
+    "aliases": [
+      "компот",
+      "fruit compote",
+      "домашний компот"
+    ],
+    "category": "сладкое",
+    "state": "готовый продукт",
+    "source_name": "Generic recipe estimate",
+    "source_note_or_url": "Оценка по домашнему компоту с сахаром; фрукты и сахар сильно влияют",
+    "calories_per_100g": 35,
+    "protein_per_100g": 0.1,
+    "fat_per_100g": 0.0,
+    "carbs_per_100g": 8.5
+  },
+  {
+    "name_ru": "морс",
+    "aliases": [
+      "морс",
+      "berry drink",
+      "клюквенный морс",
+      "ягодный морс"
+    ],
+    "category": "сладкое",
+    "state": "готовый продукт",
+    "source_name": "Generic recipe estimate",
+    "source_note_or_url": "Оценка по ягодному морсу с сахаром; зависит от сахара",
+    "calories_per_100g": 40,
+    "protein_per_100g": 0.1,
+    "fat_per_100g": 0.0,
+    "carbs_per_100g": 9.8
+  },
+  {
+    "name_ru": "кисель",
+    "aliases": [
+      "кисель",
+      "fruit kissel",
+      "ягодный кисель"
+    ],
+    "category": "сладкое",
+    "state": "готовый продукт",
+    "source_name": "Generic recipe estimate",
+    "source_note_or_url": "Оценка по фруктово-ягодному киселю с крахмалом и сахаром; спорно",
+    "calories_per_100g": 55,
+    "protein_per_100g": 0.1,
+    "fat_per_100g": 0.0,
+    "carbs_per_100g": 13.5
+  },
+  {
+    "name_ru": "лимонад",
+    "aliases": [
+      "лимонад",
+      "lemonade",
+      "газированный лимонад",
+      "sweet lemonade"
+    ],
+    "category": "сладкое",
+    "state": "готовый продукт",
+    "source_name": "USDA/FatSecret lemonade",
+    "source_note_or_url": "https://foods.fatsecret.com/calories-nutrition/search?q=lemonade ; обычный сладкий лимонад",
+    "calories_per_100g": 40,
+    "protein_per_100g": 0.0,
+    "fat_per_100g": 0.0,
+    "carbs_per_100g": 10.4
+  },
+  {
+    "name_ru": "сок яблочный",
+    "aliases": [
+      "яблочный сок",
+      "сок яблочный",
+      "apple juice"
+    ],
+    "category": "фрукты и ягоды",
+    "state": "готовый продукт",
+    "source_name": "USDA/FatSecret apple juice",
+    "source_note_or_url": "https://foods.fatsecret.com/calories-nutrition/search?q=apple+juice ; 100% juice",
+    "calories_per_100g": 46,
+    "protein_per_100g": 0.1,
+    "fat_per_100g": 0.1,
+    "carbs_per_100g": 11.3
+  },
+  {
+    "name_ru": "сок апельсиновый",
+    "aliases": [
+      "апельсиновый сок",
+      "сок апельсиновый",
+      "orange juice"
+    ],
+    "category": "фрукты и ягоды",
+    "state": "готовый продукт",
+    "source_name": "USDA/FatSecret orange juice",
+    "source_note_or_url": "https://foods.fatsecret.com/calories-nutrition/search?q=orange+juice ; 100% juice",
+    "calories_per_100g": 45,
+    "protein_per_100g": 0.7,
+    "fat_per_100g": 0.2,
+    "carbs_per_100g": 10.4
+  },
+  {
+    "name_ru": "квас",
+    "aliases": [
+      "квас",
+      "kvass",
+      "хлебный квас"
+    ],
+    "category": "сладкое",
+    "state": "готовый продукт",
+    "source_name": "Generic label estimate",
+    "source_note_or_url": "Международных баз мало; оценка по обычному хлебному квасу; сахар/бренд влияют",
+    "calories_per_100g": 27,
+    "protein_per_100g": 0.2,
+    "fat_per_100g": 0.0,
+    "carbs_per_100g": 5.2
+  },
+  {
+    "name_ru": "майонез",
+    "aliases": [
+      "майонез",
+      "mayo",
+      "майонез классический",
+      "майонез жирный"
+    ],
+    "category": "соусы",
+    "state": "готовый продукт",
+    "source_name": "USDA via NutritionValue/Melio",
+    "source_note_or_url": "https://meal-plan.app/en/foods/fats-and-oils/mayonnaise-regular/ ; regular mayonnaise per 100 g",
+    "calories_per_100g": 680,
+    "protein_per_100g": 1.0,
+    "fat_per_100g": 75.0,
+    "carbs_per_100g": 1.0
+  },
+  {
+    "name_ru": "горчица",
+    "aliases": [
+      "горчица",
+      "желтая горчица",
+      "столовая горчица",
+      "prepared mustard"
+    ],
+    "category": "соусы",
+    "state": "готовый продукт",
+    "source_name": "USDA / Recipal yellow prepared mustard",
+    "source_note_or_url": "https://www.recipal.com/ingredients/325-nutrition-facts-calories-protein-carbs-fat-mustard-prepared-yellow ; prepared yellow mustard per 100 g",
+    "calories_per_100g": 60,
+    "protein_per_100g": 3.74,
+    "fat_per_100g": 3.34,
+    "carbs_per_100g": 5.83
+  },
+  {
+    "name_ru": "сметанный соус",
+    "aliases": [
+      "сметанный соус",
+      "sour cream sauce",
+      "соус со сметаной"
+    ],
+    "category": "соусы",
+    "state": "готовый продукт",
+    "source_name": "Generic recipe estimate",
+    "source_note_or_url": "Оценка по сметанному соусу на базе sour cream; добавки и жирность сметаны влияют",
+    "calories_per_100g": 160,
+    "protein_per_100g": 2.5,
+    "fat_per_100g": 15.0,
+    "carbs_per_100g": 4.0
+  },
+  {
+    "name_ru": "чесночный соус",
+    "aliases": [
+      "чесночный соус",
+      "garlic sauce",
+      "соус с чесноком",
+      "чесночный дип"
+    ],
+    "category": "соусы",
+    "state": "готовый продукт",
+    "source_name": "Generic recipe estimate",
+    "source_note_or_url": "Оценка по майонезно/сметанному garlic sauce; рецепты отличаются очень сильно",
+    "calories_per_100g": 260,
+    "protein_per_100g": 2.0,
+    "fat_per_100g": 25.0,
+    "carbs_per_100g": 6.0
+  },
+  {
+    "name_ru": "мед",
+    "aliases": [
+      "мед",
+      "мёд",
+      "пчелиный мед",
+      "натуральный мед"
+    ],
+    "category": "сладкое",
+    "state": "готовый продукт",
+    "source_name": "USDA/FatSecret honey",
+    "source_note_or_url": "https://foods.fatsecret.com/calories-nutrition/usda/honey?portionamount=100.000&portionid=62267",
+    "calories_per_100g": 304,
+    "protein_per_100g": 0.3,
+    "fat_per_100g": 0.0,
+    "carbs_per_100g": 82.4
+  },
+  {
+    "name_ru": "сахар",
+    "aliases": [
+      "сахар",
+      "белый сахар",
+      "sugar",
+      "сахар песок"
+    ],
+    "category": "сладкое",
+    "state": "сухой продукт",
+    "source_name": "USDA/FatSecret sugar",
+    "source_note_or_url": "https://foods.fatsecret.com/calories-nutrition/search?q=white+sugar ; granulated white sugar",
+    "calories_per_100g": 387,
+    "protein_per_100g": 0.0,
+    "fat_per_100g": 0.0,
+    "carbs_per_100g": 100.0
+  },
+  {
+    "name_ru": "сгущенка",
+    "aliases": [
+      "сгущенка",
+      "сгущенное молоко",
+      "sweetened condensed milk",
+      "condensed milk"
+    ],
+    "category": "молочные продукты",
+    "state": "готовый продукт",
+    "source_name": "USDA/FatSecret sweetened condensed milk",
+    "source_note_or_url": "https://foods.fatsecret.com/calories-nutrition/search?q=sweetened+condensed+milk",
+    "calories_per_100g": 321,
+    "protein_per_100g": 7.9,
+    "fat_per_100g": 8.7,
+    "carbs_per_100g": 54.4
+  },
+  {
+    "name_ru": "варенье",
+    "aliases": [
+      "варенье",
+      "fruit preserves",
+      "jam",
+      "домашнее варенье"
+    ],
+    "category": "сладкое",
+    "state": "готовый продукт",
+    "source_name": "USDA/FatSecret fruit preserves",
+    "source_note_or_url": "https://foods.fatsecret.com/calories-nutrition/search?q=fruit+preserves ; базовое fruit preserves/jam; ягоды и сахар влияют",
+    "calories_per_100g": 278,
+    "protein_per_100g": 0.4,
+    "fat_per_100g": 0.1,
+    "carbs_per_100g": 68.9
+  },
+  {
+    "name_ru": "джем",
+    "aliases": [
+      "джем",
+      "jam",
+      "fruit jam",
+      "ягодный джем"
+    ],
+    "category": "сладкое",
+    "state": "готовый продукт",
+    "source_name": "USDA/FatSecret jam",
+    "source_note_or_url": "https://foods.fatsecret.com/calories-nutrition/search?q=jam ; базовый fruit jam; спорно по сахару",
+    "calories_per_100g": 250,
+    "protein_per_100g": 0.4,
+    "fat_per_100g": 0.1,
+    "carbs_per_100g": 65.0
+  },
+  {
+    "name_ru": "хлеб с маслом",
+    "aliases": [
+      "хлеб с маслом",
+      "buttered bread",
+      "бутерброд с маслом"
+    ],
+    "category": "хлеб и выпечка",
+    "state": "готовый продукт",
+    "source_name": "Calculated from USDA bread + butter",
+    "source_note_or_url": "Расчет: 85% white bread + 15% butter; пропорция масла сильно влияет",
+    "calories_per_100g": 340,
+    "protein_per_100g": 7.1,
+    "fat_per_100g": 14.0,
+    "carbs_per_100g": 46.0
+  },
+  {
+    "name_ru": "бутерброд с сыром",
+    "aliases": [
+      "бутерброд с сыром",
+      "cheese sandwich",
+      "хлеб с сыром"
+    ],
+    "category": "хлеб и выпечка",
+    "state": "готовый продукт",
+    "source_name": "Calculated from USDA bread + cheese",
+    "source_note_or_url": "Расчет: 70% white bread + 30% semi-hard cheese; сорт сыра влияет",
+    "calories_per_100g": 310,
+    "protein_per_100g": 13.5,
+    "fat_per_100g": 12.0,
+    "carbs_per_100g": 36.0
+  },
+  {
+    "name_ru": "бутерброд с колбасой",
+    "aliases": [
+      "бутерброд с колбасой",
+      "sausage sandwich",
+      "хлеб с колбасой"
+    ],
+    "category": "хлеб и выпечка",
+    "state": "готовый продукт",
+    "source_name": "Calculated from USDA bread + cooked sausage",
+    "source_note_or_url": "Расчет: 70% white bread + 30% cooked sausage; вид колбасы сильно влияет",
+    "calories_per_100g": 300,
+    "protein_per_100g": 10.5,
+    "fat_per_100g": 13.0,
+    "carbs_per_100g": 35.0
+  }
+]

@@ -6,6 +6,7 @@ from dataclasses import dataclass, field
 @dataclass
 class RecognizedItem:
     product_id: int
+    product_source: str
     raw_item_text: str
     product_text: str
     display_name: str

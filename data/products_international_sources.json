@@ -1,0 +1,343 @@
+[
+  {
+    "name_ru": "ряженка",
+    "aliases": [
+      "ряженка",
+      "ряженка 2.5%",
+      "ряженка 3.2%",
+      "топленое кисломолоко"
+    ],
+    "category": "молочные продукты",
+    "state": "готовый продукт",
+    "source_name": "Rud / Yagotynske open labels",
+    "source_note_or_url": "https://rud.ua/en/products/dairy/ryazhenka/riazhanka-1kg/ ; https://milkalliance.com.ua/en/ryazhanka-3-2-zhiru-3/tm-yagotynske/ ; взят базовый вариант 2.5%, 3.2% дает около 57 ккал",
+    "calories_per_100g": 54,
+    "protein_per_100g": 2.9,
+    "fat_per_100g": 2.5,
+    "carbs_per_100g": 4.2
+  },
+  {
+    "name_ru": "айран",
+    "aliases": [
+      "айран",
+      "тан",
+      "йогуртовый напиток",
+      "кисломолочный напиток"
+    ],
+    "category": "молочные продукты",
+    "state": "готовый продукт",
+    "source_name": "FatSecret generic / Serene Dairy label",
+    "source_note_or_url": "https://foods.fatsecret.com/calories-nutrition/generic/ayran?portionamount=100.000&portionid=21566410 ; https://serenedairy.lv/en/fermented-milk-drinks/ayran ; данные могут гулять из-за жирности и соли",
+    "calories_per_100g": 41,
+    "protein_per_100g": 2.32,
+    "fat_per_100g": 2.15,
+    "carbs_per_100g": 3.17
+  },
+  {
+    "name_ru": "сыр сулугуни",
+    "aliases": [
+      "сулугуни",
+      "сыр сулугуни",
+      "sulguni",
+      "suluguni"
+    ],
+    "category": "молочные продукты",
+    "state": "готовый продукт",
+    "source_name": "Milkiland / FatSecret search",
+    "source_note_or_url": "https://www.milkiland.ua/en/buyers/domestic-market/sulguni-cheese-/ ; https://www.fatsecret.co.za/calories-nutrition/search?q=Suluguni+Cheese ; спорно: рассольные сыры сильно отличаются по жирности",
+    "calories_per_100g": 295,
+    "protein_per_100g": 22.5,
+    "fat_per_100g": 22.5,
+    "carbs_per_100g": 0.0
+  },
+  {
+    "name_ru": "брынза",
+    "aliases": [
+      "брынза",
+      "бринза",
+      "brynza",
+      "bryndza",
+      "рассольный сыр"
+    ],
+    "category": "молочные продукты",
+    "state": "готовый продукт",
+    "source_name": "Czech Food Composition Database",
+    "source_note_or_url": "https://www.nutridatabaze.cz/en/food/?id=397 ; sheep Bryndza per 100 g; спорно для коровьей брынзы",
+    "calories_per_100g": 314,
+    "protein_per_100g": 20.5,
+    "fat_per_100g": 25.4,
+    "carbs_per_100g": 1.7
+  },
+  {
+    "name_ru": "творожный сыр",
+    "aliases": [
+      "творожный сыр",
+      "крем-сыр",
+      "сливочный сыр",
+      "cream cheese"
+    ],
+    "category": "молочные продукты",
+    "state": "готовый продукт",
+    "source_name": "USDA / FatSecret generic cream cheese",
+    "source_note_or_url": "https://foods.fatsecret.com/calories-nutrition/usda/cream-cheese?portionamount=100.000&portionid=56428 ; выбран plain regular cream cheese; не light",
+    "calories_per_100g": 349,
+    "protein_per_100g": 7.55,
+    "fat_per_100g": 34.87,
+    "carbs_per_100g": 2.66
+  },
+  {
+    "name_ru": "хек готовый",
+    "aliases": [
+      "хек готовый",
+      "хек приготовленный",
+      "хек отварной",
+      "мерлуза готовая"
+    ],
+    "category": "рыба и морепродукты",
+    "state": "готовый продукт",
+    "source_name": "MyNetDiary / generic cooked hake",
+    "source_note_or_url": "https://www.mynetdiary.com/food/calories-in-south-african-hake-cooked-ounce-41454861-0.html ; пересчет из 3 oz: 99 ккал, 20 г белка, 1.7 г жира",
+    "calories_per_100g": 116,
+    "protein_per_100g": 23.5,
+    "fat_per_100g": 2.0,
+    "carbs_per_100g": 0.0
+  },
+  {
+    "name_ru": "хек сырой",
+    "aliases": [
+      "хек",
+      "хек сырой",
+      "мерлуза",
+      "рыба хек"
+    ],
+    "category": "рыба и морепродукты",
+    "state": "сырой продукт",
+    "source_name": "Czech Food Composition Database",
+    "source_note_or_url": "https://www.nutridatabaze.cz/en/food/?id=829 ; Argentine hake raw, edible portion per 100 g",
+    "calories_per_100g": 75,
+    "protein_per_100g": 15.9,
+    "fat_per_100g": 1.3,
+    "carbs_per_100g": 0.0
+  },
+  {
+    "name_ru": "тунец готовый",
+    "aliases": [
+      "тунец готовый",
+      "тунец приготовленный",
+      "тунец отварной",
+      "тунец запеченный"
+    ],
+    "category": "рыба и морепродукты",
+    "state": "готовый продукт",
+    "source_name": "FatSecret generic cooked tuna",
+    "source_note_or_url": "https://foods.fatsecret.com/calories-nutrition/generic/tuna-fresh-cooked?portionamount=100.000&portionid=50781 ; generic fresh cooked tuna per 100 g",
+    "calories_per_100g": 153,
+    "protein_per_100g": 27.3,
+    "fat_per_100g": 3.96,
+    "carbs_per_100g": 0.41
+  },
+  {
+    "name_ru": "тунец сырой",
+    "aliases": [
+      "тунец",
+      "тунец сырой",
+      "свежий тунец",
+      "raw tuna"
+    ],
+    "category": "рыба и морепродукты",
+    "state": "сырой продукт",
+    "source_name": "FatSecret generic raw tuna",
+    "source_note_or_url": "https://foods.fatsecret.com/calories-nutrition/generic/tuna-fresh-raw?portionamount=100.000&portionid=50780 ; generic fresh raw tuna per 100 g",
+    "calories_per_100g": 108,
+    "protein_per_100g": 23.38,
+    "fat_per_100g": 0.95,
+    "carbs_per_100g": 0.0
+  },
+  {
+    "name_ru": "сельдь соленая",
+    "aliases": [
+      "сельдь соленая",
+      "селедка",
+      "соленая селедка",
+      "herring salted"
+    ],
+    "category": "рыба и морепродукты",
+    "state": "готовый продукт",
+    "source_name": "FatSecret USDA Atlantic herring / note",
+    "source_note_or_url": "https://foods.fatsecret.com/calories-nutrition/usda/atlantic-herring?portionamount=100.000&portionid=60734 ; взята обычная Atlantic herring как базовая; соленая сельдь спорна из-за маринада/масла/жирности",
+    "calories_per_100g": 158,
+    "protein_per_100g": 17.96,
+    "fat_per_100g": 9.04,
+    "carbs_per_100g": 0.0
+  },
+  {
+    "name_ru": "крабовые палочки",
+    "aliases": [
+      "крабовые палочки",
+      "сурими",
+      "имитация краба",
+      "crab sticks"
+    ],
+    "category": "рыба и морепродукты",
+    "state": "готовый продукт",
+    "source_name": "USDA/FatSecret surimi fish",
+    "source_note_or_url": "https://foods.fatsecret.com/calories-nutrition/usda/surimi-%28fish%29?portionamount=100.000&portionid=60804 ; surimi fish per 100 g; бренды отличаются по крахмалу",
+    "calories_per_100g": 99,
+    "protein_per_100g": 15.18,
+    "fat_per_100g": 0.9,
+    "carbs_per_100g": 6.85
+  },
+  {
+    "name_ru": "майонез",
+    "aliases": [
+      "майонез",
+      "mayo",
+      "майонез классический",
+      "майонез жирный"
+    ],
+    "category": "соусы",
+    "state": "готовый продукт",
+    "source_name": "NutritionValue / USDA regular mayonnaise",
+    "source_note_or_url": "https://www.nutritionvalue.org/Mayonnaise%2C_regular_83107000_nutritional_value.html ; serving 220 g пересчитан на 100 г",
+    "calories_per_100g": 680,
+    "protein_per_100g": 0.95,
+    "fat_per_100g": 75.0,
+    "carbs_per_100g": 0.59
+  },
+  {
+    "name_ru": "горчица",
+    "aliases": [
+      "горчица",
+      "желтая горчица",
+      "столовая горчица",
+      "prepared mustard"
+    ],
+    "category": "соусы",
+    "state": "готовый продукт",
+    "source_name": "USDA / Recipal yellow prepared mustard",
+    "source_note_or_url": "https://www.recipal.com/ingredients/325-nutrition-facts-calories-protein-carbs-fat-mustard-prepared-yellow ; yellow prepared mustard per 100 g",
+    "calories_per_100g": 60,
+    "protein_per_100g": 3.74,
+    "fat_per_100g": 3.34,
+    "carbs_per_100g": 5.83
+  },
+  {
+    "name_ru": "мед",
+    "aliases": [
+      "мед",
+      "мёд",
+      "пчелиный мед",
+      "натуральный мед"
+    ],
+    "category": "сладкое",
+    "state": "готовый продукт",
+    "source_name": "USDA/FatSecret honey",
+    "source_note_or_url": "https://foods.fatsecret.com/calories-nutrition/usda/honey?portionamount=100.000&portionid=62267 ; honey per 100 g",
+    "calories_per_100g": 304,
+    "protein_per_100g": 0.3,
+    "fat_per_100g": 0.0,
+    "carbs_per_100g": 82.4
+  },
+  {
+    "name_ru": "яичница",
+    "aliases": [
+      "яичница",
+      "глазунья",
+      "жареное яйцо",
+      "fried egg"
+    ],
+    "category": "яйца",
+    "state": "готовый продукт",
+    "source_name": "USDA/FatSecret fried egg",
+    "source_note_or_url": "https://foods.fatsecret.com/calories-nutrition/usda/fried-egg?portionamount=100.000&portionid=56528 ; fried egg per 100 g; зависит от количества масла",
+    "calories_per_100g": 201,
+    "protein_per_100g": 13.63,
+    "fat_per_100g": 15.31,
+    "carbs_per_100g": 0.88
+  },
+  {
+    "name_ru": "пюре картофельное",
+    "aliases": [
+      "картофельное пюре",
+      "пюре",
+      "пюрешка",
+      "mashed potatoes"
+    ],
+    "category": "крупы и гарниры",
+    "state": "готовый продукт",
+    "source_name": "NutritionValue / USDA mashed potatoes with milk and butter",
+    "source_note_or_url": "https://www.nutritionvalue.org/Potatoes%2C_whole_milk_and_butter_added%2C_home-prepared%2C_mashed_nutritional_value.html ; serving 210 g пересчитан на 100 г; зависит от масла/молока",
+    "calories_per_100g": 113,
+    "protein_per_100g": 1.86,
+    "fat_per_100g": 4.24,
+    "carbs_per_100g": 16.57
+  },
+  {
+    "name_ru": "плов",
+    "aliases": [
+      "плов",
+      "рисовый плов",
+      "rice pilaf",
+      "плов с рисом"
+    ],
+    "category": "готовые блюда",
+    "state": "готовый продукт",
+    "source_name": "FatSecret generic rice pilaf",
+    "source_note_or_url": "https://foods.fatsecret.com/calories-nutrition/generic/rice-pilaf?portionamount=100.000&portionid=53828 ; это rice pilaf без учета жирного мясного узбекского плова; спорно",
+    "calories_per_100g": 125,
+    "protein_per_100g": 2.07,
+    "fat_per_100g": 3.24,
+    "carbs_per_100g": 21.57
+  },
+  {
+    "name_ru": "борщ",
+    "aliases": [
+      "борщ",
+      "красный борщ",
+      "beet soup",
+      "borscht"
+    ],
+    "category": "готовые блюда",
+    "state": "готовый продукт",
+    "source_name": "FatSecret generic beet soup/borscht",
+    "source_note_or_url": "https://foods.fatsecret.com/calories-nutrition/generic/beet-soup-%28borscht%29?portionamount=100.000&portionid=55501 ; generic beet soup/borscht per 100 g; рецепт сильно влияет",
+    "calories_per_100g": 32,
+    "protein_per_100g": 1.37,
+    "fat_per_100g": 1.64,
+    "carbs_per_100g": 3.37
+  },
+  {
+    "name_ru": "куриный суп",
+    "aliases": [
+      "куриный суп",
+      "суп с курицей",
+      "chicken soup",
+      "куриный бульон с овощами"
+    ],
+    "category": "готовые блюда",
+    "state": "готовый продукт",
+    "source_name": "FatSecret generic chicken soup",
+    "source_note_or_url": "https://foods.fatsecret.com/calories-nutrition/generic/chicken-soup?portionamount=100.000&portionid=51693 ; generic chicken soup per 100 g; зависит от лапши/картофеля",
+    "calories_per_100g": 31,
+    "protein_per_100g": 1.68,
+    "fat_per_100g": 1.02,
+    "carbs_per_100g": 3.88
+  },
+  {
+    "name_ru": "сырники",
+    "aliases": [
+      "сырники",
+      "творожники",
+      "syrniki",
+      "cottage cheese pancakes"
+    ],
+    "category": "готовые блюда",
+    "state": "готовый продукт",
+    "source_name": "FatSecret generic syrniki",
+    "source_note_or_url": "https://www.fatsecret.com.au/calories-nutrition/generic/syrniki?portionamount=100.000&portionid=2673056 ; generic syrniki per 100 g; спорно из-за творога, сахара, муки и масла",
+    "calories_per_100g": 175,
+    "protein_per_100g": 14.44,
+    "fat_per_100g": 7.97,
+    "carbs_per_100g": 11.5
+  }
+]

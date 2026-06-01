@@ -2,27 +2,36 @@
 
 ## Purpose
 
-This document gives a high-level sequence for product growth after the current MVP work.
+This document gives a high-level sequence for product growth after the current implemented baseline.
 
 It is intentionally brief and should not duplicate current functional requirements.
 
-## Current Delivery Priority
+## Current Baseline
 
-Current priority:
+The current product baseline already includes:
 
-1. finish the Level 1 runtime path
-2. make the Level 1 bot reliable for Russian-first `product + grams` input
+- reliable Russian-first `product + grams` calorie counting
+- curated product lookup with aliases
+- profile onboarding and editing
+- BMR and TDEE calculation
+- daily targets from profile data
+- optional assistant mode
+- `/today` daily totals
+- `/search` product discovery
+- per-day activity override
+- personal user-added products and prepared meals
+- category browsing
+- listing and deleting personal products
 
 ## Planned Growth Sequence
 
-### Level 2
+### Next Priority
 
-- add user onboarding
-- collect sex, age, height, and weight
-- calculate a base daily target
-- allow profile updates
+- make the current scope more reliable and easier to maintain
+- improve parser and alias coverage
+- improve developer tooling and run/test ergonomics
 
-### Level 3
+### Goal Layer
 
 - add goal modes
 - support `maintenance`
@@ -30,22 +39,24 @@ Current priority:
 - support `diet`
 - compare intake against the selected target
 
-### Later Expansions
+### Diary Layer
 
-- save food entries
-- calculate daily totals
-- show history
-- support editing and deletion
+- add history beyond the current day
+- support editing and deletion of stored entries
+- improve daily review UX
+
+### Data and Input Layer
+
 - improve search and alias coverage
-- add user-defined products
+- support editing personal products
 - add recipes and richer units
 - add freer AI-assisted input later if needed
 
 ## Success Direction
 
-- Level 1 is dependable and easy to use.
-- Later profile and goal features are added on top of that foundation.
-- The data model and parser stay expandable without breaking the simple MVP flow.
+- The current bot feels dependable for the implemented profile and assistant flows.
+- Goal features are layered on top of the existing target calculations.
+- Diary and parsing improvements expand capability without breaking the simple core flow.
 
 ## Related Files
 

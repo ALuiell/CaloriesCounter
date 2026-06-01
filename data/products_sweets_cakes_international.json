@@ -1,0 +1,1222 @@
+[
+  {
+    "name_ru": "шоколад молочный",
+    "aliases": [
+      "молочный шоколад",
+      "шоколад молочный",
+      "milk chocolate",
+      "плитка шоколада"
+    ],
+    "category": "сладкое",
+    "state": "готовый продукт",
+    "source_name": "USDA/FatSecret",
+    "source_note_or_url": "https://foods.fatsecret.com/calories-nutrition/usda/milk-chocolate-candies?portionamount=100.000&portionid=62121 ; milk chocolate candies per 100 g",
+    "calories_per_100g": 535,
+    "protein_per_100g": 7.65,
+    "fat_per_100g": 29.66,
+    "carbs_per_100g": 59.4
+  },
+  {
+    "name_ru": "шоколад темный",
+    "aliases": [
+      "темный шоколад",
+      "черный шоколад",
+      "dark chocolate",
+      "горький шоколад"
+    ],
+    "category": "сладкое",
+    "state": "готовый продукт",
+    "source_name": "FatSecret generic",
+    "source_note_or_url": "https://foods.fatsecret.com/calories-nutrition/generic/chocolate-sweet-or-dark?portionamount=100.000&portionid=56073 ; sweet/dark chocolate per 100 g; % какао сильно влияет",
+    "calories_per_100g": 505,
+    "protein_per_100g": 3.9,
+    "fat_per_100g": 34.2,
+    "carbs_per_100g": 59.6
+  },
+  {
+    "name_ru": "шоколад белый",
+    "aliases": [
+      "белый шоколад",
+      "white chocolate",
+      "шоколад белый"
+    ],
+    "category": "сладкое",
+    "state": "готовый продукт",
+    "source_name": "USDA/FatSecret search",
+    "source_note_or_url": "https://foods.fatsecret.com/calories-nutrition/search?q=white+chocolate ; white chocolate per 100 g; бренды отличаются",
+    "calories_per_100g": 539,
+    "protein_per_100g": 5.9,
+    "fat_per_100g": 32.1,
+    "carbs_per_100g": 59.2
+  },
+  {
+    "name_ru": "шоколадная конфета",
+    "aliases": [
+      "шоколадная конфета",
+      "конфета шоколадная",
+      "chocolate candy",
+      "шоколадные конфеты"
+    ],
+    "category": "сладкое",
+    "state": "готовый продукт",
+    "source_name": "USDA/FatSecret",
+    "source_note_or_url": "https://foods.fatsecret.com/calories-nutrition/usda/milk-chocolate-candies?portionamount=100.000&portionid=62121 ; generic milk chocolate candy per 100 g",
+    "calories_per_100g": 535,
+    "protein_per_100g": 7.65,
+    "fat_per_100g": 29.66,
+    "carbs_per_100g": 59.4
+  },
+  {
+    "name_ru": "батончик шоколадный с арахисом",
+    "aliases": [
+      "шоколадный батончик",
+      "батончик с арахисом",
+      "peanut candy bar",
+      "батончик шоколадный"
+    ],
+    "category": "сладкое",
+    "state": "готовый продукт",
+    "source_name": "FatSecret generic",
+    "source_note_or_url": "https://foods.fatsecret.com/calories-nutrition/generic/peanut-bar-chocolate-covered-candy?portionamount=100.000&portionid=55981 ; chocolate covered peanut candy bar per 100 g",
+    "calories_per_100g": 526,
+    "protein_per_100g": 13.07,
+    "fat_per_100g": 32.45,
+    "carbs_per_100g": 51.12
+  },
+  {
+    "name_ru": "шоколадная паста",
+    "aliases": [
+      "шоколадная паста",
+      "ореховая паста шоколадная",
+      "chocolate hazelnut spread",
+      "нутелла"
+    ],
+    "category": "сладкое",
+    "state": "готовый продукт",
+    "source_name": "USDA/FatSecret search",
+    "source_note_or_url": "https://foods.fatsecret.com/calories-nutrition/search?q=chocolate+hazelnut+spread ; generic chocolate hazelnut spread; бренды отличаются",
+    "calories_per_100g": 541,
+    "protein_per_100g": 6.0,
+    "fat_per_100g": 31.0,
+    "carbs_per_100g": 57.0
+  },
+  {
+    "name_ru": "какао-порошок сладкий",
+    "aliases": [
+      "какао порошок сладкий",
+      "какао смесь",
+      "hot cocoa mix",
+      "какао напиток сухой"
+    ],
+    "category": "сладкое",
+    "state": "сухой продукт",
+    "source_name": "USDA/FatSecret search",
+    "source_note_or_url": "https://foods.fatsecret.com/calories-nutrition/search?q=hot+cocoa+mix ; dry sweetened cocoa mix per 100 g; спорно по сахару",
+    "calories_per_100g": 398,
+    "protein_per_100g": 7.0,
+    "fat_per_100g": 4.0,
+    "carbs_per_100g": 83.0
+  },
+  {
+    "name_ru": "карамель",
+    "aliases": [
+      "карамель",
+      "леденцы",
+      "hard candy",
+      "карамельки"
+    ],
+    "category": "сладкое",
+    "state": "готовый продукт",
+    "source_name": "USDA/FatSecret search",
+    "source_note_or_url": "https://foods.fatsecret.com/calories-nutrition/search?q=hard+candy ; hard candy per 100 g",
+    "calories_per_100g": 394,
+    "protein_per_100g": 0.0,
+    "fat_per_100g": 0.2,
+    "carbs_per_100g": 98.0
+  },
+  {
+    "name_ru": "ирис",
+    "aliases": [
+      "ирис",
+      "ириски",
+      "toffee",
+      "молочная ириска"
+    ],
+    "category": "сладкое",
+    "state": "готовый продукт",
+    "source_name": "USDA/FatSecret search",
+    "source_note_or_url": "https://foods.fatsecret.com/calories-nutrition/search?q=toffee ; generic toffee per 100 g; зависит от рецепта",
+    "calories_per_100g": 560,
+    "protein_per_100g": 3.0,
+    "fat_per_100g": 34.0,
+    "carbs_per_100g": 62.0
+  },
+  {
+    "name_ru": "мармелад",
+    "aliases": [
+      "мармелад",
+      "fruit jelly candy",
+      "jelly candies",
+      "желейные конфеты"
+    ],
+    "category": "сладкое",
+    "state": "готовый продукт",
+    "source_name": "USDA/FatSecret search",
+    "source_note_or_url": "https://foods.fatsecret.com/calories-nutrition/search?q=jelly+candy ; jelly/fruit candy per 100 g; бренды отличаются",
+    "calories_per_100g": 330,
+    "protein_per_100g": 0.2,
+    "fat_per_100g": 0.0,
+    "carbs_per_100g": 82.0
+  },
+  {
+    "name_ru": "зефир",
+    "aliases": [
+      "зефир",
+      "marshmallow",
+      "маршмеллоу",
+      "воздушный зефир"
+    ],
+    "category": "сладкое",
+    "state": "готовый продукт",
+    "source_name": "USDA/FatSecret search",
+    "source_note_or_url": "https://foods.fatsecret.com/calories-nutrition/search?q=marshmallow ; marshmallows per 100 g",
+    "calories_per_100g": 318,
+    "protein_per_100g": 1.8,
+    "fat_per_100g": 0.2,
+    "carbs_per_100g": 81.3
+  },
+  {
+    "name_ru": "пастила",
+    "aliases": [
+      "пастила",
+      "fruit pastila",
+      "яблочная пастила",
+      "фруктовая пастила"
+    ],
+    "category": "сладкое",
+    "state": "готовый продукт",
+    "source_name": "Generic recipe estimate",
+    "source_note_or_url": "Международной универсальной позиции почти нет; оценка по fruit paste/pastila с сахаром; спорно",
+    "calories_per_100g": 330,
+    "protein_per_100g": 0.5,
+    "fat_per_100g": 0.0,
+    "carbs_per_100g": 82.0
+  },
+  {
+    "name_ru": "жевательный мармелад",
+    "aliases": [
+      "жевательный мармелад",
+      "gummy candy",
+      "желейки",
+      "гумми"
+    ],
+    "category": "сладкое",
+    "state": "готовый продукт",
+    "source_name": "USDA/FatSecret search",
+    "source_note_or_url": "https://foods.fatsecret.com/calories-nutrition/search?q=gummy+candy ; gummy candy per 100 g",
+    "calories_per_100g": 350,
+    "protein_per_100g": 6.0,
+    "fat_per_100g": 0.1,
+    "carbs_per_100g": 78.0
+  },
+  {
+    "name_ru": "халва подсолнечная",
+    "aliases": [
+      "халва",
+      "подсолнечная халва",
+      "sunflower halva",
+      "халва классическая"
+    ],
+    "category": "сладкое",
+    "state": "готовый продукт",
+    "source_name": "Generic international label estimate",
+    "source_note_or_url": "Оценка по sunflower halva; международные базы и рецепты отличаются",
+    "calories_per_100g": 523,
+    "protein_per_100g": 11.6,
+    "fat_per_100g": 29.7,
+    "carbs_per_100g": 54.0
+  },
+  {
+    "name_ru": "лукум",
+    "aliases": [
+      "лукум",
+      "рахат-лукум",
+      "turkish delight",
+      "lokum"
+    ],
+    "category": "сладкое",
+    "state": "готовый продукт",
+    "source_name": "USDA/FatSecret search",
+    "source_note_or_url": "https://foods.fatsecret.com/calories-nutrition/search?q=turkish+delight ; Turkish delight per 100 g; орехи увеличивают жиры",
+    "calories_per_100g": 360,
+    "protein_per_100g": 0.8,
+    "fat_per_100g": 0.2,
+    "carbs_per_100g": 89.0
+  },
+  {
+    "name_ru": "нуга",
+    "aliases": [
+      "нуга",
+      "nougat",
+      "ореховая нуга",
+      "сладкая нуга"
+    ],
+    "category": "сладкое",
+    "state": "готовый продукт",
+    "source_name": "USDA/FatSecret search",
+    "source_note_or_url": "https://foods.fatsecret.com/calories-nutrition/search?q=nougat ; generic nougat per 100 g; спорно по орехам",
+    "calories_per_100g": 398,
+    "protein_per_100g": 3.5,
+    "fat_per_100g": 9.0,
+    "carbs_per_100g": 75.0
+  },
+  {
+    "name_ru": "козинак",
+    "aliases": [
+      "козинак",
+      "козинаки",
+      "seed brittle",
+      "sesame brittle"
+    ],
+    "category": "сладкое",
+    "state": "готовый продукт",
+    "source_name": "Generic international label estimate",
+    "source_note_or_url": "Оценка по seed/sesame brittle; состав семечек и сахара сильно влияет",
+    "calories_per_100g": 510,
+    "protein_per_100g": 12.0,
+    "fat_per_100g": 28.0,
+    "carbs_per_100g": 52.0
+  },
+  {
+    "name_ru": "печенье сахарное",
+    "aliases": [
+      "сахарное печенье",
+      "печенье",
+      "sugar cookies",
+      "простое печенье"
+    ],
+    "category": "хлеб и выпечка",
+    "state": "готовый продукт",
+    "source_name": "USDA/FatSecret search",
+    "source_note_or_url": "https://foods.fatsecret.com/calories-nutrition/search?q=sugar+cookies ; plain sugar cookies per 100 g",
+    "calories_per_100g": 480,
+    "protein_per_100g": 5.0,
+    "fat_per_100g": 20.0,
+    "carbs_per_100g": 70.0
+  },
+  {
+    "name_ru": "печенье шоколадное",
+    "aliases": [
+      "шоколадное печенье",
+      "chocolate cookies",
+      "печенье с какао"
+    ],
+    "category": "хлеб и выпечка",
+    "state": "готовый продукт",
+    "source_name": "USDA/FatSecret search",
+    "source_note_or_url": "https://foods.fatsecret.com/calories-nutrition/search?q=chocolate+cookies ; generic chocolate cookies per 100 g",
+    "calories_per_100g": 500,
+    "protein_per_100g": 5.0,
+    "fat_per_100g": 24.0,
+    "carbs_per_100g": 66.0
+  },
+  {
+    "name_ru": "печенье с шоколадной крошкой",
+    "aliases": [
+      "печенье с шоколадной крошкой",
+      "chocolate chip cookies",
+      "кукис",
+      "американское печенье"
+    ],
+    "category": "хлеб и выпечка",
+    "state": "готовый продукт",
+    "source_name": "USDA/FatSecret",
+    "source_note_or_url": "https://foods.fatsecret.com/calories-nutrition/usda/chocolate-chip-cookies-%28soft-type%29?portionamount=100.000&portionid=61615 ; soft type per 100 g",
+    "calories_per_100g": 458,
+    "protein_per_100g": 3.5,
+    "fat_per_100g": 24.3,
+    "carbs_per_100g": 59.1
+  },
+  {
+    "name_ru": "овсяное печенье",
+    "aliases": [
+      "овсяное печенье",
+      "oatmeal cookies",
+      "печенье овсяное"
+    ],
+    "category": "хлеб и выпечка",
+    "state": "готовый продукт",
+    "source_name": "USDA/FatSecret search",
+    "source_note_or_url": "https://foods.fatsecret.com/calories-nutrition/search?q=oatmeal+cookies ; generic oatmeal cookies per 100 g",
+    "calories_per_100g": 450,
+    "protein_per_100g": 6.0,
+    "fat_per_100g": 18.0,
+    "carbs_per_100g": 68.0
+  },
+  {
+    "name_ru": "крекеры сладкие",
+    "aliases": [
+      "сладкие крекеры",
+      "sweet crackers",
+      "крекер сладкий",
+      "галеты сладкие"
+    ],
+    "category": "хлеб и выпечка",
+    "state": "готовый продукт",
+    "source_name": "USDA/FatSecret search",
+    "source_note_or_url": "https://foods.fatsecret.com/calories-nutrition/search?q=sweet+crackers ; generic sweet crackers per 100 g",
+    "calories_per_100g": 430,
+    "protein_per_100g": 7.0,
+    "fat_per_100g": 12.0,
+    "carbs_per_100g": 73.0
+  },
+  {
+    "name_ru": "галеты",
+    "aliases": [
+      "галеты",
+      "plain biscuits",
+      "сухое печенье",
+      "галетное печенье"
+    ],
+    "category": "хлеб и выпечка",
+    "state": "готовый продукт",
+    "source_name": "USDA/FatSecret search",
+    "source_note_or_url": "https://foods.fatsecret.com/calories-nutrition/search?q=plain+biscuits ; plain biscuits/crackers; спорно",
+    "calories_per_100g": 420,
+    "protein_per_100g": 9.0,
+    "fat_per_100g": 10.0,
+    "carbs_per_100g": 74.0
+  },
+  {
+    "name_ru": "вафли",
+    "aliases": [
+      "вафли",
+      "wafer cookies",
+      "вафельное печенье",
+      "вафельки"
+    ],
+    "category": "хлеб и выпечка",
+    "state": "готовый продукт",
+    "source_name": "USDA/FatSecret search",
+    "source_note_or_url": "https://foods.fatsecret.com/calories-nutrition/search?q=wafer+cookies ; wafer cookies per 100 g",
+    "calories_per_100g": 520,
+    "protein_per_100g": 5.5,
+    "fat_per_100g": 27.0,
+    "carbs_per_100g": 64.0
+  },
+  {
+    "name_ru": "пряники",
+    "aliases": [
+      "пряники",
+      "gingerbread",
+      "медовые пряники",
+      "gingerbread cookies"
+    ],
+    "category": "хлеб и выпечка",
+    "state": "готовый продукт",
+    "source_name": "USDA/FatSecret search",
+    "source_note_or_url": "https://foods.fatsecret.com/calories-nutrition/search?q=gingerbread ; gingerbread cookies per 100 g; глазурь влияет",
+    "calories_per_100g": 360,
+    "protein_per_100g": 5.0,
+    "fat_per_100g": 7.0,
+    "carbs_per_100g": 70.0
+  },
+  {
+    "name_ru": "сухари сладкие",
+    "aliases": [
+      "сухари сладкие",
+      "rusk",
+      "сладкие сухари",
+      "tea rusks"
+    ],
+    "category": "хлеб и выпечка",
+    "state": "готовый продукт",
+    "source_name": "Generic international label estimate",
+    "source_note_or_url": "Оценка по sweet rusks; универсальной записи нет; спорно",
+    "calories_per_100g": 405,
+    "protein_per_100g": 10.0,
+    "fat_per_100g": 7.0,
+    "carbs_per_100g": 75.0
+  },
+  {
+    "name_ru": "батончик мюсли",
+    "aliases": [
+      "батончик мюсли",
+      "granola bar",
+      "злаковый батончик",
+      "мюсли бар"
+    ],
+    "category": "сладкое",
+    "state": "готовый продукт",
+    "source_name": "USDA/FatSecret search",
+    "source_note_or_url": "https://foods.fatsecret.com/calories-nutrition/search?q=granola+bar ; generic granola bar per 100 g; бренды отличаются",
+    "calories_per_100g": 471,
+    "protein_per_100g": 8.0,
+    "fat_per_100g": 19.0,
+    "carbs_per_100g": 64.0
+  },
+  {
+    "name_ru": "батончик протеиновый",
+    "aliases": [
+      "протеиновый батончик",
+      "protein bar",
+      "белковый батончик"
+    ],
+    "category": "сладкое",
+    "state": "готовый продукт",
+    "source_name": "Generic label estimate",
+    "source_note_or_url": "Оценка по типовым protein bars; бренды очень отличаются, данные спорные",
+    "calories_per_100g": 370,
+    "protein_per_100g": 30.0,
+    "fat_per_100g": 11.0,
+    "carbs_per_100g": 35.0
+  },
+  {
+    "name_ru": "попкорн карамельный",
+    "aliases": [
+      "карамельный попкорн",
+      "caramel popcorn",
+      "сладкий попкорн"
+    ],
+    "category": "сладкое",
+    "state": "готовый продукт",
+    "source_name": "USDA/FatSecret search",
+    "source_note_or_url": "https://foods.fatsecret.com/calories-nutrition/search?q=caramel+popcorn ; caramel-coated popcorn per 100 g",
+    "calories_per_100g": 430,
+    "protein_per_100g": 4.5,
+    "fat_per_100g": 12.0,
+    "carbs_per_100g": 78.0
+  },
+  {
+    "name_ru": "кукурузные палочки сладкие",
+    "aliases": [
+      "кукурузные палочки",
+      "сладкие кукурузные палочки",
+      "corn puffs sweet"
+    ],
+    "category": "сладкое",
+    "state": "готовый продукт",
+    "source_name": "Generic label estimate",
+    "source_note_or_url": "Оценка по sweet corn puffs; бренды отличаются",
+    "calories_per_100g": 470,
+    "protein_per_100g": 5.5,
+    "fat_per_100g": 15.0,
+    "carbs_per_100g": 78.0
+  },
+  {
+    "name_ru": "эклер",
+    "aliases": [
+      "эклер",
+      "eclair",
+      "заварное пирожное",
+      "эклер с кремом"
+    ],
+    "category": "хлеб и выпечка",
+    "state": "готовый продукт",
+    "source_name": "USDA/FatSecret search",
+    "source_note_or_url": "https://foods.fatsecret.com/calories-nutrition/search?q=eclair ; cream-filled eclair per 100 g; крем влияет",
+    "calories_per_100g": 260,
+    "protein_per_100g": 5.0,
+    "fat_per_100g": 14.0,
+    "carbs_per_100g": 29.0
+  },
+  {
+    "name_ru": "профитроли",
+    "aliases": [
+      "профитроли",
+      "profiteroles",
+      "заварные шарики",
+      "профитроль"
+    ],
+    "category": "хлеб и выпечка",
+    "state": "готовый продукт",
+    "source_name": "Generic recipe estimate",
+    "source_note_or_url": "Оценка по cream-filled profiteroles; крем/глазурь влияют",
+    "calories_per_100g": 280,
+    "protein_per_100g": 5.5,
+    "fat_per_100g": 16.0,
+    "carbs_per_100g": 29.0
+  },
+  {
+    "name_ru": "безе",
+    "aliases": [
+      "безе",
+      "меренга",
+      "meringue",
+      "meringue cookies"
+    ],
+    "category": "сладкое",
+    "state": "готовый продукт",
+    "source_name": "USDA/FatSecret search",
+    "source_note_or_url": "https://foods.fatsecret.com/calories-nutrition/search?q=meringue ; meringue cookies per 100 g",
+    "calories_per_100g": 390,
+    "protein_per_100g": 4.0,
+    "fat_per_100g": 0.0,
+    "carbs_per_100g": 94.0
+  },
+  {
+    "name_ru": "пирожное картошка",
+    "aliases": [
+      "пирожное картошка",
+      "cake pop",
+      "шоколадная картошка",
+      "картошка десерт"
+    ],
+    "category": "сладкое",
+    "state": "готовый продукт",
+    "source_name": "Generic recipe estimate",
+    "source_note_or_url": "Оценка по biscuit crumbs + cocoa + butter/condensed milk; рецепты сильно отличаются",
+    "calories_per_100g": 390,
+    "protein_per_100g": 5.0,
+    "fat_per_100g": 19.0,
+    "carbs_per_100g": 50.0
+  },
+  {
+    "name_ru": "маффин ванильный",
+    "aliases": [
+      "ванильный маффин",
+      "маффин",
+      "plain muffin",
+      "muffin"
+    ],
+    "category": "хлеб и выпечка",
+    "state": "готовый продукт",
+    "source_name": "USDA/FatSecret search",
+    "source_note_or_url": "https://foods.fatsecret.com/calories-nutrition/search?q=plain+muffin ; plain muffin per 100 g",
+    "calories_per_100g": 360,
+    "protein_per_100g": 6.0,
+    "fat_per_100g": 14.0,
+    "carbs_per_100g": 53.0
+  },
+  {
+    "name_ru": "маффин шоколадный",
+    "aliases": [
+      "шоколадный маффин",
+      "chocolate muffin",
+      "маффин с шоколадом"
+    ],
+    "category": "хлеб и выпечка",
+    "state": "готовый продукт",
+    "source_name": "USDA/FatSecret search",
+    "source_note_or_url": "https://foods.fatsecret.com/calories-nutrition/search?q=chocolate+muffin ; chocolate muffin per 100 g",
+    "calories_per_100g": 390,
+    "protein_per_100g": 5.0,
+    "fat_per_100g": 18.0,
+    "carbs_per_100g": 54.0
+  },
+  {
+    "name_ru": "круассан сладкий",
+    "aliases": [
+      "круассан",
+      "sweet croissant",
+      "круассан сладкий",
+      "croissant"
+    ],
+    "category": "хлеб и выпечка",
+    "state": "готовый продукт",
+    "source_name": "USDA/FatSecret search",
+    "source_note_or_url": "https://foods.fatsecret.com/calories-nutrition/search?q=croissant ; plain croissant per 100 g",
+    "calories_per_100g": 406,
+    "protein_per_100g": 8.2,
+    "fat_per_100g": 21.0,
+    "carbs_per_100g": 45.8
+  },
+  {
+    "name_ru": "донат",
+    "aliases": [
+      "донат",
+      "пончик",
+      "doughnut",
+      "donut"
+    ],
+    "category": "хлеб и выпечка",
+    "state": "готовый продукт",
+    "source_name": "USDA/FatSecret search",
+    "source_note_or_url": "https://foods.fatsecret.com/calories-nutrition/search?q=doughnut ; plain/glazed doughnut per 100 g; глазурь влияет",
+    "calories_per_100g": 410,
+    "protein_per_100g": 5.0,
+    "fat_per_100g": 22.0,
+    "carbs_per_100g": 48.0
+  },
+  {
+    "name_ru": "панкейк сладкий",
+    "aliases": [
+      "панкейк",
+      "pancake",
+      "американский блин",
+      "сладкий панкейк"
+    ],
+    "category": "хлеб и выпечка",
+    "state": "готовый продукт",
+    "source_name": "USDA/FatSecret search",
+    "source_note_or_url": "https://foods.fatsecret.com/calories-nutrition/search?q=pancakes ; plain pancakes, no syrup",
+    "calories_per_100g": 227,
+    "protein_per_100g": 6.4,
+    "fat_per_100g": 9.7,
+    "carbs_per_100g": 28.3
+  },
+  {
+    "name_ru": "вафельный рожок",
+    "aliases": [
+      "вафельный рожок",
+      "waffle cone",
+      "рожок для мороженого"
+    ],
+    "category": "хлеб и выпечка",
+    "state": "готовый продукт",
+    "source_name": "USDA/FatSecret search",
+    "source_note_or_url": "https://foods.fatsecret.com/calories-nutrition/search?q=waffle+cone ; ice cream waffle cone per 100 g",
+    "calories_per_100g": 417,
+    "protein_per_100g": 7.0,
+    "fat_per_100g": 9.0,
+    "carbs_per_100g": 77.0
+  },
+  {
+    "name_ru": "мороженое пломбир",
+    "aliases": [
+      "пломбир",
+      "мороженое пломбир",
+      "ice cream",
+      "сливочное мороженое"
+    ],
+    "category": "молочные продукты",
+    "state": "готовый продукт",
+    "source_name": "USDA/FatSecret search",
+    "source_note_or_url": "https://foods.fatsecret.com/calories-nutrition/search?q=vanilla+ice+cream ; vanilla ice cream per 100 g; жирность брендов отличается",
+    "calories_per_100g": 207,
+    "protein_per_100g": 3.5,
+    "fat_per_100g": 11.0,
+    "carbs_per_100g": 23.6
+  },
+  {
+    "name_ru": "мороженое шоколадное",
+    "aliases": [
+      "шоколадное мороженое",
+      "chocolate ice cream",
+      "мороженое с шоколадом"
+    ],
+    "category": "молочные продукты",
+    "state": "готовый продукт",
+    "source_name": "USDA/FatSecret search",
+    "source_note_or_url": "https://foods.fatsecret.com/calories-nutrition/search?q=chocolate+ice+cream ; chocolate ice cream per 100 g",
+    "calories_per_100g": 216,
+    "protein_per_100g": 3.8,
+    "fat_per_100g": 11.0,
+    "carbs_per_100g": 28.0
+  },
+  {
+    "name_ru": "сорбет фруктовый",
+    "aliases": [
+      "сорбет",
+      "фруктовый сорбет",
+      "sorbet",
+      "fruit sorbet"
+    ],
+    "category": "сладкое",
+    "state": "готовый продукт",
+    "source_name": "USDA/FatSecret search",
+    "source_note_or_url": "https://foods.fatsecret.com/calories-nutrition/search?q=sorbet ; fruit sorbet per 100 g",
+    "calories_per_100g": 130,
+    "protein_per_100g": 0.5,
+    "fat_per_100g": 0.2,
+    "carbs_per_100g": 32.0
+  },
+  {
+    "name_ru": "пудинг ванильный",
+    "aliases": [
+      "ванильный пудинг",
+      "pudding",
+      "молочный пудинг",
+      "vanilla pudding"
+    ],
+    "category": "молочные продукты",
+    "state": "готовый продукт",
+    "source_name": "USDA/FatSecret search",
+    "source_note_or_url": "https://foods.fatsecret.com/calories-nutrition/search?q=vanilla+pudding ; ready-to-eat vanilla pudding per 100 g",
+    "calories_per_100g": 130,
+    "protein_per_100g": 3.0,
+    "fat_per_100g": 3.0,
+    "carbs_per_100g": 22.0
+  },
+  {
+    "name_ru": "пудинг шоколадный",
+    "aliases": [
+      "шоколадный пудинг",
+      "chocolate pudding",
+      "пудинг с какао"
+    ],
+    "category": "молочные продукты",
+    "state": "готовый продукт",
+    "source_name": "USDA/FatSecret search",
+    "source_note_or_url": "https://foods.fatsecret.com/calories-nutrition/search?q=chocolate+pudding ; ready-to-eat chocolate pudding per 100 g",
+    "calories_per_100g": 142,
+    "protein_per_100g": 3.0,
+    "fat_per_100g": 4.0,
+    "carbs_per_100g": 23.0
+  },
+  {
+    "name_ru": "рисовый пудинг",
+    "aliases": [
+      "рисовый пудинг",
+      "rice pudding",
+      "молочный рисовый десерт"
+    ],
+    "category": "молочные продукты",
+    "state": "готовый продукт",
+    "source_name": "USDA/FatSecret search",
+    "source_note_or_url": "https://foods.fatsecret.com/calories-nutrition/search?q=rice+pudding ; ready-to-eat rice pudding per 100 g",
+    "calories_per_100g": 108,
+    "protein_per_100g": 3.2,
+    "fat_per_100g": 2.1,
+    "carbs_per_100g": 19.0
+  },
+  {
+    "name_ru": "торт шоколадный без глазури",
+    "aliases": [
+      "шоколадный торт",
+      "торт шоколадный",
+      "chocolate cake",
+      "шоколадный бисквит"
+    ],
+    "category": "хлеб и выпечка",
+    "state": "готовый продукт",
+    "source_name": "FatSecret generic",
+    "source_note_or_url": "https://www.fatsecret.co.za/calories-nutrition/generic/chocolate-cake-%28without-icing%29?portionamount=100.000&portionid=61574 ; chocolate cake without icing per 100 g",
+    "calories_per_100g": 358,
+    "protein_per_100g": 5.3,
+    "fat_per_100g": 15.1,
+    "carbs_per_100g": 53.4
+  },
+  {
+    "name_ru": "торт шоколадный с кремом",
+    "aliases": [
+      "шоколадный торт с кремом",
+      "chocolate cake with icing",
+      "торт с глазурью"
+    ],
+    "category": "хлеб и выпечка",
+    "state": "готовый продукт",
+    "source_name": "FatSecret generic / estimate",
+    "source_note_or_url": "https://foods.fatsecret.com/calories-nutrition/search?q=chocolate+cake+with+icing ; cake with icing; крем и глазурь сильно влияют",
+    "calories_per_100g": 371,
+    "protein_per_100g": 4.0,
+    "fat_per_100g": 16.0,
+    "carbs_per_100g": 55.0
+  },
+  {
+    "name_ru": "чизкейк",
+    "aliases": [
+      "чизкейк",
+      "cheesecake",
+      "сырный торт"
+    ],
+    "category": "хлеб и выпечка",
+    "state": "готовый продукт",
+    "source_name": "USDA/FatSecret",
+    "source_note_or_url": "https://foods.fatsecret.com/calories-nutrition/usda/cheesecake?portionamount=100.000&portionid=61604 ; commercially prepared cheesecake per 100 g",
+    "calories_per_100g": 321,
+    "protein_per_100g": 5.5,
+    "fat_per_100g": 22.5,
+    "carbs_per_100g": 25.5
+  },
+  {
+    "name_ru": "бисквитный торт",
+    "aliases": [
+      "бисквитный торт",
+      "sponge cake",
+      "торт бисквитный",
+      "бисквит"
+    ],
+    "category": "хлеб и выпечка",
+    "state": "готовый продукт",
+    "source_name": "USDA/FatSecret search",
+    "source_note_or_url": "https://foods.fatsecret.com/calories-nutrition/search?q=sponge+cake ; plain sponge cake per 100 g; крем не учтен",
+    "calories_per_100g": 290,
+    "protein_per_100g": 5.4,
+    "fat_per_100g": 4.5,
+    "carbs_per_100g": 58.0
+  },
+  {
+    "name_ru": "медовик",
+    "aliases": [
+      "медовик",
+      "honey cake",
+      "медовый торт",
+      "торт медовик"
+    ],
+    "category": "хлеб и выпечка",
+    "state": "готовый продукт",
+    "source_name": "Generic recipe estimate",
+    "source_note_or_url": "Оценка по honey layer cake with cream; международной универсальной позиции нет; очень зависит от крема",
+    "calories_per_100g": 420,
+    "protein_per_100g": 6.0,
+    "fat_per_100g": 22.0,
+    "carbs_per_100g": 50.0
+  },
+  {
+    "name_ru": "наполеон",
+    "aliases": [
+      "наполеон",
+      "napoleon cake",
+      "слоеный торт",
+      "торт наполеон"
+    ],
+    "category": "хлеб и выпечка",
+    "state": "готовый продукт",
+    "source_name": "Generic recipe estimate",
+    "source_note_or_url": "Оценка по puff pastry layer cake with custard; рецепт сильно влияет",
+    "calories_per_100g": 370,
+    "protein_per_100g": 5.0,
+    "fat_per_100g": 22.0,
+    "carbs_per_100g": 38.0
+  },
+  {
+    "name_ru": "морковный торт",
+    "aliases": [
+      "морковный торт",
+      "carrot cake",
+      "торт морковный"
+    ],
+    "category": "хлеб и выпечка",
+    "state": "готовый продукт",
+    "source_name": "USDA/FatSecret search",
+    "source_note_or_url": "https://foods.fatsecret.com/calories-nutrition/search?q=carrot+cake ; carrot cake with icing per 100 g; крем влияет",
+    "calories_per_100g": 415,
+    "protein_per_100g": 4.0,
+    "fat_per_100g": 23.0,
+    "carbs_per_100g": 49.0
+  },
+  {
+    "name_ru": "торт красный бархат",
+    "aliases": [
+      "красный бархат",
+      "red velvet cake",
+      "торт red velvet",
+      "торт красный бархат"
+    ],
+    "category": "хлеб и выпечка",
+    "state": "готовый продукт",
+    "source_name": "Generic recipe estimate",
+    "source_note_or_url": "Оценка по red velvet cake with cream cheese frosting; рецепты отличаются",
+    "calories_per_100g": 380,
+    "protein_per_100g": 4.5,
+    "fat_per_100g": 20.0,
+    "carbs_per_100g": 47.0
+  },
+  {
+    "name_ru": "торт тирамису",
+    "aliases": [
+      "тирамису",
+      "tiramisu",
+      "торт тирамису",
+      "десерт тирамису"
+    ],
+    "category": "сладкое",
+    "state": "готовый продукт",
+    "source_name": "USDA/FatSecret search",
+    "source_note_or_url": "https://foods.fatsecret.com/calories-nutrition/search?q=tiramisu ; tiramisu dessert per 100 g; спорно по крему",
+    "calories_per_100g": 300,
+    "protein_per_100g": 6.0,
+    "fat_per_100g": 18.0,
+    "carbs_per_100g": 28.0
+  },
+  {
+    "name_ru": "торт прага",
+    "aliases": [
+      "торт прага",
+      "прага",
+      "chocolate layer cake",
+      "пражский торт"
+    ],
+    "category": "хлеб и выпечка",
+    "state": "готовый продукт",
+    "source_name": "Generic recipe estimate",
+    "source_note_or_url": "Оценка по chocolate layer cake with butter cream; международной стандартной позиции нет; спорно",
+    "calories_per_100g": 390,
+    "protein_per_100g": 5.0,
+    "fat_per_100g": 23.0,
+    "carbs_per_100g": 41.0
+  },
+  {
+    "name_ru": "торт птичье молоко",
+    "aliases": [
+      "птичье молоко",
+      "торт птичье молоко",
+      "souffle cake",
+      "суфлейный торт"
+    ],
+    "category": "сладкое",
+    "state": "готовый продукт",
+    "source_name": "Generic recipe estimate",
+    "source_note_or_url": "Оценка по souffle cake with chocolate glaze; состав сильно влияет",
+    "calories_per_100g": 340,
+    "protein_per_100g": 5.5,
+    "fat_per_100g": 18.0,
+    "carbs_per_100g": 39.0
+  },
+  {
+    "name_ru": "торт сметанник",
+    "aliases": [
+      "сметанник",
+      "sour cream cake",
+      "торт сметанник"
+    ],
+    "category": "хлеб и выпечка",
+    "state": "готовый продукт",
+    "source_name": "Generic recipe estimate",
+    "source_note_or_url": "Оценка по sour cream cake; жирность сметаны и крем влияют",
+    "calories_per_100g": 330,
+    "protein_per_100g": 5.0,
+    "fat_per_100g": 18.0,
+    "carbs_per_100g": 37.0
+  },
+  {
+    "name_ru": "фруктовый торт",
+    "aliases": [
+      "фруктовый торт",
+      "fruit cake",
+      "торт с фруктами",
+      "фруктовый бисквит"
+    ],
+    "category": "хлеб и выпечка",
+    "state": "готовый продукт",
+    "source_name": "USDA/FatSecret search",
+    "source_note_or_url": "https://foods.fatsecret.com/calories-nutrition/search?q=fruit+cake ; fruit cake per 100 g; тип торта сильно влияет",
+    "calories_per_100g": 324,
+    "protein_per_100g": 3.3,
+    "fat_per_100g": 9.1,
+    "carbs_per_100g": 61.0
+  },
+  {
+    "name_ru": "торт с заварным кремом",
+    "aliases": [
+      "торт с заварным кремом",
+      "custard cake",
+      "заварной торт"
+    ],
+    "category": "хлеб и выпечка",
+    "state": "готовый продукт",
+    "source_name": "Generic recipe estimate",
+    "source_note_or_url": "Оценка по sponge/layer cake with custard cream; спорно",
+    "calories_per_100g": 310,
+    "protein_per_100g": 5.0,
+    "fat_per_100g": 15.0,
+    "carbs_per_100g": 39.0
+  },
+  {
+    "name_ru": "варенье",
+    "aliases": [
+      "варенье",
+      "fruit preserves",
+      "jam",
+      "домашнее варенье"
+    ],
+    "category": "сладкое",
+    "state": "готовый продукт",
+    "source_name": "USDA/FatSecret search",
+    "source_note_or_url": "https://foods.fatsecret.com/calories-nutrition/search?q=fruit+preserves ; fruit preserves/jam per 100 g; ягоды и сахар влияют",
+    "calories_per_100g": 278,
+    "protein_per_100g": 0.4,
+    "fat_per_100g": 0.1,
+    "carbs_per_100g": 68.9
+  },
+  {
+    "name_ru": "джем",
+    "aliases": [
+      "джем",
+      "jam",
+      "fruit jam",
+      "ягодный джем"
+    ],
+    "category": "сладкое",
+    "state": "готовый продукт",
+    "source_name": "USDA/FatSecret search",
+    "source_note_or_url": "https://foods.fatsecret.com/calories-nutrition/search?q=jam ; fruit jam per 100 g; сахар влияет",
+    "calories_per_100g": 250,
+    "protein_per_100g": 0.4,
+    "fat_per_100g": 0.1,
+    "carbs_per_100g": 65.0
+  },
+  {
+    "name_ru": "шоколадный сироп",
+    "aliases": [
+      "шоколадный сироп",
+      "chocolate syrup",
+      "сироп шоколадный",
+      "топпинг шоколадный"
+    ],
+    "category": "сладкое",
+    "state": "готовый продукт",
+    "source_name": "USDA/FatSecret search",
+    "source_note_or_url": "https://foods.fatsecret.com/calories-nutrition/search?q=chocolate+syrup ; chocolate syrup per 100 g",
+    "calories_per_100g": 279,
+    "protein_per_100g": 2.1,
+    "fat_per_100g": 1.0,
+    "carbs_per_100g": 65.0
+  },
+  {
+    "name_ru": "кленовый сироп",
+    "aliases": [
+      "кленовый сироп",
+      "maple syrup",
+      "сироп кленовый"
+    ],
+    "category": "сладкое",
+    "state": "готовый продукт",
+    "source_name": "USDA/FatSecret search",
+    "source_note_or_url": "https://foods.fatsecret.com/calories-nutrition/search?q=maple+syrup ; maple syrup per 100 g",
+    "calories_per_100g": 260,
+    "protein_per_100g": 0.0,
+    "fat_per_100g": 0.1,
+    "carbs_per_100g": 67.0
+  },
+  {
+    "name_ru": "сгущенка вареная",
+    "aliases": [
+      "вареная сгущенка",
+      "dulce de leche",
+      "карамелизированное молоко",
+      "варенка"
+    ],
+    "category": "молочные продукты",
+    "state": "готовый продукт",
+    "source_name": "Generic label estimate",
+    "source_note_or_url": "Оценка по dulce de leche/caramelized condensed milk; бренды отличаются",
+    "calories_per_100g": 315,
+    "protein_per_100g": 6.5,
+    "fat_per_100g": 7.5,
+    "carbs_per_100g": 55.0
+  },
+  {
+    "name_ru": "сгущенка обычная",
+    "aliases": [
+      "сгущенка",
+      "сгущенное молоко",
+      "sweetened condensed milk",
+      "condensed milk"
+    ],
+    "category": "молочные продукты",
+    "state": "готовый продукт",
+    "source_name": "USDA/FatSecret search",
+    "source_note_or_url": "https://foods.fatsecret.com/calories-nutrition/search?q=sweetened+condensed+milk ; sweetened condensed milk per 100 g",
+    "calories_per_100g": 321,
+    "protein_per_100g": 7.9,
+    "fat_per_100g": 8.7,
+    "carbs_per_100g": 54.4
+  },
+  {
+    "name_ru": "сахар белый",
+    "aliases": [
+      "сахар",
+      "белый сахар",
+      "sugar",
+      "сахар песок"
+    ],
+    "category": "сладкое",
+    "state": "сухой продукт",
+    "source_name": "USDA/FatSecret search",
+    "source_note_or_url": "https://foods.fatsecret.com/calories-nutrition/search?q=white+sugar ; granulated white sugar per 100 g",
+    "calories_per_100g": 387,
+    "protein_per_100g": 0.0,
+    "fat_per_100g": 0.0,
+    "carbs_per_100g": 100.0
+  },
+  {
+    "name_ru": "сахарная пудра",
+    "aliases": [
+      "сахарная пудра",
+      "powdered sugar",
+      "пудра сахарная"
+    ],
+    "category": "сладкое",
+    "state": "сухой продукт",
+    "source_name": "USDA/FatSecret search",
+    "source_note_or_url": "https://foods.fatsecret.com/calories-nutrition/search?q=powdered+sugar ; powdered sugar per 100 g",
+    "calories_per_100g": 389,
+    "protein_per_100g": 0.0,
+    "fat_per_100g": 0.0,
+    "carbs_per_100g": 100.0
+  },
+  {
+    "name_ru": "мед",
+    "aliases": [
+      "мед",
+      "мёд",
+      "пчелиный мед",
+      "натуральный мед"
+    ],
+    "category": "сладкое",
+    "state": "готовый продукт",
+    "source_name": "USDA/FatSecret honey",
+    "source_note_or_url": "https://foods.fatsecret.com/calories-nutrition/usda/honey?portionamount=100.000&portionid=62267 ; honey per 100 g",
+    "calories_per_100g": 304,
+    "protein_per_100g": 0.3,
+    "fat_per_100g": 0.0,
+    "carbs_per_100g": 82.4
+  },
+  {
+    "name_ru": "сухофрукты смесь",
+    "aliases": [
+      "сухофрукты",
+      "смесь сухофруктов",
+      "dried fruit mix",
+      "сухие фрукты"
+    ],
+    "category": "фрукты и ягоды",
+    "state": "сухой продукт",
+    "source_name": "Generic USDA-style estimate",
+    "source_note_or_url": "Оценка по mixed dried fruit; состав смеси сильно влияет",
+    "calories_per_100g": 300,
+    "protein_per_100g": 2.5,
+    "fat_per_100g": 0.6,
+    "carbs_per_100g": 73.0
+  },
+  {
+    "name_ru": "изюм",
+    "aliases": [
+      "изюм",
+      "raisins",
+      "сушеный виноград"
+    ],
+    "category": "фрукты и ягоды",
+    "state": "сухой продукт",
+    "source_name": "USDA/FatSecret search",
+    "source_note_or_url": "https://foods.fatsecret.com/calories-nutrition/search?q=raisins ; raisins per 100 g",
+    "calories_per_100g": 299,
+    "protein_per_100g": 3.1,
+    "fat_per_100g": 0.5,
+    "carbs_per_100g": 79.0
+  },
+  {
+    "name_ru": "курага",
+    "aliases": [
+      "курага",
+      "dried apricots",
+      "сушеный абрикос"
+    ],
+    "category": "фрукты и ягоды",
+    "state": "сухой продукт",
+    "source_name": "USDA/FatSecret search",
+    "source_note_or_url": "https://foods.fatsecret.com/calories-nutrition/search?q=dried+apricots ; dried apricots per 100 g",
+    "calories_per_100g": 241,
+    "protein_per_100g": 3.4,
+    "fat_per_100g": 0.5,
+    "carbs_per_100g": 63.9
+  },
+  {
+    "name_ru": "финики",
+    "aliases": [
+      "финики",
+      "dates",
+      "сушеные финики"
+    ],
+    "category": "фрукты и ягоды",
+    "state": "сухой продукт",
+    "source_name": "USDA/FatSecret search",
+    "source_note_or_url": "https://foods.fatsecret.com/calories-nutrition/search?q=dates ; dried dates per 100 g",
+    "calories_per_100g": 282,
+    "protein_per_100g": 2.5,
+    "fat_per_100g": 0.4,
+    "carbs_per_100g": 75.0
+  }
+]

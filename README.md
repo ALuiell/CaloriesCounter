@@ -4,14 +4,22 @@
 
 CaloriesCounter is a Telegram bot project for calorie and macro tracking from plain text food messages.
 
-The current implementation target is a clean Level 1 MVP:
+## Current State
+
+The current implementation already covers:
 
 - Russian-first food input
 - `product + grams` parsing
 - lookup in a curated starter database
 - calories, protein, fat, and carbs per message
-
-## Current State
+- user profiles
+- BMR and TDEE calculation
+- daily targets
+- optional assistant mode
+- `/today` daily totals
+- `/search` product search
+- category browsing for shared products
+- personal user-added products and prepared meals
 
 The documentation source of truth for active work is:
 
@@ -22,7 +30,7 @@ Use it first to understand:
 - what the project is building now
 - what is already prepared
 - what is explicitly out of scope
-- what the next implementation step is
+- what the next implementation focus is
 
 ## Documentation Map
 
