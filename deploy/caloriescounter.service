@@ -1,0 +1,15 @@
+[Unit]
+Description=Telegram Bot Service
+After=network.target
+
+[Service]
+User=heaven99902
+Group=heaven99902
+WorkingDirectory=/home/heaven99902/my_bot
+# Путь к python внутри вашего venv и путь к самому файлу бота
+ExecStart=/home/heaven99902/my_bot/venv/bin/python3 app/main.py
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
