@@ -237,11 +237,9 @@ def build_language_keyboard() -> InlineKeyboardMarkup:
     return InlineKeyboardMarkup(
         inline_keyboard=[
             [
-                InlineKeyboardButton(text="🇷🇺 Русский (RU)", callback_data=f"{CALLBACK_CHOOSE_LANG_PREFIX}ru"),
-                InlineKeyboardButton(text="🇺🇦 Українська (UK)", callback_data=f"{CALLBACK_CHOOSE_LANG_PREFIX}uk"),
-            ],
-            [
-                InlineKeyboardButton(text="🇬🇧 English (EN)", callback_data=f"{CALLBACK_CHOOSE_LANG_PREFIX}en"),
+                InlineKeyboardButton(text="EN", callback_data=f"{CALLBACK_CHOOSE_LANG_PREFIX}en"),
+                InlineKeyboardButton(text="UA", callback_data=f"{CALLBACK_CHOOSE_LANG_PREFIX}uk"),
+                InlineKeyboardButton(text="RU", callback_data=f"{CALLBACK_CHOOSE_LANG_PREFIX}ru"),
             ]
         ]
     )
