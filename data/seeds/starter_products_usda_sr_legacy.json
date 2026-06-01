@@ -6357,7 +6357,6 @@
       "aliases": [
         "бургер",
         "гамбургер",
-        "чизбургер",
         "burger",
         "hamburger"
       ],
@@ -6520,6 +6519,217 @@
       "protein_per_100g": 0.81,
       "fat_per_100g": 0.31,
       "carbs_per_100g": 13.3
+    },
+    {
+      "slug": "burger_cheeseburger",
+      "name_ru": "чизбургер",
+      "category": "готовые блюда",
+      "state": "готовый продукт",
+      "usda_description": "Fast foods, cheeseburger, single patty, plain, with cheese",
+      "aliases": [
+        "чизбургер",
+        "cheeseburger",
+        "бургер с сыром"
+      ],
+      "fdc_id": 999014,
+      "usda_category": "Fast Foods",
+      "calories_per_100g": 263.0,
+      "protein_per_100g": 13.0,
+      "fat_per_100g": 11.5,
+      "carbs_per_100g": 26.8
+    },
+    {
+      "slug": "burger_double_cheeseburger",
+      "name_ru": "двойной чизбургер",
+      "category": "готовые блюда",
+      "state": "готовый продукт",
+      "usda_description": "Fast foods, double cheeseburger, double patty, with cheese",
+      "aliases": [
+        "двойной чизбургер",
+        "double cheeseburger"
+      ],
+      "fdc_id": 999015,
+      "usda_category": "Fast Foods",
+      "calories_per_100g": 280.0,
+      "protein_per_100g": 16.0,
+      "fat_per_100g": 14.5,
+      "carbs_per_100g": 21.0
+    },
+    {
+      "slug": "burger_chicken",
+      "name_ru": "чикенбургер",
+      "category": "готовые блюда",
+      "state": "готовый продукт",
+      "usda_description": "Fast foods, chicken fillet burger (McChicken style)",
+      "aliases": [
+        "чикенбургер",
+        "бургер с курицей",
+        "куриный бургер",
+        "chicken burger",
+        "chicken sandwich"
+      ],
+      "fdc_id": 999016,
+      "usda_category": "Fast Foods",
+      "calories_per_100g": 260.0,
+      "protein_per_100g": 11.5,
+      "fat_per_100g": 11.0,
+      "carbs_per_100g": 28.5
+    },
+    {
+      "slug": "potato_wedges",
+      "name_ru": "картофель по-деревенски",
+      "category": "готовые блюда",
+      "state": "готовый продукт",
+      "usda_description": "Fast foods, potato wedges, country style, baked or fried",
+      "aliases": [
+        "картофель по-деревенски",
+        "картофельные дольки",
+        "картошка по-деревенски",
+        "potato wedges",
+        "country potatoes"
+      ],
+      "fdc_id": 999017,
+      "usda_category": "Fast Foods",
+      "calories_per_100g": 160.0,
+      "protein_per_100g": 2.2,
+      "fat_per_100g": 6.5,
+      "carbs_per_100g": 23.0
+    },
+    {
+      "slug": "chicken_nuggets",
+      "name_ru": "наггетсы куриные",
+      "category": "готовые блюда",
+      "state": "готовый продукт",
+      "usda_description": "Fast foods, chicken nuggets, breaded and fried",
+      "aliases": [
+        "наггетсы",
+        "куриные наггетсы",
+        "наггетсы куриные",
+        "chicken nuggets",
+        "nuggets"
+      ],
+      "fdc_id": 999018,
+      "usda_category": "Fast Foods",
+      "calories_per_100g": 302.0,
+      "protein_per_100g": 15.5,
+      "fat_per_100g": 20.0,
+      "carbs_per_100g": 15.0
+    },
+    {
+      "slug": "chicken_strips",
+      "name_ru": "стрипсы куриные",
+      "category": "готовые блюда",
+      "state": "готовый продукт",
+      "usda_description": "Fast foods, chicken strips, crispy breaded and fried",
+      "aliases": [
+        "стрипсы",
+        "куриные стрипсы",
+        "стрипсы куриные",
+        "chicken strips",
+        "kfc strips"
+      ],
+      "fdc_id": 999019,
+      "usda_category": "Fast Foods",
+      "calories_per_100g": 320.0,
+      "protein_per_100g": 18.0,
+      "fat_per_100g": 19.0,
+      "carbs_per_100g": 19.0
+    },
+    {
+      "slug": "cheese_sticks",
+      "name_ru": "сырные палочки",
+      "category": "готовые блюда",
+      "state": "готовый продукт",
+      "usda_description": "Fast foods, mozzarella cheese sticks, breaded and fried",
+      "aliases": [
+        "сырные палочки",
+        "моцарелла палочки",
+        "сыр в панировке",
+        "mozzarella sticks",
+        "cheese sticks"
+      ],
+      "fdc_id": 999020,
+      "usda_category": "Fast Foods",
+      "calories_per_100g": 330.0,
+      "protein_per_100g": 13.5,
+      "fat_per_100g": 17.5,
+      "carbs_per_100g": 30.0
+    },
+    {
+      "slug": "pizza_pepperoni",
+      "name_ru": "пицца пепперони",
+      "category": "готовые блюда",
+      "state": "готовый продукт",
+      "usda_description": "Pizza, pepperoni, mozzarella cheese and tomato sauce, thin crust",
+      "aliases": [
+        "пицца пепперони",
+        "пепперони",
+        "pizza pepperoni",
+        "pepperoni pizza"
+      ],
+      "fdc_id": 999021,
+      "usda_category": "Prepared Meals",
+      "calories_per_100g": 290.0,
+      "protein_per_100g": 12.0,
+      "fat_per_100g": 12.5,
+      "carbs_per_100g": 32.5
+    },
+    {
+      "slug": "pizza_four_cheese",
+      "name_ru": "пицца четыре сыра",
+      "category": "готовые блюда",
+      "state": "готовый продукт",
+      "usda_description": "Pizza, four cheese (Quattro Formaggi), mozzarella, gorgonzola, parmesan, cheddar",
+      "aliases": [
+        "пицца четыре сыра",
+        "4 сыра",
+        "пицца 4 сыра",
+        "pizza four cheese",
+        "four cheese pizza"
+      ],
+      "fdc_id": 999022,
+      "usda_category": "Prepared Meals",
+      "calories_per_100g": 285.0,
+      "protein_per_100g": 12.5,
+      "fat_per_100g": 11.5,
+      "carbs_per_100g": 33.0
+    },
+    {
+      "slug": "pizza_hawaiian",
+      "name_ru": "пицца гавайская",
+      "category": "готовые блюда",
+      "state": "готовый продукт",
+      "usda_description": "Pizza, Hawaiian, with ham and pineapple",
+      "aliases": [
+        "гавайская пицца",
+        "пицца гавайская",
+        "пицца с ананасами",
+        "hawaiian pizza"
+      ],
+      "fdc_id": 999023,
+      "usda_category": "Prepared Meals",
+      "calories_per_100g": 240.0,
+      "protein_per_100g": 10.5,
+      "fat_per_100g": 7.5,
+      "carbs_per_100g": 32.0
+    },
+    {
+      "slug": "pizza_meat_feast",
+      "name_ru": "пицца мясная",
+      "category": "готовые блюда",
+      "state": "готовый продукт",
+      "usda_description": "Pizza, meat feast, with ham, bacon, pepperoni and pork sausage",
+      "aliases": [
+        "мясная пицца",
+        "пицца мясная",
+        "pizza meat"
+      ],
+      "fdc_id": 999024,
+      "usda_category": "Prepared Meals",
+      "calories_per_100g": 300.0,
+      "protein_per_100g": 14.0,
+      "fat_per_100g": 13.5,
+      "carbs_per_100g": 30.5
     }
   ]
 }
