@@ -22,7 +22,7 @@ EXACT_MATCHES = {
         "uk": "спаржа"
     },
     "сельдерей стеблевой": {
-        "en": "stem celery",
+        "en": "celery stalks",
         "uk": "селера стеблова"
     },
     "редис": {
@@ -46,7 +46,7 @@ EXACT_MATCHES = {
         "uk": "кавун"
     },
     "дыня канталупа": {
-        "en": "melon cantaloupe",
+        "en": "cantaloupe melon",
         "uk": "диня канталупа"
     },
     "ежевика": {
@@ -95,19 +95,19 @@ EXACT_MATCHES = {
     },
     "фасоль navy сухая": {
         "en": "dry navy beans",
-        "uk": "квасоля navy суха"
+        "uk": "квасоля неві суха"
     },
     "фасоль navy вареная": {
         "en": "boiled navy beans",
-        "uk": "квасоля navy варена"
+        "uk": "квасоля неві варена"
     },
     "фасоль лима сухая": {
         "en": "dry lima beans",
-        "uk": "квасоля лима суха"
+        "uk": "квасоля ліма суха"
     },
     "фасоль лима вареная": {
         "en": "boiled lima beans",
-        "uk": "квасоля лима варена"
+        "uk": "квасоля ліма варена"
     },
     "соевые бобы сухие": {
         "en": "dry soybeans",
@@ -126,11 +126,11 @@ EXACT_MATCHES = {
         "uk": "горох колотий варений"
     },
     "маш сухой": {
-        "en": "dry mung bean",
+        "en": "dry mung beans",
         "uk": "маш сухий"
     },
     "маш вареный": {
-        "en": "boiled mung bean",
+        "en": "boiled mung beans",
         "uk": "маш варений"
     },
     "бобы фава вареные": {
@@ -138,7 +138,7 @@ EXACT_MATCHES = {
         "uk": "боби фава варені"
     },
     "арахисовая паста без соли": {
-        "en": "peanut butter without salt",
+        "en": "unsalted peanut butter",
         "uk": "арахісова паста без солі"
     },
     "яйцо вареное": {
@@ -154,11 +154,11 @@ EXACT_MATCHES = {
         "uk": "грудка індички запечена"
     },
     "говяжий фарш постный готовый": {
-        "en": "lean ground beef ready",
+        "en": "cooked lean ground beef",
         "uk": "яловичий фарш пісний готовий"
     },
     "говядина стейк готовый": {
-        "en": "beef steak ready",
+        "en": "cooked beef steak",
         "uk": "яловичина стейк готовий"
     },
     "свиная вырезка запеченная": {
@@ -191,7 +191,7 @@ EXACT_MATCHES = {
     },
     "сыр моцарелла": {
         "en": "mozzarella cheese",
-        "uk": "сир моцарелла"
+        "uk": "сир моцарела"
     },
     "сыр фета": {
         "en": "feta cheese",
@@ -211,7 +211,7 @@ EXACT_MATCHES = {
     },
     "сыр рикотта цельномолочная": {
         "en": "whole milk ricotta cheese",
-        "uk": "сир рикотта цільномолочна"
+        "uk": "сир рікота цільномолочний"
     },
     "семечки подсолнечника": {
         "en": "sunflower seeds",
@@ -234,11 +234,11 @@ EXACT_MATCHES = {
         "uk": "стегно індички запечене"
     },
     "говяжий фарш постный сырой": {
-        "en": "lean ground beef raw",
+        "en": "raw lean ground beef",
         "uk": "яловичий фарш пісний сирий"
     },
     "говядина стейк сырая": {
-        "en": "beef steak raw",
+        "en": "raw beef steak",
         "uk": "яловичина стейк сира"
     },
     "свиная вырезка сырая": {
@@ -250,11 +250,11 @@ EXACT_MATCHES = {
         "uk": "свиняча корейка сира"
     },
     "свиная корейка готовая": {
-        "en": "pork loin ready",
+        "en": "cooked pork loin",
         "uk": "свиняча корейка готова"
     },
     "треска готовая": {
-        "en": "cod ready",
+        "en": "cooked cod",
         "uk": "тріска готова"
     },
     "минтай сырой": {
@@ -262,7 +262,7 @@ EXACT_MATCHES = {
         "uk": "мінтай сирий"
     },
     "минтай готовый": {
-        "en": "pollock ready",
+        "en": "cooked pollock",
         "uk": "мінтай готовий"
     },
     "креветки сырые": {
@@ -270,15 +270,15 @@ EXACT_MATCHES = {
         "uk": "креветки сирі"
     },
     "креветки готовые": {
-        "en": "shrimps ready",
+        "en": "cooked shrimp",
         "uk": "креветки готові"
     },
     "тилапия сырая": {
-        "en": "tilapia raw",
+        "en": "raw tilapia",
         "uk": "тилапія сира"
     },
     "тилапия готовая": {
-        "en": "tilapia ready",
+        "en": "cooked tilapia",
         "uk": "тилапія готова"
     },
     "скумбрия сырая": {
@@ -286,12 +286,12 @@ EXACT_MATCHES = {
         "uk": "скумбрія сира"
     },
     "скумбрия готовая": {
-        "en": "mackerel ready",
+        "en": "cooked mackerel",
         "uk": "скумбрія готова"
     },
     "масло рапсовое": {
         "en": "rapeseed oil",
-        "uk": "олія рапсова"
+        "uk": "ріпакова олія"
     },
     "масло кокосовое": {
         "en": "coconut oil",
@@ -302,7 +302,7 @@ EXACT_MATCHES = {
         "uk": "олія кунжутна"
     },
     "масло арахисовое": {
-        "en": "peanut butter",
+        "en": "peanut oil",
         "uk": "олія арахісова"
     },
     "фисташки": {
@@ -318,7 +318,7 @@ EXACT_MATCHES = {
         "uk": "гарбузове насіння"
     },
     "льняное семя": {
-        "en": "flax-seed",
+        "en": "flaxseed",
         "uk": "лляне насіння"
     },
     "кунжут": {
@@ -335,14 +335,14 @@ EXACT_MATCHES = {
     },
     "пита": {
         "en": "pita",
-        "uk": "пита"
+        "uk": "піта"
     },
     "пита цельнозерновая": {
         "en": "whole grain pita",
         "uk": "піта цільнозернова"
     },
     "тортилья пшеничная": {
-        "en": "wheat tortilla",
+        "en": "flour tortilla",
         "uk": "тортилья пшенична"
     },
     "тортилья кукурузная": {
@@ -358,7 +358,7 @@ EXACT_MATCHES = {
         "uk": "англійський мафін"
     },
     "булочка столовая": {
-        "en": "bun",
+        "en": "dinner roll",
         "uk": "булочка столова"
     },
     "греческий йогурт": {
@@ -366,7 +366,7 @@ EXACT_MATCHES = {
         "uk": "грецький йогурт"
     },
     "греческий йогурт обезжиренный": {
-        "en": "greek yogurt low fat",
+        "en": "fat-free greek yogurt",
         "uk": "грецький йогурт знежирений"
     },
     "крыло куриное запеченное": {
@@ -378,15 +378,15 @@ EXACT_MATCHES = {
         "uk": "гомілка куряча запечена"
     },
     "курица тушеная": {
-        "en": "chicken stew",
+        "en": "stewed chicken",
         "uk": "курка тушкована"
     },
     "курица жареная в кляре": {
-        "en": "chicken fried in batter",
+        "en": "batter-fried chicken",
         "uk": "курка смажена у клярі"
     },
     "говядина тушеная": {
-        "en": "beef stew",
+        "en": "stewed beef",
         "uk": "яловичина тушкована"
     },
     "бекон запеченный": {
@@ -422,7 +422,7 @@ EXACT_MATCHES = {
         "uk": "сардини в олії"
     },
     "рыбные палочки готовые": {
-        "en": "fish sticks ready",
+        "en": "cooked fish sticks",
         "uk": "рибні палички готові"
     },
     "мороженое ванильное": {
@@ -435,7 +435,7 @@ EXACT_MATCHES = {
     },
     "сельдь соленая": {
         "en": "salted herring",
-        "uk": "оселедець солона"
+        "uk": "оселедець солоний"
     },
     "крабовые палочки": {
         "en": "crab sticks",
@@ -451,7 +451,7 @@ EXACT_MATCHES = {
     },
     "щи": {
         "en": "cabbage soup",
-        "uk": "щи"
+        "uk": "щі"
     },
     "овощной суп": {
         "en": "vegetable soup",
@@ -463,7 +463,7 @@ EXACT_MATCHES = {
     },
     "чечевичный суп": {
         "en": "lentil soup",
-        "uk": "чечевичний суп"
+        "uk": "сочевичний суп"
     },
     "гороховый суп": {
         "en": "pea soup",
@@ -474,8 +474,8 @@ EXACT_MATCHES = {
         "uk": "грибний суп"
     },
     "уха": {
-        "en": "ear",
-        "uk": "вуха"
+        "en": "fish soup",
+        "uk": "рибна юшка"
     },
     "солянка": {
         "en": "solyanka",
@@ -490,12 +490,12 @@ EXACT_MATCHES = {
         "uk": "рис з овочами"
     },
     "макароны по-флотски": {
-        "en": "navy pasta",
+        "en": "navy-style pasta",
         "uk": "макарони по-флотськи"
     },
     "жаркое": {
         "en": "roast",
-        "uk": "спекотне"
+        "uk": "печеня"
     },
     "рагу овощное": {
         "en": "vegetable stew",
@@ -562,7 +562,7 @@ EXACT_MATCHES = {
         "uk": "млинці"
     },
     "оладьи": {
-        "en": "pancakes",
+        "en": "thick pancakes",
         "uk": "оладки"
     },
     "вареники с картошкой": {
@@ -578,11 +578,11 @@ EXACT_MATCHES = {
         "uk": "пельмені відварені"
     },
     "оливье": {
-        "en": "olivier",
+        "en": "olivier salad",
         "uk": "олів'є"
     },
     "винегрет": {
-        "en": "vinaigrette",
+        "en": "beet salad (vinegret)",
         "uk": "вінегрет"
     },
     "крабовый салат": {
@@ -594,7 +594,7 @@ EXACT_MATCHES = {
         "uk": "салат із капусти"
     },
     "салат огурцы помидоры": {
-        "en": "salad cucumbers tomatoes",
+        "en": "cucumber and tomato salad",
         "uk": "салат помідори огірки"
     },
     "свекла с чесноком": {
@@ -602,7 +602,7 @@ EXACT_MATCHES = {
         "uk": "буряк з часником"
     },
     "морковь по-корейски": {
-        "en": "carrots in korean",
+        "en": "korean-style carrots",
         "uk": "морква по-корейськи"
     },
     "сельдь под шубой": {
@@ -614,11 +614,11 @@ EXACT_MATCHES = {
         "uk": "тан"
     },
     "йогурт питьевой без сахара": {
-        "en": "drinking yoghurt without sugar",
+        "en": "unsweetened drinking yogurt",
         "uk": "йогурт питний без цукру"
     },
     "йогурт питьевой сладкий": {
-        "en": "sweet drinking yoghurt",
+        "en": "sweet drinking yogurt",
         "uk": "йогурт питний солодкий"
     },
     "какао на молоке": {
@@ -655,18 +655,18 @@ EXACT_MATCHES = {
     },
     "латте": {
         "en": "latte",
-        "uk": "латте"
+        "uk": "лате"
     },
     "компот": {
         "en": "compote",
         "uk": "компот"
     },
     "морс": {
-        "en": "fruit drink",
+        "en": "berry drink (mors)",
         "uk": "морс"
     },
     "кисель": {
-        "en": "jelly",
+        "en": "kissel (fruit jelly drink)",
         "uk": "кисіль"
     },
     "лимонад": {
@@ -694,7 +694,7 @@ EXACT_MATCHES = {
         "uk": "часниковий соус"
     },
     "сгущенка": {
-        "en": "condensed milk",
+        "en": "sweetened condensed milk",
         "uk": "згущене молоко"
     },
     "джем": {
@@ -703,7 +703,7 @@ EXACT_MATCHES = {
     },
     "хлеб с маслом": {
         "en": "bread and butter",
-        "uk": "хліб з олією"
+        "uk": "хліб з маслом"
     },
     "бутерброд с сыром": {
         "en": "cheese sandwich",
@@ -734,7 +734,7 @@ EXACT_MATCHES = {
         "uk": "шоколадна паста"
     },
     "какао-порошок сладкий": {
-        "en": "sweet cocoa powder",
+        "en": "sweetened cocoa powder",
         "uk": "какао-порошок солодкий"
     },
     "карамель": {
@@ -742,23 +742,23 @@ EXACT_MATCHES = {
         "uk": "карамель"
     },
     "ирис": {
-        "en": "iris",
+        "en": "toffee",
         "uk": "ірис"
     },
     "мармелад": {
-        "en": "marmalade",
+        "en": "fruit jelly candy",
         "uk": "мармелад"
     },
     "зефир": {
-        "en": "marshmallows",
+        "en": "zefir (marshmallow)",
         "uk": "зефір"
     },
     "пастила": {
-        "en": "paste",
+        "en": "pastila (fruit paste)",
         "uk": "пастила"
     },
     "жевательный мармелад": {
-        "en": "chewing marmalade",
+        "en": "gummy candies",
         "uk": "жувальний мармелад"
     },
     "халва подсолнечная": {
@@ -774,7 +774,7 @@ EXACT_MATCHES = {
         "uk": "нуга"
     },
     "козинак": {
-        "en": "kozinak",
+        "en": "kozinak (nut bar)",
         "uk": "козинак"
     },
     "печенье сахарное": {
@@ -810,7 +810,7 @@ EXACT_MATCHES = {
         "uk": "пряники"
     },
     "сухари сладкие": {
-        "en": "sweet crackers",
+        "en": "sweet rusks",
         "uk": "сухарі солодкі"
     },
     "батончик мюсли": {
@@ -826,7 +826,7 @@ EXACT_MATCHES = {
         "uk": "карамельний попкорн"
     },
     "кукурузные палочки сладкие": {
-        "en": "sweet corn sticks",
+        "en": "sweet corn puffs",
         "uk": "кукурудзяні палички солодкі"
     },
     "эклер": {
@@ -842,8 +842,8 @@ EXACT_MATCHES = {
         "uk": "безе"
     },
     "пирожное картошка": {
-        "en": "potato cake",
-        "uk": "тістечка картопля"
+        "en": "chocolate potato cake (kartoshka)",
+        "uk": "тістечко картопля"
     },
     "маффин ванильный": {
         "en": "vanilla muffin",
@@ -854,7 +854,7 @@ EXACT_MATCHES = {
         "uk": "мафін шоколадний"
     },
     "донат": {
-        "en": "donate",
+        "en": "donut",
         "uk": "донат"
     },
     "панкейк сладкий": {
@@ -866,7 +866,7 @@ EXACT_MATCHES = {
         "uk": "вафельний ріжок"
     },
     "мороженое пломбир": {
-        "en": "ice cream sundae",
+        "en": "plombir ice cream",
         "uk": "морозиво пломбір"
     },
     "мороженое шоколадное": {
@@ -899,7 +899,7 @@ EXACT_MATCHES = {
     },
     "чизкейк": {
         "en": "cheesecake",
-        "uk": "чізкейк"
+        "uk": "чизкейк"
     },
     "бисквитный торт": {
         "en": "sponge cake",
@@ -910,7 +910,7 @@ EXACT_MATCHES = {
         "uk": "медовик"
     },
     "наполеон": {
-        "en": "napoleon",
+        "en": "napoleon cake",
         "uk": "наполеон"
     },
     "морковный торт": {
@@ -923,7 +923,7 @@ EXACT_MATCHES = {
     },
     "торт тирамису": {
         "en": "tiramisu cake",
-        "uk": "торт тірамісу"
+        "uk": "торт тирамісу"
     },
     "торт прага": {
         "en": "prague cake",
@@ -938,11 +938,11 @@ EXACT_MATCHES = {
         "uk": "торт сметанник"
     },
     "фруктовый торт": {
-        "en": "fruit cake",
+        "en": "sponge cake with fruit",
         "uk": "фруктовий торт"
     },
     "торт с заварным кремом": {
-        "en": "quiche",
+        "en": "cake with custard cream",
         "uk": "торт із заварним кремом"
     },
     "шоколадный сироп": {
@@ -954,7 +954,7 @@ EXACT_MATCHES = {
         "uk": "кленовий сироп"
     },
     "сгущенка вареная": {
-        "en": "boiled condensed milk",
+        "en": "boiled sweetened condensed milk",
         "uk": "згущене молоко варене"
     },
     "сахарная пудра": {
@@ -963,10 +963,10 @@ EXACT_MATCHES = {
     },
     "сухофрукты смесь": {
         "en": "dried fruit mixture",
-        "uk": "сухофрукти суміш"
+        "uk": "суміш сухофруктів"
     },
     "изюм": {
-        "en": "raisin",
+        "en": "raisins",
         "uk": "родзинки"
     },
     "курага": {
@@ -1007,11 +1007,11 @@ EXACT_MATCHES = {
     },
     "драники": {
         "en": "potato pancakes",
-        "uk": "драніки"
+        "uk": "деруни"
     },
     "паста карбонара": {
         "en": "pasta carbonara",
-        "uk": "паста карбонару"
+        "uk": "паста карбонара"
     },
     "блины с мясом": {
         "en": "pancakes with meat",
@@ -1035,10 +1035,10 @@ EXACT_MATCHES = {
     },
     "чикенбургер": {
         "en": "chicken burger",
-        "uk": "чікенбургер"
+        "uk": "чикенбургер"
     },
     "картофель по-деревенски": {
-        "en": "country style potatoes",
+        "en": "potato wedges",
         "uk": "картопля по-сільськи"
     },
     "наггетсы куриные": {
@@ -1070,6 +1070,7 @@ EXACT_MATCHES = {
         "uk": "піца м'ясна"
     }
 }
+
 
 
 TRANSLATIONS = {
