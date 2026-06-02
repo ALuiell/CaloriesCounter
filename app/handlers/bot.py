@@ -1223,7 +1223,7 @@ async def _show_category_products(
         return
 
     lines = [get_text(lang, "category_products_header")]
-    lines.extend(_format_product_summary(product) for product in products)
+    lines.extend(_format_product_summary(product, lang) for product in products)
     await _send_with_main_menu(
         output_message,
         profile_service,
@@ -1324,7 +1324,7 @@ async def _show_user_products(
         return
 
     lines = [get_text(lang, "personal_products_header")]
-    lines.extend(_format_product_summary(product) for product in products)
+    lines.extend(_format_product_summary(product, lang) for product in products)
     await _send_with_main_menu(
         output_message,
         profile_service,
@@ -1482,12 +1482,15 @@ def _format_number(value: float | int | None) -> str:
     return text
 
 
-def _format_product_summary(product) -> str:
-    return (
-        f"- {product.name}: {round(product.calories_per_100g)} kcal, "
-        f"P {_format_number(product.protein_per_100g)} / "
-        f"F {_format_number(product.fat_per_100g)} / "
-        f"C {_format_number(product.carbs_per_100g)}"
+def _format_product_summary(product, lang: str = "ru") -> str:
+    return get_text(
+        lang,
+        "personal_product_summary",
+        name=product.name,
+        calories=round(product.calories_per_100g),
+        protein=_format_number(product.protein_per_100g),
+        fat=_format_number(product.fat_per_100g),
+        carbs=_format_number(product.carbs_per_100g),
     )
 
 

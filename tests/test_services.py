@@ -734,3 +734,46 @@ def test_multilingual_language_autodetection(tmp_path: Path):
     # 5. _get_user_lang should now stick to "uk" even if TG is "en"
     detected_lang_again = _get_user_lang(1, profile_service, mock_from_user)
     assert detected_lang_again == "uk"
+
+
+def test_format_product_summary_localization():
+    from app.handlers.bot import _format_product_summary
+    from dataclasses import dataclass
+
+    @dataclass
+    class DummyProduct:
+        name: str
+        calories_per_100g: float
+        protein_per_100g: float
+        fat_per_100g: float
+        carbs_per_100g: float
+
+    product = DummyProduct(
+        name="test_food",
+        calories_per_100g=150.0,
+        protein_per_100g=10.0,
+        fat_per_100g=5.0,
+        carbs_per_100g=20.0
+    )
+
+    # Russian
+    res_ru = _format_product_summary(product, "ru")
+    assert "ккал" in res_ru
+    assert "Б 10" in res_ru
+    assert "Ж 5" in res_ru
+    assert "У 20" in res_ru
+
+    # English
+    res_en = _format_product_summary(product, "en")
+    assert "kcal" in res_en
+    assert "P 10" in res_en
+    assert "F 5" in res_en
+    assert "C 20" in res_en
+
+    # Ukrainian
+    res_uk = _format_product_summary(product, "uk")
+    assert "ккал" in res_uk
+    assert "Б 10" in res_uk
+    assert "Ж 5" in res_uk
+    assert "В 20" in res_uk  # Ukrainian 'В' for Carbs (Вуглеводи)
+

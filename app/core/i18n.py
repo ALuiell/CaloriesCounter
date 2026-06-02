@@ -303,8 +303,8 @@ LOCALES = {
         "actions_header": "Дії:",
         "bmr_label": "BMR: <b>{bmr}</b> ккал",
         "tdee_label": "TDEE: <b>{tdee}</b> ккал",
-        "macro_norms_header": "Розрахункова денна норма БЖУ (приблизно):",
-        "macro_norms_values": "Б: {protein} г / Ж: {fat} г / У: {carbs} г",
+        "macro_norms_header": "Розрахункова денна норма БЖВ (приблизно):",
+        "macro_norms_values": "Б: {protein} г / Ж: {fat} г / В: {carbs} г",
         "bmr_tdee_hint": "BMR — витрата у спокої, TDEE — витрата з урахуванням активності.\nДетальніше: /terms",
 
         # Search & Food
@@ -319,7 +319,7 @@ LOCALES = {
         "add_food_menu_header": "Що зробити з особистою їжею?",
         "personal_products_empty": "Особистих продуктів поки немає. Натисни «Додати продукт», щоб зберегти свій варіант.",
         "personal_products_header": "Мої продукти:",
-        "personal_product_summary": "- {name}: {calories} ккал, Б {protein} / Ж {fat} / У {carbs}",
+        "personal_product_summary": "- {name}: {calories} ккал, Б {protein} / Ж {fat} / В {carbs}",
         "personal_product_deleted": "Видалено",
         "personal_product_not_found": "Не знайдено",
         "personal_product_parse_error": (
@@ -329,7 +329,7 @@ LOCALES = {
         ),
         "personal_product_saved": (
             "Зберіг особисту їжу:\n"
-            "<b>{name}</b> на 100 г: {calories} ккал, Б {protein} / Ж {fat} / У {carbs}.\n\n"
+            "<b>{name}</b> на 100 г: {calories} ккал, Б {protein} / Ж {fat} / В {carbs}.\n\n"
             "Тепер можна писати: <code>{name} 150</code>"
         ),
         "search_cancelled": "Пошук скасовано.",
@@ -344,12 +344,12 @@ LOCALES = {
             "Використовуй формат: <code>продукт + грами</code>\n"
             "Приклад: <code>гречка 120, курица 180</code>"
         ),
-        "calc_item": "- {name} {weight} г: {calories} ккал, Б {protein} / Ж {fat} / У {carbs}",
+        "calc_item": "- {name} {weight} г: {calories} ккал, Б {protein} / Ж {fat} / В {carbs}",
         "calc_total": "Разом:\n{calories} ккал\nБілки: {protein} г\nЖири: {fat} г\nВуглеводи: {carbs} г",
         "calc_today": "За сьогодні:\n{calories} ккал\nБілки: {protein} г\nЖири: {fat} г\nВуглеводи: {carbs} г",
 
         # Assistant Mode
-        "assistant_enabled_msg": "Assistant mode увімкнено. Тепер відповіді на їжу міститимуть підсумки за сьогодні, BMR, TDEE та розрахункову норму БЖУ.",
+        "assistant_enabled_msg": "Assistant mode увімкнено. Тепер відповіді на їжу міститимуть підсумки за сьогодні, BMR, TDEE та розрахункову норму БЖВ.",
         "assistant_disabled_msg": "Assistant mode вимкнено. Бот знову відповідає лише розрахунком за повідомленням.",
 
         # Core / Commands
@@ -380,7 +380,7 @@ LOCALES = {
             "Це скільки калорій організм витрачає у спокої: на дихання, роботу серця, мозку та органів.\n\n"
             "TDEE — приблизна витрата калорій за день з урахуванням активності.\n"
             "Це BMR, помножений на обраний рівень активності.\n\n"
-            "Розрахункова денна норма БЖУ — орієнтир по білках, жирах та вуглеводах, розрахований від TDEE.\n"
+            "Розрахункова денна норма БЖВ — орієнтир по білках, жирах та вуглеводах, розрахований від TDEE.\n"
             "Це приблизний розрахунок, а не медична рекомендація."
         ),
 
